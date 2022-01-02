@@ -10,7 +10,7 @@ The purpose of this project is to create a website and associated mobile applica
    - Post a message in the thank you roll (optional)
 2. Donate money towards masks
    - Choose an amount of masks to "donate"
-     - The system will multiple that amount by the cost per mask (e.g. $2.50/mask) and generate a total amoutn
+     - The system will multiple that amount by the cost per mask (e.g. $2.50/mask) and generate a total amount
    - Pay the donation amount via a range of payment services
      - Ideally, payment services will be offered that allow low/no fees for charity donations
    - Create a recurring mask donation every "x" period
@@ -39,6 +39,16 @@ Initially, the back end system will just be a simple database tracking:
 Processing of shipments will be manual by volunteers at first.
 
 Eventually, the goal is to automate the back end so that if there are sufficient donated funds, it automates sending the order to the chosen region's supplier for processing.  That will be a bit more complicated as will depend on each supplier's APIs for automated order submission.  
+
+Future features:
+- Donate cryptocurrency for masks
+- Create a campaign to get fundraising donations for masks tied directly into the site
+  - Same but tied into Facebook fundraising campains and fundraising campaigns via other similar sites
+- More payment services/options
+- Set up a way for mask suppliers to bid on providing masks at lower prices in exchange for branding/publicity
+- Set up full charity organization with CRA number, etc.
+  - Issue tax receipts for organizations that donate maks
+  - Issue tax receipts for individual donations over a certain amount (e.g., min $20?)
 
 
 
