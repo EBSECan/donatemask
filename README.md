@@ -50,7 +50,11 @@ Future features:
   - Issue tax receipts for organizations that donate maks
   - Issue tax receipts for individual donations over a certain amount (e.g., min $20?)
 
-
+Web presences:
+- https://donatemask.ca
+- https://twitter.com/donatemask
+- https://www.facebook.com/donatemaskca
+- https://www.instagram.com/donatemask
 
 
 
