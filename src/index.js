@@ -31,10 +31,24 @@ import Login from "views/templates/Login.js";
 import Profile from "views/templates/Profile.js";
 import Register from "views/templates/Register.js";
 
+import Donate from "views/Donate.js";
+import Request from "views/Request";
+import Stats from "views/Stats.js";
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/donate-a-mask" exact render={props => <LandingProd {...props} />} />
+      <Route path="/" exact render={props => <LandingProd {...props} />} />
+      <Route
+        path="/donate"
+        exact
+        render={props => <Donate {...props} />}
+      />
+      <Route
+        path="/request"
+        exact
+        render={props => <Request {...props} />}
+      />
       <Route
         path="/landing-page"
         exact
@@ -50,6 +64,11 @@ ReactDOM.render(
         path="/register-page"
         exact
         render={props => <Register {...props} />}
+      />
+      <Route
+        path="/stats"
+        exact
+        render={props => <Stats {...props} />}
       />
       <Redirect to="/" />
     </Switch>

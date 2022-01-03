@@ -47,6 +47,7 @@ import Hero from 'components/Hero.js'
 const DonatePage = () => {
   return (
     <>
+    <DemoNavbar/>
     <Hero
       heading="Donate a mask."
       body="Help a fellow human in need of face masks, through a small donation."/>
@@ -57,37 +58,4 @@ const DonatePage = () => {
   );
 }
 
-const RequestPage = () => {
-  return (
-    <>
-      <Hero
-        heading="Request a mask."
-        body="In need of a face mask? Request some below from a kind stranger :)"/>
-        <Row className="d-flex justify-content-center no-margin pt-5">
-          <RequestForm/>
-        </Row>
-    </>
-  );
-
-}
-
-const LandingProd = () => {
-  /* State hooks to show donate or request mask page, where:
-    false = Donate Masks,
-    true = Request Masks
-  */
-
-  const [show, setShow] = useState(false)
-  const showDonate = () => {setShow(false)}
-  const showRequest = () => {setShow(true)}
-  return (
-    <React.Fragment>
-      <DemoNavbar showDonate={showDonate} showRequest={showRequest}/>
-      { show
-        ?  <RequestPage/>
-      :  <DonatePage/>
-      }
-    </React.Fragment>
-  );
-}
-export default LandingProd;
+export default DonatePage;

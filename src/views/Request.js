@@ -44,22 +44,10 @@ import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
 
 
-const DonatePage = () => {
+const Request = () => {
   return (
     <>
-    <Hero
-      heading="Donate a mask."
-      body="Help a fellow human in need of face masks, through a small donation."/>
-    <Row className="d-flex justify-content-center no-margin pt-5">
-      <DonateForm/>
-    </Row>
-    </>
-  );
-}
-
-const RequestPage = () => {
-  return (
-    <>
+      <DemoNavbar/>
       <Hero
         heading="Request a mask."
         body="In need of a face mask? Request some below from a kind stranger :)"/>
@@ -71,23 +59,4 @@ const RequestPage = () => {
 
 }
 
-const LandingProd = () => {
-  /* State hooks to show donate or request mask page, where:
-    false = Donate Masks,
-    true = Request Masks
-  */
-
-  const [show, setShow] = useState(false)
-  const showDonate = () => {setShow(false)}
-  const showRequest = () => {setShow(true)}
-  return (
-    <React.Fragment>
-      <DemoNavbar showDonate={showDonate} showRequest={showRequest}/>
-      { show
-        ?  <RequestPage/>
-      :  <DonatePage/>
-      }
-    </React.Fragment>
-  );
-}
-export default LandingProd;
+export default Request;

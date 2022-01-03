@@ -80,11 +80,15 @@ const DemoNavbar = (props) => {
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <span className="nav-link-inner--text" onClick={props.showDonate}>Donate</span>
+                    <span className="nav-link-inner--text" to="/donate">Donate</span>
                   </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <span className="nav-link-inner--text" onClick={props.showRequest}>Request</span>
+                    <span className="nav-link-inner--text" to="/request">Request</span>
+                  </a>
+                  <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                    <span className="nav-link-inner--text" to="/stats">Stats</span>
                   </a>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
