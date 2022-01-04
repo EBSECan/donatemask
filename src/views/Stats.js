@@ -186,7 +186,7 @@ const Stats = () => {
       <DemoNavbar/>
       <Hero
         heading="Stats"
-        body="View stats."/>
+        body="View total mask donations, requests, and the message (inspirational, thank you) roll."/>
       <section className="section section-lg pt-lg-0 mt--100">
           <Container>
             <Row className="justify-content-center">

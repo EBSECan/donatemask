@@ -4,6 +4,7 @@ import axios from 'axios'
 
 // reactstrap components
 import {
+  UncontrolledAlert,
   Button,
   FormGroup,
   Form,
@@ -22,6 +23,7 @@ const RequestForm = () => {
   const [address, setAddress] = useState('')
   const [maskAmnt, setMaskAmnt] = useState(1)
   const [msg, setMsg] = useState('');
+  const [submitStatus, setSubmitStatus] = useState(false)
   var totalDonation = maskPrice*maskAmnt;
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,14 +37,8 @@ const RequestForm = () => {
     };
     axios
       .post("http://localhost:5000/api/mask_request_add", newMaskRequest )
-      .then(res => console.log(res.data))
-    console.log("Submitted")
-  }
 
-  const showRecords = (event) => {
-    axios
-      .get("http://localhost:5000/api/get_mask_requests")
-      .then(res => console.log(res.data))
+    setSubmitStatus(true)
   }
     return (
       <>
@@ -93,6 +89,15 @@ const RequestForm = () => {
               </FormGroup>
             </Col>
           </Row>
+          {submitStatus &&
+            <UncontrolledAlert color="success" fade={false}>
+              <span className="alert-inner--icon">
+                <i className="ni ni-like-2" />
+              </span>{" "}
+              <span className="alert-inner--text">
+                <strong>Thank you!</strong> Your request has gone through!
+              </span>
+            </UncontrolledAlert>}
         </Form>
       </>
     );

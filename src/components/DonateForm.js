@@ -4,6 +4,7 @@ import axios from 'axios'
 
 // reactstrap components
 import {
+  UncontrolledAlert,
   Button,
   FormGroup,
   Form,
@@ -21,6 +22,7 @@ const DonateForm = () => {
   const [email, setEmail] = useState('')
   const [maskAmnt, setMaskAmnt] = useState(1);
   const [msg, setMsg] = useState('')
+  const [submitStatus, setSubmitStatus] = useState(false)
   var totalDonation = maskPrice*maskAmnt;
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,14 +37,7 @@ const DonateForm = () => {
     };
     axios
       .post("http://localhost:5000/api/donation_add", newDonation )
-      .then(res => console.log(res.data))
-    console.log("Submitted")
-  }
-
-  const showRecords = (event) => {
-    axios
-      .get("http://localhost:5000/api/get_donations")
-      .then(res => console.log(res.data))
+    setSubmitStatus(true)
   }
     return (
       <>
@@ -87,6 +82,15 @@ const DonateForm = () => {
               </FormGroup>
             </Col>
           </Row>
+          {submitStatus &&
+            <UncontrolledAlert color="success" fade={false}>
+              <span className="alert-inner--icon">
+                <i className="ni ni-like-2" />
+              </span>{" "}
+              <span className="alert-inner--text">
+                <strong>Thank you!</strong> Your donation has gone through!
+              </span>
+            </UncontrolledAlert>}
         </Form>
       </>
     );

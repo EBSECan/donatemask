@@ -52,5 +52,6 @@ span#time {
 }
 
 p#message {
+  width: 80%;
   color: #333333;
 }
