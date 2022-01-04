@@ -44,7 +44,7 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
     totalDonation: req.body.totalDonation,
-    donationgMsg: req.body.donationMsg,
+    donationMsg : req.body.donationMsg,
     timestamp: req.body.timestamp,
   };
   db_connect.collection("donations").insertOne(obj, function (err, res) {
