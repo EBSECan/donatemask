@@ -21,7 +21,7 @@ const RequestForm = () => {
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [maskAmnt, setMaskAmnt] = useState(1)
-  const [thanksMsg, setThanksMsg] = useState('');
+  const [msg, setMsg] = useState('');
   var totalDonation = maskPrice*maskAmnt;
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,16 +30,13 @@ const RequestForm = () => {
       email:email,
       maskAmnt: maskAmnt,
       address: address,
-      thanksMsg: thanksMsg,
+      msg: msg,
       timestamp:new Date(),
     };
     axios
       .post("http://localhost:5000/api/mask_request_add", newMaskRequest )
       .then(res => console.log(res.data))
     console.log("Submitted")
-    console.log(name)
-    console.log(email)
-    console.log(maskAmnt)
   }
 
   const showRecords = (event) => {
@@ -76,14 +73,14 @@ const RequestForm = () => {
             </Col>
             <Col md="6">
               <FormGroup>
-                <Input placeholder="name@example.com" type="email"  onChange={(e) => setThanksMsg(e.target.value)} />
+                <Input placeholder="name@example.com" type="email"  onChange={(e) => setEmail(e.target.value)} />
               </FormGroup>
             </Col>
           </Row>
           <Row>
             <Col md="12">
               <FormGroup>
-                <Input placeholder="Thank You Message (Optional)" type="text"  onChange={(e) => setThanksMsg(e.target.value)} />
+                <Input placeholder="Thank You Message (Optional)" type="text"  onChange={(e) => setMsg(e.target.value)} />
               </FormGroup>
             </Col>
           </Row>

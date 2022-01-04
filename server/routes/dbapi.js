@@ -44,7 +44,7 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
     totalDonation: req.body.totalDonation,
-    donationMsg : req.body.donationMsg,
+    msg : req.body.msg,
     timestamp: req.body.timestamp,
   };
   db_connect.collection("donations").insertOne(obj, function (err, res) {
@@ -61,7 +61,7 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
     address: req.body.address,
     maskAmnt: req.body.maskAmnt,
     email: req.body.email,
-    thanksMsg: req.body.thanksMsg,
+    msg: req.body.msg,
     timestamp: req.body.timestamp,
   };
   db_connect.collection("maskrequests").insertOne(obj, function (err, res) {

@@ -25,79 +25,113 @@ import {
 import Hero from 'components/Hero.js'
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 
+const Message = (props) => {
+  /*
+  props:
+    body: str
+      Body of the message.
+    timestamp: Date Object
+  */
+  const timestamp = new Date(props.timestamp)
+  const now = new Date();
+  const elapsedTimeSeconds = Math.abs(timestamp- now)/1000 // In seconds.
+
+  var elapsedTimeConverted;
+  const secondConversion = {
+    0: {
+      suffix: "Second(s) ago",
+      divideBy: 1
+    },
+    60: {
+      suffix: "Minute(s) ago",
+      divideBy: 60
+    },
+    3600: {
+      suffix: "Hour(s) ago",
+      divideBy: 3600
+    },
+    86400: {
+      suffix: "Day(s) ago",
+      divideBy: 86400,
+    },
+    2592000: {
+      suffix: "Month(s) ago",
+      divideBy: 2592000,
+    }
+
+  }
+
+  // Converting the time from seconds to its respective unit, and suffixing.
+  for(const key in secondConversion) {
+    if (elapsedTimeSeconds > key) {
+      let divisor = secondConversion[key].divideBy
+      let suffix = secondConversion[key].suffix
+      var elapsedTimeConverted = `${Math.round(elapsedTimeSeconds/divisor)} ${suffix}`
+    }
+  }
+  return(
+    <div className="message mt-2 d-flex justify-content-center">
+      <p id="message"> <span id="time">{elapsedTimeConverted}</span> {props.body}</p>
+    </div>
+  );
+}
 
 const MessageRoll = () => {
+  const [donationMsgs, setDonationMsgs] = useState('')
+  const [requestMsgs, setRequestMsgs] = useState('')
 
   useEffect(() => {
     // Fetching donation and request data from the MongoDB (using the API).
     axios
       .get("http://localhost:5000/api/get_donations")
       .then(res => {
-        getTotalMasksDonated(res.data)
-
+        getMessages(res.data, "donations")
       })
+
     axios
       .get("http://localhost:5000/api/get_mask_requests")
       .then(res => {
-        getTotalMasksRequested(res.data)
+        getMessages(res.data, "requests")
       })
+
   }, [])
 
-  const Message = (props) => {
-    /* Message: */
-    const now = new Date();
-    const elapsedTimeSeconds = Math.abs(props.timestamp - now)/1000 // In seconds.
-    var elapsedTimeConverted;
-    const secondConversion = {
-      5: {
-        suffix: "Seconds ago",
-        divideBy: 1
-      },
-      60: {
-        suffix: "Minute(s) ago",
-        divideBy: 60
-      },
-      3600: {
-        suffix: "Hour(s) ago",
-        divideBy: 3600
-      },
-      86400: {
-        suffix: "Day(s) ago",
-        divideBy: 86400,
-      },
-      2592000: {
-        suffix: "Month(s) ago",
-        divideBy: 2592000,
+  const getMessages = (data, type) => {
+    // Compiling all donation messages to a single list.
+    var messages = []
+    for (let i = 0; i < data.length; i++) {
+      const curr_msg = {
+        body: data[i].msg,
+        timestamp: data[i].timestamp
       }
-
+      messages.push(curr_msg)
     }
 
-    // Converting the time from seconds to its respective unit, and suffixing.
-    for(const key in secondConversion) {
-      if (elapsedTimeSeconds > key) {
-        let divisor = secondConversion[key].divideBy
-        let suffix = secondConversion[key].suffix
-        var elapsedTimeConverted = `${Math.round(elapsedTimeSeconds/divisor)} ${suffix}`
-      }
+    // Pushing list to state.
+    if (type == "donations") {
+      setDonationMsgs(messages.reverse())
     }
-    return(
-      <div className="message mt-3 d-flex justify-content-center">
-        <p id="message"> <span id="time">xx:xx</span> this is a message</p>
-      </div>
-    );
+    else if(type=="requests") {
+      setRequestMsgs(messages.reverse())
+    }
   }
+
   return (
       <Row className="message-roll justify-content-center">
         <Col xs={3}>
           <div className="messages" id="inspirational">
-            <h3 className="display-4 d-flex justify-content-center"> Inspirational Messages</h3>
-            <Message/>
+            <h3 className="display-4 d-flex justify-content-center mb-3"> Inspirational Messages</h3>
+              {donationMsgs && donationMsgs.map((msg, idx) => (
+                <Message body={msg.body} timestamp={msg.timestamp} key={idx}/>
+              ))}
           </div>
         </Col>
         <Col xs={3}>
           <div className='messages' id="thankyou">
             <h3 className="display-4 d-flex justify-content-center"> Thank You Messages</h3>
-                        <Message/>
+              {requestMsgs && requestMsgs.map((msg, idx) => (
+                <Message body={msg.body} timestamp={msg.timestamp} key={idx}/>
+              ))}
           </div>
         </Col>
       </Row>
@@ -110,45 +144,42 @@ const Stats = () => {
   const [totalMasksDonated, setTotalMasksDonated] = useState(0)
   const [totalMasksRequested, setTotalMasksRequested] = useState(0)
 
-  const getTotalMasksDonated = (donations) => {
-    // Iterating through donations, determining total no. of masks donated.
-    var count = 0;
-    for (let i = 0; i < donations.length; i++) {
-      count += donations[i].maskAmnt
-    }
-    setTotalMasksDonated(count)
-  }
-
-  const getTotalMasksRequested = (requests) => {
-    // Iterating through donations, determining total no. of masks requested.
-    var count = 0;
-    for (let i = 0; i < requests.length; i++) {
-      count += requests[i].maskAmnt
-    }
-    setTotalMasksRequested(count)
-  }
-
-  // Calculated number of mask requests that are unfufillfed.
-  var unfulfilledMasks = 0;
-  if (totalMasksRequested > totalMasksDonated) {
-      var unfulfilledMasks = totalMasksRequested - totalMasksDonated
-  }
-
   useEffect(() => {
-    // Fetching donation and request data from the MongoDB (using the API).
+    // Fetching donation and request data from the database.
     axios
       .get("http://localhost:5000/api/get_donations")
       .then(res => {
-        getTotalMasksDonated(res.data)
+        getTotalMasks(res.data, "donations")
 
       })
     axios
       .get("http://localhost:5000/api/get_mask_requests")
       .then(res => {
-        getTotalMasksRequested(res.data)
+        getTotalMasks(res.data, "requests")
       })
   }, [])
 
+  const getTotalMasks= (data, type) => {
+    // Iterating through donations, determining total number of masks donated.
+    var count = 0;
+    for (let i = 0; i < data.length; i++) {
+      count +=data[i].maskAmnt
+    }
+
+    // Pushing count to state.
+    if (type == "donations") {
+      setTotalMasksDonated(count)
+    }
+    else if(type=="requests") {
+      setTotalMasksRequested(count)
+    }
+  }
+
+  // Calculating unfulfilled mask requests.
+  var unfulfilledMasks = 0;
+  if (totalMasksRequested > totalMasksDonated) {
+      var unfulfilledMasks = totalMasksRequested - totalMasksDonated
+  }
 
   return (
     <>

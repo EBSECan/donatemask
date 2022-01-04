@@ -20,27 +20,23 @@ const DonateForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [maskAmnt, setMaskAmnt] = useState(1);
-  const [donationMsg, setDonationMsg] = useState('')
+  const [msg, setMsg] = useState('')
   var totalDonation = maskPrice*maskAmnt;
   const handleSubmit = (event) => {
     event.preventDefault();
+    const now = new Date()
     const newDonation = {
       name:name,
       email:email,
       maskAmnt: maskAmnt,
       totalDonation: totalDonation,
-      donationMsg: donationMsg,
-      timestamp:new Date(),
+      msg: msg,
+      timestamp: now,
     };
-
-    console.log(newDonation)
     axios
       .post("http://localhost:5000/api/donation_add", newDonation )
       .then(res => console.log(res.data))
     console.log("Submitted")
-    console.log(name)
-    console.log(email)
-    console.log(maskAmnt)
   }
 
   const showRecords = (event) => {
@@ -78,7 +74,7 @@ const DonateForm = () => {
             </Col>
             <Col md="6">
               <FormGroup>
-                <Input placeholder="Donation 'Inspirational Message' (Optional)" type="text"  onChange={(e) => setDonationMsg(e.target.value)} />
+                <Input placeholder="Donation 'Inspirational Message' (Optional)" type="text"  onChange={(e) => setMsg(e.target.value)} />
               </FormGroup>
             </Col>
           </Row>

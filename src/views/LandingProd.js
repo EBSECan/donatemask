@@ -82,7 +82,7 @@ const LandingProd = () => {
   const showRequest = () => {setShow(true)}
   return (
     <React.Fragment>
-      <DemoNavbar showDonate={showDonate} showRequest={showRequest}/>
+      <DemoNavbar/>
       { show
         ?  <RequestPage/>
       :  <DonatePage/>

@@ -48,7 +48,9 @@ a {
 
 span#time {
   color: #ACACAC;
+  padding-right: 0.25vw;
 }
+
 p#message {
   color: #333333;
 }
