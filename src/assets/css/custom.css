@@ -1,3 +1,9 @@
+/* Global */
+a {
+  color: #FFFFFF;
+}
+
+/* Padding Adjustments */
 .no-padding {
   padding: 0;
 }
@@ -6,6 +12,13 @@
   margin: 0;
 }
 
+.section-lg {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+
+/* Forms */
 #request-form {
   width: 45%;
 }
@@ -16,9 +29,4 @@
 
 #full-width {
   width: 100%;
-}
-
-.section-lg {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
 }

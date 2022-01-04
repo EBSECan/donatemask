@@ -70,7 +70,7 @@ const DonateForm = () => {
           <Row>
             <Col md="6">
               <FormGroup>
-                <Input placeholder="# of Masks" type="text"  onChange={(e) => setMaskAmnt(e.target.value)} />
+                <Input placeholder="# of Masks" type="text"  onChange={(e) => setMaskAmnt(parseInt(e.target.value))} />
               </FormGroup>
             </Col>
             <Col md="6">
