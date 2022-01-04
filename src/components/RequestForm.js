@@ -31,6 +31,7 @@ const RequestForm = () => {
       maskAmnt: maskAmnt,
       address: address,
       thanksMsg: thanksMsg,
+      timestamp:new Date(),
     };
     axios
       .post("http://localhost:5000/api/mask_request_add", newMaskRequest )

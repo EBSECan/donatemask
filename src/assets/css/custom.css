@@ -30,3 +30,25 @@ a {
 #full-width {
   width: 100%;
 }
+
+/* Stats */
+.message-roll {
+  margin: 0 aut0;
+  width: 100%;
+  margin-bottom: 10vh;
+}
+
+.messages {
+  width: 100%;
+  height: 35vh;
+}
+.messages#inspirational {
+  border-right: 1px solid #D4D4D4;
+}
+
+span#time {
+  color: #ACACAC;
+}
+p#message {
+  color: #333333;
+}

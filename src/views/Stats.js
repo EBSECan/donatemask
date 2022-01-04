@@ -1,23 +1,6 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, {useState, useEffect} from "react";
 import { Redirect } from "react-router-dom";
-// nodejs library that concatenates classes
+
 import classnames from "classnames";
 import axios from 'axios';
 
@@ -41,55 +24,124 @@ import {
 // core components
 import Hero from 'components/Hero.js'
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-// index page sections
-
-const Stats = () => {
-  /* State hooks to show donate or request mask page, where:
-    false = Donate Masks,
-    true = Request Masks
-  */
-  const [donations, setDonations] = useState('')
-  const [requests, setRequests] = useState('')
-
-  const [totalMasksDonated, setTotalMasksDonated] = useState(0)
-  const [totalMasksRequested, setTotalMasksRequested] = useState(0)
-
-  var unfulfilledMasks = 0;
-  if (totalMasksRequested > totalMasksDonated) {
-      var unfulfilledMasks = totalMasksRequested - totalMasksDonated
-  }
 
 
-  const getTotalMasksDonated = (donations) => {
-    console.log(`donations: ${count}`)
-    var count = 0;
-    for (let i = 0; i < donations.length; i++) {
-      count += donations[i].maskAmnt
-    }
-    setTotalMasksDonated(count)
-    console.log(`count: ${count}`)
-  }
-
-  const getTotalMasksRequested = (requests) => {
-    console.log(`requests: ${count}`)
-    var count = 0;
-    for (let i = 0; i < requests.length; i++) {
-      count += requests[i].maskAmnt
-    }
-    setTotalMasksRequested(count)
-    console.log(`count: ${count}`)
-  }
-
+const MessageRoll = () => {
 
   useEffect(() => {
-    // Fetching masks donated, and requested.
+    // Fetching donation and request data from the MongoDB (using the API).
     axios
       .get("http://localhost:5000/api/get_donations")
       .then(res => {
         getTotalMasksDonated(res.data)
 
       })
+    axios
+      .get("http://localhost:5000/api/get_mask_requests")
+      .then(res => {
+        getTotalMasksRequested(res.data)
+      })
+  }, [])
 
+  const Message = (props) => {
+    /* Message: */
+    const now = new Date();
+    const elapsedTimeSeconds = Math.abs(props.timestamp - now)/1000 // In seconds.
+    var elapsedTimeConverted;
+    const secondConversion = {
+      5: {
+        suffix: "Seconds ago",
+        divideBy: 1
+      },
+      60: {
+        suffix: "Minute(s) ago",
+        divideBy: 60
+      },
+      3600: {
+        suffix: "Hour(s) ago",
+        divideBy: 3600
+      },
+      86400: {
+        suffix: "Day(s) ago",
+        divideBy: 86400,
+      },
+      2592000: {
+        suffix: "Month(s) ago",
+        divideBy: 2592000,
+      }
+
+    }
+
+    // Converting the time from seconds to its respective unit, and suffixing.
+    for(const key in secondConversion) {
+      if (elapsedTimeSeconds > key) {
+        let divisor = secondConversion[key].divideBy
+        let suffix = secondConversion[key].suffix
+        var elapsedTimeConverted = `${Math.round(elapsedTimeSeconds/divisor)} ${suffix}`
+      }
+    }
+    return(
+      <div className="message mt-3 d-flex justify-content-center">
+        <p id="message"> <span id="time">xx:xx</span> this is a message</p>
+      </div>
+    );
+  }
+  return (
+      <Row className="message-roll justify-content-center">
+        <Col xs={3}>
+          <div className="messages" id="inspirational">
+            <h3 className="display-4 d-flex justify-content-center"> Inspirational Messages</h3>
+            <Message/>
+          </div>
+        </Col>
+        <Col xs={3}>
+          <div className='messages' id="thankyou">
+            <h3 className="display-4 d-flex justify-content-center"> Thank You Messages</h3>
+                        <Message/>
+          </div>
+        </Col>
+      </Row>
+  );
+}
+
+const Stats = () => {
+  const [donations, setDonations] = useState('')
+  const [requests, setRequests] = useState('')
+  const [totalMasksDonated, setTotalMasksDonated] = useState(0)
+  const [totalMasksRequested, setTotalMasksRequested] = useState(0)
+
+  const getTotalMasksDonated = (donations) => {
+    // Iterating through donations, determining total no. of masks donated.
+    var count = 0;
+    for (let i = 0; i < donations.length; i++) {
+      count += donations[i].maskAmnt
+    }
+    setTotalMasksDonated(count)
+  }
+
+  const getTotalMasksRequested = (requests) => {
+    // Iterating through donations, determining total no. of masks requested.
+    var count = 0;
+    for (let i = 0; i < requests.length; i++) {
+      count += requests[i].maskAmnt
+    }
+    setTotalMasksRequested(count)
+  }
+
+  // Calculated number of mask requests that are unfufillfed.
+  var unfulfilledMasks = 0;
+  if (totalMasksRequested > totalMasksDonated) {
+      var unfulfilledMasks = totalMasksRequested - totalMasksDonated
+  }
+
+  useEffect(() => {
+    // Fetching donation and request data from the MongoDB (using the API).
+    axios
+      .get("http://localhost:5000/api/get_donations")
+      .then(res => {
+        getTotalMasksDonated(res.data)
+
+      })
     axios
       .get("http://localhost:5000/api/get_mask_requests")
       .then(res => {
@@ -104,7 +156,6 @@ const Stats = () => {
       <Hero
         heading="Stats"
         body="View stats."/>
-      {console.log('render')}
       <section className="section section-lg pt-lg-0 mt--100">
           <Container>
             <Row className="justify-content-center">
@@ -183,6 +234,7 @@ const Stats = () => {
             </Row>
           </Container>
         </section>
+        <MessageRoll/>
     </>
   );
 }

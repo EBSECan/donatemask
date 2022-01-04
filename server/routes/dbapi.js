@@ -39,14 +39,15 @@ dbAPIRoutes.route("/api/get_mask_requests").get(function (req, res) {
 // Add donation.
 dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
   let db_connect = dbo.getDb();
-  let myobj = {
+  let obj = {
     name: req.body.name,
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
     totalDonation: req.body.totalDonation,
     donationgMsg: req.body.donationMsg,
+    timestamp: req.body.timestamp,
   };
-  db_connect.collection("donations").insertOne(myobj, function (err, res) {
+  db_connect.collection("donations").insertOne(obj, function (err, res) {
     if (err) throw err;
     response.json(res);
   });
@@ -55,14 +56,15 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
 // Add mask requests.
 dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
   let db_connect = dbo.getDb();
-  let myobj = {
+  let obj = {
     name: req.body.name,
     address: req.body.address,
     maskAmnt: req.body.maskAmnt,
     email: req.body.email,
     thanksMsg: req.body.thanksMsg,
+    timestamp: req.body.timestamp,
   };
-  db_connect.collection("maskrequests").insertOne(myobj, function (err, res) {
+  db_connect.collection("maskrequests").insertOne(obj, function (err, res) {
     if (err) throw err;
     response.json(res);
   });

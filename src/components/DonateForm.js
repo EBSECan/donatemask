@@ -30,7 +30,10 @@ const DonateForm = () => {
       maskAmnt: maskAmnt,
       totalDonation: totalDonation,
       donationMsg: donationMsg,
+      timestamp:new Date(),
     };
+
+    console.log(newDonation)
     axios
       .post("http://localhost:5000/api/donation_add", newDonation )
       .then(res => console.log(res.data))
