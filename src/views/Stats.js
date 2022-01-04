@@ -114,12 +114,12 @@ const Stats = () => {
                     <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5">
                         <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                          <i className="ni ni-check-bold" />
+                          <i className="ni ni-trophy" />
                         </div>
                         <h6 className="text-primary text-uppercase">
                           No. of Masks Donated
                         </h6>
-                        <p className="display-3 text-center mt-5">
+                        <p className="display-3 text-center mt-3">
                           {totalMasksDonated}
                         </p>
                         <Button
@@ -136,7 +136,7 @@ const Stats = () => {
                     <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5">
                         <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                          <i className="ni ni-istanbul" />
+                          <i className="ni ni-satisfied" />
                         </div>
                         <h6 className="text-success text-uppercase">
                           Total Masks Requests
@@ -159,7 +159,7 @@ const Stats = () => {
                     <Card className="card-lift--hover shadow border-0">
                       <CardBody className="py-5">
                         <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                          <i className="ni ni-planet" />
+                          <i className="ni ni-sound-wave" />
                         </div>
                         <h6 className="text-warning text-uppercase">
                           Unfulfilled Mask Requsts
@@ -170,10 +170,10 @@ const Stats = () => {
                         <Button
                           className="mt-4"
                           color="warning"
-                          href="/request"
+                          href="/donate"
                           onClick={e => e.preventDefault()}
                         >
-                          Request
+                          Donate
                         </Button>
                       </CardBody>
                     </Card>
