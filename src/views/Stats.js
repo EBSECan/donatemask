@@ -23,7 +23,7 @@ import {
 
 // core components
 import Hero from 'components/Hero.js'
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import PageNavbar from "components/Navbars/PageNavbar.js";
 
 const Message = (props) => {
   /*
@@ -183,7 +183,7 @@ const Stats = () => {
 
   return (
     <>
-      <DemoNavbar/>
+      <PageNavbar/>
       <Hero
         heading="Stats"
         body="View total mask donations, requests, and the message (inspirational, thank you) roll."/>

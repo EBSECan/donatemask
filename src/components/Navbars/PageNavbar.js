@@ -40,7 +40,7 @@ import {
 } from "reactstrap";
 
 
-const DemoNavbar = (props) => {
+const PageNavbar = (props) => {
     return (
       <>
         <header className="header-global">
@@ -65,7 +65,7 @@ const DemoNavbar = (props) => {
                       <Link to="/">
                         <img
                           alt="..."
-                          src={require("assets/img/brand/argon-react.png")}
+                          src={require("assets/img/brand/logo.svg")}
                         />
                       </Link>
                     </Col>
@@ -179,4 +179,4 @@ const DemoNavbar = (props) => {
     );
 }
 
-export default DemoNavbar;
+export default PageNavbar;

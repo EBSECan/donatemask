@@ -37,8 +37,8 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import CardsFooter from "components/Footers/CardsFooter.js";
+import PageNavbar from "components/Navbars/PageNavbar.js";
+
 import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
@@ -47,7 +47,7 @@ import Hero from 'components/Hero.js'
 const Request = () => {
   return (
     <>
-      <DemoNavbar/>
+      <PageNavbar/>
       <Hero
         heading="Request a mask."
         body="In need of a face mask? Request some below from a kind stranger :)"/>

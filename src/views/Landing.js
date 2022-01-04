@@ -37,8 +37,8 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import CardsFooter from "components/Footers/CardsFooter.js";
+import PageNavbar from "components/Navbars/PageNavbar.js";
+
 import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
@@ -71,7 +71,7 @@ const RequestPage = () => {
 
 }
 
-const LandingProd = () => {
+const Landing = () => {
   /* State hooks to show donate or request mask page, where:
     false = Donate Masks,
     true = Request Masks
@@ -82,7 +82,7 @@ const LandingProd = () => {
   const showRequest = () => {setShow(true)}
   return (
     <React.Fragment>
-      <DemoNavbar/>
+      <PageNavbar/>
       { show
         ?  <RequestPage/>
       :  <DonatePage/>
@@ -90,4 +90,4 @@ const LandingProd = () => {
     </React.Fragment>
   );
 }
-export default LandingProd;
+export default Landing;

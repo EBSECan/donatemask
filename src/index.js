@@ -25,11 +25,7 @@ import "assets/scss/argon-design-system-react.scss?v1.1.0";
 import "assets/css/custom.css"
 
 import Index from "views/Index.js";
-import Landing from "views/templates/Landing.js";
-import LandingProd from "views/LandingProd.js";
-import Login from "views/templates/Login.js";
-import Profile from "views/templates/Profile.js";
-import Register from "views/templates/Register.js";
+import Landing from "views/Landing.js";
 
 import Donate from "views/Donate.js";
 import Request from "views/Request";
@@ -38,7 +34,7 @@ import Stats from "views/Stats.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" exact render={props => <LandingProd {...props} />} />
+      <Route path="/" exact render={props => <Landing {...props} />} />
       <Route
         path="/donate"
         exact
@@ -48,22 +44,6 @@ ReactDOM.render(
         path="/request"
         exact
         render={props => <Request {...props} />}
-      />
-      <Route
-        path="/landing-page"
-        exact
-        render={props => <Landing {...props} />}
-      />
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
-      <Route
-        path="/profile-page"
-        exact
-        render={props => <Profile {...props} />}
-      />
-      <Route
-        path="/register-page"
-        exact
-        render={props => <Register {...props} />}
       />
       <Route
         path="/stats"
