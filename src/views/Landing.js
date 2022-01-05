@@ -39,37 +39,12 @@ import {
 // core components
 import PageNavbar from "components/Navbars/PageNavbar.js";
 
-import DonateForm from "components/DonateForm.js"
-import RequestForm from "components/RequestForm.js"
-import Hero from 'components/Hero.js'
+import DonateForm from "components/DonateForm.js";
+import RequestForm from "components/RequestForm.js";
+import Hero from 'components/Hero.js';
+import Donate from './Donate';
+import Request from './Request';
 
-
-const DonatePage = () => {
-  return (
-    <>
-    <Hero
-      heading="Donate a mask."
-      body="Help a fellow human in need of face masks, through a small donation."/>
-    <Row className="d-flex justify-content-center no-margin pt-5">
-      <DonateForm/>
-    </Row>
-    </>
-  );
-}
-
-const RequestPage = () => {
-  return (
-    <>
-      <Hero
-        heading="Request a mask."
-        body="In need of a face mask? Request some below from a kind stranger :)"/>
-        <Row className="d-flex justify-content-center no-margin pt-5">
-          <RequestForm/>
-        </Row>
-    </>
-  );
-
-}
 
 const Landing = () => {
   /* State hooks to show donate or request mask page, where:
@@ -84,8 +59,8 @@ const Landing = () => {
     <React.Fragment>
       <PageNavbar/>
       { show
-        ?  <RequestPage/>
-      :  <DonatePage/>
+        ?  <Request/>
+      :  <Donate/>
       }
     </React.Fragment>
   );
