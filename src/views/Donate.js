@@ -47,12 +47,12 @@ const DonatePage = () => {
   return (
     <>
     <PageNavbar/>
-    <Hero
-      heading="Donate a mask."
-      body="Help a fellow human in need of face masks, through a small donation."/>
-    <Row className="d-flex justify-content-center no-margin pt-5">
-      <DonateForm/>
-    </Row>
+      <Hero
+        heading="Donate a mask."
+        body="Help a fellow human in need of face masks, through a small donation."/>
+      <Row className="d-flex justify-content-center no-margin pt-5">
+        <DonateForm/>
+      </Row>
     </>
   );
 }
