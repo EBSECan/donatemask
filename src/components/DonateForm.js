@@ -42,7 +42,7 @@ const DonateForm = () => {
   }
     return (
       <>
-        <Form onSubmit={handleSubmit} id="donate-form">
+        <Form id="donate-form" action="http://localhost:5000/create-checkout-session" method="post">
           <h3 className="display-3"> Donate a mask :)</h3>
           <p> Donating {maskAmnt} face mask(s) costs ${totalDonation}.</p>
           <Row>
@@ -85,7 +85,6 @@ const DonateForm = () => {
           </Row>
           <Row>
             <Helmet>
-              <title> This is a test.</title>
               <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
               <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
             </Helmet>
