@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // get driver connection
 const dbo = require("./db/conn");
 
-const stripe = require('stripe')('sk_test_51KENtZCOL3X1doeXmj0tkTQypG889PssOiaY2DWmpvOVcZ2uTfmzcJFCoUbK9ws30nRcxCTGy5BFbQzMKmWiCiQ7002IvcS8wP')
+const stripe = require('stripe')(process.env.STRIPE_TEST_API_KEY)
 app.post('/create-checkout-session', async (req, res) => {
   // Creating a new stripe checkout session.
   const session = await stripe.checkout.sessions.create({
@@ -29,9 +29,9 @@ app.post('/create-checkout-session', async (req, res) => {
     metadata: {
       name: req.body.name,
       email: req.body.email,
-      maskAmnt: req.body.maskAmnt,
+      maskAmnt: parseInt(req.body.maskAmnt),
       msg: req.body.donationMsg,
-      timestamp: req.body.timestamp,
+      timestamp: new Date(),
     }
   });
 
@@ -40,9 +40,12 @@ app.post('/create-checkout-session', async (req, res) => {
 
 app.get('/order/success', async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-  const payload = session.metadata
 
-  // Updating the MongoDB on successful completion of checkout.
+  // Extracting payload, converting mask amount to int.
+  const payload = session.metadata
+  payload.maskAmnt = parseInt(payload.maskAmnt)
+
+  // Updating the database on a successful checkout with donation information.
   axios.post('http://localhost:5000/api/donation_add', payload).then(res => console.log('success'))
   res.redirect('http://localhost:3000/donate?success=true')
 });

@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 
 import classnames from "classnames";
 import axios from 'axios';
+import ElapsedTime from 'components/ElapsedTime'
 
 // reactstrap components
 import {
@@ -32,46 +33,10 @@ const Message = (props) => {
       Body of the message.
     timestamp: Date Object
   */
-  const timestamp = new Date(props.timestamp)
-  const now = new Date();
-  const elapsedTimeSeconds = Math.abs(timestamp- now)/1000 // In seconds.
-
-  var elapsedTimeConverted;
-  const secondConversion = {
-    0: {
-      suffix: "Second(s) ago",
-      divideBy: 1
-    },
-    60: {
-      suffix: "Minute(s) ago",
-      divideBy: 60
-    },
-    3600: {
-      suffix: "Hour(s) ago",
-      divideBy: 3600
-    },
-    86400: {
-      suffix: "Day(s) ago",
-      divideBy: 86400,
-    },
-    2592000: {
-      suffix: "Month(s) ago",
-      divideBy: 2592000,
-    }
-
-  }
-
-  // Converting the time from seconds to its respective unit, and suffixing.
-  for(const key in secondConversion) {
-    if (elapsedTimeSeconds > key) {
-      let divisor = secondConversion[key].divideBy
-      let suffix = secondConversion[key].suffix
-      var elapsedTimeConverted = `${Math.round(elapsedTimeSeconds/divisor)} ${suffix}`
-    }
-  }
+  const elapsedTime = ElapsedTime(props.timestamp)
   return(
     <div className="message mt-2 d-flex justify-content-center">
-      <p id="message"> <span id="time">{elapsedTimeConverted}</span> {props.body}</p>
+      <p id="message"> <span id="time">{elapsedTime}</span> {props.body}</p>
     </div>
   );
 }
@@ -116,13 +81,16 @@ const MessageRoll = () => {
     }
   }
 
+
   return (
       <Row className="message-roll justify-content-center">
         <Col xs={3}>
           <div className="messages" id="inspirational">
             <h3 className="display-4 d-flex justify-content-center mb-3"> Inspirational Messages</h3>
               {donationMsgs && donationMsgs.map((msg, idx) => (
-                <Message body={msg.body} timestamp={msg.timestamp} key={idx}/>
+                /* Here we multiply the timestamp by a 1000 to convert from
+                milliseconds to Epoch. */
+                <Message body={msg.body} timestamp={msg.timestamp*1000} key={idx}/>
               ))}
           </div>
         </Col>
