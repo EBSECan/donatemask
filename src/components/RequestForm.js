@@ -18,7 +18,6 @@ import {
 
 const RequestForm = () => {
   const maskSizes = Object.values(MASK_SIZE);
-  console.log(maskSizes);
   const maskPrice = 2.5;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,14 +29,22 @@ const RequestForm = () => {
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
   const totalDonation = maskPrice * (maskAmntRegular + maskAmntSmall);
+
+  const onMaskAmntChange = (event, maskSize) => {
+    maskSize == "Regular"
+      ? setMaskAmntRegular(parseInt(event.target.value))
+      : setMaskAmntSmall(parseInt(event.target.value));
+  };
+
   const handleSubmit = (event) => {
-    if (!maskAmntRegular || !maskAmntSmall) {
-      setError(
-        "Number of Masks can't be 0! Please enter number of mask you need for your size."
-      );
+    console.log("Regular Size Mask:" + maskAmntRegular);
+    console.log("Small Size Mask:" + maskAmntSmall);
+    event.preventDefault();
+
+    if (!maskAmntRegular && !maskAmntSmall) {
+      setError("Please enter valid number of mask you need for your size.");
       return false;
     }
-    event.preventDefault();
     const newMaskRequest = {
       name: name,
       email: email,
@@ -110,9 +117,7 @@ const RequestForm = () => {
                   <Input
                     placeholder={`# of Masks of size ${maskSize}`}
                     type="number"
-                    onChange={(e) =>
-                      setMaskAmnt`${maskSize}`(parseInt(e.target.value))
-                    }
+                    onChange={(e) => onMaskAmntChange(e, maskSize)}
                   />
                 </FormGroup>
               </Col>
