@@ -31,25 +31,12 @@ const DonateForm = () => {
     if (location.search.split('=')[1] === 'true') {
       /* Occurs after a successful stripe checkout session. */
       setSubmitStatus(true)
-      console.log('showing alert')
     }
   }, [])
 
   var totalDonation = maskPrice*maskAmnt;
   const handleSubmit = (event) => {
     event.preventDefault();
-    const now = new Date()
-    const newDonation = {
-      name:name,
-      email:email,
-      maskAmnt: maskAmnt,
-      totalDonation: totalDonation,
-      msg: msg,
-      timestamp: now,
-    };
-    axios
-      .post("http://localhost:5000/api/donation_add", newDonation )
-    setSubmitStatus(true)
   }
     return (
       <>
@@ -84,7 +71,7 @@ const DonateForm = () => {
                 <Input
                   name="maskAmnt"
                   placeholder="# of Masks"
-                  type="text"
+                  type="number"
                   onChange={(e) => setMaskAmnt(parseInt(e.target.value))} />
               </FormGroup>
             </Col>

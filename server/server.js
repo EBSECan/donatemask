@@ -29,7 +29,7 @@ app.post('/create-checkout-session', async (req, res) => {
     metadata: {
       name: req.body.name,
       email: req.body.email,
-      maskAmnt: parseInt(req.body.maskAmnt),
+      maskAmnt: req.body.maskAmnt,
       msg: req.body.donationMsg,
       timestamp: req.body.timestamp,
     }
