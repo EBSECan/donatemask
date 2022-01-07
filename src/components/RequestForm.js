@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { MASK_SIZE } from "../const";
+import { MASK_SIZE, MASK_PRICE } from "../const";
 
 // reactstrap components
 import {
@@ -18,7 +18,6 @@ import {
 
 const RequestForm = () => {
   const maskSizes = Object.values(MASK_SIZE);
-  const maskPrice = 2.5;
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -28,7 +27,7 @@ const RequestForm = () => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
-  const totalDonation = maskPrice * (maskAmntRegular + maskAmntSmall);
+  const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
   const onMaskAmntChange = (event, maskSize) => {
     maskSize == "Regular"
@@ -37,10 +36,7 @@ const RequestForm = () => {
   };
 
   const handleSubmit = (event) => {
-    console.log("Regular Size Mask:" + maskAmntRegular);
-    console.log("Small Size Mask:" + maskAmntSmall);
     event.preventDefault();
-
     if (!maskAmntRegular && !maskAmntSmall) {
       setError("Please enter valid number of mask you need for your size.");
       return false;
