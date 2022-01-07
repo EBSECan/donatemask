@@ -84,7 +84,7 @@ const RequestForm = () => {
             <Col md="6">
               <FormGroup>
                 <Button color="success" outline type="submit" id="full-width">
-                  Donate
+                  Request
                 </Button>
               </FormGroup>
             </Col>
