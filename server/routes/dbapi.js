@@ -56,6 +56,9 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
 dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let obj = {
+    requestorType: req.body.requestorType,
+    organizationName: req.body.organizationName,
+    organizationType: req.body.organizationType,
     name: req.body.name,
     address: req.body.address,
     maskAmntRegular: req.body.maskAmntRegular,

@@ -12,12 +12,18 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
+  DropdownMenu,
   Row,
   Col,
+  DropdownItem,
 } from "reactstrap";
 
 const RequestForm = () => {
   const maskSizes = Object.values(MASK_SIZE);
+  const [requestorType, setRequestorType] = useState("individual");
+  const [organizationName, setOrganizationName] = useState(null);
+  const [organizationType, setOrganizationType] = useState(null);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -42,6 +48,9 @@ const RequestForm = () => {
       return false;
     }
     const newMaskRequest = {
+      requestorType: requestorType,
+      organizationName,
+      organizationType,
       name: name,
       email: email,
       maskAmntRegular: maskAmntRegular,
@@ -50,10 +59,12 @@ const RequestForm = () => {
       msg: msg,
       timestamp: new Date(),
     };
+    // Adding Mask Request to DB
     axios.post("http://localhost:5000/api/mask_request_add", newMaskRequest);
 
     setSubmitStatus(true);
   };
+
   return (
     <>
       <Form onSubmit={handleSubmit} id="request-form">
@@ -63,6 +74,42 @@ const RequestForm = () => {
           Masks requests are fulfilled through donations, feel free to leave a
           thank you message to show your appreciation.
         </p>
+        <div>
+          <p> Choose Requestor Type </p>
+          <select
+            value={requestorType}
+            onChange={(e) => setRequestorType(e.target.value)}
+          >
+            <option value="individual">Individual</option>
+            <option value="organization">Organization</option>
+          </select>
+
+          <br />
+          <br />
+        </div>
+
+        {/* Requestor Type - Organization Fields */}
+        {requestorType == "organization" && (
+          <Row>
+            <Col md="6">
+              <FormGroup>
+                <Input
+                  placeholder="Organization Name"
+                  type="text"
+                  onChange={(e) => setOrganizationName(e.target.value)}
+                />
+              </FormGroup>
+            </Col>
+            <Col md="6">
+              <FormGroup>
+                <Input
+                  placeholder="Organization Type"
+                  onChange={(e) => setOrganizationType(e.target.value)}
+                />
+              </FormGroup>
+            </Col>
+          </Row>
+        )}
         <Row>
           <Col md="6">
             <FormGroup>
@@ -84,15 +131,6 @@ const RequestForm = () => {
           </Col>
         </Row>
         <Row>
-          {/* <Col md="6">
-            <FormGroup>
-              <Input
-                placeholder="# of Masks"
-                type="text"
-                onChange={(e) => setMaskAmnt(parseInt(e.target.value))}
-              />
-            </FormGroup>
-          </Col> */}
           <Col md="6">
             <FormGroup>
               <Input
