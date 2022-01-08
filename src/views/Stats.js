@@ -131,7 +131,15 @@ const Stats = () => {
     // Iterating through donations, determining total number of masks donated.
     var count = 0;
     for (let i = 0; i < data.length; i++) {
-      count +=data[i].maskAmnt
+      if (type == "requests") {
+        count += data[i].maskAmntSmall
+        count += data[i].maskAmntRegular
+      }
+
+      else {
+        count +=data[i].maskAmnt
+      }
+
     }
 
     // Pushing count to state.
