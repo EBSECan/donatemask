@@ -11,7 +11,6 @@ const dbo = require("../db/conn");
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
-
 // Get all donations.
 dbAPIRoutes.route("/api/get_donations").get(function (req, res) {
   let db_connect = dbo.getDb("donateamask");
@@ -44,7 +43,7 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
     totalDonation: req.body.totalDonation,
-    msg : req.body.msg,
+    msg: req.body.msg,
     timestamp: req.body.timestamp,
   };
   db_connect.collection("donations").insertOne(obj, function (err, res) {
@@ -59,7 +58,9 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
   let obj = {
     name: req.body.name,
     address: req.body.address,
-    maskAmnt: req.body.maskAmnt,
+    maskAmntRegular: req.body.maskAmntRegular,
+    maskAmntSmall: req.body.maskAmntSmall,
+    // maskAmnt: req.body.maskAmnt,
     email: req.body.email,
     msg: req.body.msg,
     timestamp: req.body.timestamp,
@@ -69,6 +70,5 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
     response.json(res);
   });
 });
-
 
 module.exports = dbAPIRoutes;
