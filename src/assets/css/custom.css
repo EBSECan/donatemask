@@ -55,3 +55,26 @@ p#message {
   width: 80%;
   color: #333333;
 }
+
+/* About Us */
+.row#profiles {
+  width: 65%;
+  margin: 7.5vh auto;
+  /* margin-top: 7.5vh;
+  margin-bottom: 10vh; */
+
+}
+
+.profile {
+  margin-bottom: 7.5vh;
+}
+
+h4#question {
+  margin: 1vh auto;
+  width: 70%;
+}
+
+p#answer {
+  margin: 0 auto;
+  width: 70%;
+}

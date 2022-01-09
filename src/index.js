@@ -30,6 +30,8 @@ import Landing from "views/Landing.js";
 import Donate from "views/Donate.js";
 import Request from "views/Request";
 import Stats from "views/Stats.js";
+import About from "views/About.js";
+import FAQ from "views/FAQ.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -49,6 +51,16 @@ ReactDOM.render(
         path="/stats"
         exact
         render={props => <Stats {...props} />}
+      />
+      <Route
+        path="/about"
+        exact
+        render={props => <About {...props} />}
+      />
+      <Route
+        path="/faq"
+        exact
+        render={props => <FAQ {...props} />}
       />
       <Redirect to="/" />
     </Switch>

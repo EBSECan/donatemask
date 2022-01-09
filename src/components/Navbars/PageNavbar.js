@@ -90,6 +90,14 @@ const PageNavbar = (props) => {
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
                   <Link to="/stats"><span className="nav-link-inner--text">Stats</span></Link>
                   </a>
+                  <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                  <Link to="/about"><span className="nav-link-inner--text">About Us</span></Link>
+                  </a>
+                  <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                  <Link to="/faq"><span className="nav-link-inner--text">FAQ</span></Link>
+                  </a>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
