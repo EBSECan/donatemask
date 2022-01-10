@@ -44,7 +44,7 @@ import Hero from 'components/Hero.js'
 import Profile from 'components/Profile.js'
 
 // Profile Pictures
-// import Mekki from 'assets/img/team/mekki.jpg'
+import Mekki from 'assets/img/team/mekki.jpg'
 import Haider from 'assets/img/team/haider.jpg'
 // import Devarsh from 'assets/img/team/devarsh.jpg'
 
@@ -55,7 +55,7 @@ const AboutPage = () => {
       <Hero
         heading="About us."
         body="Learn more about the project, and why we're doing what we're doing."/>
-      <Row className="d-flex justify-content-center no-margin pt-5">
+      <Row className="d-flex justify-content-center no-margin about">
         <Col xs={6}>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
         </Col>
@@ -63,59 +63,19 @@ const AboutPage = () => {
     <Row id="profiles">
       <Profile
         name="Mekki MacAulay"
-        role="Placeholder"
-        avatar={Haider}
-        linkedin="Placeholder"
-        website="Placeholder"
-        email="Placeholder"
+        role="Financial Services Sector Lead, Red Hat Practice GTM, IBM Consulting"
+        avatar={Mekki}
+        linkedin="https://www.linkedin.com/in/mekkim"
+        twitter="https://twitter.com/mekki"
+        email="mekki@donatemask.ca"
         />
       <Profile
       name="Haider Zaidi"
-      role="Placeholder"
+      role="Software Developer, Sophomore Undergrad at the Schulich School of Business"
       avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
-      />
-      <Profile
-      name="Devarsh Patel"
-      role="Placeholder"
-      avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
-      />
-      <Profile
-      name="Chris Ring"
-      role="Placeholder"
-      avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
-      />
-      <Profile
-      name="Yasmin Benatti"
-      role="Placeholder"
-      avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
-      />
-      <Profile
-      name="David Izrailov"
-      role="Placeholder"
-      avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
-      />
-      <Profile
-      name="Mckenzie Alex"
-      role="Placeholder"
-      avatar={Haider}
-      linkedin="Placeholder"
-      website="Placeholder"
-      email="Placeholder"
+      linkedin="https://www.linkedin.com/in/haider-zaidi/"
+      website="https://haiderzaidi.ca"
+      email="haider@donatemask.ca"
       />
     </Row>
     </>

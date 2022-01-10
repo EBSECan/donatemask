@@ -4,7 +4,6 @@ import {
   Button
 } from "reactstrap";
 
-import Mekki from 'assets/img/team/mekki.jpg'
 const Profile = (props) => {
   return (
       <Col className="profile" lg="3">
@@ -24,24 +23,24 @@ const Profile = (props) => {
                <Button
                  className="btn-icon-only rounded-circle"
                  color="warning"
-                 href="#pablo"
-                 onClick={e => e.preventDefault()}
+                 href={`${props.linkedin}`}
+                 target="_blank"
                >
                  <i className="fa fa-linkedin" />
                </Button>
                <Button
                  className="btn-icon-only rounded-circle ml-1"
                  color="warning"
-                 href="#pablo"
-                 onClick={e => e.preventDefault()}
+                 href={`${props.twitter ? props.twitter:props.website}`}
+                 target="_blank"
                >
-              <i class="fa fa-link"></i>
+              <i class={props.twitter ? "fa fa-twitter":"fa fa-link"}></i>
                </Button>
                <Button
                  className="btn-icon-only rounded-circle ml-1"
                  color="warning"
-                 href="#pablo"
-                 onClick={e => e.preventDefault()}
+                 href={`mailto:${props.email}`}
+                 target="_blank"
                >
                  <i className="fa fa-envelope" />
                </Button>

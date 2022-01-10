@@ -57,12 +57,15 @@ p#message {
 }
 
 /* About Us */
+.about {
+  margin-top: 5vh;
+}
+
 .row#profiles {
   width: 65%;
   margin: 7.5vh auto;
   /* margin-top: 7.5vh;
   margin-bottom: 10vh; */
-
 }
 
 .profile {
