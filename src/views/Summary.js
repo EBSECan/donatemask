@@ -160,7 +160,7 @@ const Summary = () => {
     <>
       <PageNavbar/>
       <Hero
-        heading="Stats"
+        heading="Summary"
         body="View total mask donations, requests, and the message (inspirational, thank you) roll."/>
       <section className="section section-lg pt-lg-0 mt--100">
           <Container>
