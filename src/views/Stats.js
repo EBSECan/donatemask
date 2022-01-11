@@ -25,6 +25,7 @@ import {
 // core components
 import Hero from 'components/Hero.js'
 import PageNavbar from "components/Navbars/PageNavbar.js";
+import SimpleFooter from 'components/SimpleFooter.js';
 
 const Message = (props) => {
   /*
@@ -242,6 +243,7 @@ const Stats = () => {
           </Container>
         </section>
         <MessageRoll/>
+        <SimpleFooter/>
     </>
   );
 }

@@ -1,4 +1,8 @@
 /* Global */
+
+div#root {
+  height: 100vh;
+}
 a {
   color: #FFFFFF;
 }
@@ -80,4 +84,18 @@ h4#question {
 p#answer {
   margin: 0 auto;
   width: 70%;
+}
+
+/* Privacy */
+.privacy {
+  margin-bottom: 10vh;
+}
+
+/* Footer */
+.footer {
+  margin-top: 5vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
 }

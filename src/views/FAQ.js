@@ -41,6 +41,7 @@ import PageNavbar from "components/Navbars/PageNavbar.js";
 import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
+import SimpleFooter from 'components/SimpleFooter.js';
 
 const FAQItem = (props) => {
   return (
@@ -61,15 +62,10 @@ const FAQPage = () => {
         body="Commonly asked questions and answers."/>
       <Row className="d-flex justify-content-center no-margin pt-3">
         <FAQItem
-          question='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium?'
-          answer='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'/>
-        <FAQItem
-          question='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium?'
-          answer='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'/>
-        <FAQItem
-          question='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium?'
-          answer='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.'/>
+          question="We're still preparing this, but feel free to email us if you have any questions!"
+          answer='donate@donatemask.ca'/>
       </Row>
+      <SimpleFooter/>
     </>
   );
 }

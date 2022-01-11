@@ -42,11 +42,12 @@ import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
 import Profile from 'components/Profile.js'
+import SimpleFooter from 'components/SimpleFooter.js';
 
 // Profile Pictures
 import Mekki from 'assets/img/team/mekki.jpg'
 import Haider from 'assets/img/team/haider.jpg'
-// import Devarsh from 'assets/img/team/devarsh.jpg'
+import David from 'assets/img/team/david.jpg'
 
 const AboutPage = () => {
   return (
@@ -55,9 +56,9 @@ const AboutPage = () => {
       <Hero
         heading="About us."
         body="Learn more about the project, and why we're doing what we're doing."/>
-      <Row className="d-flex justify-content-center no-margin about">
+      <Row className="d-flex justify-content-center text-center no-margin about">
         <Col xs={6}>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+          <p>We're a bunch of cool people, on a mission to help make masks more accessible, using the power of Open Source.</p>
         </Col>
       </Row>
     <Row id="profiles">
@@ -71,13 +72,22 @@ const AboutPage = () => {
         />
       <Profile
       name="Haider Zaidi"
-      role="Software Developer, Sophomore Undergrad at the Schulich School of Business"
+      role="Software Developer, Second-Year Undergrad at the Schulich School of Business"
       avatar={Haider}
       linkedin="https://www.linkedin.com/in/haider-zaidi/"
       website="https://haiderzaidi.ca"
       email="haider@donatemask.ca"
       />
+      <Profile
+      name="David Izrailov"
+      role="Data & Marketing, Second-Year Undergrad at the Schulich School of Business"
+      avatar={David}
+      linkedin="https://www.linkedin.com/in/david-izrailov/"
+      website="http://davidizrailov.com"
+      email="david@donatemask.ca"
+      />
     </Row>
+    <SimpleFooter/>
     </>
   );
 }

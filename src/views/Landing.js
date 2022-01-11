@@ -42,6 +42,7 @@ import PageNavbar from "components/Navbars/PageNavbar.js";
 import DonateForm from "components/DonateForm.js";
 import RequestForm from "components/RequestForm.js";
 import Hero from 'components/Hero.js';
+import SimpleFooter from 'components/SimpleFooter.js'
 import Donate from './Donate';
 import Request from './Request';
 
@@ -62,6 +63,7 @@ const Landing = () => {
         ?  <Request/>
       :  <Donate/>
       }
+      <SimpleFooter/>
     </React.Fragment>
   );
 }

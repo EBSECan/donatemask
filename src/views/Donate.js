@@ -41,6 +41,7 @@ import PageNavbar from "components/Navbars/PageNavbar.js";
 import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
+import SimpleFooter from 'components/SimpleFooter.js';
 
 
 const DonatePage = () => {
@@ -53,6 +54,7 @@ const DonatePage = () => {
       <Row className="d-flex justify-content-center no-margin pt-5">
         <DonateForm/>
       </Row>
+      <SimpleFooter/>
     </>
   );
 }

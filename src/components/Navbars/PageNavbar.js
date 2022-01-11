@@ -168,7 +168,7 @@ const PageNavbar = (props) => {
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="#"
+                      href="mailto:donate@donatemask.ca"
                       target="_blank"
                     >
                       <span className="btn-inner--icon">

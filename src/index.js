@@ -32,6 +32,8 @@ import Request from "views/Request";
 import Stats from "views/Stats.js";
 import About from "views/About.js";
 import FAQ from "views/FAQ.js";
+import Privacy from "views/Privacy.js"
+import Terms from 'views/Terms.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -61,6 +63,16 @@ ReactDOM.render(
         path="/faq"
         exact
         render={props => <FAQ {...props} />}
+      />
+      <Route
+        path="/privacy"
+        exact
+        render={props => <Privacy {...props} />}
+      />
+      <Route
+        path="/terms"
+        exact
+        render={props => <Terms {...props} />}
       />
       <Redirect to="/" />
     </Switch>
