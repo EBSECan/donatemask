@@ -1,4 +1,14 @@
-/* Global */
+/*
+CSS Table of Contents
+  0. Global
+  1. Forms
+  2. Summary Page
+  3. About Us Page
+  4. Privacy Page
+  5. Footer
+*/
+
+/* 0. Global */
 
 div#root {
   height: 100vh;
@@ -7,7 +17,6 @@ a {
   color: #FFFFFF;
 }
 
-/* Padding Adjustments */
 .no-padding {
   padding: 0;
 }
@@ -22,7 +31,7 @@ a {
 }
 
 
-/* Forms */
+/* 1. Forms */
 #request-form {
   width: 45%;
 }
@@ -35,7 +44,7 @@ a {
   width: 100%;
 }
 
-/* Stats */
+/* 2. Summary Page */
 .message-roll {
   margin: 0 aut0;
   width: 100%;
@@ -60,7 +69,7 @@ p#message {
   color: #333333;
 }
 
-/* About Us */
+/* 3. About Us Page */
 .about {
   margin-top: 5vh;
 }
@@ -68,8 +77,6 @@ p#message {
 .row#profiles {
   width: 65%;
   margin: 7.5vh auto;
-  /* margin-top: 7.5vh;
-  margin-bottom: 10vh; */
 }
 
 .profile {
@@ -86,12 +93,12 @@ p#answer {
   width: 70%;
 }
 
-/* Privacy */
+/* 4. Privacy Page */
 .privacy {
   margin-bottom: 10vh;
 }
 
-/* Footer */
+/* 5. Footer */
 .footer {
   margin-top: 5vh;
   position: fixed;
