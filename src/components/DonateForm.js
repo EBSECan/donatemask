@@ -40,7 +40,7 @@ const DonateForm = () => {
   }
     return (
       <>
-        <Form id="donate-form" action="http://localhost:5000/create-checkout-session" method="post">
+        <Form id="donate-form" action="https://donatemask.ca:5000/create-checkout-session" method="post">
           <h3 className="display-3"> Donate a mask :)</h3>
           <p> Donating {maskAmnt} face mask(s) costs ${totalDonation}.</p>
           <Row>

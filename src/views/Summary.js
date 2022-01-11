@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from "react";
-import { Redirect } from "react-router-dom";
-
 import classnames from "classnames";
 import axios from 'axios';
 import ElapsedTime from 'components/ElapsedTime'
@@ -49,13 +47,13 @@ const MessageRoll = () => {
   useEffect(() => {
     // Fetching donation and request data from the MongoDB (using the API).
     axios
-      .get("http://localhost:5000/api/get_donations")
+      .get("https://donatemask.ca:5000/api/get_donations")
       .then(res => {
         getMessages(res.data, "donations")
       })
 
     axios
-      .get("http://localhost:5000/api/get_mask_requests")
+      .get("https://donatemask.ca:5000/api/get_mask_requests")
       .then(res => {
         getMessages(res.data, "requests")
       })
@@ -107,7 +105,7 @@ const MessageRoll = () => {
   );
 }
 
-const Stats = () => {
+const Summary = () => {
   const [donations, setDonations] = useState('')
   const [requests, setRequests] = useState('')
   const [totalMasksDonated, setTotalMasksDonated] = useState(0)
@@ -116,13 +114,13 @@ const Stats = () => {
   useEffect(() => {
     // Fetching donation and request data from the database.
     axios
-      .get("http://localhost:5000/api/get_donations")
+      .get("https://donatemask.ca:5000/api/get_donations")
       .then(res => {
         getTotalMasks(res.data, "donations")
 
       })
     axios
-      .get("http://localhost:5000/api/get_mask_requests")
+      .get("https://donatemask.ca:5000/api/get_mask_requests")
       .then(res => {
         getTotalMasks(res.data, "requests")
       })
@@ -248,4 +246,4 @@ const Stats = () => {
   );
 }
 
-export default Stats;
+export default Summary;

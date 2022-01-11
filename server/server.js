@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+var https = require('https')
+var fs = require('fs')
 const cors = require("cors");
 const bodyParser = require('body-parser')
 const axios = require('axios')
@@ -24,8 +26,8 @@ app.post('/create-checkout-session', async (req, res) => {
       quantity: req.body.maskAmnt,
     }],
     mode: 'payment',
-    success_url: `http://localhost:5000/order/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: 'http://localhost:5000/cancel',
+    success_url: `https://donatemask.ca:5000/order/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: 'https://donatemask.ca:5000/cancel',
     metadata: {
       name: req.body.name,
       email: req.body.email,
@@ -46,11 +48,15 @@ app.get('/order/success', async (req, res) => {
   payload.maskAmnt = parseInt(payload.maskAmnt)
 
   // Updating the database on a successful checkout with donation information.
-  axios.post('http://localhost:5000/api/donation_add', payload).then(res => console.log('success'))
-  res.redirect('http://localhost:3000/donate?success=true')
+  axios.post('https://donatemask.ca:5000/api/donation_add', payload).then(res => console.log('success'))
+  res.redirect('https://donatemask.ca/donate?success=true')
 });
 
-app.listen(port, () => {
+//Creating the proxy server, supporting SSL.
+https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app).listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
     if (err) console.error(err);

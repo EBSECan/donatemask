@@ -88,7 +88,7 @@ const PageNavbar = (props) => {
                   </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                  <Link to="/stats"><span className="nav-link-inner--text">Stats</span></Link>
+                  <Link to="/summary"><span className="nav-link-inner--text">Stats</span></Link>
                   </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
