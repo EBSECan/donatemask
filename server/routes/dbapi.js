@@ -46,6 +46,7 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
     msg: req.body.msg,
     timestamp: req.body.timestamp,
   };
+
   db_connect.collection("donations").insertOne(obj, function (err, res) {
     if (err) throw err;
     response.json(res);
