@@ -53,10 +53,12 @@ app.get('/order/success', async (req, res) => {
 });
 
 //Creating the proxy server, supporting SSL.
-https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
-}, app).listen(port, () => {
+// https.createServer({
+//   key: fs.readFileSync('server.key'),
+//   cert: fs.readFileSync('server.cert')
+// }, app)
+
+app.listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
     if (err) console.error(err);
