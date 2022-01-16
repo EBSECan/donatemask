@@ -16,10 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // get driver connection
 const dbo = require("./db/conn");
 
-https.createServer({
-  key: fs.readFileSync('privatekey.pem'),
-  cert: fs.readFileSync('fullchain.pem'),
-}, app).listen(port, () => {
+// https.createServer({
+//   key: fs.readFileSync('privatekey.pem'),
+//   cert: fs.readFileSync('fullchain.pem'),
+// }, app)
+app.listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
     if (err) console.error(err);

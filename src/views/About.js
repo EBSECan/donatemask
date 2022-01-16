@@ -48,6 +48,9 @@ import SimpleFooter from 'components/SimpleFooter.js';
 import Mekki from 'assets/img/team/mekki.jpg'
 import Haider from 'assets/img/team/haider.jpg'
 import David from 'assets/img/team/david.jpg'
+import Chris from 'assets/img/team/chris.jpg'
+import Devarsh from 'assets/img/team/devarsh.jpg'
+
 
 const AboutPage = () => {
   return (
@@ -85,6 +88,22 @@ const AboutPage = () => {
       linkedin="https://www.linkedin.com/in/david-izrailov/"
       website="http://davidizrailov.com"
       email="david@donatemask.ca"
+      />
+      <Profile
+      name="Chris Ring"
+      role="Business and Digital Transformation Strategist, Agile Leader"
+      avatar={Chris}
+      linkedin="https://www.linkedin.com/in/chrisjring/"
+      website="https://www.linkedin.com/in/chrisjring/"
+      email="chris@donatemask.ca"
+      />
+      <Profile
+      name="Devarsh Patel"
+      role="Associate Software Developer"
+      avatar={Devarsh}
+      linkedin="https://www.linkedin.com/in/devarsh19/"
+      website="https://github.com/devarsh19"
+      email="devarsh@donatemask.ca"
       />
     </Row>
     <SimpleFooter/>
