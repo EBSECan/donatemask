@@ -123,9 +123,9 @@ const DonateForm = () => {
                       type="checkbox"
                       onChange={(e) => checkBoxHandler(e)}
                     />
-                  <label className="custom-control-label" htmlFor="customCheck1">
-                      I agree to the terms and privacy policy.
-                    </label>
+                  <p className="custom-control-label" htmlFor="customCheck1">
+                    Please agree to the <a href="/terms">terms</a> and <a href="/privacy">privacy policy</a> before proceeding.
+                  </p>
                   </div>
                   <Button color={state.agreementStatus ? "success" : "warning"} outline type="submit" id="full-width">
                       Donate
@@ -140,7 +140,7 @@ const DonateForm = () => {
                   <i className="ni ni-like-2" />
                 </span>{" "}
                 <span className="alert-inner--text">
-                Please agree to the terms and privacy policy before proceeding.
+                Please agree to the <a href="/terms">terms</a> and <a href="/privacy">privacy policy</a> before proceeding.
                 </span>
               </UncontrolledAlert>}
           <Row>
