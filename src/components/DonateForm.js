@@ -70,7 +70,7 @@ const DonateForm = () => {
       <>
         <Form id="donate-form" action="https://donatemask.ca:5000/create-checkout-session" method="post">
           <h3 className="display-3"> Donate a mask :)</h3>
-          <p> Donating {state.maskAmnt} face mask(s) costs ${totalDonation}.</p>
+          <p> Donating {state.maskAmnt} face mask(s) costs ${totalDonation.toFixed(2)}.</p>
           <Row>
             <Col md="6">
               <FormGroup>
