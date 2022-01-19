@@ -30,14 +30,14 @@ app.listen(port, () => {
 });
 
 
-const stripe = require('stripe')(process.env.STRIPE_TEST_API_KEY)
+const stripe = require('stripe')(process.env.STRIPE_API_KEY)
 app.post('/create-checkout-session', async (req, res) => {
   // Creating a new stripe checkout session.
   console.log(req.body)
   const session = await stripe.checkout.sessions.create({
     customer_email: req.body.email,
     line_items: [{
-      price: 'price_1KF4SwCOL3X1doeXr9IjhRij',
+      price: 'price_1KEOMhCOL3X1doeXxRmWdA1U',
       quantity: req.body.maskAmnt,
     }],
     mode: 'payment',

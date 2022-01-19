@@ -123,9 +123,9 @@ const DonateForm = () => {
                       type="checkbox"
                       onChange={(e) => checkBoxHandler(e)}
                     />
-                  <p className="custom-control-label" htmlFor="customCheck1">
+                  <label className="custom-control-label" htmlFor="customCheck1">
                     Please agree to the <a href="/terms">terms</a> and <a href="/privacy">privacy policy</a> before proceeding.
-                  </p>
+                  </label>
                   </div>
                   <Button color={state.agreementStatus ? "success" : "warning"} outline type="submit" id="full-width">
                       Donate
