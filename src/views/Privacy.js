@@ -50,11 +50,11 @@ const PrivacyPage = () => {
     <PageNavbar/>
       <Hero
         heading="Privacy Policy."
-        body="Privacy, it's important."/>
+        body="Privacy! It's important!"/>
       <Row className="d-flex justify-content-center no-margin about">
         <Col xs={6} className="privacy">
           <p>
-           We are committed to maintaining the accuracy, confidentiality, and security of your personally identifiable information (&quot;Personal Information&quot;). As part of this commitment, our privacy policy governs our actions as they relate to the collection, use and disclosure of Personal Information. Our privacy policy is based upon the values set by the Canadian Standards Association's Model Code for the Protection of Personal Information and Canada's Personal Information Protection and Electronic Documents Act.</p>
+           Evidence-Based Social Enterprises Canada and the Donate A Mask Project and their volunteers are committed to maintaining the accuracy, confidentiality, and security of your personally identifiable information (&quot;Personal Information&quot;). As part of this commitment, our privacy policy governs our actions as they relate to the collection, use and disclosure of Personal Information. Our privacy policy is based upon the values set by the Canadian Standards Association's Model Code for the Protection of Personal Information and Canada's Personal Information Protection and Electronic Documents Act.</p>
 
           <p>1. Introduction</p>
 

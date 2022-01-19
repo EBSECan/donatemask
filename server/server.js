@@ -16,13 +16,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // get driver connection
 const dbo = require("./db/conn");
 
-const stripe = require('stripe')(process.env.STRIPE_TEST_API_KEY)
+https.createServer({
+  key: fs.readFileSync('privatekey.pem'),
+  cert: fs.readFileSync('fullchain.pem'),
+}, app).listen(port, () => {
+  // perform a database connection when server starts
+  dbo.connectToServer(function (err) {
+    if (err) console.error(err);
+
+  });
+  console.log(`Server is running on port: ${port}`);
+});
+
+
+const stripe = require('stripe')(process.env.STRIPE_API_KEY)
 app.post('/create-checkout-session', async (req, res) => {
   // Creating a new stripe checkout session.
+  console.log(req.body)
   const session = await stripe.checkout.sessions.create({
     customer_email: req.body.email,
     line_items: [{
-      price: 'price_1KF4SwCOL3X1doeXr9IjhRij',
+      price: 'price_1KEOMhCOL3X1doeXxRmWdA1U',
       quantity: req.body.maskAmnt,
     }],
     mode: 'payment',
@@ -48,21 +62,8 @@ app.get('/order/success', async (req, res) => {
   payload.maskAmnt = parseInt(payload.maskAmnt)
 
   // Updating the database on a successful checkout with donation information.
-  axios.post('https://donatemask.ca:5000/api/donation_add', payload).then(res => console.log('success'))
+  axios.post('https://donatemask.ca:5000/api/donation_add', payload)
+  .then(res => console.log('success'))
+  .catch(error => console.log(error))
   res.redirect('https://donatemask.ca/donate?success=true')
-});
-
-//Creating the proxy server, supporting SSL.
-// https.createServer({
-//   key: fs.readFileSync('server.key'),
-//   cert: fs.readFileSync('server.cert')
-// }, app)
-
-app.listen(port, () => {
-  // perform a database connection when server starts
-  dbo.connectToServer(function (err) {
-    if (err) console.error(err);
-
-  });
-  console.log(`Server is running on port: ${port}`);
 });

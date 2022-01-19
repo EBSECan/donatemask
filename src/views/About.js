@@ -48,6 +48,9 @@ import SimpleFooter from 'components/SimpleFooter.js';
 import Mekki from 'assets/img/team/mekki.jpg'
 import Haider from 'assets/img/team/haider.jpg'
 import David from 'assets/img/team/david.jpg'
+import Chris from 'assets/img/team/chris.jpg'
+import Devarsh from 'assets/img/team/devarsh.jpg'
+
 
 const AboutPage = () => {
   return (
@@ -55,16 +58,25 @@ const AboutPage = () => {
     <PageNavbar/>
       <Hero
         heading="About us."
-        body="Learn more about the project, and why we're doing what we're doing."/>
+        body="Learn more about the project and why we're doing what we're doing."/>
       <Row className="d-flex justify-content-center text-center no-margin about">
         <Col xs={6}>
-          <p>We're a bunch of cool people, on a mission to help make masks more accessible, using the power of Open Source.</p>
+          <p>We're a bunch of cool people on a mission to help make masks more accessible using the power of Open Source.</p>
         </Col>
       </Row>
     <Row id="profiles">
       <Profile
         name="Mekki MacAulay"
-        role="Financial Services Sector Lead, Red Hat Practice GTM, IBM Consulting"
+        role="Executive Director & Chair of the Board of Directors - Evidence-Based Social Enterprises Canada"
+        description="Mekki MacAulay is the Founder of Evidence-Based Social Enterprises Canada, a charitable organization whose mission is to \
+apply evidence-based policy approaches to help the most vulnerable in our society who fall through the cracks of existing government and other social support systems. \
+He launched the Donate A Mask Canada Project because he saw people frustrated and scared that they were unable to protect themselves and their loved ones with high-quality \
+masks during the COVID-19 pandemic and resolved to put his talents as a Professional Engineer (PEng) and Strategic Management PhD to use to tackle that problem head on, bringing \
+to bear the incredible talent of his professional and personal network of smart, hard working, caring colleagues and friends.  He is a firm believer that the best way to teach \
+people how to care about one another is to show them, with action.  His social enterprises are inspired by those of Paramount Fine Foods CEO Mohamad Fakih, \
+the many projects of the broader open source and free software movements, and animal support charity organisations like the Toronto Humane Society, Toronto Street Cats, \
+and Toronto Cat Rescue, with whom he has worked as a volunteer for many years. \
+Mekki currently lives in Toronto and works at IBM as Financial Services Sector Lead in IBM Consulting Canada's Red Hat Practice GTM."
         avatar={Mekki}
         linkedin="https://www.linkedin.com/in/mekkim"
         twitter="https://twitter.com/mekki"
@@ -85,6 +97,22 @@ const AboutPage = () => {
       linkedin="https://www.linkedin.com/in/david-izrailov/"
       website="http://davidizrailov.com"
       email="david@donatemask.ca"
+      />
+      <Profile
+      name="Chris Ring"
+      role="Business and Digital Transformation Strategist, Agile Leader"
+      avatar={Chris}
+      linkedin="https://www.linkedin.com/in/chrisjring/"
+      website="https://www.linkedin.com/in/chrisjring/"
+      email="chris@donatemask.ca"
+      />
+      <Profile
+      name="Devarsh Patel"
+      role="Associate Software Developer"
+      avatar={Devarsh}
+      linkedin="https://www.linkedin.com/in/devarsh19/"
+      website="https://github.com/devarsh19"
+      email="devarsh@donatemask.ca"
       />
     </Row>
     <SimpleFooter/>

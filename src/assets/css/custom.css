@@ -44,6 +44,10 @@ a {
   width: 100%;
 }
 
+.custom-control-label a {
+  color: #3881f5;
+}
+
 /* 2. Summary Page */
 .message-roll {
   margin: 0 aut0;
@@ -101,17 +105,36 @@ p#answer {
 
 /* 5. Footer */
 .footer {
-  margin-top: 5vh;
-  position: fixed;
+  margin-top: 10vh;
   bottom: 0;
   width: 100%;
   background: transparent;
+  z-index: -1;
+}
+
+/* 6. FAQ Page */
+
+.faq {
+  margin-bottom: 25vh;
+}
+.display-linebreak {
+  white-space: pre-line;
+}
+
+#answer a {
+  color: #3881f5;
 }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  .footer {
+    display: none;
+  }
   .messages#inspirational {
     border-right: none;
     border-bottom: 1px solid #D4D4D4;
+  }
+  #request-form {
+    margin-bottom: 15vh;
   }
 }
