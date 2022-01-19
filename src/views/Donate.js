@@ -50,7 +50,7 @@ const DonatePage = () => {
     <PageNavbar/>
       <Hero
         heading="Donate a mask."
-        body="Help a fellow human in need of face masks, through a small donation."/>
+        body="Help a fellow human in need of face masks with a single or recurring donation."/>
       <Row className="d-flex justify-content-center no-margin pt-5">
         <DonateForm/>
       </Row>
