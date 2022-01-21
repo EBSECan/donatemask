@@ -80,25 +80,29 @@ const MessageRoll = () => {
     }
   }
 
-
   return (
       <Row className="message-roll justify-content-center">
         <Col md={3} xs={12}>
           <div className="messages" id="inspirational">
             <h3 className="display-4 d-flex justify-content-center mb-3"> Inspirational Messages</h3>
-              {donationMsgs && donationMsgs.slice(0, 5).map((msg, idx) => (
+              {donationMsgs && donationMsgs.slice(0, 15).map((msg, idx) => {
                 /* Here we multiply the timestamp by a 1000 to convert from
                 milliseconds to Epoch. */
-                <Message body={msg.body} timestamp={msg.timestamp*1000} key={idx}/>
-              ))}
+                if (msg.body) {
+                  return <Message body={msg.body} timestamp={msg.timestamp*1000} key={idx}/>
+                }
+
+              })}
           </div>
         </Col>
         <Col md={3} xs={12}>
           <div className='messages' id="thankyou">
             <h3 className="display-4 d-flex justify-content-center"> Thank You Messages</h3>
-              {requestMsgs && requestMsgs.slice(0, 5).map((msg, idx) => (
-                <Message body={msg.body} timestamp={msg.timestamp} key={idx}/>
-              ))}
+              {requestMsgs && requestMsgs.slice(0, 15).map((msg, idx) => {
+                if (msg.body) {
+                  return <Message body={msg.body} timestamp={msg.timestamp} key={idx}/>
+                }
+              })}
           </div>
         </Col>
       </Row>
@@ -219,7 +223,7 @@ const Summary = () => {
                           <i className="ni ni-sound-wave" />
                         </div>
                         <h6 className="text-warning text-uppercase">
-                          Unfulfilled Mask Requsts
+                          Unfunded Mask Requsts
                         </h6>
                         <p className="display-3 text-center mt-3">
                           {unfulfilledMasks}
