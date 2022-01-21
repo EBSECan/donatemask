@@ -36,11 +36,35 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  UncontrolledCollapse,
 } from "reactstrap";
 
 
-const PageNavbar = (props) => {
+class PageNavbar extends React.Component {
+  componentDidMount() {
+    let headroom = new Headroom(document.getElementById("navbar-main"));
+    // initialise
+    headroom.init();
+  }
+  state = {
+    collapseClasses: "",
+    collapseOpen: false
+  };
+
+  onExiting = () => {
+    this.setState({
+      collapseClasses: "collapsing-out"
+    });
+  };
+
+  onExited = () => {
+    this.setState({
+      collapseClasses: ""
+    });
+  };
+
+  render() {
     return (
       <>
         <header className="header-global">
@@ -50,15 +74,22 @@ const PageNavbar = (props) => {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-3" to="/" tag={Link}>
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
-                  alt="Donate a Mask."
-                  src={Logo}
+                  alt="..."
+                  src={require("assets/img/brand/logo.svg")}
                 />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
               </button>
+              <UncontrolledCollapse
+                toggler="#navbar_global"
+                navbar
+                className={this.state.collapseClasses}
+                onExiting={this.onExiting}
+                onExited={this.onExited}
+              >
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
@@ -78,113 +109,115 @@ const PageNavbar = (props) => {
                   </Row>
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/donate"><span className="nav-link-inner--text">Donate</span></Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/request" id="yeet?"><span className="nav-link-inner--text">Request</span></Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                  <Link to="/summary"><span className="nav-link-inner--text">Summary</span></Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                  <Link to="/about"><span className="nav-link-inner--text">About Us</span></Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                  <Link to="/faq"><span className="nav-link-inner--text">FAQ</span></Link>
-                  </a>
-                </Nav>
-                <Nav className="align-items-lg-center ml-lg-auto d-none md-block" navbar>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.facebook.com/donatemaskca"
-                      id="tooltip333589074"
-                      target="_blank"
-                    >
-                      <i className="fa fa-facebook-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Facebook
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
-                      Like us on Facebook
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.instagram.com/donatemask"
-                      id="tooltip356693867"
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://twitter.com/donatemask"
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://github.com/mekkim/donatemask"
-                      id="tooltip112445449"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="mailto:donate@donatemask.ca"
-                      target="_blank"
-                    >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-envelope mr-2" />
-                      </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Contact
-                      </span>
-                    </Button>
-                  </NavItem>
-                </Nav>
-            </Container>
-          </Navbar>
-        </header>
-      </>
+                   <a className="nav-link" href="#">
+                     <i className="ni ni-ui-04 d-lg-none mr-1" />
+                     <Link to="/donate"><span className="nav-link-inner--text">Donate</span></Link>
+                   </a>
+                   <a className="nav-link" href="#">
+                     <i className="ni ni-ui-04 d-lg-none mr-1" />
+                     <Link to="/request" id="yeet?"><span className="nav-link-inner--text">Request</span></Link>
+                   </a>
+                   <a className="nav-link" href="#">
+                     <i className="ni ni-ui-04 d-lg-none mr-1" />
+                   <Link to="/summary"><span className="nav-link-inner--text">Summary</span></Link>
+                   </a>
+                   <a className="nav-link" href="#">
+                     <i className="ni ni-ui-04 d-lg-none mr-1" />
+                   <Link to="/about"><span className="nav-link-inner--text">About Us</span></Link>
+                   </a>
+                   <a className="nav-link" href="#">
+                     <i className="ni ni-ui-04 d-lg-none mr-1" />
+                   <Link to="/faq"><span className="nav-link-inner--text">FAQ</span></Link>
+                   </a>
+                 </Nav>
+                 <Nav className="align-items-lg-center ml-lg-auto d-none md-block" navbar>
+                   <NavItem>
+                     <NavLink
+                       className="nav-link-icon"
+                       href="https://www.facebook.com/donatemaskca"
+                       id="tooltip333589074"
+                       target="_blank"
+                     >
+                       <i className="fa fa-facebook-square" />
+                       <span className="nav-link-inner--text d-lg-none ml-2">
+                         Facebook
+                       </span>
+                     </NavLink>
+                     <UncontrolledTooltip delay={0} target="tooltip333589074">
+                       Like us on Facebook
+                     </UncontrolledTooltip>
+                   </NavItem>
+                   <NavItem>
+                     <NavLink
+                       className="nav-link-icon"
+                       href="https://www.instagram.com/donatemask"
+                       id="tooltip356693867"
+                       target="_blank"
+                     >
+                       <i className="fa fa-instagram" />
+                       <span className="nav-link-inner--text d-lg-none ml-2">
+                         Instagram
+                       </span>
+                     </NavLink>
+                     <UncontrolledTooltip delay={0} target="tooltip356693867">
+                       Follow us on Instagram
+                     </UncontrolledTooltip>
+                   </NavItem>
+                   <NavItem>
+                     <NavLink
+                       className="nav-link-icon"
+                       href="https://twitter.com/donatemask"
+                       id="tooltip184698705"
+                       target="_blank"
+                     >
+                       <i className="fa fa-twitter-square" />
+                       <span className="nav-link-inner--text d-lg-none ml-2">
+                         Twitter
+                       </span>
+                     </NavLink>
+                     <UncontrolledTooltip delay={0} target="tooltip184698705">
+                       Follow us on Twitter
+                     </UncontrolledTooltip>
+                   </NavItem>
+                   <NavItem>
+                     <NavLink
+                       className="nav-link-icon"
+                       href="https://github.com/mekkim/donatemask"
+                       id="tooltip112445449"
+                       target="_blank"
+                     >
+                       <i className="fa fa-github" />
+                       <span className="nav-link-inner--text d-lg-none ml-2">
+                         Github
+                       </span>
+                     </NavLink>
+                     <UncontrolledTooltip delay={0} target="tooltip112445449">
+                       Star us on Github
+                     </UncontrolledTooltip>
+                   </NavItem>
+                   <NavItem className="d-none d-lg-block ml-lg-4">
+                     <Button
+                       className="btn-neutral btn-icon"
+                       color="default"
+                       href="mailto:donate@donatemask.ca"
+                       target="_blank"
+                     >
+                       <span className="btn-inner--icon">
+                         <i className="fa fa-envelope mr-2" />
+                       </span>
+                       <span className="nav-link-inner--text ml-1">
+                         Contact
+                       </span>
+                     </Button>
+                   </NavItem>
+                 </Nav>
+                               </UncontrolledCollapse>
+             </Container>
+           </Navbar>
+         </header>
+       </>
     );
+  }
 }
 
 export default PageNavbar;
