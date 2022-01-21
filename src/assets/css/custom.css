@@ -30,11 +30,6 @@ a {
   padding-bottom: 8rem;
 }
 
-.collapse.navbar-collapse {
-  display: flex;
-  justify-content: end;
-}
-
 /* 1. Forms */
 #request-form {
   width: 45%;
