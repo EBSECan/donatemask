@@ -223,7 +223,7 @@ const Summary = () => {
                           <i className="ni ni-sound-wave" />
                         </div>
                         <h6 className="text-warning text-uppercase">
-                          Unfulfilled Mask Requsts
+                          Unfunded Mask Requsts
                         </h6>
                         <p className="display-3 text-center mt-3">
                           {unfulfilledMasks}

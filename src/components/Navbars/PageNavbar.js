@@ -77,7 +77,7 @@ class PageNavbar extends React.Component {
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
-                  src={require("assets/img/brand/logo.svg")}
+                  src={Logo}
                 />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
@@ -94,14 +94,11 @@ class PageNavbar extends React.Component {
                   <Row>
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
-                        <img
-                          alt="..."
-                          src={require("assets/img/brand/logo.svg")}
-                        />
+                        <h2> Donate Mask</h2>
                       </Link>
                     </Col>
                     <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
+                      <button className="navbar-toggler justify-content-end" id="navbar_global">
                         <span />
                         <span />
                       </button>
