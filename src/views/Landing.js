@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, {useState} from "react";
+import React, { useState } from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -33,7 +33,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 // core components
@@ -41,11 +41,10 @@ import PageNavbar from "components/Navbars/PageNavbar.js";
 
 import DonateForm from "components/DonateForm.js";
 import RequestForm from "components/RequestForm.js";
-import Hero from 'components/Hero.js';
-import SimpleFooter from 'components/SimpleFooter.js'
-import Donate from './Donate';
-import Request from './Request';
-
+import Hero from "components/Hero.js";
+import SimpleFooter from "components/SimpleFooter.js";
+import Donate from "./Donate";
+import Request from "./Request";
 
 const Landing = () => {
   /* State hooks to show donate or request mask page, where:
@@ -53,18 +52,18 @@ const Landing = () => {
     true = Request Masks
   */
 
-  const [show, setShow] = useState(false)
-  const showDonate = () => {setShow(false)}
-  const showRequest = () => {setShow(true)}
+  const [show, setShow] = useState(false);
+  const showDonate = () => {
+    setShow(false);
+  };
+  const showRequest = () => {
+    setShow(true);
+  };
   return (
     <React.Fragment>
-      <PageNavbar/>
-      { show
-        ?  <Request/>
-      :  <Donate/>
-      }
-      <SimpleFooter/>
+      <PageNavbar />
+      {show ? <Request /> : <Donate />}
     </React.Fragment>
   );
-}
+};
 export default Landing;
