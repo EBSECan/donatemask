@@ -127,7 +127,7 @@ class PageNavbar extends React.Component {
                    <Link to="/faq"><span className="nav-link-inner--text">FAQ</span></Link>
                    </a>
                  </Nav>
-                 <Nav className="align-items-lg-center ml-lg-auto d-none md-block" navbar>
+                 <Nav className="align-items-lg-center ml-lg-auto md-block" navbar>
                    <NavItem>
                      <NavLink
                        className="nav-link-icon"
