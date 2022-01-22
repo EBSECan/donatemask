@@ -30,7 +30,6 @@ a {
   padding-bottom: 8rem;
 }
 
-
 /* 1. Forms */
 #request-form {
   width: 45%;
@@ -127,6 +126,12 @@ p#answer {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+
+  .navbar-nav a {
+    color: black;
+  }
+
+
   .footer {
     display: none;
   }
