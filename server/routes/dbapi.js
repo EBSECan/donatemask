@@ -64,9 +64,9 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
     address: req.body.address,
     maskAmntRegular: req.body.maskAmntRegular,
     maskAmntSmall: req.body.maskAmntSmall,
-    // maskAmnt: req.body.maskAmnt,
     email: req.body.email,
     msg: req.body.msg,
+    requestFulfilled: false,
     timestamp: req.body.timestamp,
   };
   db_connect.collection("maskrequests").insertOne(obj, function (err, res) {
