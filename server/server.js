@@ -16,11 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // get driver connection
 const dbo = require("./db/conn");
 
-// https.createServer({
-//   key: fs.readFileSync('privatekey.pem'),
-//   cert: fs.readFileSync('fullchain.pem'),
-// }, app)
-app.listen(port, () => {
+https.createServer({
+  key: fs.readFileSync('privatekey.pem'),
+  cert: fs.readFileSync('fullchain.pem'),
+}, app).listen(port, () => {
   // perform a database connection when server starts
   dbo.connectToServer(function (err) {
     if (err) console.error(err);
@@ -68,5 +67,3 @@ app.get('/order/success', async (req, res) => {
   .catch(error => console.log(error))
   res.redirect('https://donatemask.ca/donate?success=true')
 });
-
-//Creating the proxy server, supporting SSL.
