@@ -175,9 +175,9 @@ const Summary = () => {
   };
 
   // Calculating unfulfilled mask requests.
-  var unfulfilledMasks = 0;
+  var unFundedMasks = 0;
   if (totalMasksRequested > totalMasksDonated) {
-    var unfulfilledMasks = totalMasksRequested - totalMasksDonated;
+    var unFundedMasks = totalMasksRequested - totalMasksDonated;
   }
 
   return (
@@ -266,7 +266,7 @@ const Summary = () => {
                         Unfunded Mask Requsts
                       </h6>
                       <p className="display-3 text-center mt-3">
-                        {unfulfilledMasks}
+                        {unFundedMasks}
                       </p>
                       <Button
                         className="mt-4"
