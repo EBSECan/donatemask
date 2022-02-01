@@ -27,6 +27,8 @@ const RequestForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [postalCode, setPostal] = useState("");
   const [maskAmntRegular, setMaskAmntRegular] = useState(0);
   const [maskAmntSmall, setMaskAmntSmall] = useState(0);
 
@@ -41,12 +43,12 @@ const RequestForm = () => {
       : setMaskAmntSmall(parseInt(event.target.value));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!maskAmntRegular && !maskAmntSmall) {
-      setError("Please enter valid number of mask you need for your size.");
-      return false;
-    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!maskAmntRegular && !maskAmntSmall) {
+            setError("Please enter valid number of mask you need for your size.");
+            return false;
+			}
     const newMaskRequest = {
       requestorType: requestorType,
       organizationName,
@@ -55,7 +57,7 @@ const RequestForm = () => {
       email: email,
       maskAmntRegular: maskAmntRegular,
       maskAmntSmall: maskAmntSmall,
-      address: address,
+      address: address + ', ' + city + ', ' + postalCode,
       msg: msg,
       timestamp: new Date(),
     };
@@ -63,8 +65,8 @@ const RequestForm = () => {
     axios.post("http://localhost:5000/api/mask_request_add", newMaskRequest);
 
     setSubmitStatus(true);
-  };
-
+    };
+    
   return (
     <>
       <Form onSubmit={handleSubmit} id="request-form">
@@ -122,25 +124,45 @@ const RequestForm = () => {
           </Col>
           <Col md="6">
             <FormGroup>
-              <Input
-                id="exampleFormControlInput1"
-                placeholder="#, Street Name, City, Province, Canada, Postal Code"
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="6">
-            <FormGroup>
-              <Input
-                placeholder="name@example.com"
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
+               <Input
+               placeholder="name@example.com"
+               type="email"
+               onChange={(e) => setEmail(e.target.value)}
+               />
+               </FormGroup>
+                  </Col>
+                  </Row>
+              <Row>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="#, Street Name"
+                              onChange={(e) => setAddress(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="City, Province, Canada"
+                              onChange={(e) => setCity(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+              </Row>
+              <Row>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="Postal Code"
+                              onChange={(e) => setPostal(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+              </Row>
         <h3>Masks Details</h3>
         <Row>
           {maskSizes.map((maskSize) => {
@@ -193,10 +215,10 @@ const RequestForm = () => {
               <i className="ni ni-like-2" />
             </span>{" "}
             <span className="alert-inner--text">
-              <strong>Thank you!</strong> Your request has gone through!
+                          <strong>Thank you!</strong> Your request has gone through!
             </span>
           </UncontrolledAlert>
-        )}
+              )}
       </Form>
     </>
   );
