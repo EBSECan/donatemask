@@ -152,7 +152,7 @@ const DonateForm = () => {
               <p> You can also support the project through our Pateron or GoFundMe.</p>
               <a href="https://www.patreon.com/bePatron?u=67322518" data-patreon-widget-type="become-patron-button" id="patron">Become a Patron of the Donate A Mask Project!</a>
               <div className="gfm-embed mt-2" data-url="https://www.gofundme.com/f/donate-a-mask-project/widget/small/" id="gofundme"></div>
-              <a href="https://www.buymeacoffee.com/">
+              <a href="https://www.buymeacoffee.com/donatemask">
                 <img src="https://img.buymeacoffee.com/button-api/?text=Donate a Mask&emoji=😷&slug=donatemask&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></img>
               </a>
             </Col>
