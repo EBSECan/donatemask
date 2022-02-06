@@ -226,7 +226,6 @@ const Summary = () => {
                         className="mt-4"
                         color="success"
                         href="/request"
-                        onClick={(e) => e.preventDefault()}
                       >
                         Request
                       </Button>
