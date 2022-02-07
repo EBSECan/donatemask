@@ -158,6 +158,7 @@ const RequestForm = () => {
                   <Input
                     placeholder={`# of Masks of size ${maskSize}`}
                     type="number"
+                    min="0"
                     onChange={(e) => onMaskAmntChange(e, maskSize)}
                   />
                 </FormGroup>

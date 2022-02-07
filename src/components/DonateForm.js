@@ -100,7 +100,8 @@ const DonateForm = () => {
                   name="maskAmnt"
                   placeholder="# of Masks"
                   type="number"
-                  onChange={(e) => setState({...state, maskAmnt:parseInt(event.target.value)})} />
+                  min="0"
+                  onChange={(e) => setState({...state, maskAmnt:parseInt(e.target.value)})} />
               </FormGroup>
             </Col>
             <Col md="6">
