@@ -139,6 +139,7 @@ const DonateForm = () => {
                   type="checkbox"
                   onChange={(e) => checkBoxHandler(e)}
                 />
+              </div>
               </FormGroup>
             </Col>
           </Row>
