@@ -33,6 +33,7 @@ const RequestForm = () => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
   const onMaskAmntChange = (event, maskSize) => {
@@ -60,9 +61,15 @@ const RequestForm = () => {
       timestamp: new Date(),
     };
     // Adding Mask Request to DB
-    axios.post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest);
+    axios
+      .post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest)
+      .then(() => {
+        setSubmitStatus(true);
+      })
+      .catch(error => {
+        setSubmitFailed(true);
+      });
 
-    setSubmitStatus(true);
   };
 
   return (
@@ -195,6 +202,14 @@ const RequestForm = () => {
             <span className="alert-inner--text">
               <strong>Thank you!</strong> Your request has gone through!
             </span>
+          </UncontrolledAlert>
+        )}
+        {submitFailed && (
+          <UncontrolledAlert color="danger" fade={false}>
+            <span className="alert-inner--icon">
+              <i className="ni ni-fat-remove" />
+            </span>{" "}
+            <span className="alert-inner--text">{"Sorry, Something Went Wrong!"}</span>
           </UncontrolledAlert>
         )}
       </Form>
