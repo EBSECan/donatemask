@@ -82,9 +82,8 @@ const MessageRoll = () => {
   return (
     <Row className="message-roll justify-content-center">
       <Col md={3} xs={12}>
-        <div className="messages" id="inspirational">
+        <div id="inspirational">
           <h3 className="display-4 d-flex justify-content-center mb-3">
-            {" "}
             Inspirational Messages
           </h3>
           {donationMsgs &&
@@ -104,9 +103,8 @@ const MessageRoll = () => {
         </div>
       </Col>
       <Col md={3} xs={12}>
-        <div className="messages" id="thankyou">
-          <h3 className="display-4 d-flex justify-content-center">
-            {" "}
+        <div id="thankyou">
+          <h3 className="display-4 d-flex justify-content-center mb-3">
             Thank You Messages
           </h3>
           {requestMsgs &&
