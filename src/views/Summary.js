@@ -245,10 +245,9 @@ const Summary = () => {
                       <Button
                         className="mt-4"
                         color="success"
-                        href="/donate"
-                        onClick={(e) => e.preventDefault()}
+                        href="/request"
                       >
-                        Donate
+                        Request
                       </Button>
                     </CardBody>
                   </Card>
@@ -269,7 +268,6 @@ const Summary = () => {
                         className="mt-4"
                         color="warning"
                         href="/donate"
-                        onClick={(e) => e.preventDefault()}
                       >
                         Donate
                       </Button>
