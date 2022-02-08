@@ -111,9 +111,8 @@ const DonateForm = () => {
                 name="maskAmnt"
                 placeholder="# of Masks"
                 type="number"
-                onChange={(e) =>
-                  setState({ ...state, maskAmnt: parseInt(event.target.value) })
-                }
+                min="0"
+                onChange={(e) => setState({...state, maskAmnt:parseInt(e.target.value)})}
               />
             </FormGroup>
           </Col>
@@ -140,19 +139,27 @@ const DonateForm = () => {
                   type="checkbox"
                   onChange={(e) => checkBoxHandler(e)}
                 />
-                <label className="custom-control-label" htmlFor="customCheck1">
-                  Please agree to the <a href="/terms">terms</a> and{" "}
-                  <a href="/privacy">privacy policy</a> before proceeding.
-                </label>
               </div>
-              <Button
-                color={state.agreementStatus ? "success" : "warning"}
-                outline
-                type="submit"
-                id="full-width"
-              >
-                Donate
-              </Button>
+              </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md="6">
+              <FormGroup>
+                <div className="custom-control custom-checkbox mb-3">
+                    <input
+                      className="custom-control-input"
+                      id="customCheck1"
+                      type="checkbox"
+                      onChange={(e) => checkBoxHandler(e)}
+                    />
+                  <label className="custom-control-label" htmlFor="customCheck1">
+                    Please agree to the <a href="/terms">terms</a> and <a href="/privacy">privacy policy</a> before proceeding.
+                  </label>
+                  </div>
+                  <Button color={state.agreementStatus ? "success" : "warning"} outline type="submit" id="full-width">
+                      Donate
+                  </Button>
             </FormGroup>
           </Col>
         </Row>
@@ -190,7 +197,6 @@ const DonateForm = () => {
               src="https://www.gofundme.com/static/js/embed.js"
             ></script>
           </Helmet>
-
 
           <Col md="12">
             <br />
