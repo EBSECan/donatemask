@@ -27,7 +27,9 @@ const RequestForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [apartment, setApartment] = useState("");
   const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
   const [postalCode, setPostal] = useState("");
   const [maskAmntRegular, setMaskAmntRegular] = useState(0);
   const [maskAmntSmall, setMaskAmntSmall] = useState(0);
@@ -46,7 +48,7 @@ const RequestForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!maskAmntRegular && !maskAmntSmall) {
-            setError("Please enter valid number of mask you need for your size.");
+            setError("Please enter a valid number of masks you need for your size.");
             return false;
 			}
     const newMaskRequest = {
@@ -57,10 +59,16 @@ const RequestForm = () => {
       email: email,
       maskAmntRegular: maskAmntRegular,
       maskAmntSmall: maskAmntSmall,
-      address: address + ', ' + city + ', ' + postalCode,
+      address: address, 
       msg: msg,
       timestamp: new Date(),
-    };
+     };
+        if (apartment === "") {
+            newMaskRequest.address = address + ', ' + city + ', ' + province + ', ' +postalCode;
+        }
+        else {
+            newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' +postalCode;
+        }
     // Adding Mask Request to DB
     axios.post("http://localhost:5000/api/mask_request_add", newMaskRequest);
 
@@ -146,8 +154,26 @@ const RequestForm = () => {
                       <FormGroup>
                           <Input
                               id="exampleFormControlInput1"
-                              placeholder="City, Province, Canada"
+                              placeholder="Apartment #"
+                              onChange={(e) => setApartment(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="City"
                               onChange={(e) => setCity(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="Province"
+                              onChange={(e) => setProvince(e.target.value)}
                           />
                       </FormGroup>
                   </Col>
