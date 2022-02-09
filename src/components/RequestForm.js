@@ -37,6 +37,7 @@ const RequestForm = () => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
   const onMaskAmntChange = (event, maskSize) => {
@@ -70,11 +71,16 @@ const RequestForm = () => {
             newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' +postalCode;
         }
     // Adding Mask Request to DB
-    axios.post("http://localhost:5000/api/mask_request_add", newMaskRequest);
+    axios
+      .post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest)
+      .then(() => {
+        setSubmitStatus(true);
+      })
+      .catch(error => {
+        setSubmitFailed(true);
+      });
+  };
 
-    setSubmitStatus(true);
-    };
-    
   return (
     <>
       <Form onSubmit={handleSubmit} id="request-form">
@@ -199,6 +205,7 @@ const RequestForm = () => {
                   <Input
                     placeholder={`# of Masks of size ${maskSize}`}
                     type="number"
+                    min="0"
                     onChange={(e) => onMaskAmntChange(e, maskSize)}
                   />
                 </FormGroup>
@@ -244,7 +251,15 @@ const RequestForm = () => {
                           <strong>Thank you!</strong> Your request has gone through!
             </span>
           </UncontrolledAlert>
-              )}
+        )}
+        {submitFailed && (
+          <UncontrolledAlert color="danger" fade={false}>
+            <span className="alert-inner--icon">
+              <i className="ni ni-fat-remove" />
+            </span>{" "}
+            <span className="alert-inner--text">{"Sorry, Something Went Wrong!"}</span>
+          </UncontrolledAlert>
+        )}
       </Form>
     </>
   );

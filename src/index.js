@@ -29,7 +29,11 @@ import Landing from "views/Landing.js";
 
 import Donate from "views/Donate.js";
 import Request from "views/Request";
-import Stats from "views/Stats.js";
+import Summary from "views/Summary.js";
+import About from "views/About.js";
+import FAQ from "views/FAQ.js";
+import Privacy from "views/Privacy.js"
+import Terms from 'views/Terms.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -46,9 +50,28 @@ ReactDOM.render(
         render={props => <Request {...props} />}
       />
       <Route
-        path="/stats"
+        path="/summary"
+        render={props => <Summary {...props} />}
+      />
+      <Route
+        path="/about"
         exact
-        render={props => <Stats {...props} />}
+        render={props => <About {...props} />}
+      />
+      <Route
+        path="/faq"
+        exact
+        render={props => <FAQ {...props} />}
+      />
+      <Route
+        path="/privacy"
+        exact
+        render={props => <Privacy {...props} />}
+      />
+      <Route
+        path="/terms"
+        exact
+        render={props => <Terms {...props} />}
       />
       <Redirect to="/" />
     </Switch>

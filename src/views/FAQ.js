@@ -36,27 +36,43 @@ import {
   Col
 } from "reactstrap";
 
+import Linkify from 'react-linkify';
+
 // core components
 import PageNavbar from "components/Navbars/PageNavbar.js";
 import DonateForm from "components/DonateForm.js"
 import RequestForm from "components/RequestForm.js"
 import Hero from 'components/Hero.js'
 import SimpleFooter from 'components/SimpleFooter.js';
+import QA from './QA.js';
 
-
-const DonatePage = () => {
+const FAQItem = (props) => {
   return (
-    <>
-    <PageNavbar/>
-      <Hero
-        heading="Donate a mask."
-        body="Help a fellow human in need of face masks with a single or recurring donation."/>
-      <Row className="d-flex justify-content-center no-margin pt-5">
-        <DonateForm/>
-      </Row>
-      <SimpleFooter/>
-    </>
+    <Col xs={12} className="d-flex justify-content-center text-center display-linebreak">
+      <div className='pt-5'>
+        <h4 id="question">{props.question}</h4>
+        <Linkify><p id="answer"> {props.answer}</p></Linkify>
+      </div>
+    </Col>
+  );
+}
+const FAQPage = () => {
+  return (
+    <div className="faq">
+      <PageNavbar/>
+        <Hero
+          heading="Frequently Asked Questions"
+          body="Commonly asked questions and answers."/>
+        <Row className="d-flex justify-content-center no-margin pt-3">
+          {QA.map((question, idx) => (
+            <FAQItem
+              question={question.question}
+              answer={question.answer}/>
+          ))}
+        </Row>
+        <SimpleFooter/>
+    </div>
   );
 }
 
-export default DonatePage;
+export default FAQPage;

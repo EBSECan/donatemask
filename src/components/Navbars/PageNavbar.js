@@ -17,7 +17,7 @@
 */
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from 'assets/img/brand/logo.svg'
+import Logo from "assets/img/brand/logo.svg";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 // reactstrap components
@@ -36,11 +36,34 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  UncontrolledCollapse,
 } from "reactstrap";
 
+class PageNavbar extends React.Component {
+  componentDidMount() {
+    let headroom = new Headroom(document.getElementById("navbar-main"));
+    // initialise
+    headroom.init();
+  }
+  state = {
+    collapseClasses: "",
+    collapseOpen: false,
+  };
 
-const PageNavbar = (props) => {
+  onExiting = () => {
+    this.setState({
+      collapseClasses: "collapsing-out",
+    });
+  };
+
+  onExited = () => {
+    this.setState({
+      collapseClasses: "",
+    });
+  };
+
+  render() {
     return (
       <>
         <header className="header-global">
@@ -50,27 +73,31 @@ const PageNavbar = (props) => {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-3" to="/" tag={Link}>
-                <img
-                  alt="Donate a Mask."
-                  src={Logo}
-                />
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
+                <img alt="..." src={Logo} />
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
               </button>
+              <UncontrolledCollapse
+                toggler="#navbar_global"
+                navbar
+                className={this.state.collapseClasses}
+                onExiting={this.onExiting}
+                onExited={this.onExited}
+              >
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
-                        <img
-                          alt="..."
-                          src={require("assets/img/brand/logo.svg")}
-                        />
+                        <h2> Donate Mask</h2>
                       </Link>
                     </Col>
                     <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
+                      <button
+                        className="navbar-toggler justify-content-end"
+                        id="navbar_global"
+                      >
                         <span />
                         <span />
                       </button>
@@ -80,18 +107,39 @@ const PageNavbar = (props) => {
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/donate"><span className="nav-link-inner--text">Donate</span></Link>
+                    <Link to="/donate">
+                      <span className="nav-link-inner--text">Donate</span>
+                    </Link>
                   </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/request" id="yeet?"><span className="nav-link-inner--text">Request</span></Link>
+                    <Link to="/request" id="yeet?">
+                      <span className="nav-link-inner--text">Request</span>
+                    </Link>
                   </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
-                  <Link to="/stats"><span className="nav-link-inner--text">Stats</span></Link>
+                    <Link to="/summary">
+                      <span className="nav-link-inner--text">Summary</span>
+                    </Link>
+                  </a>
+                  <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                    <Link to="/about">
+                      <span className="nav-link-inner--text">About Us</span>
+                    </Link>
+                  </a>
+                  <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                    <Link to="/faq">
+                      <span className="nav-link-inner--text">FAQ</span>
+                    </Link>
                   </a>
                 </Nav>
-                <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                <Nav
+                  className="align-items-lg-center ml-lg-auto md-block"
+                  navbar
+                >
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -156,27 +204,28 @@ const PageNavbar = (props) => {
                       Star us on Github
                     </UncontrolledTooltip>
                   </NavItem>
+
                   <NavItem className="d-none d-lg-block ml-lg-4">
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="#"
+                      href="mailto:donate@donatemask.ca"
                       target="_blank"
                     >
                       <span className="btn-inner--icon">
                         <i className="fa fa-envelope mr-2" />
                       </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Contact
-                      </span>
+                      <span className="nav-link-inner--text ml-1">Contact</span>
                     </Button>
                   </NavItem>
                 </Nav>
+              </UncontrolledCollapse>
             </Container>
           </Navbar>
         </header>
       </>
     );
+  }
 }
 
 export default PageNavbar;
