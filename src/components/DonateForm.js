@@ -202,7 +202,7 @@ const DonateForm = () => {
             <br />
             <p>
               {" "}
-              You can also support the project through our Pateron or GoFundMe.
+              You can also support the project through our Pateron or GoFundMe or Buy Me a Coffee (Mask!)
             </p>
             <a
               href="https://www.patreon.com/bePatron?u=67322518"
@@ -216,7 +216,7 @@ const DonateForm = () => {
               data-url="https://www.gofundme.com/f/donate-a-mask-project/widget/small/"
               id="gofundme"
             ></div>
-            <a href="https://www.buymeacoffee.com/">
+            <a href="https://www.buymeacoffee.com/donatemask">
               <img src="https://img.buymeacoffee.com/button-api/?text=Donate a Mask&emoji=😷&slug=donatemask&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></img>
             </a>
           </Col>
