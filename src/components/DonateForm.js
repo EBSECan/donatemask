@@ -202,7 +202,7 @@ const DonateForm = () => {
             <br />
             <p>
               {" "}
-              You can also support the project through our Pateron or GoFundMe or Buy Me a Coffee (Mask!)
+              You can also support the project through our Patreon or GoFundMe or Buy Me a Coffee (Mask!)
             </p>
             <a
               href="https://www.patreon.com/bePatron?u=67322518"
