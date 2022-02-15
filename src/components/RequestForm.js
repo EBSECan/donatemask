@@ -27,12 +27,17 @@ const RequestForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [apartment, setApartment] = useState("");
+  const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
+  const [postalCode, setPostal] = useState("");
   const [maskAmntRegular, setMaskAmntRegular] = useState(0);
   const [maskAmntSmall, setMaskAmntSmall] = useState(0);
 
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
+  const [submitFailed, setSubmitFailed] = useState(false);
   const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
   const onMaskAmntChange = (event, maskSize) => {
@@ -41,12 +46,12 @@ const RequestForm = () => {
       : setMaskAmntSmall(parseInt(event.target.value));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!maskAmntRegular && !maskAmntSmall) {
-      setError("Please enter valid number of mask you need for your size.");
-      return false;
-    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!maskAmntRegular && !maskAmntSmall) {
+            setError("Please enter a valid number of masks you need for your size.");
+            return false;
+			}
     const newMaskRequest = {
       requestorType: requestorType,
       organizationName,
@@ -55,14 +60,25 @@ const RequestForm = () => {
       email: email,
       maskAmntRegular: maskAmntRegular,
       maskAmntSmall: maskAmntSmall,
-      address: address,
+      address: address, 
       msg: msg,
       timestamp: new Date(),
-    };
+     };
+        if (apartment === "") {
+            newMaskRequest.address = address + ', ' + city + ', ' + province + ', ' +postalCode;
+        }
+        else {
+            newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' +postalCode;
+        }
     // Adding Mask Request to DB
-    axios.post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest);
-
-    setSubmitStatus(true);
+    axios
+      .post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest)
+      .then(() => {
+        setSubmitStatus(true);
+      })
+      .catch(error => {
+        setSubmitFailed(true);
+      });
   };
 
   return (
@@ -122,25 +138,63 @@ const RequestForm = () => {
           </Col>
           <Col md="6">
             <FormGroup>
-              <Input
-                id="exampleFormControlInput1"
-                placeholder="#, Street Name, City, Province, Canada, Postal Code"
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="6">
-            <FormGroup>
-              <Input
-                placeholder="name@example.com"
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </FormGroup>
-          </Col>
-        </Row>
+               <Input
+               placeholder="name@example.com"
+               type="email"
+               onChange={(e) => setEmail(e.target.value)}
+               />
+               </FormGroup>
+                  </Col>
+                  </Row>
+              <Row>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="#, Street Name"
+                              onChange={(e) => setAddress(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="Apartment #"
+                              onChange={(e) => setApartment(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="City"
+                              onChange={(e) => setCity(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="Province"
+                              onChange={(e) => setProvince(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+              </Row>
+              <Row>
+                  <Col md="6">
+                      <FormGroup>
+                          <Input
+                              id="exampleFormControlInput1"
+                              placeholder="Postal Code"
+                              onChange={(e) => setPostal(e.target.value)}
+                          />
+                      </FormGroup>
+                  </Col>
+              </Row>
         <h3>Masks Details</h3>
         <Row>
           {maskSizes.map((maskSize) => {
@@ -151,6 +205,7 @@ const RequestForm = () => {
                   <Input
                     placeholder={`# of Masks of size ${maskSize}`}
                     type="number"
+                    min="0"
                     onChange={(e) => onMaskAmntChange(e, maskSize)}
                   />
                 </FormGroup>
@@ -193,8 +248,16 @@ const RequestForm = () => {
               <i className="ni ni-like-2" />
             </span>{" "}
             <span className="alert-inner--text">
-              <strong>Thank you!</strong> Your request has gone through!
+                          <strong>Thank you!</strong> Your request has gone through!
             </span>
+          </UncontrolledAlert>
+        )}
+        {submitFailed && (
+          <UncontrolledAlert color="danger" fade={false}>
+            <span className="alert-inner--icon">
+              <i className="ni ni-fat-remove" />
+            </span>{" "}
+            <span className="alert-inner--text">{"Sorry, Something Went Wrong!"}</span>
           </UncontrolledAlert>
         )}
       </Form>
