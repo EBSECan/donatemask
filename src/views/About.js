@@ -50,6 +50,7 @@ import Haider from 'assets/img/team/haider.jpg'
 import David from 'assets/img/team/david.jpg'
 import Chris from 'assets/img/team/chris.jpg'
 import Devarsh from 'assets/img/team/devarsh.jpg'
+import Sarah from 'assets/img/team/sarah.jpg'
 
 
 const AboutPage = () => {
@@ -113,6 +114,14 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
       linkedin="https://www.linkedin.com/in/devarsh19/"
       website="https://github.com/devarsh19"
       email="devarsh@donatemask.ca"
+      />
+      <Profile
+      name="Sarah Guimond"
+      role="Program Manager"
+      avatar={Sarah}
+      linkedin="https://www.linkedin.com/in/sarahguimond/"
+      twitter="https://twitter.com/sarah_guimond_"
+      email="sarah@donatemask.ca"
       />
     </Row>
     <SimpleFooter/>
