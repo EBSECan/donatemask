@@ -49,12 +49,12 @@ const MessageRoll = () => {
 
   useEffect(() => {
     // Fetching donation and request data from the MongoDB (using the API).
-    axios.get("/api/get_donations").then((res) => {
+    axios.get("https://donatemask.ca/api/get_donations").then((res) => {
       getMessages(res.data, "donations");
     });
 
     axios
-      .get("/api/get_mask_requests")
+      .get("https://donatemask.ca/api/get_mask_requests")
       .then((res) => {
         getMessages(res.data, "requests");
       });
@@ -78,6 +78,9 @@ const MessageRoll = () => {
       setRequestMsgs(messages.reverse());
     }
   };
+
+  console.log(requestMsgs)
+                var count = 0;
 
   return (
     <Row className="message-roll justify-content-center">
@@ -108,8 +111,9 @@ const MessageRoll = () => {
             Thank You Messages
           </h3>
           {requestMsgs &&
-            requestMsgs.slice(0, 15).map((msg, idx) => {
-              if (msg.body) {
+            requestMsgs.map((msg, idx) => {
+              if (msg.body && count <= 15) {
+                count+=1
                 return (
                   <Message
                     body={msg.body}
@@ -118,7 +122,8 @@ const MessageRoll = () => {
                   />
                 );
               }
-            })}
+            })
+          }
         </div>
       </Col>
     </Row>
@@ -134,11 +139,11 @@ const Summary = () => {
 
   useEffect(() => {
     // Fetching donation and request data from the database.
-    axios.get("/api/get_donations").then((res) => {
+    axios.get("https://donatemask.ca/api/get_donations").then((res) => {
       getTotalMasks(res.data, "donations");
     });
     axios
-      .get("/api/get_mask_requests")
+      .get("https://donatemask.ca/api/get_mask_requests")
       .then((res) => {
         getTotalMasks(res.data, "requests");
       });
