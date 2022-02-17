@@ -68,7 +68,7 @@ const DonateForm = () => {
     <>
       <Form
         id="donate-form"
-        action="https://donatemask.ca:5000/create-checkout-session"
+        action="https://donatemask.ca/create-checkout-session"
         method="post"
       >
         <h3 className="display-3"> Donate a mask :)</h3>
