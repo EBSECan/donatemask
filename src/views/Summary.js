@@ -49,12 +49,12 @@ const MessageRoll = () => {
 
   useEffect(() => {
     // Fetching donation and request data from the MongoDB (using the API).
-    axios.get("https://donatemask.ca/api/get_donations").then((res) => {
+    axios.get("/api/get_donations").then((res) => {
       getMessages(res.data, "donations");
     });
 
     axios
-      .get("https://donatemask.ca/api/get_mask_requests")
+      .get("/api/get_mask_requests")
       .then((res) => {
         getMessages(res.data, "requests");
       });
@@ -134,11 +134,11 @@ const Summary = () => {
 
   useEffect(() => {
     // Fetching donation and request data from the database.
-    axios.get("https://donatemask.ca/api/get_donations").then((res) => {
+    axios.get("/api/get_donations").then((res) => {
       getTotalMasks(res.data, "donations");
     });
     axios
-      .get("https://donatemask.ca/api/get_mask_requests")
+      .get("/api/get_mask_requests")
       .then((res) => {
         getTotalMasks(res.data, "requests");
       });

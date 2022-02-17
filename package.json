@@ -3,6 +3,7 @@
    "version": "1.1.0",
    "description": "Donate a Mask",
    "main": "index.js",
+   "proxy": "https://donatemask.ca/api",
    "repository": {
       "type": "git",
       "url": "git+https://github.com/creativetimofficial/argon-design-system-react.git"
