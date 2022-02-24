@@ -30,6 +30,7 @@ import Landing from "views/Landing.js";
 import Donate from "views/Donate.js";
 import Request from "views/Request";
 import Stats from "views/Stats.js";
+import ConfirmRequest from "views/ConfirmRequest.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -44,6 +45,11 @@ ReactDOM.render(
         path="/request"
         exact
         render={props => <Request {...props} />}
+      />
+      <Route
+         path="/confirmrequest"
+         exact
+         render={props => <ConfirmRequest {...props} />}
       />
       <Route
         path="/stats"
