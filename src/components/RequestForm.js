@@ -73,7 +73,7 @@ const RequestForm = () => {
         }
     // Adding Mask Request to DB
     axios
-      .post("https://donatemask.ca:5000/api/mask_request_add", newMaskRequest)
+      .post("https://donatemask.ca/api/mask_request_add", newMaskRequest)
       .then(() => {
         setSubmitStatus(true);
       })
