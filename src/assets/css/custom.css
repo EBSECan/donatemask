@@ -1,0 +1,145 @@
+/*
+CSS Table of Contents
+  0. Global
+  1. Forms
+  2. Summary Page
+  3. About Us Page
+  4. Privacy Page
+  5. Footer
+*/
+
+/* 0. Global */
+
+div#root {
+  height: 100vh;
+}
+a {
+  color: #FFFFFF;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.section-lg {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+/* 1. Forms */
+#request-form {
+  width: 45%;
+}
+
+#donate-form {
+  width: 45%;
+}
+
+#full-width {
+  width: 100%;
+}
+
+.custom-control-label a {
+  color: #3881f5;
+}
+
+/* 2. Summary Page */
+.message-roll {
+  margin: 0 aut0;
+  width: 100%;
+  margin-bottom: 10vh;
+}
+
+.messages {
+  width: 100%;
+  height: 35vh;
+  padding-top: 5vh;
+}
+.messages#inspirational {
+  border-right: 1px solid #D4D4D4;
+}
+
+span#time {
+  color: #ACACAC;
+  padding-right: 0.25vw;
+}
+
+p#message {
+  width: 80%;
+  color: #333333;
+}
+
+/* 3. About Us Page */
+.about {
+  margin-top: 5vh;
+}
+
+.row#profiles {
+  width: 65%;
+  margin: 7.5vh auto;
+}
+
+.profile {
+  margin-bottom: 7.5vh;
+}
+
+h4#question {
+  margin: 1vh auto;
+  width: 70%;
+}
+
+p#answer {
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* 4. Privacy Page */
+.privacy {
+  margin-bottom: 10vh;
+}
+
+/* 5. Footer */
+.footer {
+  margin-top: 10vh;
+  bottom: 0;
+  width: 100%;
+  background: transparent;
+  z-index: -1;
+}
+
+/* 6. FAQ Page */
+
+.faq {
+  margin-bottom: 25vh;
+}
+.display-linebreak {
+  white-space: pre-line;
+}
+
+#answer a {
+  color: #3881f5;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .navbar-nav a {
+    color: black;
+  }
+
+
+  .footer {
+    display: none;
+  }
+  .messages#inspirational {
+    border-right: none;
+    border-bottom: 1px solid #D4D4D4;
+  }
+  #request-form {
+    margin-bottom: 15vh;
+  }
+}
