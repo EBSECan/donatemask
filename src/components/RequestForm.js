@@ -62,6 +62,7 @@ const RequestForm = () => {
             maskAmntRegular: maskAmntRegular,
             maskAmntSmall: maskAmntSmall,
             address: address,
+            postal: postalCode,
             msg: msg,
             timestamp: new Date(),
         };
