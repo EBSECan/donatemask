@@ -62,3 +62,8 @@ app.get('/order/success', async (req, res) => {
   .catch(error => console.log(error))
   res.redirect('https://donatemask.ca/donate?success=true')
 });
+
+// Handles wildcard requests, ensures direct links with routing works.
+app.get('*',(req, res) => {
+        res.sendFile('/home/donatemask/donatemask.ca/public/index.html');
+    });
