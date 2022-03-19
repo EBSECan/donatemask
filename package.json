@@ -54,7 +54,7 @@
       "headroom.js": "0.12.0",
       "moment": "2.29.1",
       "mongodb": "^4.2.2",
-      "node-sass": "5.0.0",
+      "node-sass": "latest",
       "nouislider": "14.7.0",
       "react": "17.0.2",
       "react-datetime": "2.16.3",
@@ -63,7 +63,7 @@
       "react-linkify": "^1.0.0-alpha",
       "react-router": "5.2.0",
       "react-router-dom": "5.2.0",
-      "react-scripts": "4.0.3",
+      "react-scripts": "latest",
       "reactstrap": "8.9.0"
    },
    "devDependencies": {
@@ -75,5 +75,9 @@
       "gulp-append-prepend": "1.0.9",
       "jquery": "3.6.0",
       "typescript": "4.2.4"
+   },
+   "overrides": {
+	   "glob-parent": "latest",
+	   "nth-check": "latest"
    }
 }
