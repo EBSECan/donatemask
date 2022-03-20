@@ -38,20 +38,30 @@ import {
 
 // core components
 import PageNavbar from "components/Navbars/PageNavbar.js";
-import DonateForm from "components/DonateForm.js"
-import RequestForm from "components/RequestForm.js"
-import Hero from 'components/Hero.js'
-import Profile from 'components/Profile.js'
-import SimpleFooter from 'components/SimpleFooter.js';
+import DonateForm from "components/DonateForm.js";
+import RequestForm from "components/RequestForm.js";
+import Hero from "components/Hero.js";
+import Profile from "components/Profile.js";
+import SimpleFooter from "components/SimpleFooter.js";
 
 // Profile Pictures
-import Mekki from 'assets/img/team/mekki.jpg'
-import Haider from 'assets/img/team/haider.jpg'
-import David from 'assets/img/team/david.jpg'
-import Chris from 'assets/img/team/chris.jpg'
-import Devarsh from 'assets/img/team/devarsh.jpg'
-import Sarah from 'assets/img/team/sarah.jpg'
+import Mekki from "assets/img/team/mekki.jpg";
+import Haider from "assets/img/team/haider.jpg";
+import David from "assets/img/team/david.jpg";
+import Chris from "assets/img/team/chris.jpg";
+import Devarsh from "assets/img/team/devarsh.jpg";
+import Sarah from "assets/img/team/sarah.jpg";
+
+// Sponsorship Layout and Logos
 import Sponsorship from "components/Sponsorship";
+import Desjardins from "assets/img/sponsors/desjardins.png";
+import Eclipse from "assets/img/sponsors/eclipse.png";
+import Vitacore from "assets/img/sponsors/vitacore.png";
+import FDK from "assets/img/sponsors/fdk.jpg";
+import TTC from "assets/img/sponsors/ttc.png";
+import Kanbanize from "assets/img/sponsors/kanbanize.svg";
+
+
 
 
 const AboutPage = () => {
@@ -133,26 +143,29 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 
 			<Row id="profiles" className="d-flex flex-wrap align-items-center">
 				<Sponsorship
-					src="//www.desjardins.com/ressources/images/logo-desjardins-blanc.svg?resVer=1619067765000"
-					bgColor="#00874e"
+					src={Desjardins}
 					padding="10px"
 					href="https://www.desjardins.com/ca/"
 				/>
 				<Sponsorship
-					src="https://www.eclipseinnovations.com/wp-content/uploads/Eclipse-Innovations-logo2x.png"
+					src={Eclipse}
 					href="https://www.eclipseinnovations.com/"
 				/>
 				<Sponsorship
-					src="https://assets-global.website-files.com/6004970449096a86863eda3e/6004e927ca6190ff691da5fe_vitacore-logo.png"
+					src= {Vitacore}
 					href="https://www.vitacore.ca/"
 				/>
 				<Sponsorship
-					src="https://ttc-cdn.azureedge.net/-/media/Project/TTC/DevProto/Icons/TTC-LOGO.svg?h=70&iar=0&w=130&rev=4eab8911954346daac6109b0e428a7a8&hash=B51F5613FBD392950421B03466715365"
+					src={TTC}
 					href="https://www.ttc.ca/"
 				/>
 				<Sponsorship
-					src="https://static.wixstatic.com/media/08f795_d3530a841f9a42c1a71cd1dd1c25e514~mv2.png/v1/fill/w_337,h_80,al_c,q_85/08f795_d3530a841f9a42c1a71cd1dd1c25e514~mv2.webp"
+					src={FDK}
 					href="https://www.fdksupply.com/"
+				/>
+				<Sponsorship
+					src={Kanbanize}
+					href="https://kanbanize.com/"
 				/>
 			</Row>
     <SimpleFooter/>
