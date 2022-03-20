@@ -79,7 +79,12 @@ p#message {
 }
 
 .row#profiles {
-  width: 65%;
+  width: 85%;
+  margin: 7.5vh auto;
+}
+
+.row#sponsors {
+  width: 90%;
   margin: 7.5vh auto;
 }
 
