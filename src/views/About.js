@@ -141,7 +141,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 				</Col>
 			</Row>
 
-			<Row id="profiles" className="d-flex flex-wrap align-items-center">
+			<Row id="sponsors" className="d-flex flex-wrap align-items-center">
 				<Sponsorship
 					src={Desjardins}
 					padding="10px"

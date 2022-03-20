@@ -117,6 +117,12 @@ class PageNavbar extends React.Component {
                       <span className="nav-link-inner--text">Request</span>
                     </Link>
                   </a>
+				   <a className="nav-link" href="#">
+                    <i className="ni ni-ui-04 d-lg-none mr-1" />
+                    <Link to="/buy" id="buy">
+                      <span className="nav-link-inner--text">Buy</span>
+                    </Link>
+                  </a>
                   <a className="nav-link" href="#">
                     <i className="ni ni-ui-04 d-lg-none mr-1" />
                     <Link to="/summary">
