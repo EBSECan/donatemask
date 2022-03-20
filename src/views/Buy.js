@@ -42,17 +42,17 @@ import Hero from 'components/Hero.js'
 import SimpleFooter from 'components/SimpleFooter.js';
 
 
-const ConfirmRequest = () => {
+const BuyPage = () => {
     return (
         <>
             <PageNavbar />
             <Hero
-                heading="Request Confirmed"
-                body="We have received your request!" />
+                heading="Buy test page"
+                body="Testing buy a mask page" />
             <SimpleFooter/>
         </>
     );
 
 }
 
-export default ConfirmRequest;
+export default BuyPage;
