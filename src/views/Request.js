@@ -50,8 +50,8 @@ const Request = () => {
     <>
       <PageNavbar/>
       <Hero
-        heading="Request a mask."
-        body="In need of a face mask? Request some below from a kind stranger :)"/>
+        heading="Request masks."
+        body="In need of high-quality, N95-comparable, Health Canada-approved masks to protect you and your loved ones? Fill out the form below and our charity will send them to you for FREE."/>
         <Row className="d-flex justify-content-center no-margin pt-5">
           <RequestForm/>
         </Row>
