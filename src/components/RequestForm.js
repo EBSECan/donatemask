@@ -86,11 +86,11 @@ const RequestForm = () => {
     return (
         <>
             <Form onSubmit={handleSubmit} id="request-form">
-                <h3 className="display-3"> Request a mask!</h3>
+                <h3 className="display-3"> Request masks form</h3>
                 <p>
                     {" "}
-                    Masks requests are fulfilled through donations, feel free to leave a
-                    thank you message to show your appreciation.
+                    Masks requests are funded by charitable donations.  Feel free to leave a
+                    thank you message to donors.
                 </p>
                 <div>
                     <p> Choose Requestor Type </p>
@@ -197,7 +197,7 @@ const RequestForm = () => {
                       </FormGroup>
                   </Col>
               </Row>
-        <h3>Masks Details</h3>
+        <h3>Masks Types and Quantities</h3>
         <Row>
           {maskSizes.map((maskSize) => {
             return (
