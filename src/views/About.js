@@ -69,8 +69,8 @@ const AboutPage = () => {
     <>
     <PageNavbar/>
       <Hero
-        heading="About us."
-        body="Learn more about the project and why we're doing what we're doing."/>
+        heading="About us"
+        body="Meet our volunteers, sponsors, and partners."/>
       <Row className="d-flex justify-content-center text-center no-margin about">
         <Col xs={6}>
           <p>We're a bunch of cool people on a mission to help make masks more accessible using the power of Open Source.</p>
