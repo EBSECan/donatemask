@@ -61,7 +61,7 @@ const FAQPage = () => {
     <div className="faq">
       <PageNavbar/>
         <Hero
-          heading="Frequently Asked Questions"
+          heading="Frequently asked questions"
           body="Commonly asked questions and answers."/>
         <Row className="d-flex justify-content-center no-margin pt-3">
           {QA.map((question, idx) => (
