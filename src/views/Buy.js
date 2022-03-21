@@ -71,7 +71,7 @@ const BuyPage = () => {
 					<Row className="d-flex justify-content-center  no-margin buy-eclipse">
 						<Col xs={12}>
 						<p><b>Box (25 units) Small-Size Eclipse Horizon Masks: $62.50 (no tax) with FREE shipping in Canada.</b></p>
-						<a href="https://buy.stripe.com/9AQbKw41H7ivfMkaEE" target = "_blank">
+						<a href="https://buy.stripe.com/5kAdSE41H1Yb8jS5kn" target = "_blank">
 							<img src={EclipseMask} width="75%" alt="Buy now: Eclipse Innovation Horizon small-size masks" />
 						</a>
 						
@@ -83,7 +83,7 @@ const BuyPage = () => {
 					<Row className="d-flex justify-content-center  no-margin buy-fdk">
 						<Col xs={12}>
 						<p><b>Box (25 units) Regular-Size FUDAKIN FDK-MF-20-01 Masks: $62.50 (no tax) with FREE shipping in Canada.</b></p>
-						<a href="https://buy.stripe.com/6oEeWIfKpdGT6bKcMN" target = "_blank">
+						<a href="https://buy.stripe.com/dR6cOA9m19qD0Rq5km" target = "_blank">
 							<img src={FdkMask} width="75%" alt="Buy now: FUDAKIN FDK-MF-20-01 regular-size masks" />
 						</a>
 						
