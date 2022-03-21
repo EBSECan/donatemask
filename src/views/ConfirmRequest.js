@@ -47,8 +47,8 @@ const ConfirmRequest = () => {
         <>
             <PageNavbar />
             <Hero
-                heading="Request Confirmed"
-                body="We have received your request!" />
+                heading="Request confirmed"
+                body="We have received your mask request!" />
             <SimpleFooter/>
         </>
     );
