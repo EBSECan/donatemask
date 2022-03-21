@@ -49,8 +49,8 @@ const PrivacyPage = () => {
     <>
     <PageNavbar/>
       <Hero
-        heading="Terms."
-        body="These terms govern the use of all products and services provided by the Donate A Mask Project (A project of Evidence-Based Social Enterprises Canada Incorporated)."/>
+        heading="Terms"
+        body="These terms govern the use of all products and services provided or sold by the Donate A Mask Project (A project of Evidence-Based Social Enterprises Canada charity, CRA charitable registration number 754329506RR0001)."/>
       <Row className="d-flex justify-content-center no-margin about">
         <Col xs={6} className="privacy">
             <p>
