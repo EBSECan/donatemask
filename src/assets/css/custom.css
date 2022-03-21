@@ -6,6 +6,8 @@ CSS Table of Contents
   3. About Us Page
   4. Privacy Page
   5. Footer
+  6. FAQ Page
+  7. Buy Page
 */
 
 /* 0. Global */
@@ -127,6 +129,31 @@ p#answer {
 
 #answer a {
   color: #3881f5;
+}
+
+/* 7. Buy Page */
+.buy-eclipse {
+  margin-top: 0vh;
+  margin-bottom: 3vh;
+  max-width:120vh;
+  width: 100%;
+}
+
+.buy-fdk {
+  margin-top: 0vh;
+  margin-bottom: 3vh;
+  max-width:120vh;
+  width: 100%;
+}
+
+.buy-head {
+  margin-top: 1vh;
+  max-width:120vh;
+  width: 100%;
+}
+
+.buylinks {
+	color: #0000FF;
 }
 
 @media only screen and (max-width: 768px) {

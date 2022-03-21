@@ -37,11 +37,22 @@ class SimpleFooter extends React.Component {
           <Container>
             <hr />
             <Row className=" align-items-center justify-content-md-between">
-              <Col md="6">
+              <Col md="4">
                 <div className=" copyright">
-                  © DonateAMask
+                  © Evidence-Based Social Enterprises Canada
                 </div>
               </Col>
+			  <Col>
+				<Nav className=" copyright justify-content-left align-items-left">
+                  <NavItem>
+					<NavLink
+					  href="https://creativecommons.org/licenses/by/4.0/"
+						target="_blank">
+						(CC-BY)
+					</NavLink>
+				  </NavItem>
+				</Nav>
+			  </Col>
               <Col md="6">
                 <Nav className=" nav-footer justify-content-end align-items-lg-center">
                   <NavItem>
@@ -145,6 +156,15 @@ class SimpleFooter extends React.Component {
                  </Nav>
               </Col>
             </Row>
+			<Row className=" align-items-center justify-content-md-between">
+              <Col md="6">
+                <Nav className=" copyright justify-content-left align-items-left">
+                  <NavItem>
+					CRA Charitable Registration Number 754329506RR0001
+				  </NavItem>
+				</Nav>
+              </Col>
+			</Row>  
           </Container>
         </footer>
       </>
