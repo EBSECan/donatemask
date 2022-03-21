@@ -202,7 +202,7 @@ const Summary = () => {
                         <i className="ni ni-trophy" />
                       </div>
                       <h6 className="text-primary text-uppercase">
-                        No. of Masks Donated
+                        No. of Masks Funded by Donation
                       </h6>
                       <p className="display-3 text-center mt-3">
                         {totalMasksDonated}
@@ -220,7 +220,7 @@ const Summary = () => {
                         <i className="ni ni-satisfied" />
                       </div>
                       <h6 className="text-success text-uppercase">
-                        Total Masks Requested
+                        No. of Masks Requested
                       </h6>
                       <p className="display-3 text-center mt-3">
                         {totalMasksRequested}
@@ -242,7 +242,7 @@ const Summary = () => {
                         <i className="ni ni-satisfied" />
                       </div>
                       <h6 className="text-success text-uppercase">
-                        Total Masks Fulfilled
+                        No. of Masks Fulfilled
                       </h6>
                       <p className="display-3 text-center mt-3">
                         {totalMasksFulfilled}
@@ -264,7 +264,7 @@ const Summary = () => {
                         <i className="ni ni-sound-wave" />
                       </div>
                       <h6 className="text-warning text-uppercase">
-                        Unfunded Mask Requests
+                        No. of Masks Needing Funding
                       </h6>
                       <p className="display-3 text-center mt-3">
                         {unFundedMasks}
