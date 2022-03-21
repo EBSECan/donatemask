@@ -49,8 +49,8 @@ const PrivacyPage = () => {
     <>
     <PageNavbar/>
       <Hero
-        heading="Privacy Policy."
-        body="Privacy! It's important!"/>
+        heading="Privacy policy"
+        body="We are committed to protecting your private information according to Canadian's internationally recognized high standards."/>
       <Row className="d-flex justify-content-center no-margin about">
         <Col xs={6} className="privacy">
           <p>
