@@ -175,3 +175,9 @@ p#answer {
     margin-bottom: 15vh;
   }
 }
+@media (min-width: 1200px) {
+  .navbar-expand-lg .navbar-nav .nav-link{
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
