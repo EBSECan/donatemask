@@ -17,6 +17,9 @@ import {
   Col,
 } from "reactstrap";
 
+import PaypalDonate from "assets/img/buttons/paypal-donate.png";
+import GofundmeDonate from "assets/img/buttons/gofundme-donate.jpg";
+
 const DonateForm = () => {
   let location = useLocation();
   const maskPrice = 2.5;
@@ -158,7 +161,7 @@ const DonateForm = () => {
                   </label>
                   </div>
                   <Button color={state.agreementStatus ? "success" : "warning"} outline type="submit" id="full-width">
-                      Donate
+                      Donate via Stripe
                   </Button>
             </FormGroup>
           </Col>
@@ -169,8 +172,8 @@ const DonateForm = () => {
               <i className="ni ni-like-2" />
             </span>{" "}
             <span className="alert-inner--text">
-              Please agree to the <a href="/terms">terms</a> and{" "}
-              <a href="/privacy">privacy policy</a> before proceeding.
+              Please agree to the <a href="/terms" target = "_blank">terms</a> and{" "}
+              <a href="/privacy" target = "_blank">privacy policy</a> before proceeding.
             </span>
           </UncontrolledAlert>
         )}
@@ -180,11 +183,11 @@ const DonateForm = () => {
 
         <Row>
           <Col>
-            <p>OR Click below button to donate using Paypal!</p>
-            <p></p>
-            <div id="donate-button-container">
-              <div id="paypal-donate-button"></div>
-            </div>
+            <p>Or, click one of the buttons below to support us via Paypal, Patreon, GoFundMe, or Buy Me a Coffee (Mask!)</p>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=CWHHLTCCJ8JWG" target = "_blank">
+              <img src={PaypalDonate} width="25%" alt="Donate now via Paypal"/>
+            </a>
+            
           </Col>
 
           <Helmet>
@@ -192,8 +195,10 @@ const DonateForm = () => {
               async
               src="https://c6.patreon.com/becomePatronButton.bundle.js"
             ></script>
+		  </Helmet>
+		  <Helmet>
             <script
-              defer
+              async
               src="https://www.gofundme.com/static/js/embed.js"
             ></script>
           </Helmet>
@@ -202,22 +207,28 @@ const DonateForm = () => {
             <br />
             <p>
               {" "}
-              You can also support the project through our Patreon or GoFundMe or Buy Me a Coffee (Mask!)
+              
             </p>
+			
+			
             <a
               href="https://www.patreon.com/bePatron?u=67322518"
               data-patreon-widget-type="become-patron-button"
-              id="patron"
+              id="patron" target = "_blank"
             >
               Become a Patron of the Donate A Mask Project!
             </a>
-            <div
-              className="gfm-embed mt-2"
-              data-url="https://www.gofundme.com/f/donate-a-mask-project/widget/small/"
-              id="gofundme"
-            ></div>
-            <a href="https://www.buymeacoffee.com/donatemask">
-              <img src="https://img.buymeacoffee.com/button-api/?text=Donate a Mask&emoji=😷&slug=donatemask&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></img>
+            <div>
+            <br />
+
+            <a href="https://gofund.me/dbc4d708" target = "_blank">
+              <img src={GofundmeDonate} width="25%" alt="Donate now via GoFundMe"/>
+            </a>
+             <br />
+         <br />
+            </div>
+            <a href="https://www.buymeacoffee.com/donatemask" target = "_blank">
+              <img src="https://img.buymeacoffee.com/button-api/?text=Donate a Mask&emoji=😷&slug=donatemask&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" width="25%" alt="Donate now via Buy Me A Coffee"></img>
             </a>
           </Col>
         </Row>
