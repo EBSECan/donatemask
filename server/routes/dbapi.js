@@ -66,6 +66,7 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
     maskAmntSmall: req.body.maskAmntSmall,
     testAmnt: req.body.testAmnt,
     postalCode: req.body.postal,
+    province: req.body.province,
     email: req.body.email,
     msg: req.body.msg,
     requestFulfilled: false,
