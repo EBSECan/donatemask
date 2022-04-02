@@ -75,6 +75,7 @@ const RequestForm = () => {
 			testAmnt: testAmnt,
             address: address,
             postal: postalCode,
+		province:province,
             msg: msg,
             timestamp: new Date(),
         };
