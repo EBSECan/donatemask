@@ -181,3 +181,9 @@ p#answer {
     padding-right: 0.5rem !important;
   }
 }
+
+@media (min-width: 770px) and (max-width: 990px){
+    .navbar-expand-lg .navbar-nav .nav-link a{
+      color: black !important;
+    }
+}
