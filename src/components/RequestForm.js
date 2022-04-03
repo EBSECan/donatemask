@@ -33,6 +33,7 @@ const RequestForm = () => {
     const [postalCode, setPostal] = useState("");
     const [maskAmntRegular, setMaskAmntRegular] = useState(0);
     const [maskAmntSmall, setMaskAmntSmall] = useState(0);
+	const [testAmnt, setTestAmnt] = useState(0);
 
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
@@ -41,15 +42,25 @@ const RequestForm = () => {
   const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
     const onMaskAmntChange = (event, maskSize) => {
-        maskSize == "Regular"
-            ? setMaskAmntRegular(parseInt(event.target.value))
-            : setMaskAmntSmall(parseInt(event.target.value));
+        switch(maskSize) {
+			case "Regular-size Masks":
+				setMaskAmntRegular(parseInt(event.target.value));
+			break;
+			case "Small-size Masks":
+				setMaskAmntSmall(parseInt(event.target.value));
+			break;
+			case "COVID Tests":
+				setTestAmnt(parseInt(event.target.value));
+			break;
+			default:
+				setMaskAmntRegular(parseInt(event.target.value));
+		}	
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!maskAmntRegular && !maskAmntSmall) {
-            setError("Please enter a valid number of masks you need for your size.");
+        if (!maskAmntRegular && !maskAmntSmall && !testAmnt) {
+            setError("Please request at least one mask or COVID test.");
             return false;
         }
         
@@ -61,8 +72,10 @@ const RequestForm = () => {
             email: email,
             maskAmntRegular: maskAmntRegular,
             maskAmntSmall: maskAmntSmall,
+			testAmnt: testAmnt,
             address: address,
             postal: postalCode,
+		province:province,
             msg: msg,
             timestamp: new Date(),
         };
@@ -86,7 +99,7 @@ const RequestForm = () => {
     return (
         <>
             <Form onSubmit={handleSubmit} id="request-form">
-                <h3 className="display-3"> Request masks form</h3>
+                <h3 className="display-3"> Request masks and COVID tests form</h3>
                 <p>
                     {" "}
                     Masks requests are funded by charitable donations.  Feel free to leave a
@@ -197,7 +210,7 @@ const RequestForm = () => {
                       </FormGroup>
                   </Col>
               </Row>
-        <h3>Masks Types and Quantities</h3>
+        <h3>Masks Types and Quantities and COVID Test Quantities</h3>
         <Row>
           {maskSizes.map((maskSize) => {
             return (
@@ -205,7 +218,7 @@ const RequestForm = () => {
                 <FormGroup>
                   <p>{maskSize}</p>
                   <Input
-                    placeholder={`# of Masks of size ${maskSize}`}
+        			placeholder={`Please enter # requested`}
                     type="number"
                     min="0"
                     onChange={(e) => onMaskAmntChange(e, maskSize)}

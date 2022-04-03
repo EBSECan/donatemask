@@ -22,7 +22,7 @@ import GofundmeDonate from "assets/img/buttons/gofundme-donate.jpg";
 
 const DonateForm = () => {
   let location = useLocation();
-  const maskPrice = 2.5;
+  const maskPrice = 1.25;
   const [state, setState] = useState({
     name: "",
     email: "",
