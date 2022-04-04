@@ -60,8 +60,8 @@ import Vitacore from "assets/img/sponsors/vitacore.png";
 import FDK from "assets/img/sponsors/fdk.jpg";
 import TTC from "assets/img/sponsors/ttc.png";
 import Kanbanize from "assets/img/sponsors/kanbanize.svg";
-
-
+import CanRedCross from "assets/img/sponsors/canredcross.png";
+import HealthCanada from "assets/img/sponsors/healthcanada.png";
 
 
 const AboutPage = () => {
@@ -166,6 +166,14 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 				<Sponsorship
 					src={Kanbanize}
 					href="https://kanbanize.com/"
+				/>
+				<Sponsorship
+					src={CanRedCross}
+					href="https://www.redcross.ca/"
+				/>
+				<Sponsorship
+					src={HealthCanada}
+					href="https://www.canada.ca/en/health-canada.html"
 				/>
 			</Row>
     <SimpleFooter/>
