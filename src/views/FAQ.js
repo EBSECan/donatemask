@@ -48,7 +48,7 @@ import QA from './QA.js';
 
 const FAQItem = (props) => {
   return (
-    <Col xs={12} className="d-flex justify-content-center text-center display-linebreak">
+    <Col xs={12} className="d-flex justify-content-left text-left display-linebreak">
       <div className='pt-5'>
         <h4 id="question">{props.question}</h4>
         <Linkify><p id="answer"> {props.answer}</p></Linkify>
