@@ -66,15 +66,15 @@ const MessageRoll = () => {
 
 	return (
 		<Row className="message-roll justify-content-center">
+		{/*
 			<Col md={3} xs={12}>
 				<div id="inspirational">
 					<h3 className="display-4 d-flex justify-content-center mb-3">
-						Inspirational Messages
+					//	Inspirational Messages
 					</h3>
 					{donationMsgs &&
 						donationMsgs.slice(0, 15).map((msg, idx) => {
-							/* Here we multiply the timestamp by a 1000 to convert from
-                milliseconds to Epoch. */
+							// Here we multiply the timestamp by a 1000 to convert from milliseconds to Epoch. 
 							if (msg.body) {
 								return (
 									<Message
@@ -87,14 +87,15 @@ const MessageRoll = () => {
 						})}
 				</div>
 			</Col>
-			<Col md={3} xs={12}>
+		*/}
+			<Col md={6} xs={12}>
 				<div id="thankyou">
 					<h3 className="display-4 d-flex justify-content-center mb-3">
-						Thank You Messages
+						Recent Thank You Messages
 					</h3>
 					{requestMsgs &&
 						requestMsgs.map((msg, idx) => {
-							if (msg.body && count <= 15) {
+							if (msg.body && count <= 25) {
 								count += 1;
 								return (
 									<Message
@@ -189,7 +190,7 @@ const Summary = () => {
 			<PageNavbar />
 			<Hero
 				heading="Summary"
-				body="View total mask donations, requests, and the message (inspirational, thank you) roll."
+				body="View total mask donations, mask and test requests, fulfillment stats, and thank you messages."
 			/>
 			<section className="section section-lg pt-lg-0 mt--100">
 				<Container>
