@@ -49,7 +49,7 @@ const RequestForm = () => {
 			case "Small-size Masks":
 				setMaskAmntSmall(parseInt(event.target.value));
 			break;
-			case "COVID Tests":
+			case "Boxes of COVID Tests":
 				setTestAmnt(parseInt(event.target.value));
 			break;
 			default:
@@ -60,7 +60,7 @@ const RequestForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!maskAmntRegular && !maskAmntSmall && !testAmnt) {
-            setError("Please request at least one mask or COVID test.");
+            setError("Please request at least one mask or box of COVID tests.");
             return false;
         }
         
@@ -99,7 +99,7 @@ const RequestForm = () => {
     return (
         <>
             <Form onSubmit={handleSubmit} id="request-form">
-                <h3 className="display-3"> Request masks and COVID tests form</h3>
+                <h3 className="display-3"> Request masks and boxes of COVID tests form</h3>
                 <p>
                     {" "}
                     Masks requests are funded by charitable donations.  Feel free to leave a
@@ -210,7 +210,7 @@ const RequestForm = () => {
                       </FormGroup>
                   </Col>
               </Row>
-        <h3>Masks Types and Quantities and COVID Test Quantities</h3>
+        <h3>Masks Types and Quantities and COVID Test Boxes (5-count) Quantities</h3>
         <Row>
           {maskSizes.map((maskSize) => {
             return (

@@ -50,8 +50,8 @@ const Request = () => {
     <>
       <PageNavbar/>
       <Hero
-        heading="Request masks and COVID rapid tests"
-        body="High-quality, N95-like masks and COVID rapid tests go hand in hand to protect the health of our communities.  Please use the form below to request regular-size masks, small-size masks, and COVID rapid tests to help protect you and your loved ones or your organization."/>
+        heading="Request masks and boxes of COVID rapid tests"
+        body="High-quality, N95-like masks and COVID rapid tests go hand in hand to protect the health of our communities.  Please use the form below to request regular-size masks, small-size masks, and boxes (5-count) of COVID rapid tests to help protect you and your loved ones or your organization."/>
         <Row className="d-flex justify-content-center no-margin pt-5">
           <RequestForm/>
         </Row>
