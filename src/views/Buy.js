@@ -48,14 +48,16 @@ import FdkMask from "assets/img/buy/fdk-mask.png";
 import FdkLogo from "assets/img/buy/fdk-logo.jpg";
 import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
-
+import KitData from "assets/img/buy/6200kitspecifications.pdf";
+import Kit from "assets/img/buy/6200kit.png";
+import Refill from "assets/img/buy/6200refill.png";
 
 const BuyPage = () => {
     return (
         <>
             <PageNavbar />
             <Hero
-                heading="Buy masks from our charity store"
+                heading="Buy disposable masks and respirator kits from our charity store"
                 body="100% of the proceeds of our Charity Store go towards sending FREE masks to people in need across Canada." />
 			<Container className="py-lg-md d-flex">
 				<div className="col px-0">
@@ -89,6 +91,30 @@ const BuyPage = () => {
 						
 						<div className="buylinks">
 						  <p><a className="buylinks" href = {FdkData} target = "_blank" >Product data sheet (PDF)</a></p>
+						</div>
+						</Col>
+					</Row>
+					<Row className="d-flex justify-content-center  no-margin buy-kit">
+						<Col xs={12}>
+						<p><b>3M 6200 kit with P100 & Exhale Valve N95-equivalent filters and cleaning wipes: $119.99 (no tax) with FREE shipping in Canada.</b></p>
+						<a href="https://buy.stripe.com/5kAeWI9m1cCP57G28c" target = "_blank">
+							<img src={Kit} width="75%" alt="Buy now: 3M 6200 kit with P100 & Exhale Valve N95-equivalent filters and cleaning wipes" />
+						</a>
+						
+						<div className="buylinks">
+						  <p><a className="buylinks" href = {KitData} target = "_blank" >Specifications and data sheets (PDF)</a></p>
+						</div>
+						</Col>
+					</Row>
+					<Row className="d-flex justify-content-center  no-margin buy-refill" style={{ marginTop: '1.5rem' }}>
+						<Col xs={12}>
+						<p><b>3M 6200 Refill Pack with 6-pair x P100 & 6 x Exhale Valve N95-equivalent filters and box (100-count) alcohol-free cleaning wipes: $299.99 (no tax) with FREE shipping in Canada.</b></p>
+						<a href="https://buy.stripe.com/5kAg0MgOt0U757G5kp" target = "_blank">
+							<img src={Refill} width="75%" alt="Buy now: 3M 6200 refill pack with 6-pair x P100 & 6 x Exhale Valve N95-equivalent filters and box (100-count) cleaning wipes" />
+						</a>
+						
+						<div className="buylinks">
+						  <p><a className="buylinks" href = {KitData} target = "_blank" >Specifications and data sheets (PDF)</a></p>
 						</div>
 						</Col>
 					</Row>
