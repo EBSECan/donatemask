@@ -48,7 +48,7 @@ Please note that while we will make every effort possible to ensure the quality 
    
   {
   question: `If you get more requests for masks than donations, how do you prioritize who gets masks?`,
-  answer: `Initially, we were going to use a triage to prioritize mask requests based on funding and need.  However, we were able to get a loan on generous terms in order to purchase large quantities of masks directly from manufacturers at lower prices, so we have been fulfilling mask requests that don't have matching donations at present.  We'll continue to do this so long as our loan terms hold with the hope that we'll be able to get a charity grant to keep operating soon!`,
+  answer: `Initially, we were going to use a triage to prioritize mask requests based on funding and need.  However, we were able to get a loan on generous terms in order to purchase large quantities of masks directly from manufacturers at lower prices, so we have been fulfilling mask requests that don't have matching donations at present.  We'll continue to do this so long as our loan terms hold with the hope that we'll be able to get a charity grant soon in order to keep operating!`,
 },
    
   {
@@ -81,7 +81,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
    
   {
   question: `I LOVE the Donate A Mask Project! I want to volunteer to help out!`,
-  answer: `Thanks! We LOVE passionate people and we welcome your help. Please reach out to us at volunteer@donatemask.ca and we'll find a way to put your specific skills and interests to work towards our mission of making high quality masks available to everyone with minimal fuss!`,
+  answer: `Thanks! We LOVE passionate people and we welcome your help. Please reach out to us at volunteer@donatemask.ca and we'll find a way to put your specific skills and interests to work towards our mission of making high-quality masks available to everyone with minimal fuss!`,
 },
   
   {
@@ -116,12 +116,12 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
   question: `Where does your funding come from?`,
-  answer:` 100% of our funding comes from donations from people like you and organizations willing to help out. We do not receive any government grants or other such funding to run this charitable initiative. Yet!  We are applying for government and other charitable grants to support this initiative and will update you if we're lucky enough to receive them!`,
+  answer:` 100% of our funding comes from donations from people like you and organizations willing to help out. We do not receive any government grants or other such funding to run this charitable initiative--yet!  We are applying for government and other charitable grants to support this initiative and will update you if we're lucky enough to receive them!`,
 },
 
   {
   question: `What's the best way to protect myself from COVID-19?`,
-  answer: `While we are not in a position to give you medical advice, here are some websites that describe the science of epidemiology and best practices to say safe:
+  answer: `While we are not in a position to give you medical advice, here are some websites that describe the science of epidemiology and best practices to stay safe:
 
   https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html
 
@@ -155,7 +155,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
   question: `I want to set up a fundraising campaign to support your charity; how do I do that? `,
-  answer: `Thank you very much for your interest in supporting us! Email us at donate@donatemask.ca and will help get your fundraising initiative set up with you.`,
+  answer: `Thank you very much for your interest in supporting us! Email us at donate@donatemask.ca and we will help get your fundraising initiative set up with you.`,
 },
 
   {
