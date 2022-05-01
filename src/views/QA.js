@@ -3,22 +3,22 @@ const QA = [
   question: `There are lots of pandemic grifters out there, taking advantage of people when they are at their most vulnerable. How do I know this isn't a scam?`,
   answer: `You are wise to do your due-diligence before donating money or sending your personal information (address) to a website! Good job!  You can verify that this is a real initiative by real people in several ways:
 
-1) Donate A Mask Project founder and Executive Director of Evidence-Based Social Enterprises Canda, Mekki MacAulay, has a deliberately public profile on the Internet that goes back two decades.  You can find everything about him on his LinkedIn Profile (https://www.linkedin.com/in/mekkim), his Twitter (https://twitter.com/mekki), his Facebook (https://facebook.com/mekki), and so on.  You can also email him at mekki@donatemask.ca with any concerns or questions.  
+1) Donate A Mask Project founder and Executive Director of Evidence-Based Social Enterprises Canada, Mekki MacAulay, has a deliberately public profile on the Internet that goes back two decades.  You can find everything about him on his LinkedIn Profile (https://www.linkedin.com/in/mekkim), his Twitter (https://twitter.com/mekki), his Facebook (https://facebook.com/mekki), and so on.  You can also email him at mekki@donatemask.ca with any concerns or questions.  
 
 Mekki takes his obligations as a Professional Engineer (PEng) registered with Professional Engineers Ontario (License #100134797) very seriously.  One of his obligations as a Professional Engineer is to always hold the public interest as paramount.  The word of a professional engineer is his oath.  You can look up Mekki's professional engineering registration at this site: https://www.peo.on.ca/directory (search for Mekki as first name--there's only one!).
 
-2) The Donate A Mask Project is an initiatve of Evidence-Based Social Enterprises Canada, a registered Charitable Organization*.  You can look up the organization with the Canada Revenue Agency to verify that it is, indeed a real charitable organization, at this location: https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en
+2) The Donate A Mask Project is an initiative of Evidence-Based Social Enterprises Canada, a registered Charitable Organization*.  You can look up the organization with the Canada Revenue Agency to verify that it is, indeed a real charitable organization, at this location: https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en
 
-[*Chariable registration application in progress]
+[*Charitable registration application in progress]
 
-3) Lastly, if you are a media organization who wants to validate that we are real and do due diligence before publication, please reach out to us at marketing@donatemask.ca and we will be happy to provide any documentation you may wish to validate who we are and what we do.
+3) If you are a media organization who wants to validate that we are real and do due diligence before publication, please reach out to us at marketing@donatemask.ca and we will be happy to provide any documentation you may wish to validate who we are and what we do.
 
 4) The Donate A Mask Project Canada leverages the principles of the open source movement of transparency and auditability.  Our web page and activities are deliberately accessible to the general public via GitHub at this location: https://github.com/mekkim/donatemask - We would LOVE it if you want to reproduce this project using our resources in your own jurisdiction (USA? France? UK? Reach out to us! We'll help get you set up!)`,
 },
   
   {
   question: `When you say that you will provide "high-quality" masks to those who request them, what do you mean?`,
-  answer: `There is a lot of confusing messaging about masks, masking, and mask quality circulating during the pandemic.  When we say "high-quality" masks, what we mean is "NIOSH N95- respirators of various configutations or equivalent".  Technically, we are providing "respirators", not "masks", but since most people use the term "mask" in common discussions, we've adopted that term for simplicity of communication.  
+  answer: `There is a lot of confusing messaging about masks, masking, and mask quality circulating during the pandemic.  When we say "high-quality" masks, what we mean is "NIOSH N95- respirators of various configurations or equivalent".  Technically, we are providing "respirators", not "masks", but since most people use the term "mask" in common discussions, we've adopted that term for simplicity of communication.  
 
 We have three tiers of reference masks that we attempt to procure and distribute as part of this initiative.  Wherever possible, based on supply chain availability, we will provide the tier 1 masks.  In the event that they are not available, we will substitute tier 2 and 3 masks as necessary.  The lowest tier masks we provide will still be "NIOSH N95-rated or equivalent".
 
@@ -28,27 +28,27 @@ Because the NIOSH N95 standard is American, Canadian manufacturers use a range o
 
 Another major issue in quality is fit.  We only provide masks with headband straps. We do not distribute masks with earloop straps.  That's because masks need a tight fit on the face in order to be effective, and the pulling on the ears required to achieve that tight fit is too uncomfortable for most (especially children!). As a result, earloop masks are often worn incorrectly, to diminished effectiveness.  To address this issue, we simply decided to only provide headband strap masks that are designed to be worn by healthcare workers for 12 hour shifts comfortably.  In fact, the regular size mask we distribute presently is the same model worn by EMS in Ontario, from the same Canadian designer!
 
-Please note that while we will make every effort possible to ensure the quality of the masks and othe ritems we provide, we cannot and will not take on any responsibility or liability for their effectiveness for any or no purpose.  All products requested and received are used at your own risk.  Please see our Terms of Use for more details.`,
+Please note that while we will make every effort possible to ensure the quality of the masks and other items we provide, we cannot and will not take on any responsibility or liability for their effectiveness for any or no purpose.  All products requested and received are used at your own risk.  Please see our Terms of Use for more details.`,
 },
    
   {
   question: `bUt MaSKs aRE bAd FoR yoU!!!1!one!11!!`,
-  answer: `Please look at the title of our organization once more: "Evidence-Based Social Enterprises Canada".  We're not here to debate with anti-science zealots.  Don't want our free masks delivered right to your door using the labour of volunteers and the funding of genrous people who want our communities to be healthier?  Kool. Make room for those who want to protect themselves and the people they care about.  Don't let the website/app close button hit you on the way out!`,
+  answer: `Please look at the title of our organization once more: "Evidence-Based Social Enterprises Canada".  We're not here to debate with anti-science zealots.  Don't want our free masks delivered right to your door using the labour of volunteers and the funding of generous people who want our communities to be healthier?  Kool. Make room for those who want to protect themselves and the people they care about.  Don't let the website/app close button hit you on the way out!`,
 },
    
   {
   question: `How many masks can I request?`,
-  answer: `Please request what you feel you and those you are requesting for can use over a 60 day period at most..  Recent research has shown that you can safely sanitize and reuse masks up to 25 times, so please clena and reuse them as much as you can so that there are more to go around.  Details here: https://www.ajicjournal.org/article/S0196-6553(21)00741-0/fulltext - If you need more masks later on, please feel free to submit another request.`,
+  answer: `Please request what you feel you and those you are requesting for can use over a 60 day period at most.  Recent research has shown that you can safely sanitize and reuse masks up to 25 times, so please clean and reuse them as much as you can so that there are more to go around.  Details here: https://www.ajicjournal.org/article/S0196-6553(21)00741-0/fulltext - If you need more masks later on, please feel free to submit another request.`,
 },
    
   {
   question: `I'm requesting for an organization/group/other larger number. Can you help us out?`,
-  answer: `So far we have been able to support the organizations (including Schools, Churches, shelters, outreach groups, etc.) who have requested masks from us.  Assuming we are able to locate contining funding for this charity program, we should be able to continue to meet the demans of organizations as well.  If your request is too large or there's some issue with it, we'll reach out to you via email to discuss.  If you don't hear from us, you can safely assume it's in the mail!`,
+  answer: `So far we have been able to support the organizations (including schools, churches, shelters, outreach groups, etc.) who have requested masks from us.  Assuming we are able to locate continuing funding for this charity program, we should be able to continue to meet the demands of organizations as well.  If your request is too large or there's some issue with it, we'll reach out to you via email to discuss.  If you don't hear from us, you can safely assume it's in the mail!`,
 },
    
   {
   question: `If you get more requests for masks than donations, how do you prioritize who gets masks?`,
-  answer: `Initially, we were going to use a triage to prioritize mask requests based on funding and need.  However, we were able to get a loan on generous terms in order to purchase large quantities of masks directly from manufacturers at lower prices, so we have been fulfilling mask requests that don't have matching donations at present.  We'll continue to do this so long as our loan terms hold with the hope we'll be able to get a charity grant to keep operating soon!`,
+  answer: `Initially, we were going to use a triage to prioritize mask requests based on funding and need.  However, we were able to get a loan on generous terms in order to purchase large quantities of masks directly from manufacturers at lower prices, so we have been fulfilling mask requests that don't have matching donations at present.  We'll continue to do this so long as our loan terms hold with the hope that we'll be able to get a charity grant to keep operating soon!`,
 },
    
   {
@@ -57,14 +57,14 @@ Please note that while we will make every effort possible to ensure the quality 
 
 The value of $2.50 "per mask" was the original value that was selected as a quasi-arbitrary number that incorporates factors such as mask cost, shipping costs, and organization costs, rounded upwards deliberately.  We, of course, pay nowhere near that amount per mask as we make volume purchases from suppliers.  More recently, in order for our stats page to reflect the reality of our funding situation more accurately, we lowered this amount to $1.25 per mask, which roughly covers the cost of masks and shipping and overhead based on the volumes we have purchased.
 
-Where there is extra money, more masks will be shipped with those funds; simple as that.  Everyone working on the Donate A Mask Project is an unpaid voluneer (whom we greatly appreciate!).  100% of donated funds go directly to the mission of putting masks in the mailboxes of requestors.  
+Where there is extra money, more masks will be shipped with those funds; simple as that.  Everyone working on the Donate A Mask Project is an unpaid volunteer (whom we greatly appreciate!).  100% of donated funds go directly to the mission of putting masks in the mailboxes of requestors.  
 
 If you're a media organization who wishes to report on this project, please reach out to us at marketing@donatemask.ca and we will be happy to show you all of our financial statements so that you can validate how the money is used in this charity project.`,
 },
    
   {
-  question: `I am a large donor / donor organization who supports your missio nand wants to make a large contribution of charitable funding; how do I do that?`,
-  answer: `We're exited to collaborate with other like minded organizations who understand the importance of putting high-quality masks directly in the hands of the most vulnerable in our society.  Reach out to us at donate@donatemask.ca and we can work out collaboration/donation details.  Thank you!`,
+  question: `I am a large donor / donor organization who supports your mission and wants to make a large contribution of charitable funding; how do I do that?`,
+  answer: `We're excited to collaborate with other like-minded organizations who understand the importance of putting high-quality masks directly in the hands of the most vulnerable in our society.  Reach out to us at donate@donatemask.ca and we can work out collaboration/donation details.  Thank you!`,
 },
    
   {
@@ -85,7 +85,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 },
   
   {
-  question: `Is there a mobile app available`,
+  question: `Is there a mobile app available?`,
   answer: `Not yet.  We're working on it and we'll let you know when it's live.  For now you can access the page using a mobile web browser.`,
 },
 
@@ -101,7 +101,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
   question: `We would like to sponsor your charity project in exchange for showcasing our brand or logo. Will you do that?`,
-  answer: `Yes! Absolutely! We welcome corporate/other sponsorship.  We'll gladly showcase your logo/brand on the sponsor/thank you section of our site to recognize your contribution.  We may also be able to issue a charitable receipt to your organization for your donation (according to CRA accounting uidelines).  Please reach out to us at donate@donatemask.ca to coordinate your sponsorship!`,
+  answer: `Yes! Absolutely! We welcome corporate/other sponsorship.  We'll gladly showcase your logo/brand on the sponsor/thank you section of our site to recognize your contribution.  We may also be able to issue a charitable receipt to your organization for your donation (according to CRA accounting guidelines).  Please reach out to us at donate@donatemask.ca to coordinate your sponsorship!`,
 },
 
   {
@@ -189,7 +189,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
     
   {
   question: `I have a question not in this FAQ. Who do I contact?`,
-  answer: `No doubt we haven't thought of all the questions you might have! Feel free to reach out to us at marketing@donatemask.ca with your questions. We'll udpate the FAQ accordingly.  Thank you!`,
+  answer: `No doubt we haven't thought of all the questions you might have! Feel free to reach out to us at marketing@donatemask.ca with your questions. We'll update the FAQ accordingly.  Thank you!`,
 },
 ]
 
