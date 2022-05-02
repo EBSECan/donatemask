@@ -3,3 +3,4 @@
 package-lock.json
 /server/config.env
 /server/node_modules
+coverage/

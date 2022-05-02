@@ -1,0 +1,6 @@
+{
+  "globalSetup": "<rootDir>/test/globalSetup.js",
+  "globalTeardown": "<rootDir>/test/globalTeardown.js",
+  "testMatch": [ "<rootDir>/test/**/*.test.js" ],
+  "verbose": true
+}
