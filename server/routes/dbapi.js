@@ -1,44 +1,31 @@
 const express = require("express");
 
-// recordRoutes is an instance of the express router.
-// We use it to define our routes.
-// The router will be added as a middleware and will take control of requests starting with path /record.
-const dbAPIRoutes = express.Router();
+const donations = require('../db/donations');
+const maskRequests = require('../db/mask-requests');
 
-// This will help us connect to the database
-const dbo = require("../db/conn");
-
-// This help convert the id from string to ObjectId for the _id.
-const ObjectId = require("mongodb").ObjectId;
+const router = express.Router();
 
 // Get all donations.
-dbAPIRoutes.route("/api/get_donations").get(function (req, res) {
-  let db_connect = dbo.getDb("donateamask");
-  db_connect
-    .collection("donations")
-    .find({})
-    .toArray(function (err, result) {
-      if (err) throw err;
-      res.json(result);
-    });
+router.get("/api/get_donations", async (req, res, next) => {
+  try {
+    res.json(await donations.get());
+  } catch(err) {
+    next(err);
+  }
 });
 
 // Get all mask requests.
-dbAPIRoutes.route("/api/get_mask_requests").get(function (req, res) {
-  let db_connect = dbo.getDb("donateamask");
-  db_connect
-    .collection("maskrequests")
-    .find({})
-    .toArray(function (err, result) {
-      if (err) throw err;
-      res.json(result);
-    });
+router.get("/api/get_mask_requests", async (req, res, next) => {
+  try {
+    res.json(await maskRequests.get());
+  } catch(err) {
+    next(err);
+  }
 });
 
 // Add donation.
-dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
-  let db_connect = dbo.getDb();
-  let obj = {
+router.post("/api/donation_add", async (req, res, next) => {
+  const data = {
     name: req.body.name,
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
@@ -47,16 +34,16 @@ dbAPIRoutes.route("/api/donation_add").post(function (req, response) {
     timestamp: req.body.timestamp,
   };
 
-  db_connect.collection("donations").insertOne(obj, function (err, res) {
-    if (err) throw err;
-    response.json(res);
-  });
+  try {
+    res.status(201).json(await donations.add(data));
+  } catch(err) {
+    next(err);
+  }
 });
 
 // Add mask requests.
-dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
-  let db_connect = dbo.getDb();
-  let obj = {
+router.post("/api/mask_request_add", async (req, res, next) => {
+  const data = {
     requestorType: req.body.requestorType,
     organizationName: req.body.organizationName,
     organizationType: req.body.organizationType,
@@ -72,10 +59,12 @@ dbAPIRoutes.route("/api/mask_request_add").post(function (req, response) {
     requestFulfilled: false,
     timestamp: req.body.timestamp,
   };
-  db_connect.collection("maskrequests").insertOne(obj, function (err, res) {
-    if (err) throw err;
-    response.json(res);
-  });
+
+  try {
+    res.status(201).json(await maskRequests.add(data));
+  } catch(err) {
+    next(err);
+  }
 });
 
-module.exports = dbAPIRoutes;
+module.exports = router;
