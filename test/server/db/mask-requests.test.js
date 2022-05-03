@@ -24,15 +24,18 @@ describe("db/mask-requests.js", () => {
       province: "Ontario",
       email: "email@example.com",
       msg: "Message",
-      requestFulfilled: false,
+      requestFulfilled: true,
       timestamp: new Date(),
     };
 
     await maskRequests.add(maskRequest);
 
     const result = await maskRequests.get();
+    const { maskAmntRegular, maskAmntSmall, msg, requestFulfilled, testAmnt, timestamp } = maskRequest;
     expect(result).toEqual(
-      expect.arrayContaining([expect.objectContaining(maskRequest)])
+      expect.arrayContaining([expect.objectContaining({
+        maskAmntRegular, maskAmntSmall, msg, requestFulfilled, testAmnt, timestamp
+      })])
     );
   });
 });

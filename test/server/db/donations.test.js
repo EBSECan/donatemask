@@ -10,19 +10,20 @@ describe("db/donations.js", () => {
 
   test("add() adds a donation", async () => {
     const donation = {
-      name: "New Donation",
-      email: "new-donation@example.com",
+      name: "dZcb",
+      email: "dZcb@example.com",
       maskAmnt: 1,
       totalDonation: 1 * 1.25,
-      msg: "New Donation Message",
+      msg: "dZcb Donation Message",
       timestamp: new Date(),
     };
 
     await donations.add(donation);
 
     const result = await donations.get();
+    const { maskAmnt, msg, timestamp } = donation;
     expect(result).toEqual(
-      expect.arrayContaining([expect.objectContaining(donation)])
+      expect.arrayContaining([expect.objectContaining({ maskAmnt, msg, timestamp })])
     );
   });
 });
