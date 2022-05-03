@@ -10,11 +10,11 @@ describe("dbapi", () => {
   describe("donations", () => {
     test("POST /api/donation_add should add a donation and return 201", () => {
       const donation = {
-        name: "Name",
-        email: "email@example.com",
+        name: "nDuX",
+        email: "nDuX@example.com",
         maskAmnt: 10,
         totalDonation: 10 * 1.25,
-        msg: "Message",
+        msg: "nDuX Donation Message",
         timestamp: new Date(),
       };
 
@@ -32,11 +32,11 @@ describe("dbapi", () => {
 
     test("A donation added should exist in returned results", async () => {
       const donation = {
-        name: "New Donation",
-        email: "new-donation@example.com",
-        maskAmnt: 1,
-        totalDonation: 1 * 1.25,
-        msg: "New Donation Message",
+        name: "6EjR",
+        email: "6EjR@example.com",
+        maskAmnt: 3,
+        totalDonation: 3 * 1.25,
+        msg: "6EjR Donation Message",
         timestamp: new Date(),
       };
 
@@ -47,13 +47,10 @@ describe("dbapi", () => {
         .get("/api/get_donations")
         .expect(200)
         .then((res) => {
+          const { maskAmnt, msg, timestamp } = donation;
           expect(res.body).toEqual(
             expect.arrayContaining([
-              expect.objectContaining({
-                ...donation,
-                // The timestamp will be an ISO string vs. Date Object
-                timestamp: donation.timestamp.toISOString(),
-              }),
+              expect.objectContaining({ maskAmnt, msg, timestamp: timestamp.toISOString() }),
             ])
           );
         });
@@ -126,12 +123,16 @@ describe("dbapi", () => {
         .get("/api/get_mask_requests")
         .expect(200)
         .then((res) => {
+          const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } = maskRequest;
           expect(res.body).toEqual(
             expect.arrayContaining([
               expect.objectContaining({
-                ...maskRequest,
+                maskAmntRegular,
+                maskAmntSmall,
+                testAmnt,
+                msg,
                 // The timestamp will be an ISO string vs. Date Object
-                timestamp: maskRequest.timestamp.toISOString(),
+                timestamp: timestamp.toISOString(),
               }),
             ])
           );

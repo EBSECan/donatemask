@@ -46,8 +46,6 @@ describe("stripeapi", () => {
       expect(data).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
-            email: orderDetails.email,
-            name: orderDetails.name,
             maskAmnt: orderDetails.maskAmnt,
             msg: orderDetails.donationMsg,
           }),
