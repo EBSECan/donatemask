@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { MASK_SIZE, MASK_PRICE } from "../const";
 import { Redirect } from "react-router-dom";
 // reactstrap components
@@ -85,12 +84,20 @@ const RequestForm = () => {
             newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' + postalCode;
         }
     // Adding Mask Request to DB
-    axios
-      .post("https://donatemask.ca/api/mask_request_add", newMaskRequest)
-      .then(() => {
+    fetch("https://donatemask.ca/api/mask_request_add", {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newMaskRequest),
+    })
+      .then((res) => {
+        if(!res.ok) {
+          throw new Error('Unable to add new mask request');
+        }
         setSubmitStatus(true);
       })
-      .catch(error => {
+      .catch(() => {
         setSubmitFailed(true);
       });
   };

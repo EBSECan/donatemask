@@ -30,7 +30,7 @@ import Landing from "views/Landing.js";
 import Donate from "views/Donate.js";
 import Request from "views/Request";
 import Buy from "views/Buy.js";
-import Summary from "views/Summary.js";
+import Summary from "views/Summary";
 import About from "views/About.js";
 import FAQ from "views/FAQ.js";
 import Privacy from "views/Privacy.js"
