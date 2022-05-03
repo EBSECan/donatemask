@@ -38,4 +38,33 @@ describe("db/mask-requests.js", () => {
       })])
     );
   });
+
+  test("messages() gets recent messages", async () => {
+    const maskRequest = {
+      requestorType: "individual",
+      organizationName: null,
+      organizationType: null,
+      name: "z67g",
+      address: "Address",
+      maskAmntRegular: 1,
+      maskAmntSmall: 1,
+      testAmnt: 1,
+      postal: "M5W 1E6",
+      province: "Ontario",
+      email: "z67g@example.com",
+      msg: "z67g Message",
+      requestFulfilled: false,
+      timestamp: new Date(),
+    };
+
+    await maskRequests.add(maskRequest);
+
+    const result = await maskRequests.messages();
+    const { msg, timestamp } = maskRequest;
+    expect(result).toEqual(
+      expect.arrayContaining([expect.objectContaining({
+        msg, timestamp
+      })])
+    );
+  });
 });
