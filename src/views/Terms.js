@@ -89,7 +89,7 @@ const PrivacyPage = () => {
             Please see our Privacy Policy to learn about how we collect, use, and share your personal information.<br />
              <br />
             8. Errors and Omissions<br /><br />
-            Please note that our website may contain typographical errors or inaccuracies and may not be complete or current. We reserve the right to correct any errors, inaccuracies or omissions and to change or update information at any time, without prior notice (including after an order or donation has been submitted). Such errors, inaccuracies or omissions may relate to product description or availability and we reserve the right to cancel or refuse any order placed based on inaccuracies or availability information, to the extent permitted by applicable law.<br />
+            Please note that our website may contain typographical errors or inaccuracies and may not be complete or current. We reserve the right to correct any errors, inaccuracies or omissions and to change or update information at any time, without prior notice (including after an order or donation has been submitted). Such errors, inaccuracies or omissions may relate to product description or availability and we reserve the right to cancel or refuse any order placed based on inaccuracies or availability of information, to the extent permitted by applicable law.<br />
             We do not undertake to update, modify or clarify information on our website, except as required by law.<br />
              <br />
             9. Disclaimer and Limitation of Liability<br /><br />
