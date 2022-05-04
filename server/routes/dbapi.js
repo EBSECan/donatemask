@@ -29,7 +29,6 @@ router.post("/api/donation_add", async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     maskAmnt: req.body.maskAmnt,
-    totalDonation: req.body.totalDonation,
     msg: req.body.msg,
     timestamp: req.body.timestamp,
   };

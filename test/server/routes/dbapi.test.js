@@ -13,7 +13,6 @@ describe("dbapi", () => {
         name: "nDuX",
         email: "nDuX@example.com",
         maskAmnt: 10,
-        totalDonation: 10 * 1.25,
         msg: "nDuX Donation Message",
         timestamp: new Date(),
       };
@@ -35,7 +34,6 @@ describe("dbapi", () => {
         name: "6EjR",
         email: "6EjR@example.com",
         maskAmnt: 3,
-        totalDonation: 3 * 1.25,
         msg: "6EjR Donation Message",
         timestamp: new Date(),
       };
