@@ -89,5 +89,5 @@ module.exports.messages = async (count = 25) => {
     .toArray();
 
   // Remove any empty/null messages
-  return messages.filter(({ msg }) => msg?.length);
+  return messages.filter(({ msg }) => msg.length);
 };
