@@ -5,6 +5,34 @@ const maskRequests = require('../db/mask-requests');
 
 const router = express.Router();
 
+// Get stats for donations and mask requests.
+router.get("/api/stats", async (req, res, next) => {
+  try {
+    const [donationsStats, maskRequestsStats] = await Promise.all([
+      donations.stats(),
+      maskRequests.stats(),
+    ]);
+    res.json({
+      ...donationsStats,
+      ...maskRequestsStats,
+      unfundedMasks: maskRequestsStats.masksRequested > donationsStats.masksDonated ?
+        maskRequestsStats.masksRequested - donationsStats.masksDonated : 0,
+    });
+  } catch(err) {
+    next(err);
+  }
+});
+
+// Get messages from donations and mask requests
+router.get("/api/messages", async (req, res, next) => {
+  const count = parseInt(req.query.count, 10) || 25;
+  try {
+    res.json(await maskRequests.messages(count));
+  } catch(err) {
+    next(err);
+  }
+});
+
 // Get all donations.
 router.get("/api/get_donations", async (req, res, next) => {
   try {
