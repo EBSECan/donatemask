@@ -58,7 +58,7 @@ const BuyPage = () => {
             <PageNavbar />
             <Hero
                 heading="Buy disposable masks and respirator kits from our charity store"
-                body="100% of the proceeds of our Charity Store go towards sending FREE masks to people in need across Canada." />
+                body="100% of the proceeds from our Charity Store go towards sending FREE masks to people in need across Canada." />
 			<Container className="py-lg-md d-flex">
 				<div className="col px-0">
 					<Row className="d-flex justify-content-center  no-margin buy-head">

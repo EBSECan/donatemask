@@ -102,7 +102,7 @@ const RequestForm = () => {
                 <h3 className="display-3"> Request masks and boxes of COVID tests form</h3>
                 <p>
                     {" "}
-                    Masks requests are funded by charitable donations.  Feel free to leave a
+                    Mask requests are funded by charitable donations.  Feel free to leave a
                     thank you message to donors.
                 </p>
                 <div>

@@ -296,7 +296,7 @@ const Summary = () => {
 												<i className="ni ni-satisfied" />
 											</div>
 											<h6 className="text-success text-uppercase">
-												No. of COVID Tests Fullfilled
+												No. of COVID Tests Fulfilled
 											</h6>
 											<p className="display-3 text-center mt-3">
 												{totalTestsFulfilled}
