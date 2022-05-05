@@ -39,7 +39,6 @@ const RequestForm = () => {
   const [error, setError] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
   const [submitFailed, setSubmitFailed] = useState(false);
-  const totalDonation = MASK_PRICE * (maskAmntRegular + maskAmntSmall);
 
     const onMaskAmntChange = (event, maskSize) => {
         switch(maskSize) {

@@ -14,7 +14,6 @@ describe("db/donations.js", () => {
       name: "dZcb",
       email: "dZcb@example.com",
       maskAmnt: 1,
-      totalDonation: 1 * 1.25,
       msg: "dZcb Donation Message",
       timestamp: new Date(),
     };
@@ -24,7 +23,14 @@ describe("db/donations.js", () => {
     const result = await donations.get();
     const { maskAmnt, msg, timestamp } = donation;
     expect(result).toEqual(
-      expect.arrayContaining([expect.objectContaining({ maskAmnt, msg, timestamp })])
+      expect.arrayContaining([
+        expect.objectContaining({
+          maskAmnt,
+          // totalDonation should be calculated and added automatically
+          totalDonation: 1.25,
+          msg,
+          timestamp })
+      ])
     );
   });
 
