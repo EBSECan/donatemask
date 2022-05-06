@@ -20,37 +20,14 @@
 <!DOCTYPE html>
 <html lang="en" class="perfect-scrollbar-off nav-open">
   <head>
+    <meta charset="utf-8" />
     <!--  Begin Google Adsense Code    -->
-
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3985494747487493"
       crossorigin="anonymous"
     ></script>
-
     <!--  End Google Adsense Code    -->
-
-    <!-- Begin Bootstrap JS Dependencies -->
-    <script
-      src="https://unpkg.com/react/umd/react.production.min.js"
-      crossorigin
-    ></script>
-
-    <script
-      src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-      crossorigin
-    ></script>
-
-    <script
-      src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-      crossorigin
-    ></script>
-
-    <script>
-      var Alert = ReactBootstrap.Alert;
-    </script>
-    <!-- End Bootstrap JS Depndencies -->
-    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -91,37 +68,21 @@
     <meta name="twitter:title" content="Donate a Mask">
     <meta name="twitter:description" content="Support the Donate A Mask Charity Project with a single or recurring donation. 100% of your donation goes towards helping vulnerable people.">
     <meta name="twitter:image" content="https://donatemask.ca/static/media/logo.eb5559fdd02a62715e6846f4951c1186.svg">
-
-    
-
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"></script>
+    <script>
+      PayPal.Donation.Button({
+        env: "production",
+        hosted_button_id: "CWHHLTCCJ8JWG",
+        image: {
+          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
+          alt: "Donate with PayPal button",
+          title: "PayPal - The safer, easier way to pay online!",
+        },
+      }).render("#paypal-donate-button");
+    </script>
   </body>
-  <script
-    src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
-    charset="UTF-8"
-  ></script>
-  <script>
-    PayPal.Donation.Button({
-      env: "production",
-      hosted_button_id: "CWHHLTCCJ8JWG",
-      image: {
-        src: "https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif",
-        alt: "Donate with PayPal button",
-        title: "PayPal - The safer, easier way to pay online!",
-      },
-    }).render("#paypal-donate-button");
-  </script>
 </html>
