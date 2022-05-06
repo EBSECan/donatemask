@@ -48,29 +48,35 @@ import QA from './QA.js';
 
 const FAQItem = (props) => {
   return (
-    <Col xs={12} className="d-flex justify-content-left text-left display-linebreak">
-      <div className='pt-5'>
-        <h4 id="question">{props.question}</h4>
-        <Linkify><p id="answer"> {props.answer}</p></Linkify>
-      </div>
-    </Col>
+    <Row className="d-flex justify-content-center no-margin pt-3">
+      <Col xs={12} className="d-flex justify-content-left text-left display-linebreak">
+        <div className='pt-5 question-answer'>
+          <h4 className="question">{props.question}</h4>
+          <p className="answer"><Linkify>{props.answer}</Linkify></p>
+        </div>
+      </Col>
+    </Row>
   );
 }
 const FAQPage = () => {
   return (
     <div className="faq">
       <PageNavbar/>
-        <Hero
-          heading="Frequently asked questions"
-          body="Commonly asked questions and answers."/>
-        <Row className="d-flex justify-content-center no-margin pt-3">
-          {QA.map((question, idx) => (
-            <FAQItem
-              question={question.question}
-              answer={question.answer}/>
-          ))}
-        </Row>
-        <SimpleFooter/>
+      <Hero
+        heading="Frequently asked questions"
+        body="Commonly asked questions and answers."
+      />
+      <Container fluid="xl">
+      {
+        QA.map(({question, answer}) => (
+          <FAQItem
+            key={question}
+            question={question}
+            answer={answer}/>
+        ))
+      }
+      </Container>
+      <SimpleFooter/>
     </div>
   );
 }

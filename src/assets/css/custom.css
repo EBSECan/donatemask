@@ -94,14 +94,26 @@ p#message {
   margin-bottom: 7.5vh;
 }
 
-h4#question {
+.question-answer {
+  width: 100%;
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4.question {
   margin: 1vh auto;
   width: 70%;
 }
 
-p#answer {
+p.answer {
   margin: 0 auto;
   width: 70%;
+}
+
+p.answer a {
+  width: 100%;
+  color: #3171d7;
 }
 
 /* 4. Privacy Page */
