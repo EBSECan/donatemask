@@ -11,11 +11,15 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # We currently have to deploy on 13.14.0, so test on that plus an LTS
+        node: [ 13.14.0, 16 ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node }}
       - run: |
           npm install
           npm test
