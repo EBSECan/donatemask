@@ -65,7 +65,7 @@ a {
   border-right: 1px solid #D4D4D4;
 }
 
-span#time {
+time.ago {
   color: #ACACAC;
   padding-right: 0.25vw;
 }

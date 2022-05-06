@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 // reactstrap components
