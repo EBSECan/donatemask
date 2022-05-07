@@ -261,15 +261,6 @@ describe("dbapi", () => {
       return request(app).post("/api/donation_add").send(donation).expect(201);
     });
 
-    test("GET /api/get_donations should return 200 and an array", () =>
-      request(app)
-        .get("/api/get_donations")
-        .expect("Content-Type", /json/)
-        .expect(200)
-        .then((res) => {
-          expect(Array.isArray(res.body)).toBe(true);
-        }));
-
     test("A donation added should exist in returned results", async () => {
       const donation = {
         name: "6EjR",
@@ -282,17 +273,13 @@ describe("dbapi", () => {
       // Create a new donation in the db
       await request(app).post("/api/donation_add").send(donation).expect(201);
       // Make sure we can get it back again
-      return request(app)
-        .get("/api/get_donations")
-        .expect(200)
-        .then((res) => {
-          const { maskAmnt, msg, timestamp } = donation;
-          expect(res.body).toEqual(
-            expect.arrayContaining([
-              expect.objectContaining({ maskAmnt, msg, timestamp: timestamp.toISOString() }),
-            ])
-          );
-        });
+      const results = await donations.get();
+      const { maskAmnt, msg, timestamp } = donation;
+      expect(results).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({ maskAmnt, msg, timestamp: timestamp.toISOString() }),
+        ])
+      );
     });
   });
 
@@ -320,15 +307,6 @@ describe("dbapi", () => {
         .send(maskRequest)
         .expect(201);
     });
-
-    test("GET /api/get_mask_requests should return 200 and an array", () =>
-      request(app)
-        .get("/api/get_mask_requests")
-        .expect("Content-Type", /json/)
-        .expect(200)
-        .then((res) => {
-          expect(Array.isArray(res.body)).toBe(true);
-        }));
 
     test("A mask request added should exist in returned results", async () => {
       const maskRequest = {
@@ -358,24 +336,20 @@ describe("dbapi", () => {
         .expect(201);
 
       // Make sure we can get it back again
-      return request(app)
-        .get("/api/get_mask_requests")
-        .expect(200)
-        .then((res) => {
-          const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } = maskRequest;
-          expect(res.body).toEqual(
-            expect.arrayContaining([
-              expect.objectContaining({
-                maskAmntRegular,
-                maskAmntSmall,
-                testAmnt,
-                msg,
-                // The timestamp will be an ISO string vs. Date Object
-                timestamp: timestamp.toISOString(),
-              }),
-            ])
-          );
-        });
+      const results = await maskRequests.get();
+      const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } = maskRequest;
+      expect(results).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            maskAmntRegular,
+            maskAmntSmall,
+            testAmnt,
+            msg,
+            // The timestamp will be an ISO string vs. Date Object
+            timestamp: timestamp.toISOString(),
+          }),
+        ])
+      );
     });
   });
 });

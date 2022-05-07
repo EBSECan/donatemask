@@ -33,24 +33,6 @@ router.get("/api/messages", async (req, res, next) => {
   }
 });
 
-// Get all donations.
-router.get("/api/get_donations", async (req, res, next) => {
-  try {
-    res.json(await donations.get());
-  } catch(err) {
-    next(err);
-  }
-});
-
-// Get all mask requests.
-router.get("/api/get_mask_requests", async (req, res, next) => {
-  try {
-    res.json(await maskRequests.get());
-  } catch(err) {
-    next(err);
-  }
-});
-
 // Add donation.
 router.post("/api/donation_add", async (req, res, next) => {
   const data = {
