@@ -13,7 +13,7 @@ test("Donate page loads with direct link to /donate route", async ({ page }) =>
   confirmRoute(page, "/donate", "Donate a mask"));
 
 test("Request page loads with direct link to /request route", async ({ page }) =>
-  confirmRoute(page, "/request", "Request masks and boxes of COVID rapid tests"));
+  confirmRoute(page, "/request", "Request masks and COVID rapid tests"));
 
 test("Buy page loads with direct link to /buy route", async ({ page }) => 
   confirmRoute(page, "/buy", "Buy disposable masks and respirator kits from our charity store"));
@@ -32,3 +32,6 @@ test("Privacy page loads with direct link to /privacy route", async ({ page }) =
 
 test("Terms page loads with direct link to /terms route", async ({ page }) =>
   confirmRoute(page, '/terms', "Terms"));
+
+test("Confirm Request page loads with direct link to /confirmrequest route", async ({ page }) =>
+  confirmRoute(page, '/confirmrequest', "Request confirmed"));

@@ -15,11 +15,10 @@ import {
   Row,
   Col,
 } from "reactstrap";
-
 import DonationTiers from "./DonationTiers";
-import { formatCurrency } from "../util";
 
-const maskPrice = 1.25;
+import { MASK_PRICE } from "../const";
+import { formatCurrency } from "../util";
 
 // Donation tiers: number of masks
 const tiers = [10, 25, 50, 100, 500, 1000];
@@ -31,7 +30,7 @@ const DonateForm = () => {
   const [msg, setMsg] = useState();
   const [agreed, setAgreed] = useState(false);
 
-  const totalDonation = useMemo(() => maskPrice * maskAmnt, [maskAmnt]);
+  const totalDonation = useMemo(() => MASK_PRICE * maskAmnt, [maskAmnt]);
 
   return (
     <Container>
