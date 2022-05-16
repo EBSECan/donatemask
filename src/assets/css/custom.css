@@ -168,6 +168,22 @@ p.answer a {
 	color: #0000FF;
 }
 
+.thank-you {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-share-icons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-share-icon {
+  margin-left: 8px;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 
