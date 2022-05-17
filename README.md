@@ -66,7 +66,60 @@ To contribute:
 - fork and clone this repo
 - create a new branch
 - cd into the main project folder with `cd donatemask`
-- install the dependencies with `npm install` - make sure to use nodejs version >= v13.14.0
-- run `npm start` to build and run the dev server. This will also watch for changes and rebuild when a file is saved.
-- commit your changes to the new branch you created
-- make a pull request to the main branch
+
+### Tests
+
+To run the tests:
+
+```sh
+npm test
+```
+
+You can also run a single test:
+
+```sh
+npm test test.name
+```
+
+Or run the tests in watch mode:
+
+```sh
+npm run test:watch
+```
+
+To get a test coverage report, use:
+
+```sh
+npm run coverage
+```
+
+See the `coverage/lcov-report/index.html` file to see detailed information about files and lines of code not currently being tested.
+
+### Back-End
+
+To run the back-end for local development:
+
+```sh
+$ cd server
+$ npm install
+$ npm run dev
+```
+
+The back-end will be running on http://localhost:4443.  You should run the front-end next to use it.
+
+NOTE: the back-end is currently limited to node v13.14.0 in production, so be aware of what version you run locally.
+
+### Front-End
+
+To run the front-end for local development:
+
+```sh
+$ npm install
+$ npm start
+```
+
+The front-end will be running on http://localhost:3000.  The front-end will proxy requests to the back-end in development mode at http://localhost:4443, so make sure you are running the back-end first.
+
+### Pull Requests
+
+You're welcome to file issues and create a pull requests.

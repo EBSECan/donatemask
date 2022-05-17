@@ -2,8 +2,8 @@ const { connectToServer, close } = require("../../../server/db/conn");
 const maskRequests = require("../../../server/db/mask-requests");
 
 describe("db/mask-requests.js", () => {
-  beforeAll((done) => connectToServer(done));
-  afterAll((done) => close(done));
+  beforeAll(() => connectToServer());
+  afterAll(() => close());
 
   test("get() returns an array of mask requests", () =>
     maskRequests

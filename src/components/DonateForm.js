@@ -32,7 +32,7 @@ const DonateForm = () => {
   return (
     <Form
       id="donate-form"
-      action="https://donatemask.ca/create-checkout-session"
+      action="/create-checkout-session"
       method="post"
     >
       <h3 className="display-3"> Donate a mask&nbsp;:)</h3>

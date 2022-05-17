@@ -3,8 +3,8 @@ const donations = require("../../../server/db/donations");
 
 describe("db/donations.js", () => {
   // Connect and close before/after each test so we wipe the data
-  beforeEach((done) => connectToServer(done));
-  afterEach((done) => close(done));
+  beforeEach(() => connectToServer());
+  afterEach(() => close());
 
   test("get() returns an array of donations", () =>
     donations.get().then((result) => expect(Array.isArray(result)).toBe(true)));

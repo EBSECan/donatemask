@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(require("./routes"));
 
+/* istanbul ignore next */
 app.use((err, req, res, next) => {
   console.error({ err }, 'Server error');
-
   res.status(500).send('Internal Server Error');
 });
 

@@ -9,8 +9,8 @@ import Stats from "./Stats";
 import { fetcher } from "../../util";
 
 const Summary = () => {
-  const { data: stats } = useSWR("https://donatemask.ca/api/stats", fetcher);
-  const { data: messages } = useSWR("https://donatemask.ca/api/messages", fetcher);
+  const { data: stats } = useSWR("/api/stats", fetcher);
+  const { data: messages } = useSWR("/api/messages", fetcher);
 
   return (
     <>

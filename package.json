@@ -31,7 +31,7 @@
    "scripts": {
       "start": "react-scripts start",
       "build": "react-scripts build && gulp licenses",
-      "test": "jest -c jest.config.json --",
+      "test": "jest -c jest.config.json --runInBand --",
       "test:watch": "jest -c jest.config.json --watch --",
       "coverage": "jest -c jest.config.json --collectCoverage --",
       "eject": "react-scripts eject",
@@ -79,5 +79,6 @@
    "overrides": {
       "glob-parent": "latest",
       "nth-check": "latest"
-   }
+   },
+   "proxy": "http://localhost:4443"
 }

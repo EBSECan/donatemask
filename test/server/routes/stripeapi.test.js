@@ -1,6 +1,7 @@
 const request = require("supertest");
 
 const app = require("../../../server/api");
+const { webUrl } = require("../../../server/util");
 const donations = require("../../../server/db/donations");
 const { connectToServer, close } = require("../../../server/db/conn");
 
@@ -8,8 +9,8 @@ const { connectToServer, close } = require("../../../server/db/conn");
 jest.mock("stripe");
 
 describe("stripeapi", () => {
-  beforeAll((done) => connectToServer(done));
-  afterAll((done) => close(done));
+  beforeAll(() => connectToServer());
+  afterAll(() => close());
 
   const orderDetails = {
     name: "Stripe Checkout Name",
@@ -39,7 +40,7 @@ describe("stripeapi", () => {
       await request(app)
         .get("/order/success?session_id=test")
         .expect(302)
-        .expect("Location", "https://donatemask.ca/donate?success=true");
+        .expect("Location", `${webUrl}/donate?success=true`);
 
       // 3. Make sure a donation was added to the database
       const data = await donations.get();
