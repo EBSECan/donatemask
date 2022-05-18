@@ -12,7 +12,13 @@ router.get("/api/stats", async (req, res, next) => {
       donations.stats(),
       maskRequests.stats(),
     ]);
-    res.json({
+
+    // Explicitly add cache-control to prevent Passenger/Apache using a long
+    // default. For /api/* we want short-lived cache (10 min), but will tolerate stale
+    // content while it's being updated (600=10 min, 60=1 min, 86400=1 day)
+    res
+      .header('Cache-Control', 'max-age=600, stale-while-revalidate=60, stale-if-error=86400')
+      .json({
       ...donationsStats,
       ...maskRequestsStats,
       unfundedMasks: maskRequestsStats.masksRequested > donationsStats.masksDonated ?
@@ -27,7 +33,12 @@ router.get("/api/stats", async (req, res, next) => {
 router.get("/api/messages", async (req, res, next) => {
   const count = parseInt(req.query.count, 10) || 25;
   try {
-    res.json(await maskRequests.messages(count));
+    // Explicitly add cache-control to prevent Passenger/Apache using a long
+    // default. For /api/* we want short-lived cache (10 min), but will tolerate stale
+    // content while it's being updated (600=10 min, 60=1 min, 86400=1 day)
+    res
+      .header('Cache-Control', 'max-age=600, stale-while-revalidate=60, stale-if-error=86400')
+      .json(await maskRequests.messages(count));
   } catch(err) {
     next(err);
   }

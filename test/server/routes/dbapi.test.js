@@ -10,6 +10,13 @@ describe("dbapi", () => {
   afterAll((done) => close(done));
 
   describe("/api/messages", () => {
+    test("GET /api/messages should send correct cache-control header", () =>
+      request(app)
+      .get("/api/messages")
+      .expect("Cache-Control", "max-age=600, stale-while-revalidate=60, stale-if-error=86400")
+      .expect(200)
+    );
+
     test("GET /api/messages should include the expected properties", () =>
       request(app)
         .get("/api/messages")
@@ -106,6 +113,13 @@ describe("dbapi", () => {
   });
 
   describe("/api/stats", () => {
+    test("GET /api/stats should send correct cache-control header", () =>
+      request(app)
+      .get("/api/stats")
+      .expect("Cache-Control", "max-age=600, stale-while-revalidate=60, stale-if-error=86400")
+      .expect(200)
+    );
+
     const ensureTotalUnfundedMasks = (unfunded, requested, donated) => {
       if (requested > donated) {
         expect(unfunded).toEqual(requested - donated);
