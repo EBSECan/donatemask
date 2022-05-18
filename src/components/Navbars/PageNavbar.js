@@ -50,7 +50,7 @@ class PageNavbar extends React.Component {
     collapseClasses: "",
     collapseOpen: false,
   };
-  
+
   onExiting = () => {
     this.setState({
       collapseClasses: "collapsing-out",
