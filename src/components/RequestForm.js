@@ -249,7 +249,7 @@ const RequestForm = () => {
         <Row>
           <Col md="6">
             <FormGroup>
-              <Button color="success" outline type="submit" id="full-width">
+              <Button color="success" outline type="submit" className="full-width">
                 Request
               </Button>
             </FormGroup>

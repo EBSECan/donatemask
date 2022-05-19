@@ -1,0 +1,28 @@
+# For testing the front-end, back-end, and Stripe Test integration
+
+services:
+  # Front-end + Back-end running on http://localhost:4443
+  donatemask:
+    container_name: donatemask
+    build: .
+    init: true
+    environment:
+      - PORT=4443
+      - WEB_URL=http://localhost:4443
+      # Use the Dockerized mongo instance for testing
+      - ATLAS_URI=mongodb://root:password@mongodb:27017
+      # Serve the web site from the express server (same origin)
+      - USE_STATIC_HOSTING=1
+      # Forward these from the host environmnet (should be set already)
+      - STRIPE_API_KEY
+      - STRIPE_PRICE_ID
+    ports:
+      - "4443:4443"
+
+  # Testing instance of MongoDB
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
