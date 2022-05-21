@@ -23,10 +23,7 @@ test('Able to make a donation via Stripe', async ({ page }) => {
   await page.click("#donate-agree-label.custom-control-label", { position: { x: 3, y: 3 } });
 
   // 3. Click DONATE and wait for navigation to stripe
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('#donate-submit')
-  ]);
+  await page.click('#donate-submit');
 
   // 4. Fill Stripe form, see https://stripe.com/docs/testing
   await page.fill('#cardNumber', '4242 4242 4242 4242');
@@ -37,6 +34,7 @@ test('Able to make a donation via Stripe', async ({ page }) => {
   await page.fill('#cardExpiry', `${month}/${year}`);
   await page.fill('#cardCvc', '123');
   await page.fill('#billingName', 'Test Name');
+  await page.selectOption('#billingCountry', { label: 'Canada' });
   await page.fill('#billingPostalCode', 'M5W 1E6');
 
   // 5. Submit the Stripe form by pressing Pay and wait for navigation back
@@ -45,5 +43,6 @@ test('Able to make a donation via Stripe', async ({ page }) => {
     page.click('button.SubmitButton'),
   ]);
 
-  await expect(page.locator('.thank-you')).toContainText('Donation Successful. Thank You!');
+  // 6. Wait for the success message
+  await expect(page.locator('.thank-you')).toContainText('Donation Successful. Thank You!', { timeout: 15000 });
 });

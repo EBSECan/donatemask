@@ -5,3 +5,5 @@ package-lock.json
 /server/node_modules
 coverage/
 .DS_Store
+# Playwright test videos, traces
+test-results/
