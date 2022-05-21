@@ -41,6 +41,53 @@ a {
   width: 45%;
 }
 
+.donate-intro {
+  border: 0;
+}
+
+.donate-intro a {
+  color: #3881f5;;
+}
+
+.donation-calculation {
+  font-size: 0.9em;
+}
+
+.donation-amount {
+  font-weight: bold;
+}
+
+.donation-tiers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.donation-tier-button {
+  display: block;
+  margin-bottom: 10px;
+  color: #525f7f !important;
+}
+
+.donation-quotes {
+  margin-top: 3em;
+}
+
+.donation-quote {
+  margin-right: 2em;
+  margin-left: 2em;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.donation-other-ways {
+  margin-top: 2em;
+}
+
+.donation-other-ways a {
+  color: #3881f5;
+}
+
 .full-width {
   width: 100%;
 }
