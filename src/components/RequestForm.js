@@ -84,7 +84,7 @@ const RequestForm = () => {
             newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' + postalCode;
         }
     // Adding Mask Request to DB
-    fetch("https://donatemask.ca/api/mask_request_add", {
+    fetch("/api/mask_request_add", {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -249,7 +249,7 @@ const RequestForm = () => {
         <Row>
           <Col md="6">
             <FormGroup>
-              <Button color="success" outline type="submit" id="full-width">
+              <Button color="success" outline type="submit" className="full-width">
                 Request
               </Button>
             </FormGroup>

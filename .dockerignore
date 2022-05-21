@@ -1,0 +1,8 @@
+__mocks__/
+.github/
+build/
+coverage/
+node_modules/
+server/node_modules/
+test/
+.git/

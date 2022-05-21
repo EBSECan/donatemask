@@ -41,7 +41,7 @@ a {
   width: 45%;
 }
 
-#full-width {
+.full-width {
   width: 100%;
 }
 
@@ -172,6 +172,10 @@ p.answer a {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.thank-you a {
+  color: #3881f5;
 }
 
 .social-share-icons {

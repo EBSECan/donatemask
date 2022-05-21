@@ -32,7 +32,7 @@ const DonateForm = () => {
   return (
     <Form
       id="donate-form"
-      action="https://donatemask.ca/create-checkout-session"
+      action="/create-checkout-session"
       method="post"
     >
       <h3 className="display-3"> Donate a mask&nbsp;:)</h3>
@@ -95,6 +95,7 @@ const DonateForm = () => {
           <FormGroup>
             <Label for="donate-msg">Message (Optional)</Label>
             <Input
+              id="donate-msg"
               name="donationMsg"
               placeholder="I'm donating because..."
               type="textarea"
@@ -117,7 +118,7 @@ const DonateForm = () => {
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
               />
-              <label className="custom-control-label" htmlFor="donate-agree">
+              <label className="custom-control-label" id="donate-agree-label" htmlFor="donate-agree">
                 Please agree to the <a href="/terms">terms</a> and{" "}
                 <a href="/privacy">privacy policy</a> before proceeding.
               </label>
@@ -130,7 +131,8 @@ const DonateForm = () => {
             disabled={!agreed}
             type="submit"
             tabIndex="6"
-            id="full-width"
+            className="full-width"
+            id="donate-submit"
           >
             Donate
           </Button>

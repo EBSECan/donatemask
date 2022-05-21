@@ -66,7 +66,96 @@ To contribute:
 - fork and clone this repo
 - create a new branch
 - cd into the main project folder with `cd donatemask`
-- install the dependencies with `npm install` - make sure to use nodejs version >= v13.14.0
-- run `npm start` to build and run the dev server. This will also watch for changes and rebuild when a file is saved.
-- commit your changes to the new branch you created
-- make a pull request to the main branch
+
+### Unit Tests
+
+To run the tests:
+
+```sh
+npm test
+```
+
+You can also run a single test:
+
+```sh
+npm test test.name
+```
+
+Or run the tests in watch mode:
+
+```sh
+npm run test:watch
+```
+
+To get a test coverage report, use:
+
+```sh
+npm run coverage
+```
+
+See the `coverage/lcov-report/index.html` file to see detailed information about files and lines of code not currently being tested.
+
+### Integration Tests
+
+The integration tests use headless browsers to simulate real interactions between the front-end, back-end, and third-party services (e.g., Stripe).  To run these locally, you'll first need to install the headless browsers:
+
+```sh
+npx playwright install
+```
+
+Now build and run the front-end and back-end using Docker:
+
+```sh
+docker-compose up
+```
+
+Finally, run the integration tests:
+
+```sh
+npm run test:integration
+```
+
+To debug the tests, and see the [Playwright Debug docs](https://playwright.dev/docs/debug).  Specifically, you can run with the `PWDEBUG=1` environment variable set to open the [Playwright Inspector](https://playwright.dev/docs/inspector).  You might also want to comment-out all but 1 of the browsers in `playwright.config.js` so you can focus on a single run.
+
+You can also turn-on the browsers to visually see them run the tests:
+
+```sh
+npm run test:integration-debug
+```
+
+### Back-End
+
+To run the back-end for local development:
+
+```sh
+$ cd server
+$ npm install
+$ npm run dev
+```
+
+The back-end will be running on http://localhost:4443.  You should run the front-end next to use it.
+
+NOTE: the back-end is currently limited to node v13.14.0 in production, so be aware of what version you run locally.
+
+### Front-End
+
+To run the front-end for local development:
+
+```sh
+$ npm install
+$ npm start
+```
+
+The front-end will be running on http://localhost:3000.  The front-end will proxy requests to the back-end in development mode at http://localhost:4443, so make sure you are running the back-end first.
+
+### Running Everything Together
+
+To run the front-end and back-end together locally in development, use:
+
+```sh
+$ npm run dev
+```
+
+### Pull Requests
+
+You're welcome to file issues and create a pull requests.

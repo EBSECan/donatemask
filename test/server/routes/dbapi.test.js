@@ -6,8 +6,8 @@ const donations = require("../../../server/db/donations");
 const maskRequests = require("../../../server/db/mask-requests");
 
 describe("dbapi", () => {
-  beforeAll((done) => connectToServer(done));
-  afterAll((done) => close(done));
+  beforeAll(() => connectToServer());
+  afterAll(() => close());
 
   describe("/api/messages", () => {
     test("GET /api/messages should send correct cache-control header", () =>
