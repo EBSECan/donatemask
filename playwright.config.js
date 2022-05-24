@@ -5,9 +5,11 @@ const { devices } = require('@playwright/test');
 const config = {
   forbidOnly: !!process.env.CI,
   worker: process.env.CI ? 1 : undefined,
+  retries: 2,
   reporter: 'list',
   use: {
     trace: 'on-first-retry',
+    video: 'on-first-retry',
   },
   projects: [
     // Desktop
@@ -30,10 +32,6 @@ const config = {
         browserName: 'chromium',
         ...devices['Pixel 4'],
       },
-    },
-    {
-      name: 'Mobile Safari',
-      use: devices['iPhone 12'],
     },
   ],
 };
