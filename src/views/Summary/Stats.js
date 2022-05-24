@@ -3,14 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import SummaryCard from './SummaryCard';
 import { TrophyIcon, SatisfiedIcon, SoundWaveIcon } from "./Icons";
-
-// Format the value with a comma if present, or return '...'
-const formatValue = value => {
-    if(!value && value !== 0) {
-        return '...';
-    }
-    return new Intl.NumberFormat().format(value);
-};
+import { formatNumber } from '../../util';
 
 const Stats = ({ stats = {} }) => {
     const { masksDonated, masksRequested, masksFulfilled, unfundedMasks, testsRequested, testsFulfilled } = stats;
@@ -24,7 +17,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of Masks Funded by Donation"
-                  value={formatValue(masksDonated)}
+                  value={formatNumber(masksDonated)}
                   icon={<TrophyIcon />}
                   buttonText="Donate"
                   buttonHref="/donate"
@@ -33,7 +26,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of Masks Requested"
-                  value={formatValue(masksRequested)}
+                  value={formatNumber(masksRequested)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"
                   buttonHref="/request"
@@ -43,7 +36,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of Masks Fulfilled"
-                  value={formatValue(masksFulfilled)}
+                  value={formatNumber(masksFulfilled)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"
                   buttonHref="/request"
@@ -53,7 +46,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of Masks Needing Funding"
-                  value={formatValue(unfundedMasks)}
+                  value={formatNumber(unfundedMasks)}
                   icon={<SoundWaveIcon />}
                   buttonText="Donate"
                   buttonHref="/donate"
@@ -65,7 +58,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of COVID Tests Requested"
-                  value={formatValue(testsRequested)}
+                  value={formatNumber(testsRequested)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"
                   buttonHref="/request"
@@ -75,7 +68,7 @@ const Stats = ({ stats = {} }) => {
               <Col lg="3">
                 <SummaryCard
                   title="No. of COVID Tests Fulfilled"
-                  value={formatValue(testsFulfilled)}
+                  value={formatNumber(testsFulfilled)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"
                   buttonHref="/request"
