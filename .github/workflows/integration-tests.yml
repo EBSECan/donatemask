@@ -1,35 +1,22 @@
-name: Continuous Integration
+name: Integration Tests
 
+# These tests can only be run on `main` vs in PRs from forks
+# because they require access to repo secrets. If the tests
+# fail, videos will be uploaded to show what happened in the
+# test browsers.
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
 
 jobs:
-  unit-tests:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # We currently have to deploy on 13.14.0, so test on that plus an LTS
-        node: [ 13.14.0, 16 ]
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - run: |
-          npm install
-          npm test
-
   integration-tests:
     runs-on: ubuntu-latest
     env:
       STRIPE_API_KEY: ${{ secrets.STRIPE_API_KEY }}
       STRIPE_PRICE_ID: ${{ secrets.STRIPE_PRICE_ID }}
     steps:
+      # Sanity check to make sure the secrets are being injected properly
       - if: ${{ env.STRIPE_API_KEY == '' }}
         run: echo 'STRIPE_API_KEY env var is NOT set'
       - uses: actions/checkout@v3
@@ -42,7 +29,7 @@ jobs:
         run: docker-compose up -d
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Tests
+      - name: Run Integration Tests
         run: npm run test:integration
       # If the tests fail, upload videos of what happened
       - uses: actions/upload-artifact@v3
