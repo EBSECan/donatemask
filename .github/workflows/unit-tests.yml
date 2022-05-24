@@ -1,0 +1,25 @@
+name: Unit Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # We currently have to deploy on 13.14.0, so test on that plus an LTS
+        node: [ 13.14.0, 16 ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: |
+          npm install
+          npm test

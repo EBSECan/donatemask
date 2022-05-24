@@ -69,7 +69,9 @@ To contribute:
 
 ### Unit Tests
 
-To run the tests:
+Unit tests are automatically run automatically on every pull request and merge to the `main` branch.
+
+To run the tests locally, use:
 
 ```sh
 npm test
@@ -97,7 +99,11 @@ See the `coverage/lcov-report/index.html` file to see detailed information about
 
 ### Integration Tests
 
-The integration tests use headless browsers to simulate real interactions between the front-end, back-end, and third-party services (e.g., Stripe).  To run these locally, you'll first need to install the headless browsers:
+The integration tests use headless browsers to simulate real interactions between the front-end, back-end, and third-party services (e.g., Stripe).
+
+Integration tests are automatically run automatically on merge to the `main` branch, but not for pull requests (i.e., they require access to repo secrets not available to PRs).  If the tests fail, videos of the failing test run(s) are automatically uploaded to GitHub as a build artifact (see the Actions item for your commit).
+
+To run these locally, you'll first need to install the headless browsers:
 
 ```sh
 npx playwright install
@@ -106,7 +112,7 @@ npx playwright install
 Now build and run the front-end and back-end using Docker:
 
 ```sh
-docker-compose up
+docker-compose up --build
 ```
 
 Finally, run the integration tests:
