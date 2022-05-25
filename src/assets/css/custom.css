@@ -34,11 +34,9 @@ a {
 
 /* 1. Forms */
 #request-form {
-  width: 45%;
-}
-
-#donate-form {
-  width: 45%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .donate-intro {

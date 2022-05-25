@@ -1,246 +1,290 @@
 import React, { useState } from "react";
-import { MASK_SIZE, MASK_PRICE } from "../const";
-import { Redirect } from "react-router-dom";
-// reactstrap components
+import { MASK_SIZE } from "../const";
+import { useHistory } from "react-router-dom";
 import {
-    UncontrolledAlert,
-    Button,
-    FormGroup,
-    Form,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
-    DropdownMenu,
-    Row,
-    Col,
-    DropdownItem,
+  Container,
+  UncontrolledAlert,
+  Button,
+  FormGroup,
+  Form,
+  Label,
+  Input,
+  Row,
+  Col,
 } from "reactstrap";
 
-const RequestForm = () => {
-    const maskSizes = Object.values(MASK_SIZE);
-    const [requestorType, setRequestorType] = useState("individual");
-    const [organizationName, setOrganizationName] = useState(null);
-    const [organizationType, setOrganizationType] = useState(null);
+// Create a single address line from address components.
+// The address may contain newlines, switch them to commas.
+const buildAddress = (address, city, province, postalCode) =>
+  [address.replace(/\r?\n/, ", "), city, province, postalCode]
+    .map(value =>value.trim())
+    .join(", ");
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [address, setAddress] = useState("");
-    const [apartment, setApartment] = useState("");
-    const [city, setCity] = useState("");
-    const [province, setProvince] = useState("");
-    const [postalCode, setPostal] = useState("");
-    const [maskAmntRegular, setMaskAmntRegular] = useState(0);
-    const [maskAmntSmall, setMaskAmntSmall] = useState(0);
-	const [testAmnt, setTestAmnt] = useState(0);
+const RequestForm = () => {
+  const history = useHistory();
+
+  const [requestorType, setRequestorType] = useState("individual");
+  const [organizationName, setOrganizationName] = useState("");
+  const [organizationType, setOrganizationType] = useState("");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [province, setProvince] = useState("Ontario");
+  const [postalCode, setPostal] = useState("");
+  const [maskAmntRegular, setMaskAmntRegular] = useState(0);
+  const [maskAmntSmall, setMaskAmntSmall] = useState(0);
+  const [testAmnt, setTestAmnt] = useState(0);
 
   const [msg, setMsg] = useState("");
-  const [error, setError] = useState("");
-  const [submitStatus, setSubmitStatus] = useState(false);
+  const [error, setError] = useState();
   const [submitFailed, setSubmitFailed] = useState(false);
 
-    const onMaskAmntChange = (event, maskSize) => {
-        switch(maskSize) {
-			case "Regular-size Masks":
-				setMaskAmntRegular(parseInt(event.target.value));
-			break;
-			case "Small-size Masks":
-				setMaskAmntSmall(parseInt(event.target.value));
-			break;
-			case "Boxes of COVID Tests":
-				setTestAmnt(parseInt(event.target.value));
-			break;
-			default:
-				setMaskAmntRegular(parseInt(event.target.value));
-		}	
-    };
+  const onMaskAmntChange = (event, maskSizeId) => {
+    const amount = parseInt(event.target.value, 10);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!maskAmntRegular && !maskAmntSmall && !testAmnt) {
-            setError("Please request at least one mask or box of COVID tests.");
-            return false;
-        }
-        
-        const newMaskRequest = {
-            requestorType: requestorType,
-            organizationName,
-            organizationType,
-            name: name,
-            email: email,
-            maskAmntRegular: maskAmntRegular,
-            maskAmntSmall: maskAmntSmall,
-			testAmnt: testAmnt,
-            address: address,
-            postal: postalCode,
-		province:province,
-            msg: msg,
-            timestamp: new Date(),
-        };
-        if (apartment === "") {
-            newMaskRequest.address = address + ', ' + city + ', ' + province + ', ' + postalCode;
-        }
-        else {
-            newMaskRequest.address = address + ', ' + apartment + ', ' + city + ', ' + province + ', ' + postalCode;
-        }
-    // Adding Mask Request to DB
-    fetch("/api/mask_request_add", {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newMaskRequest),
-    })
-      .then((res) => {
-        if(!res.ok) {
-          throw new Error('Unable to add new mask request');
-        }
-        setSubmitStatus(true);
-      })
-      .catch(() => {
-        setSubmitFailed(true);
-      });
+    switch (maskSizeId) {
+      case "regular":
+        setMaskAmntRegular(amount);
+        break;
+      case "small":
+        setMaskAmntSmall(amount);
+        break;
+      case "test":
+        setTestAmnt(amount);
+        break;
+      default:
+        console.warn("Unexpected mask size id", maskSizeId);
+        setMaskAmntRegular(amount);
+    }
+
+    // Clear the error if the mask amount has been fixed
+    // and we're in the error state.
+    if (error && amount) {
+      setError(null);
+    }
   };
 
-    return (
-        <>
-            <Form onSubmit={handleSubmit} id="request-form">
-                <h3 className="display-3"> Request masks and boxes of COVID tests form</h3>
-                <p>
-                    {" "}
-                    Mask requests are funded by charitable donations.  Feel free to leave a
-                    thank you message to donors.
-                </p>
-                <div>
-                    <p> Choose Requestor Type </p>
-                    <select
-                        value={requestorType}
-                        onChange={(e) => setRequestorType(e.target.value)}
-                    >
-                        <option value="individual">Individual</option>
-                        <option value="organization">Organization</option>
-                    </select>
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-                    <br />
-                    <br />
-                </div>
+    if (!maskAmntRegular && !maskAmntSmall && !testAmnt) {
+      setError("Please request at least one mask size or box of COVID tests.");
+      return false;
+    }
+
+    const newMaskRequest = {
+      requestorType,
+      organizationName,
+      organizationType,
+      name,
+      email,
+      maskAmntRegular,
+      maskAmntSmall,
+      testAmnt,
+      address: buildAddress(address, city, province, postalCode),
+      province,
+      postal: postalCode,
+      msg,
+      timestamp: new Date(),
+    };
+
+    try {
+      // Adding Mask Request to DB
+      const res = await fetch("/api/mask_request_add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newMaskRequest),
+      });
+      if (!res.ok) {
+        throw new Error("Unable to add new mask request");
+      }
+      // Navigate to the confirmation page
+      history.push("/confirmrequest");
+    } catch (err) {
+      console.log("Error submitting mask request", err);
+      setSubmitFailed(true);
+    }
+  };
+
+  return (
+    <Container>
+      <Form onSubmit={handleSubmit} id="request-form">
+        <h3 className="display-3">Request Masks and COVID Tests</h3>
+        <p>Requests are free, and funded by charitable donations.</p>
+        <Row>
+          <Col md="6">
+            <FormGroup>
+              <Label for="requestor-type">Choose Requestor Type</Label>
+              <Input
+                id="requestor-type"
+                type="select"
+                value={requestorType}
+                onChange={(e) => setRequestorType(e.target.value)}
+              >
+                <option value="individual">Individual</option>
+                <option value="organization">Organization</option>
+              </Input>
+            </FormGroup>
+          </Col>
+        </Row>
 
         {/* Requestor Type - Organization Fields */}
         {requestorType == "organization" && (
           <Row>
             <Col md="6">
               <FormGroup>
+                <Label for="organization-name">Organization Name</Label>
                 <Input
-                  placeholder="Organization Name"
+                  id="organization-name"
                   type="text"
+                  autoComplete="organization"
+                  value={organizationName}
+                  required
                   onChange={(e) => setOrganizationName(e.target.value)}
                 />
               </FormGroup>
             </Col>
             <Col md="6">
               <FormGroup>
+                <Label for="organization-type">Organization Type</Label>
                 <Input
-                  placeholder="Organization Type"
+                  id="organization-type"
+                  type="text"
+                  placeholder="School, Church, etc."
+                  required
+                  value={organizationType}
                   onChange={(e) => setOrganizationType(e.target.value)}
                 />
               </FormGroup>
             </Col>
           </Row>
         )}
+
         <Row>
           <Col md="6">
             <FormGroup>
+              <Label for="request-name">Name</Label>
               <Input
-                placeholder="Name"
+                id="request-name"
                 type="text"
+                autoComplete="name"
+                required
+                value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </FormGroup>
           </Col>
           <Col md="6">
             <FormGroup>
-               <Input
-               placeholder="name@example.com"
-               type="email"
-               onChange={(e) => setEmail(e.target.value)}
-               />
-               </FormGroup>
-                  </Col>
-                  </Row>
-              <Row>
-                  <Col md="6">
-                      <FormGroup>
-                          <Input
-                              id="exampleFormControlInput1"
-                              placeholder="#, Street Name"
-                              onChange={(e) => setAddress(e.target.value)}
-                          />
-                      </FormGroup>
-                  </Col>
-                  <Col md="6">
-                      <FormGroup>
-                          <Input
-                              id="exampleFormControlInput1"
-                              placeholder="Apartment #"
-                              onChange={(e) => setApartment(e.target.value)}
-                          />
-                      </FormGroup>
-                  </Col>
-                  <Col md="6">
-                      <FormGroup>
-                          <Input
-                              id="exampleFormControlInput1"
-                              placeholder="City"
-                              onChange={(e) => setCity(e.target.value)}
-                          />
-                      </FormGroup>
-                  </Col>
-                  <Col md="6">
-                      <FormGroup>
-                          <Input
-                              id="exampleFormControlInput1"
-                              placeholder="Province"
-                              onChange={(e) => setProvince(e.target.value)}
-                          />
-                      </FormGroup>
-                  </Col>
-              </Row>
-              <Row>
-                  <Col md="6">
-                      <FormGroup>
-                          <Input
-                              id="exampleFormControlInput1"
-                              placeholder="Postal Code"
-                              onChange={(e) => setPostal(e.target.value)}
-                          />
-                      </FormGroup>
-                  </Col>
-              </Row>
-        <h3>Masks Types and Quantities and COVID Test Boxes (5-count) Quantities</h3>
+              <Label for="request-email">Email</Label>
+              <Input
+                id="request-email"
+                autoComplete="email"
+                required
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
         <Row>
-          {maskSizes.map((maskSize) => {
-            return (
-              <Col md="6">
-                <FormGroup>
-                  <p>{maskSize}</p>
-                  <Input
-        			placeholder={`Please enter # requested`}
-                    type="number"
-                    min="0"
-                    onChange={(e) => onMaskAmntChange(e, maskSize)}
-                  />
-                </FormGroup>
-              </Col>
-            );
-          })}
+          <Col md="12">
+            <FormGroup>
+              <Label for="request-address">Address</Label>
+              <Input
+                id="request-address"
+                autoComplete="street-address"
+                type="textarea"
+                required
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </FormGroup>
+          </Col>
+          <Col md="6">
+            <FormGroup>
+              <Label for="request-city">City</Label>
+              <Input
+                id="request-city"
+                required
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </FormGroup>
+          </Col>
+          <Col md="6">
+            <FormGroup>
+              <Label for="request-province">Province</Label>
+              <Input
+                id="request-province"
+                type="select"
+                required
+                value={province}
+                onChange={(e) => setProvince(e.target.value)}
+              >
+                <option>Alberta</option>
+                <option>British Columbia</option>
+                <option>Manitoba</option>
+                <option>New Brunswick</option>
+                <option>Newfoundland and Labrador</option>
+                <option>Northwest Territories</option>
+                <option>Nova Scotia</option>
+                <option>Nunavut</option>
+                <option>Ontario</option>
+                <option>Prince Edward Island</option>
+                <option>Québec</option>
+                <option>Saskatchewan</option>
+                <option>Yukon</option>
+              </Input>
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="6">
+            <FormGroup>
+              <Label for="request-postal-code">Postal Code</Label>
+              <Input
+                id="request-postal-code"
+                autoComplete="postal-code"
+                type="text"
+                value={postalCode}
+                onChange={(e) => setPostal(e.target.value)}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+        <h3>Mask Size and COVID Test Quantities</h3>
+        <Row>
+          {Object.entries(MASK_SIZE).map(([id, label]) => (
+            <Col md="4" key={id}>
+              <FormGroup>
+                <Label for={`request-amount-${id}`}>{label}</Label>
+                <Input
+                  id={`request-amount-${id}`}
+                  placeholder={`Number Requested`}
+                  type="number"
+                  min="0"
+                  onChange={(e) => onMaskAmntChange(e, id)}
+                />
+              </FormGroup>
+            </Col>
+          ))}
         </Row>
 
         <Row>
           <Col md="12">
             <FormGroup>
+              <Label for="request-message">Thank-You Message (optional)</Label>
               <Input
-                placeholder="Thank You Message (Optional)"
-                type="text"
+                id="request-message"
+                type="textarea"
+                value={msg}
                 onChange={(e) => setMsg(e.target.value)}
               />
             </FormGroup>
@@ -249,33 +293,36 @@ const RequestForm = () => {
         <Row>
           <Col md="6">
             <FormGroup>
-              <Button color="success" outline type="submit" className="full-width">
+              <Button
+                id="request-submit"
+                disabled={!!error}
+                color="success"
+                type="submit"
+                className="full-width"
+              >
                 Request
               </Button>
             </FormGroup>
           </Col>
         </Row>
+
         {error && (
           <UncontrolledAlert color="danger" fade={false}>
-            <span className="alert-inner--icon">
-              <i className="ni ni-like-2" />
-            </span>{" "}
-            <span className="alert-inner--text">{error}</span>
+            <span className="alert-inner--text request-form-error">{error}</span>
           </UncontrolledAlert>
         )}
-        {submitStatus &&(
-                    <Redirect to='/confirmrequest' />
-        )}
+
         {submitFailed && (
           <UncontrolledAlert color="danger" fade={false}>
-            <span className="alert-inner--icon">
-              <i className="ni ni-fat-remove" />
-            </span>{" "}
-            <span className="alert-inner--text">{"Sorry, Something Went Wrong!"}</span>
+            <span className="alert-inner--text request-form-error">
+              {
+                "Sorry, we were unable to submit your request. Please try again later."
+              }
+            </span>
           </UncontrolledAlert>
         )}
       </Form>
-    </>
+    </Container>
   );
 };
 
