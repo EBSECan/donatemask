@@ -23,10 +23,13 @@ import { formatCurrency } from "../util";
 // Donation tiers: number of masks
 const tiers = [10, 25, 50, 100, 500, 1000];
 
+// Initial donation tier to highlight
+const defaultTier = 50;
+
 const DonateForm = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [maskAmnt, setMaskAmnt] = useState(25);
+  const [maskAmnt, setMaskAmnt] = useState(defaultTier);
   const [msg, setMsg] = useState();
   const [agreed, setAgreed] = useState(false);
 
@@ -73,7 +76,7 @@ const DonateForm = () => {
                 <Row>
                   <Col>
                     <FormGroup>
-                      <Label for="donate-name">
+                      <Label for="donate-maskAmnt">
                         Or enter a custom number of masks:
                       </Label>
                       <Input
@@ -106,6 +109,7 @@ const DonateForm = () => {
                       <Input
                         id="donate-name"
                         name="name"
+                        autoComplete="name"
                         type="text"
                         tabIndex="2"
                         required
@@ -122,6 +126,7 @@ const DonateForm = () => {
                       <Input
                         name="email"
                         id="donate-email"
+                        autoComplete="email"
                         type="email"
                         required
                         tabIndex="2"
