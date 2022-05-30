@@ -1,38 +1,15 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "assets/img/brand/logo.svg";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 // reactstrap components
 import {
   Button,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
-  UncontrolledDropdown,
-  Media,
   NavbarBrand,
+  Nav,
   Navbar,
   NavItem,
   NavLink,
-  Nav,
   Container,
   Row,
   Col,
@@ -74,7 +51,12 @@ class PageNavbar extends React.Component {
           >
             <Container>
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                <img alt="..." src={Logo} />
+                <img
+                  className="logo"
+                  alt="Donate A Mask logo"
+                  src="/logos/logo-128x128.png"
+                />
+                <span className="logo-title">Donate a Mask</span>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -90,62 +72,69 @@ class PageNavbar extends React.Component {
                   <Row>
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
-                        <h2> Donate Mask</h2>
+                        <h2>Donate Mask</h2>
                       </Link>
                     </Col>
                     <Col className="collapse-close" xs="6">
                       <button
                         className="navbar-toggler justify-content-end"
                         id="navbar_global"
-                      >
-                        <span />
-                        <span />
-                      </button>
+                      ></button>
                     </Col>
                   </Row>
                 </div>
-                <Nav className="navbar-nav-hover align-items-lg-center" navbar>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/donate">
-                      <span className="nav-link-inner--text">Donate</span>
-                    </Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/request" id="yeet?">
-                      <span className="nav-link-inner--text">Request</span>
-                    </Link>
-                  </a>
-				   <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/buy" id="buy">
-                      <span className="nav-link-inner--text">Buy</span>
-                    </Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/summary">
-                      <span className="nav-link-inner--text">Summary</span>
-                    </Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/about">
-                      <span className="nav-link-inner--text">About Us</span>
-                    </Link>
-                  </a>
-                  <a className="nav-link" href="#">
-                    <i className="ni ni-ui-04 d-lg-none mr-1" />
-                    <Link to="/faq">
-                      <span className="nav-link-inner--text">FAQ</span>
-                    </Link>
-                  </a>
+
+                <Nav className="mx-auto" navbar>
+                  <NavItem>
+                    <NavLink className="nav-link-text-cta" tag={Link} to="/donate">
+                      Donate
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link-text-cta" tag={Link} to="/request">
+                      Request
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link-text" tag={Link} to="/buy">
+                      Buy
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link-text" tag={Link} to="/faq">
+                      FAQ
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link-text" tag={Link} to="/summary">
+                      Summary
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="nav-link-text" tag={Link} to="/about">
+                      About&nbsp;Us
+                    </NavLink>
+                  </NavItem>
                 </Nav>
-                <Nav
-                  className="align-items-lg-center ml-lg-auto md-block"
-                  navbar
-                >
+
+                <Nav className="mx-auto" navbar>
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
+                      href="https://twitter.com/donatemask"
+                      id="tooltip184698705"
+                      target="_blank"
+                    >
+                      <i className="fa fa-twitter-square" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Twitter
+                      </span>
+                    </NavLink>
+                    <UncontrolledTooltip delay={0} target="tooltip184698705">
+                      Follow us on Twitter
+                    </UncontrolledTooltip>
+                  </NavItem>
+
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -181,22 +170,6 @@ class PageNavbar extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://twitter.com/donatemask"
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
                       href="https://github.com/mekkim/donatemask"
                       id="tooltip112445449"
                       target="_blank"
@@ -210,19 +183,21 @@ class PageNavbar extends React.Component {
                       Star us on Github
                     </UncontrolledTooltip>
                   </NavItem>
-
-                  <NavItem className="d-none d-lg-block ml-lg-4">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
+                  <NavItem>
+                    <NavLink
+                      className="nav-link-icon"
                       href="mailto:donate@donatemask.ca"
+                      id="tooltip112445643"
                       target="_blank"
                     >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-envelope mr-2" />
+                      <i className="fa fa-envelope" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        Email
                       </span>
-                      <span className="nav-link-inner--text ml-1">Contact</span>
-                    </Button>
+                    </NavLink>
+                    <UncontrolledTooltip delay={0} target="tooltip112445643">
+                      Contact us by email
+                    </UncontrolledTooltip>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
