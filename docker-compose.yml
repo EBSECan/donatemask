@@ -4,7 +4,14 @@ services:
   # Front-end + Back-end running on http://localhost:4443
   donatemask:
     container_name: donatemask
-    build: .
+    build:
+      context: .
+      args:
+        # Add overrides for the Stripe product links to use test endpoints.
+        # The ebook links all point to a $5.00 test product that redirects to the ebook download
+        - STRIPE_EBOOK_LINK=https://buy.stripe.com/test_14k6pX6xa1Z51uUaEF
+        # All mask purchases use a $5.00 test product that shows a final confirmation
+        - STRIPE_MASK_LINK=https://buy.stripe.com/test_bIYbKhbRugTZa1q7ss
     init: true
     environment:
       - PORT=4443

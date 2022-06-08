@@ -7,7 +7,7 @@ CSS Table of Contents
   4. Privacy Page
   5. Footer
   6. FAQ Page
-  7. Buy Page
+  7. Store Page
 */
 
 /* 0. Global */
@@ -57,9 +57,18 @@ a {
   margin-left: 8px;
   margin-right: 10px;
   background: white;
-  color: #7691f0 !important;
   padding: 8px !important;
   margin-top: 8px;
+}
+
+/* When the navbar is anchored to the top, use a lighter font for hte CTA buttons */
+.nav-link-text-cta {
+  color: #7691f0 !important;
+}
+
+/* Use darker text for the CTA buttons when the header is pinned mid-scroll */
+.headroom--not-top.headroom--not-bottom.headroom--pinned .nav-link-text-cta {
+  color: #172b4d !important;
 }
 
 /* 1. Forms */
@@ -98,7 +107,7 @@ a {
 }
 
 .donation-quotes {
-  margin-top: 3em;
+  margin-top: 1em;
 }
 
 .donation-quote {
@@ -218,7 +227,16 @@ p.answer a {
   color: #3881f5;
 }
 
-/* 7. Buy Page */
+/* 7. Store Page */
+
+.borderless {
+  border: 0;
+}
+
+#jon-parsons-book {
+  border: 1px solid lightgray;
+}
+
 .buy-eclipse {
   margin-top: 0vh;
   margin-bottom: 3vh;

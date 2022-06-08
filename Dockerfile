@@ -1,8 +1,14 @@
 # Configure and build the front-end. Use a more modern, LTS node version.
 FROM node:16 as front-end
+ARG STRIPE_EBOOK_LINK
+ARG STRIPE_MASK_LINK
 WORKDIR /tmp/donatemask
 COPY . .
-RUN npm install && npm run build
+RUN npm install && \
+    # Expose the Stripe test product links to the React build process
+    REACT_APP_STRIPE_EBOOK_LINK=${STRIPE_EBOOK_LINK} \
+    REACT_APP_STRIPE_MASK_LINK=${STRIPE_MASK_LINK} \
+    npm run build
 
 # Production currently runs on node v13.14.0
 FROM node:13.14.0 as prod
