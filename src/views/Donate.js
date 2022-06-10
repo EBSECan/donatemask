@@ -33,8 +33,8 @@ const DonatePage = () => {
     <>
       <PageNavbar />
       <Hero
-        heading="Donate a mask"
-        body="Support the Donate A Mask Charity Project with a single or recurring donation. 100% of your donation goes towards helping vulnerable people."
+        heading="Donate A Mask"
+        body="Support the Donate A Mask Charity and 100% of your donation goes towards helping vulnerable people across Canada."
       />
       <Row className="d-flex justify-content-center no-margin pt-5">
         { donateComponent }

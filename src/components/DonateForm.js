@@ -41,7 +41,7 @@ const DonateForm = () => {
         <Col md="6">
           <Card className="donate-intro">
             <CardBody>
-              <CardTitle tag="h2">Donate a Mask</CardTitle>
+              <CardTitle tag="h2">Donate A Mask</CardTitle>
               <CardText>
                 <strong>Donate A Mask</strong> is a volunteer-run charity that
                 ships <strong>free N95 equivalent respirator masks</strong> to
@@ -55,6 +55,13 @@ const DonateForm = () => {
                 someone in need. You can see detailed information about how many
                 masks have been requested and shipped on our{" "}
                 <Link to="/summary">Summary page</Link>.
+              </CardText>
+              <hr />
+              <CardText>
+                You can also support us by purchasing <strong>masks</strong>, or the e-book{" "}
+                <strong>COVID-19 and Ethics in Canada</strong> by{" "}
+                <strong>Jon Parsons</strong> from our{" "}
+                <Link to="/store">Charity Store</Link>.
               </CardText>
             </CardBody>
           </Card>
@@ -250,6 +257,9 @@ const DonateForm = () => {
             <h5 className="mb-3">Other ways to support us:</h5>
 
             <ul>
+              <li>
+                <Link to="/store">Donate A Mask Charity Store</Link>
+              </li>
               <li>
                 <a
                   href="https://www.paypal.com/donate/?hosted_button_id=CWHHLTCCJ8JWG"

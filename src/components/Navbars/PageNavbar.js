@@ -56,7 +56,7 @@ class PageNavbar extends React.Component {
                   alt="Donate A Mask logo"
                   src="/logos/logo-128x128.png"
                 />
-                <span className="logo-title">Donate a Mask</span>
+                <span className="logo-title">Donate A Mask</span>
               </NavbarBrand>
               <button className="navbar-toggler" id="navbar_global">
                 <span className="navbar-toggler-icon" />
@@ -96,8 +96,8 @@ class PageNavbar extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="nav-link-text" tag={Link} to="/buy">
-                      Buy
+                    <NavLink className="nav-link-text-cta" tag={Link} to="/store">
+                      Store
                     </NavLink>
                   </NavItem>
                   <NavItem>

@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -27,7 +10,7 @@ import "assets/css/custom.css";
 import Landing from "views/Landing.js";
 import Donate from "views/Donate.js";
 import Request from "views/Request";
-import Buy from "views/Buy.js";
+import Store from "views/Store.js";
 import Summary from "views/Summary";
 import About from "views/About.js";
 import FAQ from "views/FAQ.js";
@@ -41,7 +24,9 @@ ReactDOM.render(
       <Route path="/" exact render={(props) => <Landing {...props} />} />
       <Route path="/donate" exact render={(props) => <Donate {...props} />} />
       <Route path="/request" exact render={(props) => <Request {...props} />} />
-      <Route path="/buy" exact render={(props) => <Buy {...props} />} />
+      // For legacy purposes, support both /buy and /store
+      <Route path="/buy" exact render={(props) => <Store {...props} />} />
+      <Route path="/store" exact render={(props) => <Store {...props} />} />
       <Route path="/summary" render={(props) => <Summary {...props} />} />
       <Route path="/about" exact render={(props) => <About {...props} />} />
       <Route path="/faq" exact render={(props) => <FAQ {...props} />} />
