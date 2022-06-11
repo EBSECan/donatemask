@@ -1,0 +1,29 @@
+{
+  "common": {
+    "donate-a-mask": "Donate A Mask"
+  },
+  "header": {
+    "donate": "Donate",
+    "request": "Request",
+    "store": "Store",
+    "faq": "FAQ",
+    "summary": "Summary",
+    "about-us": "About Us",
+    "logo-alt-text": "Donate A Mask logo"
+  },
+  "tooltip": {
+    "facebook": "Like us on Facebook",
+    "instagram": "Follow us on Instagram",
+    "twitter": "Follow us on Twitter",
+    "github": "Star us on Github",
+    "email": "Email us"
+  },
+  "footer": {
+    "copyright": "© Evidence-Based Social Enterprises Canada",
+    "cc-license": "(CC-BY)",
+    "charity-registration": "CRA Charitable Registration Number 754329506RR0001",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact"
+  }
+}
