@@ -19,7 +19,7 @@ import Terms from "views/Terms.js";
 import ConfirmRequest from "views/ConfirmRequest.js";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter forceRefresh>
     <Switch>
       <Route path="/" exact render={(props) => <Landing {...props} />} />
       <Route path="/donate" exact render={(props) => <Donate {...props} />} />
