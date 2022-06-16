@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MASK_SIZE } from "../const";
+import { DEMOGRAPHIC_GROUPS } from "../const";
 import { useHistory } from "react-router-dom";
 import {
   Container,
@@ -17,8 +17,21 @@ import {
 // The address may contain newlines, switch them to commas.
 const buildAddress = (address, city, province, postalCode) =>
   [address.replace(/\r?\n/, ", "), city, province, postalCode]
-    .map(value =>value.trim())
+    .map((value) => value.trim())
     .join(", ");
+
+// Create an array of strings representing any/all of the
+// demographic groups that were selected.  Default to
+// "None Selected" if left empty.
+const buildDemographicList = () => {
+  const demographicList = [];
+  const selected = document.querySelectorAll('#demographic-groups input[type=checkbox]:checked');
+  selected.forEach(elem => demographicList.push(elem.value));
+  if(demographicList.length === 0) {
+    demographicList.push('None Selected');
+  }
+  return demographicList;
+}
 
 const RequestForm = () => {
   const history = useHistory();
@@ -41,17 +54,20 @@ const RequestForm = () => {
   const [error, setError] = useState();
   const [submitFailed, setSubmitFailed] = useState(false);
 
-  const onMaskAmntChange = (event, maskSizeId) => {
-    const amount = parseInt(event.target.value, 10);
+  const onAmntChange = (event, type) => {
+    let amount = parseInt(event.target.value, 10);
+    if(isNaN(amount)) {
+      amount = undefined;
+    }
 
-    switch (maskSizeId) {
-      case "regular":
+    switch (type) {
+      case "masks-regular":
         setMaskAmntRegular(amount);
         break;
-      case "small":
+      case "masks-small":
         setMaskAmntSmall(amount);
         break;
-      case "test":
+      case "tests":
         setTestAmnt(amount);
         break;
       default:
@@ -59,7 +75,7 @@ const RequestForm = () => {
         setMaskAmntRegular(amount);
     }
 
-    // Clear the error if the mask amount has been fixed
+    // Clear the error if the amount has been fixed
     // and we're in the error state.
     if (error && amount) {
       setError(null);
@@ -74,7 +90,7 @@ const RequestForm = () => {
       return false;
     }
 
-    const newMaskRequest = {
+    const request = {
       requestorType,
       organizationName,
       organizationType,
@@ -90,6 +106,11 @@ const RequestForm = () => {
       timestamp: new Date(),
     };
 
+    // If this request includes tests, add demographic info too
+    if (testAmnt >= 1) {
+      request.demographics = buildDemographicList();
+    }
+
     try {
       // Adding Mask Request to DB
       const res = await fetch("/api/mask_request_add", {
@@ -97,7 +118,7 @@ const RequestForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newMaskRequest),
+        body: JSON.stringify(request),
       });
       if (!res.ok) {
         throw new Error("Unable to add new mask request");
@@ -253,34 +274,95 @@ const RequestForm = () => {
                 id="request-postal-code"
                 autoComplete="postal-code"
                 type="text"
+                required
                 value={postalCode}
                 onChange={(e) => setPostal(e.target.value)}
               />
             </FormGroup>
           </Col>
         </Row>
-        <h3>Mask Size and COVID Test Quantities</h3>
+
+        <h3 className="mt-3">Mask Size and Quantity</h3>
         <Row>
-          {Object.entries(MASK_SIZE).map(([id, label]) => (
-            <Col md="4" key={id}>
-              <FormGroup>
-                <Label for={`request-amount-${id}`}>{label}</Label>
-                <Input
-                  id={`request-amount-${id}`}
-                  placeholder={`Number Requested`}
-                  type="number"
-                  min="0"
-                  onChange={(e) => onMaskAmntChange(e, id)}
-                />
-              </FormGroup>
-            </Col>
-          ))}
+          <Col md="4">
+            <FormGroup>
+              <Label for="request-amount-regular">Regular-size Masks</Label>
+              <Input
+                id="request-amount-regular"
+                placeholder={`Number Requested`}
+                type="number"
+                min="0"
+                onChange={(e) => onAmntChange(e, 'masks-regular')}
+              />
+            </FormGroup>
+          </Col>
+          <Col md="4">
+            <FormGroup>
+              <Label for="request-amount-small">Small-size Masks</Label>
+              <Input
+                id="request-amount-small"
+                placeholder={`Number Requested`}
+                type="number"
+                min="0"
+                onChange={(e) => onAmntChange(e, 'masks-small')}
+              />
+            </FormGroup>
+          </Col>
         </Row>
+
+        <h3 className="mt-3">COVID Test Boxes</h3>
+        <Row>
+          <Col md="4">
+            <FormGroup>
+              <Label for="rat-amount">Number of Boxes (5 tests per-box)</Label>
+              <Input
+                id="rat-amount"
+                placeholder={`Number Requested`}
+                type="number"
+                min="0"
+                onChange={(e) => onAmntChange(e, 'tests')}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        {testAmnt >= 1 && (
+          <div className="mb-3">
+            <Row>
+              <Col>
+                <h4>Demographic Information</h4>
+                <p>
+                  Our rapid tests are supplied by the{" "}
+                  <strong>Canadian Red Cross</strong>, who have asked for data
+                  about the demographic groups receiving these tests. This data
+                  will be collected anonymously, and will not affect your request.
+                </p>
+                <p>
+                  <strong>Please select all boxes that apply</strong> to the
+                  request you are making for yourself or on behalf of another
+                  party:
+                </p>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <Container id="demographic-groups">
+                  {DEMOGRAPHIC_GROUPS.map((label) => (
+                    <FormGroup check key={label}>
+                      <Input id={`demographic-group-${label}`} type="checkbox" value={label} />{" "}
+                      <Label for={`demographic-group-${label}`} check>{label}</Label>
+                    </FormGroup>
+                  ))}
+                </Container>
+              </Col>
+            </Row>
+          </div>
+        )}
 
         <Row>
           <Col md="12">
+            <h4 className="mt-3">Thank-You Message (optional)</h4>
             <FormGroup>
-              <Label for="request-message">Thank-You Message (optional)</Label>
               <Input
                 id="request-message"
                 type="textarea"
@@ -308,7 +390,9 @@ const RequestForm = () => {
 
         {error && (
           <UncontrolledAlert color="danger" fade={false}>
-            <span className="alert-inner--text request-form-error">{error}</span>
+            <span className="alert-inner--text request-form-error">
+              {error}
+            </span>
           </UncontrolledAlert>
         )}
 

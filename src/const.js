@@ -1,9 +1,3 @@
-export const MASK_SIZE = {
-  regular: "Regular-size Masks",
-  small: "Small-size Masks",
-  test: "COVID Test Boxes (5 per box)"
-};
-
 export const MASK_PRICE = 1.25;
 
 // We allow overriding these Stripe product links via environment variables.
@@ -22,3 +16,21 @@ export const STRIPE_LINKS = {
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAg0MgOt0U757G5kp",
   },
 };
+
+export const DEMOGRAPHIC_GROUPS = [
+  'Older adults',
+  'Caregivers',
+  'Persons with disabilities and/or health conditions',
+  'Members of the LGBTQ2SIA+ community',
+  'People experiencing or at risk for homelessness',
+  'People with low income',
+  'Children/youth',
+  'Indigenous Peoples',
+  'Racialized persons',
+  'Newcomers to Canada',
+  'People isolated socially or geographically',
+  'Essential workers',
+  'Other vulnerable populations not listed here',
+  'None of the above',
+  'Prefer not to say',
+];
