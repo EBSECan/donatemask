@@ -12,6 +12,7 @@ describe("db/demographics.js", () => {
 
   test("add() adds demographic data", async () => {
     const demographicData = {
+      postalCode: "M5W 1E6",
       groups: ["Group1", "Group2"],
       timestamp: new Date(),
     };
@@ -19,16 +20,17 @@ describe("db/demographics.js", () => {
     await demographics.add(demographicData);
 
     const result = await demographics.get();
-    const { groups, timestamp } = demographicData;
+    const { postalCode, groups, timestamp } = demographicData;
     expect(result).toEqual(
       expect.arrayContaining([expect.objectContaining({
-        groups, timestamp
+        postalCode, groups, timestamp
       })])
     );
   });
 
   test("stats() returns expected counts", async () => {
     const demographicData = {
+      postalCode: "M5W 1E7",
       // Group3 is unique to this test
       groups: ["Group1", "Group2", "Group3"],
       timestamp: new Date(),

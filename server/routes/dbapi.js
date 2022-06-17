@@ -94,6 +94,7 @@ router.post("/api/mask_request_add", async (req, res, next) => {
     // Only bother with demographics data if we have tests requested
     if (req.body.testAmnt >= 1) {
       await demographics.add({
+        postalCode: req.body.postal,
         groups: req.body.demographics || ["None Selected"],
         timestamp: req.body.timestamp,
       });

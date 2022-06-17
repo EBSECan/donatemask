@@ -418,10 +418,11 @@ describe("dbapi", () => {
 
     // Make sure we get back the default demographics info
     const results = await demographics.get();
-    const { timestamp } = maskRequest;
+    const { timestamp, postalCode } = maskRequest;
     expect(results).not.toEqual(
       expect.arrayContaining([
         expect.objectContaining({
+          postalCode,
           // The timestamp will be an ISO string vs. Date Object
           timestamp: timestamp.toISOString(),
         }),
@@ -459,10 +460,11 @@ describe("dbapi", () => {
 
     // Make sure we get back the default demographics info
     const results = await demographics.get();
-    const { timestamp } = maskRequest;
+    const { timestamp, postalCode } = maskRequest;
     expect(results).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
+          postalCode,
           groups: ["None Selected"],
           // The timestamp will be an ISO string vs. Date Object
           timestamp: timestamp.toISOString(),
@@ -505,6 +507,7 @@ describe("dbapi", () => {
     expect(results).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
+          postalCode: maskRequest.postalCode,
           groups: maskRequest.demographics,
           // The timestamp will be an ISO string vs. Date Object
           timestamp: maskRequest.timestamp.toISOString(),

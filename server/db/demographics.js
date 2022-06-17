@@ -4,6 +4,7 @@ const dbo = require("./conn");
  * Demographics Schema:
  *
  * _id: "61e86ee591676123aaab97d1"
+ * postalCode: "M5W 1E6",
  * groups: ["People with low income", "Children/youth", ...] | ["None Selected"]
  * timestamp: "2022-01-19T20:04:52.611Z"
  *
