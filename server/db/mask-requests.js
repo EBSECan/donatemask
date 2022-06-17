@@ -1,5 +1,5 @@
 const dbo = require("./conn");
-const { toInt } = require('../util');
+const { toInt } = require("../util");
 
 /**
  * Mask Request Schema:
@@ -60,7 +60,8 @@ module.exports.stats = async () => {
   let testsRequested = 0;
   let testsFulfilled = 0;
 
-   maskRequests.forEach(({ testAmnt, requestFulfilled, maskAmnt, maskAmntSmall, maskAmntRegular }) => {
+  maskRequests.forEach(
+    ({ testAmnt, requestFulfilled, maskAmntSmall, maskAmntRegular }) => {
       testsRequested += toInt(testAmnt);
       masksRequested += toInt(maskAmntSmall) + toInt(maskAmntRegular);
 
@@ -68,7 +69,8 @@ module.exports.stats = async () => {
         testsFulfilled += toInt(testAmnt);
         masksFulfilled += toInt(maskAmntSmall) + toInt(maskAmntRegular);
       }
-    });
+    }
+  );
 
   return {
     masksRequested,

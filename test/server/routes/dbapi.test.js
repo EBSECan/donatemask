@@ -4,6 +4,7 @@ const { connectToServer, close } = require("../../../server/db/conn");
 const app = require("../../../server/api");
 const donations = require("../../../server/db/donations");
 const maskRequests = require("../../../server/db/mask-requests");
+const demographics = require("../../../server/db/demographics");
 
 describe("dbapi", () => {
   beforeAll(() => connectToServer());
@@ -12,10 +13,12 @@ describe("dbapi", () => {
   describe("/api/messages", () => {
     test("GET /api/messages should send correct cache-control header", () =>
       request(app)
-      .get("/api/messages")
-      .expect("Cache-Control", "max-age=600, stale-while-revalidate=60, stale-if-error=86400")
-      .expect(200)
-    );
+        .get("/api/messages")
+        .expect(
+          "Cache-Control",
+          "max-age=600, stale-while-revalidate=60, stale-if-error=86400"
+        )
+        .expect(200));
 
     test("GET /api/messages should include the expected properties", () =>
       request(app)
@@ -24,8 +27,7 @@ describe("dbapi", () => {
         .expect(200)
         .then((res) => {
           expect(Array.isArray(res.body)).toBe(true);
-        })
-    );
+        }));
 
     test("Specifying a ?count should limit the number of messages returned", async () => {
       // Add a donation
@@ -68,7 +70,7 @@ describe("dbapi", () => {
         .expect(200)
         .then((res) => {
           expect(res.body.length).toBe(1);
-        })
+        });
     });
 
     test("Messages should include most recent mask request", async () => {
@@ -94,7 +96,7 @@ describe("dbapi", () => {
         .post("/api/mask_request_add")
         .send(maskRequest)
         .expect(201);
-    
+
       return request(app)
         .get("/api/messages")
         .expect("Content-Type", /json/)
@@ -105,20 +107,22 @@ describe("dbapi", () => {
               expect.objectContaining({
                 msg: maskRequest.msg,
                 timestamp: maskRequest.timestamp.toISOString(),
-              })
+              }),
             ])
           );
-        })
+        });
     });
   });
 
   describe("/api/stats", () => {
     test("GET /api/stats should send correct cache-control header", () =>
       request(app)
-      .get("/api/stats")
-      .expect("Cache-Control", "max-age=600, stale-while-revalidate=60, stale-if-error=86400")
-      .expect(200)
-    );
+        .get("/api/stats")
+        .expect(
+          "Cache-Control",
+          "max-age=600, stale-while-revalidate=60, stale-if-error=86400"
+        )
+        .expect(200));
 
     const ensureTotalUnfundedMasks = (unfunded, requested, donated) => {
       if (requested > donated) {
@@ -134,14 +138,13 @@ describe("dbapi", () => {
         .expect("Content-Type", /json/)
         .expect(200)
         .then((res) => {
-          expect(typeof res.body.masksDonated).toBe('number');
-          expect(typeof res.body.masksRequested).toBe('number');
-          expect(typeof res.body.masksFulfilled).toBe('number');
-          expect(typeof res.body.testsRequested).toBe('number');
-          expect(typeof res.body.testsFulfilled).toBe('number');
-          expect(typeof res.body.unfundedMasks).toBe('number');
-        })
-    );
+          expect(typeof res.body.masksDonated).toBe("number");
+          expect(typeof res.body.masksRequested).toBe("number");
+          expect(typeof res.body.masksFulfilled).toBe("number");
+          expect(typeof res.body.testsRequested).toBe("number");
+          expect(typeof res.body.testsFulfilled).toBe("number");
+          expect(typeof res.body.unfundedMasks).toBe("number");
+        }));
 
     test("Adding a donation should update stats", async () => {
       // 1. Get the original stats
@@ -174,7 +177,11 @@ describe("dbapi", () => {
       expect(updated.masksFulfilled).toEqual(original.masksFulfilled);
       expect(updated.testsRequested).toEqual(original.testsRequested);
       expect(updated.testsFulfilled).toEqual(original.testsFulfilled);
-      ensureTotalUnfundedMasks(updated.unfundedMasks, updated.masksRequested, updated.masksDonated);
+      ensureTotalUnfundedMasks(
+        updated.unfundedMasks,
+        updated.masksRequested,
+        updated.masksDonated
+      );
     });
 
     test("Adding an unfulfilled mask request should update stats", async () => {
@@ -216,7 +223,11 @@ describe("dbapi", () => {
       expect(updated.masksFulfilled).toEqual(original.masksFulfilled);
       expect(updated.testsRequested).toEqual(original.testsRequested + 6);
       expect(updated.testsFulfilled).toEqual(original.testsFulfilled);
-      ensureTotalUnfundedMasks(updated.unfundedMasks, updated.masksRequested, updated.masksDonated);
+      ensureTotalUnfundedMasks(
+        updated.unfundedMasks,
+        updated.masksRequested,
+        updated.masksDonated
+      );
     });
 
     test("Adding a fulfilled mask request should update stats", async () => {
@@ -258,7 +269,11 @@ describe("dbapi", () => {
       expect(updated.masksFulfilled).toEqual(original.masksFulfilled);
       expect(updated.testsRequested).toEqual(original.testsRequested + 8);
       expect(updated.testsFulfilled).toEqual(original.testsFulfilled);
-      ensureTotalUnfundedMasks(updated.unfundedMasks, updated.masksRequested, updated.masksDonated);
+      ensureTotalUnfundedMasks(
+        updated.unfundedMasks,
+        updated.masksRequested,
+        updated.masksDonated
+      );
     });
   });
 
@@ -291,7 +306,11 @@ describe("dbapi", () => {
       const { maskAmnt, msg, timestamp } = donation;
       expect(results).toEqual(
         expect.arrayContaining([
-          expect.objectContaining({ maskAmnt, msg, timestamp: timestamp.toISOString() }),
+          expect.objectContaining({
+            maskAmnt,
+            msg,
+            timestamp: timestamp.toISOString(),
+          }),
         ])
       );
     });
@@ -314,6 +333,7 @@ describe("dbapi", () => {
         msg: "Message",
         requestFulfilled: false,
         timestamp: new Date(),
+        // No demographics data included, by design
       };
 
       return request(app)
@@ -351,7 +371,8 @@ describe("dbapi", () => {
 
       // Make sure we can get it back again
       const results = await maskRequests.get();
-      const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } = maskRequest;
+      const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } =
+        maskRequest;
       expect(results).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
@@ -365,5 +386,130 @@ describe("dbapi", () => {
         ])
       );
     });
+  });
+
+  test("A mask request with no tests should not add demographic data", async () => {
+    const maskRequest = {
+      requestorType: "organization",
+      organizationName: "Organization Name",
+      organizationType: "Organization Type",
+      name: "New Name",
+      address: "New Address",
+      maskAmntRegular: 2,
+      maskAmntSmall: 2,
+      testAmnt: 0,
+      postalCode: "M5W 1E7",
+      province: "Manitoba",
+      email: "email2@example.com",
+      msg: "New Message",
+      timestamp: new Date(),
+      // No demographics included
+    };
+
+    // Create a new mask request in the db
+    await request(app)
+      .post("/api/mask_request_add")
+      .send({
+        ...maskRequest,
+        // The route expects .postal to be sent, but db uses .postalCode
+        postal: maskRequest.postalCode,
+      })
+      .expect(201);
+
+    // Make sure we get back the default demographics info
+    const results = await demographics.get();
+    const { timestamp } = maskRequest;
+    expect(results).not.toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          // The timestamp will be an ISO string vs. Date Object
+          timestamp: timestamp.toISOString(),
+        }),
+      ])
+    );
+  });
+
+  test("A mask request should add default demographic data", async () => {
+    const maskRequest = {
+      requestorType: "organization",
+      organizationName: "Organization Name",
+      organizationType: "Organization Type",
+      name: "New Name",
+      address: "New Address",
+      maskAmntRegular: 2,
+      maskAmntSmall: 2,
+      testAmnt: 2,
+      postalCode: "M5W 1E7",
+      province: "Manitoba",
+      email: "email2@example.com",
+      msg: "New Message",
+      timestamp: new Date(),
+      // No demographics included
+    };
+
+    // Create a new mask request in the db
+    await request(app)
+      .post("/api/mask_request_add")
+      .send({
+        ...maskRequest,
+        // The route expects .postal to be sent, but db uses .postalCode
+        postal: maskRequest.postalCode,
+      })
+      .expect(201);
+
+    // Make sure we get back the default demographics info
+    const results = await demographics.get();
+    const { timestamp } = maskRequest;
+    expect(results).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          groups: ["None Selected"],
+          // The timestamp will be an ISO string vs. Date Object
+          timestamp: timestamp.toISOString(),
+        }),
+      ])
+    );
+  });
+
+  test("A mask request with demographic data should get stored", async () => {
+    const maskRequest = {
+      requestorType: "organization",
+      organizationName: "Organization Name",
+      organizationType: "Organization Type",
+      name: "New Name",
+      address: "New Address",
+      maskAmntRegular: 2,
+      maskAmntSmall: 2,
+      testAmnt: 2,
+      postalCode: "M5W 1E7",
+      province: "Manitoba",
+      email: "email2@example.com",
+      msg: "New Message",
+      timestamp: new Date(),
+      // demographics included
+      demographics: ["Demographic Group"],
+    };
+
+    // Create a new mask request in the db
+    await request(app)
+      .post("/api/mask_request_add")
+      .send({
+        ...maskRequest,
+        // The route expects .postal to be sent, but db uses .postalCode
+        postal: maskRequest.postalCode,
+      })
+      .expect(201);
+
+    // Make sure we get back the default demographics info
+    const results = await demographics.get();
+    expect(results).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          groups: maskRequest.demographics,
+          // The timestamp will be an ISO string vs. Date Object
+          timestamp: maskRequest.timestamp.toISOString(),
+        }),
+      ])
+    );
   });
 });
