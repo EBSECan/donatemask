@@ -1,7 +1,8 @@
 const express = require("express");
 
-const donations = require('../db/donations');
-const maskRequests = require('../db/mask-requests');
+const donations = require("../db/donations");
+const maskRequests = require("../db/mask-requests");
+const demographics = require("../db/demographics");
 
 const router = express.Router();
 
@@ -17,14 +18,19 @@ router.get("/api/stats", async (req, res, next) => {
     // default. For /api/* we want short-lived cache (10 min), but will tolerate stale
     // content while it's being updated (600=10 min, 60=1 min, 86400=1 day)
     res
-      .header('Cache-Control', 'max-age=600, stale-while-revalidate=60, stale-if-error=86400')
+      .header(
+        "Cache-Control",
+        "max-age=600, stale-while-revalidate=60, stale-if-error=86400"
+      )
       .json({
-      ...donationsStats,
-      ...maskRequestsStats,
-      unfundedMasks: maskRequestsStats.masksRequested > donationsStats.masksDonated ?
-        maskRequestsStats.masksRequested - donationsStats.masksDonated : 0,
-    });
-  } catch(err) {
+        ...donationsStats,
+        ...maskRequestsStats,
+        unfundedMasks:
+          maskRequestsStats.masksRequested > donationsStats.masksDonated
+            ? maskRequestsStats.masksRequested - donationsStats.masksDonated
+            : 0,
+      });
+  } catch (err) {
     next(err);
   }
 });
@@ -37,9 +43,12 @@ router.get("/api/messages", async (req, res, next) => {
     // default. For /api/* we want short-lived cache (10 min), but will tolerate stale
     // content while it's being updated (600=10 min, 60=1 min, 86400=1 day)
     res
-      .header('Cache-Control', 'max-age=600, stale-while-revalidate=60, stale-if-error=86400')
+      .header(
+        "Cache-Control",
+        "max-age=600, stale-while-revalidate=60, stale-if-error=86400"
+      )
       .json(await maskRequests.messages(count));
-  } catch(err) {
+  } catch (err) {
     next(err);
   }
 });
@@ -56,33 +65,41 @@ router.post("/api/donation_add", async (req, res, next) => {
 
   try {
     res.status(201).json(await donations.add(data));
-  } catch(err) {
+  } catch (err) {
     next(err);
   }
 });
 
-// Add mask requests.
+// Add mask request and demographic data, keeping the two separate
 router.post("/api/mask_request_add", async (req, res, next) => {
-  const data = {
-    requestorType: req.body.requestorType,
-    organizationName: req.body.organizationName,
-    organizationType: req.body.organizationType,
-    name: req.body.name,
-    address: req.body.address,
-    maskAmntRegular: req.body.maskAmntRegular,
-    maskAmntSmall: req.body.maskAmntSmall,
-    testAmnt: req.body.testAmnt,
-    postalCode: req.body.postal,
-    province: req.body.province,
-    email: req.body.email,
-    msg: req.body.msg,
-    requestFulfilled: false,
-    timestamp: req.body.timestamp,
-  };
-
   try {
-    res.status(201).json(await maskRequests.add(data));
-  } catch(err) {
+    // Always add request data
+    await maskRequests.add({
+      requestorType: req.body.requestorType,
+      organizationName: req.body.organizationName,
+      organizationType: req.body.organizationType,
+      name: req.body.name,
+      address: req.body.address,
+      maskAmntRegular: req.body.maskAmntRegular,
+      maskAmntSmall: req.body.maskAmntSmall,
+      testAmnt: req.body.testAmnt,
+      postalCode: req.body.postal,
+      province: req.body.province,
+      email: req.body.email,
+      msg: req.body.msg,
+      requestFulfilled: false,
+      timestamp: req.body.timestamp,
+    });
+
+    // Only bother with demographics data if we have tests requested
+    if (req.body.testAmnt >= 1) {
+      await demographics.add({
+        groups: req.body.demographics || ["None Selected"],
+        timestamp: req.body.timestamp,
+      });
+    }
+    res.status(201).send("ok");
+  } catch (err) {
     next(err);
   }
 });
