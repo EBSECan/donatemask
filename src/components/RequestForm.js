@@ -314,9 +314,9 @@ const RequestForm = () => {
         <Row>
           <Col md="4">
             <FormGroup>
-              <Label for="rat-amount">Number of Boxes (5 tests per-box)</Label>
+              <Label for="request-amount-test">Number of Boxes (5 tests per-box)</Label>
               <Input
-                id="rat-amount"
+                id="request-amount-test"
                 placeholder={`Number Requested`}
                 type="number"
                 min="0"
