@@ -25,13 +25,15 @@ const buildAddress = (address, city, province, postalCode) =>
 // "None Selected" if left empty.
 const buildDemographicList = () => {
   const demographicList = [];
-  const selected = document.querySelectorAll('#demographic-groups input[type=checkbox]:checked');
-  selected.forEach(elem => demographicList.push(elem.value));
-  if(demographicList.length === 0) {
-    demographicList.push('None Selected');
+  const selected = document.querySelectorAll(
+    "#demographic-groups input[type=checkbox]:checked"
+  );
+  selected.forEach((elem) => demographicList.push(elem.value));
+  if (demographicList.length === 0) {
+    demographicList.push("None Selected");
   }
   return demographicList;
-}
+};
 
 const RequestForm = () => {
   const history = useHistory();
@@ -56,7 +58,7 @@ const RequestForm = () => {
 
   const onAmntChange = (event, type) => {
     let amount = parseInt(event.target.value, 10);
-    if(isNaN(amount)) {
+    if (isNaN(amount)) {
       amount = undefined;
     }
 
@@ -90,35 +92,28 @@ const RequestForm = () => {
       return false;
     }
 
-    const request = {
-      requestorType,
-      organizationName,
-      organizationType,
-      name,
-      email,
-      maskAmntRegular,
-      maskAmntSmall,
-      testAmnt,
-      address: buildAddress(address, city, province, postalCode),
-      province,
-      postal: postalCode,
-      msg,
-      timestamp: new Date(),
-    };
-
-    // If this request includes tests, add demographic info too
-    if (testAmnt >= 1) {
-      request.demographics = buildDemographicList();
-    }
-
     try {
-      // Adding Mask Request to DB
       const res = await fetch("/api/mask_request_add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(request),
+        body: JSON.stringify({
+          requestorType,
+          organizationName,
+          organizationType,
+          name,
+          email,
+          maskAmntRegular,
+          maskAmntSmall,
+          testAmnt,
+          address: buildAddress(address, city, province, postalCode),
+          province,
+          postal: postalCode,
+          msg,
+          timestamp: new Date(),
+          demographics: buildDemographicList(),
+        }),
       });
       if (!res.ok) {
         throw new Error("Unable to add new mask request");
@@ -292,7 +287,7 @@ const RequestForm = () => {
                 placeholder={`Number Requested`}
                 type="number"
                 min="0"
-                onChange={(e) => onAmntChange(e, 'masks-regular')}
+                onChange={(e) => onAmntChange(e, "masks-regular")}
               />
             </FormGroup>
           </Col>
@@ -304,7 +299,7 @@ const RequestForm = () => {
                 placeholder={`Number Requested`}
                 type="number"
                 min="0"
-                onChange={(e) => onAmntChange(e, 'masks-small')}
+                onChange={(e) => onAmntChange(e, "masks-small")}
               />
             </FormGroup>
           </Col>
@@ -314,50 +309,53 @@ const RequestForm = () => {
         <Row>
           <Col md="4">
             <FormGroup>
-              <Label for="request-amount-test">Number of Boxes (5 tests per-box)</Label>
+              <Label for="request-amount-test">
+                Number of Boxes (5 tests per-box)
+              </Label>
               <Input
                 id="request-amount-test"
                 placeholder={`Number Requested`}
                 type="number"
                 min="0"
-                onChange={(e) => onAmntChange(e, 'tests')}
+                onChange={(e) => onAmntChange(e, "tests")}
               />
             </FormGroup>
           </Col>
         </Row>
 
-        {testAmnt >= 1 && (
-          <div className="mb-3">
-            <Row>
-              <Col>
-                <h4>Demographic Information</h4>
-                <p>
-                  Our rapid tests are supplied by the{" "}
-                  <strong>Canadian Red Cross</strong>, who have asked for data
-                  about the demographic groups receiving these tests. This data
-                  will be collected anonymously, and will not affect your request.
-                </p>
-                <p>
-                  <strong>Please select all boxes that apply</strong> to the
-                  request you are making for yourself or on behalf of another
-                  party:
-                </p>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Container id="demographic-groups">
-                  {DEMOGRAPHIC_GROUPS.map((label) => (
-                    <FormGroup check key={label}>
-                      <Input id={`demographic-group-${label}`} type="checkbox" value={label} />{" "}
-                      <Label for={`demographic-group-${label}`} check>{label}</Label>
-                    </FormGroup>
-                  ))}
-                </Container>
-              </Col>
-            </Row>
-          </div>
-        )}
+        <h3 className="mt-2">Demographic Information</h3>
+        <Row>
+          <Col>
+            <p>
+              We receive support from the <strong>Canadian Red Cross</strong>,
+              who have asked for data about the demographic groups receiving
+              these items. This data will be collected anonymously, and will not
+              affect your request.
+            </p>
+            <p>
+              <strong>Please select all boxes that apply</strong> to the request
+              you are making for yourself or on behalf of another party:
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Container id="demographic-groups">
+              {DEMOGRAPHIC_GROUPS.map((label) => (
+                <FormGroup check key={label}>
+                  <Input
+                    id={`demographic-group-${label}`}
+                    type="checkbox"
+                    value={label}
+                  />{" "}
+                  <Label for={`demographic-group-${label}`} check>
+                    {label}
+                  </Label>
+                </FormGroup>
+              ))}
+            </Container>
+          </Col>
+        </Row>
 
         <Row>
           <Col md="12">

@@ -73,32 +73,31 @@ router.post("/api/donation_add", async (req, res, next) => {
 // Add mask request and demographic data, keeping the two separate
 router.post("/api/mask_request_add", async (req, res, next) => {
   try {
-    // Always add request data
-    await maskRequests.add({
-      requestorType: req.body.requestorType,
-      organizationName: req.body.organizationName,
-      organizationType: req.body.organizationType,
-      name: req.body.name,
-      address: req.body.address,
-      maskAmntRegular: req.body.maskAmntRegular,
-      maskAmntSmall: req.body.maskAmntSmall,
-      testAmnt: req.body.testAmnt,
-      postalCode: req.body.postal,
-      province: req.body.province,
-      email: req.body.email,
-      msg: req.body.msg,
-      requestFulfilled: false,
-      timestamp: req.body.timestamp,
-    });
-
-    // Only bother with demographics data if we have tests requested
-    if (req.body.testAmnt >= 1) {
-      await demographics.add({
+    // Record entries for requests and demographics separately
+    await Promise.all([
+      maskRequests.add({
+        requestorType: req.body.requestorType,
+        organizationName: req.body.organizationName,
+        organizationType: req.body.organizationType,
+        name: req.body.name,
+        address: req.body.address,
+        maskAmntRegular: req.body.maskAmntRegular,
+        maskAmntSmall: req.body.maskAmntSmall,
+        testAmnt: req.body.testAmnt,
+        postalCode: req.body.postal,
+        province: req.body.province,
+        email: req.body.email,
+        msg: req.body.msg,
+        requestFulfilled: false,
+        timestamp: req.body.timestamp,
+      }),
+      demographics.add({
         postalCode: req.body.postal,
         groups: req.body.demographics || ["None Selected"],
         timestamp: req.body.timestamp,
-      });
-    }
+      }),
+    ]);
+
     res.status(201).send("ok");
   } catch (err) {
     next(err);
