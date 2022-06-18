@@ -267,7 +267,7 @@ const BuyPage = () => {
             <Card className="borderless">
               <CardBody>
                 <CardImg
-                  width="720"
+                  width="495"
                   alt="Honeywell SAF-T-FIT PLUS NIOSH N95-Small Masks"
                   src={honeywellImageUrl}
                 />
