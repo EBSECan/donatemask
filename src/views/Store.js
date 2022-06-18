@@ -262,7 +262,7 @@ const BuyPage = () => {
         </Row>
         <hr />
 		
-		<Row>
+	<Row>
           <Col md="8">
             <Card className="borderless">
               <CardBody>
