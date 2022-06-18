@@ -388,48 +388,6 @@ describe("dbapi", () => {
     });
   });
 
-  test("A mask request with no tests should not add demographic data", async () => {
-    const maskRequest = {
-      requestorType: "organization",
-      organizationName: "Organization Name",
-      organizationType: "Organization Type",
-      name: "New Name",
-      address: "New Address",
-      maskAmntRegular: 2,
-      maskAmntSmall: 2,
-      testAmnt: 0,
-      postalCode: "M5W 1E7",
-      province: "Manitoba",
-      email: "email2@example.com",
-      msg: "New Message",
-      timestamp: new Date(),
-      // No demographics included
-    };
-
-    // Create a new mask request in the db
-    await request(app)
-      .post("/api/mask_request_add")
-      .send({
-        ...maskRequest,
-        // The route expects .postal to be sent, but db uses .postalCode
-        postal: maskRequest.postalCode,
-      })
-      .expect(201);
-
-    // Make sure we get back the default demographics info
-    const results = await demographics.get();
-    const { timestamp, postalCode } = maskRequest;
-    expect(results).not.toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          postalCode,
-          // The timestamp will be an ISO string vs. Date Object
-          timestamp: timestamp.toISOString(),
-        }),
-      ])
-    );
-  });
-
   test("A mask request should add default demographic data", async () => {
     const maskRequest = {
       requestorType: "organization",
