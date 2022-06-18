@@ -20,12 +20,14 @@ import SimpleFooter from "components/SimpleFooter.js";
 import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
+import HoneywellData from "assets/img/buy/honeywell.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
 import maskRegularImageUrl from "assets/img/buy/fudakin-regular.jpg";
 import maskSmallImageUrl from "assets/img/buy/horizon-small.jpg";
 import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
+import honeywellImageUrl from "assets/img/buy/honeywell.png";
 
 const redirectTo = (url) => {
   window.location.href = url;
@@ -249,6 +251,54 @@ const BuyPage = () => {
                       className="full-width"
                       color="success"
                       onClick={() => redirectTo(STRIPE_LINKS.mask.regular)}
+                    >
+                      Buy Masks
+                    </Button>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        <hr />
+		
+		<Row>
+          <Col md="8">
+            <Card className="borderless">
+              <CardBody>
+                <CardImg
+                  width="720"
+                  alt="Honeywell SAF-T-FIT PLUS NIOSH N95-Small Masks"
+                  src={honeywellImageUrl}
+                />
+              </CardBody>
+            </Card>
+          </Col>
+          <Col md="4">
+            <Card className="borderless">
+              <CardBody>
+                <CardTitle className="mb-0" tag="h3">
+                  NIOSH N95-Small Masks
+                </CardTitle>
+                <CardText className="mt-3">
+                  NIOSH N95-Small <strong>Honeywell SAF-T-FIT Plus Masks.</strong>{" "}
+                  Box of 20 masks.
+                </CardText>
+                <CardText>
+                  <a className="buylinks" href={HoneywellData} target="_blank">
+                    Specifications and data sheet (PDF)
+                  </a>
+                </CardText>
+                <CardText>
+                  <strong>$49.99 (no tax)</strong> with free shipping in Canada
+                </CardText>
+                <Row className="mt-2">
+                  <Col>
+                    <Button
+                      id="buy-masks-honeywell"
+                      className="full-width"
+                      color="success"
+                      onClick={() => redirectTo(STRIPE_LINKS.mask.honeywell)}
                     >
                       Buy Masks
                     </Button>
