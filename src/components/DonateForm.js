@@ -58,7 +58,8 @@ const DonateForm = () => {
               </CardText>
               <hr />
               <CardText>
-                You can also support us by purchasing <strong>masks</strong>, or the e-book{" "}
+                You can also support us by purchasing <strong>masks</strong>, <strong>CO
+                <sub>2</sub> monitors</strong>, or the e-book{" "}
                 <strong>COVID-19 and Ethics in Canada</strong> by{" "}
                 <strong>Jon Parsons</strong> from our{" "}
                 <Link to="/store">Charity Store</Link>.
