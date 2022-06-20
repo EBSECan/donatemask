@@ -16,6 +16,11 @@ export const STRIPE_LINKS = {
     respiratorKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAeWI9m1cCP57G28c",
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAg0MgOt0U757G5kp",
   },
+  co2: {
+    co2ModelC: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY29Wbu9byL2ZyfZ9",
+    co2ModelD: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMeWI2XD5an43C3cq",
+    aranet4: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN29Co9m18mz1VufZb",
+  }
 };
 
 export const DEMOGRAPHIC_GROUPS = [
