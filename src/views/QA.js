@@ -44,7 +44,7 @@ Please note that while we will make every effort possible to ensure the quality 
 
   {
     question: `How many masks can I request?`,
-    answer: `Please request what you feel you and those you are requesting for can use over a 60 day period at most.  If you can, request one larger order for several people and distribute the masks yourself, rather than making several smaller quests as that costs us more in shipping. Also, recent research has shown that you can safely sanitize and reuse masks up to 25 times, so please clean and reuse them as much as you can so that there are more to go around. Do NOT wash them with soap and water, alcohol, or other cleaners. They will destroy the mask fibers, reducing efficiency. Instead, you can let the masks dry out or steam them. Details here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7161499/ - If you need more masks later on, please feel free to submit another request.`,
+    answer: `Please request what you feel you and those you are requesting for can use over a 60 day period at most.  If you can, request one larger order for several people and distribute the masks yourself, rather than making several smaller requests as that costs us more in shipping. Also, recent research has shown that you can safely sanitize and reuse masks up to 25 times, so please clean and reuse them as much as you can so that there are more to go around. Do NOT wash them with soap and water, alcohol, or other cleaners. They will destroy the mask fibers, reducing efficiency. Instead, you can let the masks dry out or steam them. Details here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7161499/ - If you need more masks later on, please feel free to submit another request.`,
   },
 
   {
