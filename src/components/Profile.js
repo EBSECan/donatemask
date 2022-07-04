@@ -21,9 +21,9 @@ const Profile = (props) => {
              </h5>
              <div className="mt-3">
                <Button
-                 className="btn-icon-only rounded-circle"
+                 className="btn-icon-only rounded-circle ml-1"
                  color="warning"
-                 href={`${props.linkedin}`}
+                 href={`${props.linkedin ? props.linkedin:props.instagram}`}
                  target="_blank"
                >
                  <i className="fa fa-linkedin" />
