@@ -14,6 +14,7 @@ import David from "assets/img/team/david.jpg";
 import Chris from "assets/img/team/chris.jpg";
 import Devarsh from "assets/img/team/devarsh.jpg";
 import Sarah from "assets/img/team/sarah.jpg";
+import Ali from "assets/img/team/ali.jpg";
 
 // Sponsorship Layout and Logos
 import Sponsorship from "components/Sponsorship";
@@ -99,6 +100,14 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           linkedin="https://www.linkedin.com/in/sarahguimond/"
           twitter="https://twitter.com/sarah_guimond_"
           email="sarah@donatemask.ca"
+        />
+		 <Profile
+          name="Ali Grimshaw"
+          role="Social Media"
+          avatar={Ali}
+          instagram="https://www.instagram.com/ali_grimshaw/"
+          twitter="https://twitter.com/aligrimshaw"
+          email="ali@donatemask.ca"
         />
       </Row>
       <Row className="d-flex justify-content-center text-center no-margin about">
