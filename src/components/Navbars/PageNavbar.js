@@ -122,15 +122,15 @@ class PageNavbar extends React.Component {
                     <NavLink
                       className="nav-link-icon"
                       href="https://twitter.com/donatemask"
-                      id="tooltip184698705"
+                      id="tooltip-navbar-twitter"
                       target="_blank"
                     >
-                      <i className="fa fa-twitter-square" />
+                      <i className="fa-brands fa-twitter-square" />
                       <span className="nav-link-inner--text d-lg-none ml-2">
                         Twitter
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
+                    <UncontrolledTooltip delay={0} target="tooltip-navbar-twitter">
                       Follow us on Twitter
                     </UncontrolledTooltip>
                   </NavItem>
@@ -139,15 +139,15 @@ class PageNavbar extends React.Component {
                     <NavLink
                       className="nav-link-icon"
                       href="https://www.facebook.com/donatemaskca"
-                      id="tooltip333589074"
+                      id="tooltip-navbar-facebook"
                       target="_blank"
                     >
-                      <i className="fa fa-facebook-square" />
+                      <i className="fa-brands fa-facebook-square" />
                       <span className="nav-link-inner--text d-lg-none ml-2">
                         Facebook
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip333589074">
+                    <UncontrolledTooltip delay={0} target="tooltip-navbar-facebook">
                       Like us on Facebook
                     </UncontrolledTooltip>
                   </NavItem>
@@ -155,48 +155,48 @@ class PageNavbar extends React.Component {
                     <NavLink
                       className="nav-link-icon"
                       href="https://www.instagram.com/donatemask"
-                      id="tooltip356693867"
+                      id="tooltip-navbar-instagram"
                       target="_blank"
                     >
-                      <i className="fa fa-instagram" />
+                      <i className="fa-brands fa-instagram" />
                       <span className="nav-link-inner--text d-lg-none ml-2">
                         Instagram
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
+                    <UncontrolledTooltip delay={0} target="tooltip-navbar-instagram">
                       Follow us on Instagram
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://github.com/mekkim/donatemask"
-                      id="tooltip112445449"
+                      href="https://www.tiktok.com/@donateamask"
+                      id="tooltip-navbar-tiktok"
                       target="_blank"
                     >
-                      <i className="fa fa-github" />
+                      <i className="fa-brands fa-tiktok" />
                       <span className="nav-link-inner--text d-lg-none ml-2">
-                        Github
+                        TikTok
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445449">
-                      Star us on Github
+                    <UncontrolledTooltip delay={0} target="tooltip-navbar-tiktok">
+                      Follow us on TikTok
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="mailto:donate@donatemask.ca"
-                      id="tooltip112445643"
+                      href="https://github.com/mekkim/donatemask"
+                      id="tooltip-navbar-github"
                       target="_blank"
                     >
-                      <i className="fa fa-envelope" />
+                      <i className="fa-brands fa-github" />
                       <span className="nav-link-inner--text d-lg-none ml-2">
-                        Email
+                        Github
                       </span>
                     </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip112445643">
-                      Contact us by email
+                    <UncontrolledTooltip delay={0} target="tooltip-navbar-github">
+                      Star us on Github
                     </UncontrolledTooltip>
                   </NavItem>
                 </Nav>
