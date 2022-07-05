@@ -101,7 +101,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           twitter="https://twitter.com/sarah_guimond_"
           email="sarah@donatemask.ca"
         />
-		 <Profile
+        <Profile
           name="Ali Grimshaw"
           role="Social Media"
           avatar={Ali}
