@@ -12,15 +12,15 @@ const SocialButtonBase = ({ url, icon }) => (
 );
 
 const TwitterButton = ({ url }) => (
-  <SocialButtonBase url={url} icon={<i className="fa fa-twitter" />} />
+  <SocialButtonBase url={url} icon={<i className="fa-brands fa-twitter" />} />
 );
 
 const InstagramButton = ({ url }) => (
-  <SocialButtonBase url={url} icon={<i className="fa fa-instagram" />} />
+  <SocialButtonBase url={url} icon={<i className="fa-brands fa-instagram" />} />
 );
 
 const LinkedInButton = ({ url }) => (
-  <SocialButtonBase url={url} icon={<i className="fa fa-linkedin" />} />
+  <SocialButtonBase url={url} icon={<i className="fa-brands fa-linkedin" />} />
 );
 
 const WebsiteButton = ({ url }) => (
