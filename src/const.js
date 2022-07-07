@@ -15,6 +15,9 @@ export const STRIPE_LINKS = {
     honeywell: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28o7ug0Pv8mzas0aEQ",
     respiratorKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAeWI9m1cCP57G28c",
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAg0MgOt0U757G5kp",
+	dentecKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR6eWIgOt0U77fOfZd",
+    dentecRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY6qc69P9qDbw4eVa",
+	lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
   },
   co2: {
     co2ModelC: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY29Wbu9byL2ZyfZ9",
