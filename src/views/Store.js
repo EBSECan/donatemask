@@ -25,6 +25,8 @@ import HoneywellData from "assets/img/buy/honeywell.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
+import DentecData from "assets/img/buy/dentec-spec.pdf";
+import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -34,7 +36,10 @@ import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
 import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
-import arnet4ImageUrl from "assets/img/buy/arnet4.jpg";
+import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
+import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
+import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
+import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 
 const redirectTo = (url) => {
   window.location.href = url;
@@ -265,6 +270,62 @@ const BuyPage = () => {
           buyBtnText="Buy Pack"
         />
 
+        <StoreItem
+          imgWidth="748"
+          imgAlt="Dentec Comfort-Air Half Facepiece Respirator Kit"
+          imgUrl={dentecKitImageUrl}
+          title="Dentec Comfort-Air Respirator Kit"
+          description={
+            <>
+              Dentec <strong>Comfort-Air Half Facepiece Respirator Kit</strong>,{" "}
+              <strong>4 pairs of N95 filters</strong>, and{" "}
+              <strong>10 alcohol-free wipes</strong>.
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$99.99"
+          buyBtnId="buy-dentec-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecKit)}
+          buyBtnText="Buy Kit"
+        />
+
+        <StoreItem
+          imgWidth="1084"
+          imgAlt="Dentec Comfort-Air Refill Pack"
+          imgUrl={dentecRefillImageUrl}
+          title="Dentec Comfort-Air Refill Pack"
+          description={
+            <>
+              Dentec Comfort-Air refill pack of 16 pairs of{" "}
+              <strong>N95 Filters</strong>, and box of{" "}
+              <strong>100 alcohol-free wipes</strong>.
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$79.99"
+          buyBtnId="buy-3m-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
+          buyBtnText="Buy Pack"
+        />
+
+        <StoreItem
+          imgWidth="1000"
+          imgAlt="Scrap Scrunchie Shop Mask Lanyard"
+          imgUrl={lanyardImageUrl}
+          title="Scrap Scrunchie Shop Mask Lanyard"
+          description={
+            <>
+              Scrap Scrunchie Shop 12" <strong>mask lanyard</strong>, with
+              random snap design, hand-made in Canada by local artisan.
+            </>
+          }
+          dataSheetUrl={LanyardData}
+          price="$9.99"
+          buyBtnId="buy-lanyard"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.lanyard)}
+          buyBtnText="Buy Lanyard"
+        />
+
         <Row>
           <Col>
             <h2 className="font-weight-bold">
@@ -309,9 +370,9 @@ const BuyPage = () => {
           title="CO2 Model C"
           description={
             <>
-              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a kit. Canadian
-              designed and made. Measures CO<sub>2</sub> levels as well as
-              temperature and humidity.
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
             </>
           }
           dataSheetUrl={CO2ModelCData}
@@ -324,7 +385,7 @@ const BuyPage = () => {
         <StoreItem
           imgWidth="794"
           imgAlt="ARANET 4 Home Edition"
-          imgUrl={arnet4ImageUrl}
+          imgUrl={aranet4ImageUrl}
           title="ARANET 4"
           description={
             <>
