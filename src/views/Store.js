@@ -269,9 +269,9 @@ const BuyPage = () => {
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.refillPack)}
           buyBtnText="Buy Pack"
         />
-		
-		<StoreItem
-          imgWidth="1477"
+
+        <StoreItem
+          imgWidth="748"
           imgAlt="Dentec Comfort-Air Half Facepiece Respirator Kit"
           imgUrl={dentecKitImageUrl}
           title="Dentec Comfort-Air Respirator Kit"
@@ -289,7 +289,6 @@ const BuyPage = () => {
           buyBtnText="Buy Kit"
         />
 
-
         <StoreItem
           imgWidth="1084"
           imgAlt="Dentec Comfort-Air Refill Pack"
@@ -297,8 +296,9 @@ const BuyPage = () => {
           title="Dentec Comfort-Air Refill Pack"
           description={
             <>
-              Dentec Comfort-Air refill pack of 16 pairs of <strong>N95 Filters</strong>,
-              and box of <strong>100 alcohol-free wipes</strong>.
+              Dentec Comfort-Air refill pack of 16 pairs of{" "}
+              <strong>N95 Filters</strong>, and box of{" "}
+              <strong>100 alcohol-free wipes</strong>.
             </>
           }
           dataSheetUrl={DentecData}
@@ -308,24 +308,23 @@ const BuyPage = () => {
           buyBtnText="Buy Pack"
         />
 
-     <StoreItem
+        <StoreItem
           imgWidth="1000"
           imgAlt="Scrap Scrunchie Shop Mask Lanyard"
           imgUrl={lanyardImageUrl}
           title="Scrap Scrunchie Shop Mask Lanyard"
           description={
             <>
-              Scrap Scrunchie Shop 12" <strong>mask lanyard</strong>,{" "}
-               with random snap design, hand-made in Canada by local artisan.
+              Scrap Scrunchie Shop 12" <strong>mask lanyard</strong>, with
+              random snap design, hand-made in Canada by local artisan.
             </>
           }
-		  dataSheetUrl={LanyardData}
+          dataSheetUrl={LanyardData}
           price="$9.99"
           buyBtnId="buy-lanyard"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.lanyard)}
           buyBtnText="Buy Lanyard"
         />
-
 
         <Row>
           <Col>
@@ -371,9 +370,9 @@ const BuyPage = () => {
           title="CO2 Model C"
           description={
             <>
-              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a kit. Canadian
-              designed and made. Measures CO<sub>2</sub> levels as well as
-              temperature and humidity.
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
             </>
           }
           dataSheetUrl={CO2ModelCData}
