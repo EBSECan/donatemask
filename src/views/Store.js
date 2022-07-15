@@ -283,7 +283,7 @@ const BuyPage = () => {
             </>
           }
           dataSheetUrl={DentecData}
-          price="$99.99"
+          price="$79.99"
           buyBtnId="buy-dentec-kit"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecKit)}
           buyBtnText="Buy Kit"
@@ -302,7 +302,7 @@ const BuyPage = () => {
             </>
           }
           dataSheetUrl={DentecData}
-          price="$79.99"
+          price="$99.99"
           buyBtnId="buy-3m-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
           buyBtnText="Buy Pack"
