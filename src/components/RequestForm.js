@@ -54,6 +54,7 @@ const RequestForm = () => {
 
   const [msg, setMsg] = useState("");
   const [error, setError] = useState();
+  const [submitting, setSubmitting] = useState(false);
   const [submitFailed, setSubmitFailed] = useState(false);
 
   const onAmntChange = (event, type) => {
@@ -93,6 +94,7 @@ const RequestForm = () => {
     }
 
     try {
+      setSubmitting(true);
       const res = await fetch("/api/mask_request_add", {
         method: "POST",
         headers: {
@@ -123,6 +125,8 @@ const RequestForm = () => {
     } catch (err) {
       console.log("Error submitting mask request", err);
       setSubmitFailed(true);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -375,7 +379,7 @@ const RequestForm = () => {
             <FormGroup>
               <Button
                 id="request-submit"
-                disabled={!!error}
+                disabled={!!error || submitting}
                 color="success"
                 type="submit"
                 className="full-width"
