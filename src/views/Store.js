@@ -27,6 +27,7 @@ import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
 import DentecData from "assets/img/buy/dentec-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
+import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -40,6 +41,7 @@ import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
 import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
+import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
 const redirectTo = (url) => {
   window.location.href = url;
@@ -398,6 +400,24 @@ const BuyPage = () => {
           buyBtnId="buy-co2-aranet-4"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.aranet4)}
           buyBtnText="Buy Aranet 4"
+        />
+		
+		<StoreItem
+          imgWidth="1283"
+          imgAlt="PRE-ORDER Vitalight Portal CO2 Monitor"
+          imgUrl={vitalightImageUrl}
+          title="PRE-ORDER Vitalight Portable CO2 Monitor"
+          description={
+            <>
+              <strong>PRE-ORDER</strong> Vitalight portable CO2 Monitor. Measures CO<sub>2</sub>{" "}
+              levels in your spaces at a much lower cost, with up to 8 hour battery life!
+            </>
+          }
+          dataSheetUrl={VitalightData}
+          price="SPECIAL PRE-ORDER PRICE: $64.99"
+          buyBtnId="buy-co2-vitalight"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
+          buyBtnText="Buy Vitalight"
         />
       </Container>
       <SimpleFooter />
