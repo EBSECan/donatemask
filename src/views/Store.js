@@ -266,7 +266,7 @@ const BuyPage = () => {
             </>
           }
           dataSheetUrl={KitData}
-          price="$299.99"
+          price="$249.99"
           buyBtnId="buy-3m-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.refillPack)}
           buyBtnText="Buy Pack"
