@@ -1,4 +1,6 @@
-const toInt = (value) => value|0;
+// Get a positive, integer value for a given number.
+// Non-numbers will return 0 (e.g., null)
+const toInt = (value) => Math.abs(value|0);
 
 // Allow overriding the web URL, but default to the public domain
 const webUrl = process.env.WEB_URL || 'https://donatemask.ca';
