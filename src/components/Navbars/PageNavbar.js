@@ -186,7 +186,7 @@ class PageNavbar extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://github.com/mekkim/donatemask"
+                      href="https://github.com/EBSECan/donatemask"
                       id="tooltip-navbar-github"
                       target="_blank"
                     >
