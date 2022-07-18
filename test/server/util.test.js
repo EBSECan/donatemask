@@ -9,5 +9,9 @@ describe("util", () => {
     test("toInt() should return an integer if value is a double", () => {
       expect(util.toInt(3.14)).toEqual(3);
     });
+
+    test("toInt() should always return a positive value", () => {
+      expect(util.toInt(-10)).toEqual(10);
+    });
   });
 });
