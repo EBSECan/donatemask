@@ -246,7 +246,8 @@ const BuyPage = () => {
             <>
               3M <strong>6200 Half Facepiece Respirator Kit</strong>{" "}
               (N95-equivalent), <strong>P100 filters</strong>, and{" "}
-              <strong>10 alcohol-free respirator wipes</strong>.
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong>Medium fit.</strong>
             </>
           }
           dataSheetUrl={KitData}
@@ -284,7 +285,8 @@ const BuyPage = () => {
             <>
               Dentec <strong>Comfort-Air Half Facepiece Respirator Kit</strong>,{" "}
               <strong>4 pairs of N95 filters</strong>, and{" "}
-              <strong>10 alcohol-free respirator wipes</strong>.
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong>Small-medium fit.</strong>
             </>
           }
           dataSheetUrl={DentecData}
@@ -322,7 +324,8 @@ const BuyPage = () => {
             <>
               Dräger <strong>X-plore 2100 Respirator Kit </strong>,{" "}
               <strong>5 x P100 filters</strong>, and{" "}
-              <strong>10 alcohol-free respirator wipes</strong>.
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong> Medium-large fit.</strong>
             </>
           }
           dataSheetUrl={DraegerData}
