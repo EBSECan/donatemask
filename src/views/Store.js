@@ -26,6 +26,7 @@ import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
 import DentecData from "assets/img/buy/dentec-spec.pdf";
+import DraegerData from "assets/img/buy/draeger-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 
@@ -40,6 +41,8 @@ import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
 import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
+import draegerKitImageUrl from "assets/img/buy/draeger-kit.png";
+import draegerRefillImageUrl from "assets/img/buy/draeger-refill.png";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
@@ -243,7 +246,7 @@ const BuyPage = () => {
             <>
               3M <strong>6200 Half Facepiece Respirator Kit</strong>{" "}
               (N95-equivalent), <strong>P100 filters</strong>, and{" "}
-              <strong>10 alcohol-free wipes</strong>.
+              <strong>10 alcohol-free respirator wipes</strong>.
             </>
           }
           dataSheetUrl={KitData}
@@ -262,7 +265,7 @@ const BuyPage = () => {
             <>
               3M 6200 refill pack of six <strong>604 Exhale Filters</strong>,
               six <strong>P100 cartridges</strong>, and box of{" "}
-              <strong>100 alcohol-free wipes</strong>.
+              <strong>100 alcohol-free respirator wipes</strong>.
             </>
           }
           dataSheetUrl={KitData}
@@ -281,7 +284,7 @@ const BuyPage = () => {
             <>
               Dentec <strong>Comfort-Air Half Facepiece Respirator Kit</strong>,{" "}
               <strong>4 pairs of N95 filters</strong>, and{" "}
-              <strong>10 alcohol-free wipes</strong>.
+              <strong>10 alcohol-free respirator wipes</strong>.
             </>
           }
           dataSheetUrl={DentecData}
@@ -300,13 +303,51 @@ const BuyPage = () => {
             <>
               Dentec Comfort-Air refill pack of 16 pairs of{" "}
               <strong>N95 Filters</strong>, and box of{" "}
-              <strong>100 alcohol-free wipes</strong>.
+              <strong>100 alcohol-free respirator wipes</strong>.
             </>
           }
           dataSheetUrl={DentecData}
           price="$99.99"
-          buyBtnId="buy-3m-refill"
+          buyBtnId="buy-dentec-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
+          buyBtnText="Buy Pack"
+        />
+		
+		<StoreItem
+          imgWidth="1027"
+          imgAlt="Dräger X-plore 2100 Respirator Kit"
+          imgUrl={draegerKitImageUrl}
+          title="Dräger X-plore 2100 Respirator Kit"
+          description={
+            <>
+              Dräger <strong>X-plore 2100 Respirator Kit </strong>,{" "}
+              <strong>5 x P100 filters</strong>, and{" "}
+              <strong>10 alcohol-free respirator wipes</strong>.
+            </>
+          }
+          dataSheetUrl={DraegerData}
+          price="$109.99"
+          buyBtnId="buy-draeger-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.draegerKit)}
+          buyBtnText="Buy Kit"
+        />
+
+        <StoreItem
+          imgWidth="1856"
+          imgAlt="Dräger X-plore 2100 Refill Pack"
+          imgUrl={draegerRefillImageUrl}
+          title="Dräger X-plore 2100 Refill Pack"
+          description={
+            <>
+              Dräger X-plore 2100 refill pack of 20{" "}
+              <strong>P100 Filters</strong> and a box of{" "}
+              <strong>100 alcohol-free respirator wipes</strong>.
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$199.99"
+          buyBtnId="buy-draeger-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.draegerRefillPack)}
           buyBtnText="Buy Pack"
         />
 

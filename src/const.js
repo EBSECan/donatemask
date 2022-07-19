@@ -17,6 +17,8 @@ export const STRIPE_LINKS = {
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/00gbKwbu90U78jS7sN",
     dentecKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR6eWIgOt0U77fOfZd",
     dentecRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY6qc69P9qDbw4eVa",
+	draegerKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28o3e00Pv1Yb43C8wS",
+    draegerRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZeeWIeGlfP143C5kH",
     lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
   },
   co2: {
@@ -44,6 +46,8 @@ export const MASKS_DONATED_FROM_PURCHASE = {
     refillPack: 32,
     dentecKit: 30,
     dentecRefillPack: 16,
+	draegerKit: 20,
+	draegerRefillPack: 25,
     lanyard: 4,
   },
   co2: {
