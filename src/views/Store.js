@@ -41,8 +41,8 @@ import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
 import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
-import draegerKitImageUrl from "assets/img/buy/draeger-kit.png";
-import draegerRefillImageUrl from "assets/img/buy/draeger-refill.png";
+import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
+import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
