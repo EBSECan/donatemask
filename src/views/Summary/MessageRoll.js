@@ -10,7 +10,7 @@ const MessageRoll = ({ messages }) => {
 
   return (
     <Row className="message-roll justify-content-center">
-      <Col md={6} xs={12}>
+      <Col md={8} xs={12}>
         <h3 className="display-4 d-flex justify-content-center mb-3">
           Recent Thank You Messages
         </h3>

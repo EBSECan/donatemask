@@ -159,6 +159,10 @@ p#message {
   color: #333333;
 }
 
+#requests-map a {
+  color: #3881f5;
+}
+
 /* 3. About Us Page */
 .about {
   margin-top: 5vh;
