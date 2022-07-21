@@ -57,7 +57,7 @@ const Stats = ({ stats = {} }) => {
             <Row className="row-grid">
               <Col lg="3">
                 <SummaryCard
-                  title="No. of COVID Tests Requested"
+                  title="No. of COVID Test Boxes Requested"
                   value={formatNumber(testsRequested)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"
@@ -67,7 +67,7 @@ const Stats = ({ stats = {} }) => {
               </Col>
               <Col lg="3">
                 <SummaryCard
-                  title="No. of COVID Tests Fulfilled"
+                  title="No. of COVID Test Boxes Fulfilled"
                   value={formatNumber(testsFulfilled)}
                   icon={<SatisfiedIcon />}
                   buttonText="Request"

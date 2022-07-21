@@ -5,6 +5,7 @@ import Hero from "components/Hero.js";
 import PageNavbar from "components/Navbars/PageNavbar.js";
 import SimpleFooter from "components/SimpleFooter.js";
 import MessageRoll from "./MessageRoll";
+import RequestsMap from "./RequestsMap";
 import Stats from "./Stats";
 import { fetcher } from "../../util";
 
@@ -21,6 +22,7 @@ const Summary = () => {
       />
       <Stats stats={stats} />
       <MessageRoll messages={messages} />
+      <RequestsMap />
       <SimpleFooter />
     </>
   );
