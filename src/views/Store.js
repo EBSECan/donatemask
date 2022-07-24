@@ -453,8 +453,9 @@ const BuyPage = () => {
           title="PRE-ORDER Vitalight Portable CO2 Monitor"
           description={
             <>
-              <strong>PRE-ORDER</strong> Vitalight portable CO2 Monitor. Measures CO<sub>2</sub>{" "}
-              levels in your spaces at a much lower cost, with up to 8 hour battery life!
+              <strong>PRE-ORDER</strong> Vitalight portable CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
+              measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
+			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
