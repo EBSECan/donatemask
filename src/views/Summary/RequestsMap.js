@@ -18,12 +18,15 @@ const RequestsMap = () => (
   <Container id="requests-map">
     <Row className="justify-content-center">
       <Col xs={12}>
-        <Card>
+        <h3 className="display-4 d-flex justify-content-center mb-3">
+            Donate A Mask Request Map
+        </h3>
+
+        <Card className="borderless">
           <CardBody>
-            <CardTitle tag="h3">Donate A Mask Request Map</CardTitle>
             <CardText>
-              Since January 2022, we've had <Link to="/request">requests for masks and rapid tests</Link> from every region of Canada shown in red below.
-              Help us continue to support these and other vulnerable people across Canada with a <Link to="/donate">donation</Link> or
+              Since January 2022, we've had <Link to="/request">requests for masks and rapid tests</Link> from across Canada, shown in red below.
+              Help us continue to support vulnerable people across Canada with a <Link to="/donate">donation</Link> or
               by purchasing items in our <Link to="/buy">charity store</Link>.  All proceeds go towards sending free masks and tests to people in need across Canada.
             </CardText>
           </CardBody>
@@ -32,6 +35,7 @@ const RequestsMap = () => (
             src={mapUrl}
             bottom
             width="100%"
+            style={{ border: '1px solid lightgray', borderRadius: '5px' }}
           />
         </Card>
       </Col>
