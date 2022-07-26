@@ -12,6 +12,7 @@ describe("db/mask-requests.js", () => {
 
   test("add() adds a mask request", async () => {
     const maskRequest = {
+      priority: "normal",
       requestorType: "individual",
       organizationName: null,
       organizationType: null,
@@ -41,6 +42,7 @@ describe("db/mask-requests.js", () => {
 
   test("messages() gets recent messages", async () => {
     const maskRequest = {
+      priority: "normal",
       requestorType: "individual",
       organizationName: null,
       organizationType: null,

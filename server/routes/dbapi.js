@@ -76,6 +76,7 @@ router.post("/api/mask_request_add", async (req, res, next) => {
     // Record entries for requests and demographics separately
     await Promise.all([
       maskRequests.add({
+        priority: req.body.priority || 'normal',
         requestorType: req.body.requestorType,
         organizationName: req.body.organizationName,
         organizationType: req.body.organizationType,

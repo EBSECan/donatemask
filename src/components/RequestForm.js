@@ -6,6 +6,7 @@ import {
   UncontrolledAlert,
   Button,
   FormGroup,
+  FormText,
   Form,
   Label,
   Input,
@@ -38,6 +39,7 @@ const buildDemographicList = () => {
 const RequestForm = () => {
   const history = useHistory();
 
+  const [requestPriority, setRequestPriority] = useState("normal");
   const [requestorType, setRequestorType] = useState("individual");
   const [organizationName, setOrganizationName] = useState("");
   const [organizationType, setOrganizationType] = useState("");
@@ -101,6 +103,7 @@ const RequestForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          priority: requestPriority,
           requestorType,
           organizationName,
           organizationType,
@@ -134,7 +137,8 @@ const RequestForm = () => {
     <Container>
       <Form onSubmit={handleSubmit} id="request-form">
         <h3 className="display-3">Request Masks and COVID Tests</h3>
-        <p>Requests are free, and funded by charitable donations.</p>
+        <p>Requests are free, and funded by charitable donations. All requests are processed and fulfilled by volunteers.</p>
+
         <Row>
           <Col md="6">
             <FormGroup>
@@ -358,6 +362,24 @@ const RequestForm = () => {
                 </FormGroup>
               ))}
             </Container>
+          </Col>
+        </Row>
+        <Row className="mt-3">
+          <Col md="12">
+            <FormGroup>
+              <Label for="request-priority">Please help us prioritize your request. How urgent is your need?</Label>
+              <Input
+                id="request-priority"
+                type="select"
+                value={requestPriority}
+                onChange={(e) => setRequestPriority(e.target.value)}
+              >
+                <option value="low">Low Priority: fill order when possible, but no hurry (e.g., will not impact my immediate safety)</option>
+                <option value="normal">Normal Priority: nice to have masks/tests (e.g., won't be in danger if they're delayed a couple of weeks)</option>
+                <option value="high">High Priority: needed ASAP (e.g., upcoming high-risk event/appointment for which no protection is currently available)</option>
+              </Input>
+              <FormText><em>Disclaimer: while we can't promise shipments by a certain date, our volunteers use this info to help guide prioritization of requests.</em></FormText>
+            </FormGroup>
           </Col>
         </Row>
 
