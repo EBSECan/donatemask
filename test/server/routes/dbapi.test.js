@@ -47,6 +47,7 @@ describe("dbapi", () => {
       await request(app)
         .post("/api/mask_request_add")
         .send({
+          priority: "normal",
           requestorType: "individual",
           organizationName: null,
           organizationType: null,
@@ -75,6 +76,7 @@ describe("dbapi", () => {
 
     test("Messages should include most recent mask request", async () => {
       const maskRequest = {
+        priority: "normal",
         requestorType: "individual",
         organizationName: null,
         organizationType: null,
@@ -195,6 +197,7 @@ describe("dbapi", () => {
       await request(app)
         .post("/api/mask_request_add")
         .send({
+          priority: "normal",
           requestorType: "individual",
           organizationName: null,
           organizationType: null,
@@ -241,6 +244,7 @@ describe("dbapi", () => {
       await request(app)
         .post("/api/mask_request_add")
         .send({
+          priority: "normal",
           requestorType: "individual",
           organizationName: null,
           organizationType: null,
@@ -319,6 +323,7 @@ describe("dbapi", () => {
   describe("masks", () => {
     test("POST /api/mask_request_add should add a mask request and return 201", () => {
       const maskRequest = {
+        priority: "normal",
         requestorType: "individual",
         organizationName: null,
         organizationType: null,
@@ -344,6 +349,7 @@ describe("dbapi", () => {
 
     test("A mask request added should exist in returned results", async () => {
       const maskRequest = {
+        priority: "normal",
         requestorType: "organization",
         organizationName: "Organization Name",
         organizationType: "Organization Type",
@@ -390,6 +396,7 @@ describe("dbapi", () => {
 
   test("A mask request should add default demographic data", async () => {
     const maskRequest = {
+      priority: "normal",
       requestorType: "organization",
       organizationName: "Organization Name",
       organizationType: "Organization Type",
@@ -433,6 +440,7 @@ describe("dbapi", () => {
 
   test("A mask request with demographic data should get stored", async () => {
     const maskRequest = {
+      priority: "normal",
       requestorType: "organization",
       organizationName: "Organization Name",
       organizationType: "Organization Type",
