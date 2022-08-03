@@ -448,18 +448,18 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1283"
-          imgAlt="PRE-ORDER Vitalight Portal CO2 Monitor"
+          imgAlt="Vitalight Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="PRE-ORDER Vitalight Portable CO2 Monitor"
+          title="Vitalight Mini CO2 Monitor"
           description={
             <>
-              <strong>PRE-ORDER</strong> Vitalight portable CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
+              <strong>Vitalight</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
 			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
-          price="SPECIAL PRE-ORDER PRICE: $64.99"
+          price="$69.99"
           buyBtnId="buy-co2-vitalight"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
           buyBtnText="Buy Vitalight"
