@@ -25,7 +25,7 @@ export const STRIPE_LINKS = {
     co2ModelC: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY29Wbu9byL2ZyfZ9",
     co2ModelD: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMeWI2XD5an43C3cq",
     aranet4: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN29Co9m18mz1VufZb",
-	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY7ugbu9byL0RqcN6",
+	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
   }
 };
 
@@ -54,7 +54,7 @@ export const MASKS_DONATED_FROM_PURCHASE = {
     co2ModelC: 32,
     co2ModelD: 32,
     aranet4: 25,
-	vitalight: 12,
+	vitalight: 16,
   }
 };
 
