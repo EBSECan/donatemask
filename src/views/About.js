@@ -26,6 +26,10 @@ import TTC from "assets/img/sponsors/ttc.png";
 import Kanbanize from "assets/img/sponsors/kanbanize.svg";
 import CanRedCross from "assets/img/sponsors/canredcross.png";
 import HealthCanada from "assets/img/sponsors/healthcanada.png";
+import Dentec from "assets/img/sponsors/dentec.png";
+import Prescientx from "assets/img/sponsors/prescientx.png";
+import Co2Click from "assets/img/sponsors/co2click.png";
+import ScrapScrunchieShop from "assets/img/sponsors/scrapscrunchieshop.png";
 
 const AboutPage = () => {
   return (
@@ -131,6 +135,22 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         <Sponsorship
           src={HealthCanada}
           href="https://www.canada.ca/en/health-canada.html"
+        />
+		<Sponsorship
+          src={Dentec}
+          href="https://dentecsafety.com/"
+        />
+		<Sponsorship
+          src={Prescientx}
+          href="https://prescientx.com/"
+        />
+		<Sponsorship
+          src={Co2Click}
+          href="https://www.co2.click/"
+        />
+		<Sponsorship
+          src={ScrapScrunchieShop}
+          href="https://www.buymask.ca"
         />
       </Row>
       <SimpleFooter />
