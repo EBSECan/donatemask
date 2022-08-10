@@ -43,7 +43,8 @@
       "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
       "compile-sass": "node-sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.css",
       "minify-sass": "node-sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.min.css --output-style compressed",
-      "map-sass": "node-sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.css --source-map true"
+      "map-sass": "node-sass src/assets/scss/argon-design-system-react.scss src/assets/css/argon-design-system-react.css --source-map true",
+      "report": "node tools/report"
    },
    "browserslist": [
       ">0.2%",
@@ -78,8 +79,10 @@
       "concurrently": "^7.2.0",
       "gulp": "4.0.2",
       "gulp-append-prepend": "1.0.9",
+      "handlebars": "^4.7.7",
       "jest": "^28.0.3",
       "mongodb-memory-server": "^8.5.2",
+      "postal-code-helpers": "^1.0.12",
       "supertest": "^6.2.3"
    },
    "overrides": {
