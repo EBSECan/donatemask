@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Donate A Mask: Request Report</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="container pt-3">
+      <header class="my-5">
+        <img
+          class="rounded-circle border float-start me-2"
+          width="46"
+          height="46"
+          alt="Donate A Mask logo"
+          src="https://donatemask.ca/logos/logo-128x128.png"
+        />
+        <h1>Donate A Mask: Request Report</h1>
+        <p class="lead">Report generated on {{reportDate}}</p>
+      </header>
+
+      <section id="metric1" class="my-5">
+        <h2>1. Total Requests for Vulnerable Populations</h2>
+        <table class="table table-bordered">
+          <caption><strong>NOTE:</strong>
+            the collection of demographic data began on June 17, 2022. Thus,
+            <strong>Total Requests</strong>
+            in this table only reflects requests since that date.</caption>
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Self-Identification</th>
+              <th scope="col"># of Requests</th>
+              <th scope="col">% of Total Requests</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vulnerable - Yes</td>
+              <td>{{metric1.vulnerable.value}}</td>
+              <td>{{metric1.vulnerable.percent}}</td>
+            </tr>
+            <tr>
+              <td>Vulnerable - No</td>
+              <td>{{metric1.notVulnerable.value}}</td>
+              <td>{{metric1.notVulnerable.percent}}</td>
+            </tr>
+          </tbody>
+          <tfoot class="table-light">
+            <tr>
+              <th>Total Requests</th>
+              <th>{{metric1.total}}</th>
+              <th>&nbsp;</th>
+            </tr>
+          </tfoot>
+        </table>
+        <p>
+          <strong>Vulnerable - Yes</strong>: requests (masks and/or rapid tests)
+          made on behalf of persons self-identified as belonging to one or more
+          of the vulnerable groups listed on the “Demographic Information”
+          section of the request form.
+        </p>
+        <p>
+          <strong>Vulnerable - No</strong>: requests (masks and/or rapid tests)
+          made on behalf of persons not self-identified as belonging to one or
+          more of the vulnerable groups (i.e., selected
+          <em>Prefer not to say</em>, selected
+          <em>None of the above</em>, or made no selection).
+        </p>
+      </section>
+
+      <section id="metric2" class="my-5" style="page-break-after: always;">
+        <h2>2. Vulnerable Populations Served</h2>
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Vulnerable Population Category</th>
+              <th scope="col">
+                # of Requests Involving this Category
+              </th>
+              <th scope="col">% of Total Requests</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each metric2.populations}}
+              <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.value}}</td>
+                <td>{{this.percent}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <p>
+          <strong>NOTE:</strong>
+          A single request may be made on behalf of persons self-identified as
+          belonging to more than one category. Thus,
+          <strong>Total Requests</strong>
+          does not equal the sum of all categories.
+          <strong>% of Total Requests</strong>
+          can be interpreted as the percent of total requests that involved
+          serving a specific category. For example,
+          <strong>{{metric2.populations.0.percent}}</strong>
+          of requests involved serving
+          <em>{{metric2.populations.0.name}}</em>.
+        </p>
+        <p>
+          The collection of demographic data began on June 17, 2022. Thus
+          <strong>% of Total Requests</strong>
+          has been calculated using total requests since that date.
+        </p>
+      </section>
+
+      <section id="metric3" class="my-5">
+        <h2>3. Requests by Region</h2>
+        <img
+          alt="Map of requests across Canada"
+          src="https://ebsecan.github.io/canada-map-requests/map.png"
+          width="100%"
+          class="img-fluid mb-3"
+        />
+        <p>
+          The following table shows the number of masks (regular and small size)
+          and number of boxes of rapid tests (5 tests per box) requested by
+          region, based on postal code. For each region, the total number of
+          items is shown, as well as the proportion of requests made for that
+          item in Canada.
+        </p>
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">&nbsp;</th>
+              <th scope="col" colspan="3" class="text-center">Masks</th>
+              <th scope="col" class="text-center">Rapid Tests</th>
+            </tr>
+            <tr>
+              <th scope="col">Region</th>
+              <th scope="col"># of Regular Masks</th>
+              <th scope="col"># of Small Masks</th>
+              <th scope="col">Total Masks</th>
+              <th scope="col"># of Boxes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each metric3.regions}}
+              <tr>
+                <td>{{this.name}}</td>
+                <td>
+                  {{this.regularMaskAmount.value}}
+                  ({{this.regularMaskAmount.percent}})
+                </td>
+                <td>
+                  {{this.smallMaskAmount.value}}
+                  ({{this.smallMaskAmount.percent}})
+                </td>
+                <td>
+                  {{this.maskAmountTotal.value}}
+                  ({{this.maskAmountTotal.percent}})
+                </td>
+                <td>{{this.testAmount.value}} ({{this.testAmount.percent}})</td>
+              </tr>
+            {{/each}}
+          </tbody>
+          <tfoot class="table-light">
+            <tr>
+              <th>Canada</th>
+              <th>{{metric3.Canada.regularMaskAmount.value}}</th>
+              <th>{{metric3.Canada.smallMaskAmount.value}}</th>
+              <th>{{metric3.Canada.maskAmountTotal.value}}</th>
+              <th>{{metric3.Canada.testAmount.value}}</th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

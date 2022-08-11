@@ -7,3 +7,5 @@ coverage/
 .DS_Store
 # Playwright test videos, traces
 test-results/
+# Generated report
+report.html
