@@ -52,6 +52,7 @@ const RequestForm = () => {
   const [postalCode, setPostal] = useState("");
   const [maskAmntRegular, setMaskAmntRegular] = useState(0);
   const [maskAmntSmall, setMaskAmntSmall] = useState(0);
+  const [maskAmntLarge, setMaskAmntLarge] = useState(0);
   const [testAmnt, setTestAmnt] = useState(0);
 
   const [msg, setMsg] = useState("");
@@ -66,6 +67,9 @@ const RequestForm = () => {
     }
 
     switch (type) {
+      case "masks-large":
+        setMaskAmntLarge(amount);
+        break;
       case "masks-regular":
         setMaskAmntRegular(amount);
         break;
@@ -90,7 +94,7 @@ const RequestForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!maskAmntRegular && !maskAmntSmall && !testAmnt) {
+    if (!maskAmntRegular && !maskAmntSmall &&!maskAmntLarge && !testAmnt) {
       setError("Please request at least one mask size or box of COVID tests.");
       return false;
     }
@@ -109,6 +113,7 @@ const RequestForm = () => {
           organizationType,
           name,
           email,
+          maskAmntLarge,
           maskAmntRegular,
           maskAmntSmall,
           testAmnt,
@@ -287,6 +292,18 @@ const RequestForm = () => {
 
         <h3 className="mt-3">Mask Size and Quantity</h3>
         <Row>
+          <Col md="4">
+            <FormGroup>
+              <Label for="request-amount-large">Large-size Masks</Label>
+              <Input
+                id="request-amount-large"
+                placeholder={`Number Requested`}
+                type="number"
+                min="0"
+                onChange={(e) => onAmntChange(e, "masks-large")}
+              />
+            </FormGroup>
+          </Col>
           <Col md="4">
             <FormGroup>
               <Label for="request-amount-regular">Regular-size Masks</Label>

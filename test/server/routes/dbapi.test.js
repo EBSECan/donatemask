@@ -55,7 +55,8 @@ describe("dbapi", () => {
           address: "Address",
           maskAmntRegular: 3,
           maskAmntSmall: 3,
-          testAmnt: 6,
+          maskAmntLarge: 3,
+          testAmnt: 9,
           postal: "M5W 1E6",
           province: "Ontario",
           email: "k3yG@example.com",
@@ -84,7 +85,8 @@ describe("dbapi", () => {
         address: "Address",
         maskAmntRegular: 3,
         maskAmntSmall: 3,
-        testAmnt: 6,
+        maskAmntLarge: 3,
+        testAmnt: 9,
         postal: "M5W 1E6",
         province: "Ontario",
         email: "n6yG@example.com",
@@ -205,7 +207,8 @@ describe("dbapi", () => {
           address: "Address",
           maskAmntRegular: 3,
           maskAmntSmall: 3,
-          testAmnt: 6,
+          maskAmntLarge: 3,
+          testAmnt: 9,
           postal: "M5W 1E6",
           province: "Ontario",
           email: "email@example.com",
@@ -222,9 +225,9 @@ describe("dbapi", () => {
         .expect(200);
 
       expect(updated.masksDonated).toEqual(original.masksDonated);
-      expect(updated.masksRequested).toEqual(original.masksRequested + 6);
+      expect(updated.masksRequested).toEqual(original.masksRequested + 9);
       expect(updated.masksFulfilled).toEqual(original.masksFulfilled);
-      expect(updated.testsRequested).toEqual(original.testsRequested + 6);
+      expect(updated.testsRequested).toEqual(original.testsRequested + 9);
       expect(updated.testsFulfilled).toEqual(original.testsFulfilled);
       ensureTotalUnfundedMasks(
         updated.unfundedMasks,
@@ -252,7 +255,8 @@ describe("dbapi", () => {
           address: "Address",
           maskAmntRegular: 4,
           maskAmntSmall: 4,
-          testAmnt: 8,
+          maskAmntLarge: 4,
+          testAmnt: 12,
           postal: "M5W 1E6",
           province: "Ontario",
           email: "email@example.com",
@@ -269,9 +273,9 @@ describe("dbapi", () => {
         .expect(200);
 
       expect(updated.masksDonated).toEqual(original.masksDonated);
-      expect(updated.masksRequested).toEqual(original.masksRequested + 8);
+      expect(updated.masksRequested).toEqual(original.masksRequested + 12);
       expect(updated.masksFulfilled).toEqual(original.masksFulfilled);
-      expect(updated.testsRequested).toEqual(original.testsRequested + 8);
+      expect(updated.testsRequested).toEqual(original.testsRequested + 12);
       expect(updated.testsFulfilled).toEqual(original.testsFulfilled);
       ensureTotalUnfundedMasks(
         updated.unfundedMasks,
@@ -331,6 +335,7 @@ describe("dbapi", () => {
         address: "Address",
         maskAmntRegular: 1,
         maskAmntSmall: 1,
+        maskAmntLarge: 1,
         testAmnt: 1,
         postal: "M5W 1E6",
         province: "Ontario",
@@ -357,6 +362,7 @@ describe("dbapi", () => {
         address: "New Address",
         maskAmntRegular: 2,
         maskAmntSmall: 2,
+        maskAmntLarge: 2,
         testAmnt: 2,
         postalCode: "M5W 1E7",
         province: "Manitoba",
@@ -377,13 +383,14 @@ describe("dbapi", () => {
 
       // Make sure we can get it back again
       const results = await maskRequests.get();
-      const { maskAmntRegular, maskAmntSmall, testAmnt, msg, timestamp } =
+      const { maskAmntRegular, maskAmntSmall,maskAmntLarge, testAmnt, msg, timestamp } =
         maskRequest;
       expect(results).toEqual(
         expect.arrayContaining([
           expect.objectContaining({
             maskAmntRegular,
             maskAmntSmall,
+            maskAmntLarge,
             testAmnt,
             msg,
             // The timestamp will be an ISO string vs. Date Object
@@ -404,6 +411,7 @@ describe("dbapi", () => {
       address: "New Address",
       maskAmntRegular: 2,
       maskAmntSmall: 2,
+      maskAmntLarge: 2,
       testAmnt: 2,
       postalCode: "M5W 1E7",
       province: "Manitoba",
@@ -448,6 +456,7 @@ describe("dbapi", () => {
       address: "New Address",
       maskAmntRegular: 2,
       maskAmntSmall: 2,
+      maskAmntLarge: 2,
       testAmnt: 2,
       postalCode: "M5W 1E7",
       province: "Manitoba",
