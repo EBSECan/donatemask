@@ -9,3 +9,4 @@ coverage/
 test-results/
 # Generated report
 report.html
+server/config-sample.env

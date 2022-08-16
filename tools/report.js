@@ -160,11 +160,13 @@ const calculateRegionRequestsMetric = (data) => {
 
     let regularMaskAmount = 0;
     let smallMaskAmount = 0;
+    let largeMaskAmount = 0;
     let testAmount = 0;
 
     data.forEach((r) => {
       regularMaskAmount += toInt(r.maskAmntRegular);
       smallMaskAmount += toInt(r.maskAmntSmall);
+      largeMaskAmount += toInt(r.maskAmntLarge);
       testAmount += toInt(r.testAmnt);
     });
 
@@ -175,11 +177,14 @@ const calculateRegionRequestsMetric = (data) => {
       smallMaskAmount: {
         value: smallMaskAmount,
       },
+      largeMaskAmount: {
+        value: largeMaskAmount,
+      },
       testAmount: {
         value: testAmount,
       },
       maskAmountTotal: {
-        value: regularMaskAmount + smallMaskAmount,
+        value: regularMaskAmount + smallMaskAmount + largeMaskAmount,
       },
     };
   };
@@ -226,6 +231,13 @@ const calculateRegionRequestsMetric = (data) => {
       regionData.smallMaskAmount.value
     );
 
+    regionData.largeMaskAmount.percent = toPercent(
+      regionData.largeMaskAmount.value / canada.largeMaskAmount.value
+    );
+    regionData.largeMaskAmount.value = formatNumber(
+      regionData.largeMaskAmount.value
+    );
+
     regionData.maskAmountTotal.percent = toPercent(
       regionData.maskAmountTotal.value / canada.maskAmountTotal.value
     );
@@ -250,6 +262,9 @@ const calculateRegionRequestsMetric = (data) => {
       },
       smallMaskAmount: {
         value: formatNumber(canada.smallMaskAmount.value),
+      },
+      largeMaskAmount: {
+        value: formatNumber(canada.largeMaskAmount.value),
       },
       testAmount: {
         value: formatNumber(canada.testAmount.value),

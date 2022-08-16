@@ -20,6 +20,7 @@ describe("db/mask-requests.js", () => {
       address: "Address",
       maskAmntRegular: 1,
       maskAmntSmall: 1,
+      maskAmntLarge: 1,
       testAmnt: 1,
       postal: "M5W 1E6",
       province: "Ontario",
@@ -32,10 +33,10 @@ describe("db/mask-requests.js", () => {
     await maskRequests.add(maskRequest);
 
     const result = await maskRequests.get();
-    const { maskAmntRegular, maskAmntSmall, msg, requestFulfilled, testAmnt, timestamp } = maskRequest;
+    const { maskAmntRegular, maskAmntSmall,maskAmntLarge, msg, requestFulfilled, testAmnt, timestamp } = maskRequest;
     expect(result).toEqual(
       expect.arrayContaining([expect.objectContaining({
-        maskAmntRegular, maskAmntSmall, msg, requestFulfilled, testAmnt, timestamp
+        maskAmntRegular, maskAmntSmall,maskAmntLarge, msg, requestFulfilled, testAmnt, timestamp
       })])
     );
   });
@@ -50,6 +51,7 @@ describe("db/mask-requests.js", () => {
       address: "Address",
       maskAmntRegular: 1,
       maskAmntSmall: 1,
+      maskAmntLarge: 1,
       testAmnt: 1,
       postal: "M5W 1E6",
       province: "Ontario",
