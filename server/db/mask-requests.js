@@ -10,6 +10,7 @@ const { toInt } = require("../util");
  * organizationType: "School, etc" | null
  * name: "John Smith"
  * address: "123 Main St."
+ * maskAmntLarge: 3
  * maskAmntRegular: 2
  * maskAmntSmall: 1
  * email: "jsmith@email.com"
@@ -48,6 +49,7 @@ module.exports.stats = async () => {
       maskAmnt: 1,
       maskAmntSmall: 1,
       maskAmntRegular: 1,
+      maskAmntLarge: 1,
     })
     .toArray();
 
@@ -57,13 +59,13 @@ module.exports.stats = async () => {
   let testsFulfilled = 0;
 
   maskRequests.forEach(
-    ({ testAmnt, requestFulfilled, maskAmntSmall, maskAmntRegular }) => {
+    ({ testAmnt, requestFulfilled, maskAmntSmall, maskAmntRegular, maskAmntLarge }) => {
       testsRequested += toInt(testAmnt);
-      masksRequested += toInt(maskAmntSmall) + toInt(maskAmntRegular);
+      masksRequested += toInt(maskAmntSmall) + toInt(maskAmntRegular) + toInt(maskAmntLarge);
 
       if (requestFulfilled) {
         testsFulfilled += toInt(testAmnt);
-        masksFulfilled += toInt(maskAmntSmall) + toInt(maskAmntRegular);
+        masksFulfilled += toInt(maskAmntSmall) + toInt(maskAmntRegular) + toInt(maskAmntLarge);
       }
     }
   );

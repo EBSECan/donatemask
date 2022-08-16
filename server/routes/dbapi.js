@@ -84,6 +84,7 @@ router.post("/api/mask_request_add", async (req, res, next) => {
         address: req.body.address,
         maskAmntRegular: req.body.maskAmntRegular,
         maskAmntSmall: req.body.maskAmntSmall,
+        maskAmntLarge: req.body.maskAmntLarge,
         testAmnt: req.body.testAmnt,
         postalCode: req.body.postal,
         province: req.body.province,
