@@ -8,6 +8,7 @@ CSS Table of Contents
   5. Footer
   6. FAQ Page
   7. Store Page
+  9. News Page
 */
 
 /* 0. Global */
@@ -285,6 +286,32 @@ p.answer a {
   margin-left: 8px;
 }
 
+/* 9. News Page */
+.news{
+  margin-top: 5vh;
+  row-gap: 1rem;
+}
+.news-content{
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 1rem;
+  transition: all 0.6s linear;
+  margin-bottom: 1rem;
+  color: #233dd2;
+  display: flex;
+  text-decoration: none;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.news-content:hover{
+ transform: scale(1.05);
+}
+
+/* 9. News Page End*/
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 
@@ -311,11 +338,18 @@ p.answer a {
   #request-form {
     margin-bottom: 15vh;
   }
+
+  .news-content{
+    height: auto;
+  }
 }
 @media (min-width: 1200px) {
   .navbar-expand-lg .navbar-nav .nav-link{
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
+  }
+  .news{
+    margin: 2.5rem;
   }
 }
 
