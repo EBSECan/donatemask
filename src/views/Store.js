@@ -492,10 +492,29 @@ const BuyPage = () => {
           }
           dataSheetUrl={VitalightData}
           price="$69.99 USD"
-		  shipping=" with FREE shipping to USA (import fees & taxes not included)"
+		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-usa"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightUSA)}
           buyBtnText="Buy Vitalight - USA"
+        />
+		<StoreItem
+          imgWidth="719"
+          imgAlt="DonateMask.ca Mini CO2 Monitor"
+          imgUrl={vitalightImageUrl}
+          title="DonateMask.ca Mini CO2 Monitor (EU)"
+          description={
+            <>
+              <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
+              measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
+			  Up to 8 hour battery life!
+            </>
+          }
+          dataSheetUrl={VitalightData}
+          price="€79.99 EUR"
+		  shipping=" with FREE shipping to mainland Europe (import duties & taxes not included)"
+          buyBtnId="buy-co2-vitalight-eu"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightEU)}
+          buyBtnText="Buy Vitalight - EU"
         />
       </Container>
       <SimpleFooter />

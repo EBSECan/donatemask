@@ -27,6 +27,7 @@ export const STRIPE_LINKS = {
     aranet4: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN29Co9m18mz1VufZb",
 	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
 	vitalightUSA: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oEeWIcydfP157G00p",
+	vitalightEU: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwbKw1Tz9qD8jScNc",
   }
 };
 
@@ -57,6 +58,7 @@ export const MASKS_DONATED_FROM_PURCHASE = {
     aranet4: 25,
 	vitalight: 16,
 	vitalightUSA: 32,
+	vitalightEU: 32
   }
 };
 
