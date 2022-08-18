@@ -17,6 +17,7 @@ const StoreItem = ({
   description,
   dataSheetUrl,
   price,
+  shipping,
   buyBtnId,
   buyBtnOnClick,
   buyBtnText,
@@ -44,7 +45,7 @@ const StoreItem = ({
                 </a>
               </CardText>
               <CardText>
-                <strong>{price} (no tax)</strong> with free shipping in Canada
+                <strong>{price} </strong>{shipping}
               </CardText>
               <Row className="mt-2">
                 <Col>
