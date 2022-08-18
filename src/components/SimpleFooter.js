@@ -67,6 +67,11 @@ class SimpleFooter extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink href="/news" target="_blank">
+                      News
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink
                       className="nav-link-icon"
                       href="https://twitter.com/donatemask"

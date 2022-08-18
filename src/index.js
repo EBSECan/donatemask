@@ -17,6 +17,7 @@ import FAQ from "views/FAQ.js";
 import Privacy from "views/Privacy.js";
 import Terms from "views/Terms.js";
 import ConfirmRequest from "views/ConfirmRequest.js";
+import News from "views/News.js";
 
 ReactDOM.render(
   <BrowserRouter forceRefresh>
@@ -32,6 +33,7 @@ ReactDOM.render(
       <Route path="/faq" exact render={(props) => <FAQ {...props} />} />
       <Route path="/privacy" exact render={(props) => <Privacy {...props} />} />
       <Route path="/terms" exact render={(props) => <Terms {...props} />} />
+      <Route path="/news" exact render={(props) => <News {...props} />} />
       <Route
         path="/confirmrequest"
         exact
