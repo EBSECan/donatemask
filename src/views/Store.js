@@ -196,6 +196,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={EclipseData}
           price="$62.50"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-masks-small"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.small)}
           buyBtnText="Buy Masks"
@@ -214,6 +215,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={FdkData}
           price="$62.50"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-masks-regular"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.regular)}
           buyBtnText="Buy Masks"
@@ -232,6 +234,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={HoneywellData}
           price="$49.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-masks-honeywell"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.honeywell)}
           buyBtnText="Buy Masks"
@@ -252,6 +255,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={KitData}
           price="$119.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-3m-kit"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.respiratorKit)}
           buyBtnText="Buy Kit"
@@ -271,6 +275,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={KitData}
           price="$249.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-3m-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.refillPack)}
           buyBtnText="Buy Pack"
@@ -291,6 +296,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={DentecData}
           price="$79.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-dentec-kit"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecKit)}
           buyBtnText="Buy Kit"
@@ -310,6 +316,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={DentecData}
           price="$99.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-dentec-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
           buyBtnText="Buy Pack"
@@ -330,6 +337,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={DraegerData}
           price="$109.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-draeger-kit"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.draegerKit)}
           buyBtnText="Buy Kit"
@@ -349,6 +357,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={DentecData}
           price="$199.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-draeger-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.draegerRefillPack)}
           buyBtnText="Buy Pack"
@@ -367,6 +376,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={LanyardData}
           price="$9.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-lanyard"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.lanyard)}
           buyBtnText="Buy Lanyard"
@@ -404,6 +414,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={CO2ModelDData}
           price="$249.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-d"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelD)}
           buyBtnText="Buy Kit"
@@ -423,6 +434,7 @@ const BuyPage = () => {
           }
           dataSheetUrl={CO2ModelCData}
           price="$269.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-c"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelC)}
           buyBtnText="Buy Kit"
@@ -441,28 +453,49 @@ const BuyPage = () => {
           }
           dataSheetUrl={Aranet4Data}
           price="$369.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-aranet-4"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.aranet4)}
           buyBtnText="Buy Aranet 4"
         />
 		
 		<StoreItem
-          imgWidth="1283"
-          imgAlt="Vitalight Mini CO2 Monitor"
+          imgWidth="719"
+          imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="Vitalight Mini CO2 Monitor"
+          title="DonateMask.ca Mini CO2 Monitor"
           description={
             <>
-              <strong>Vitalight</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
+              <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
 			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
           price="$69.99"
+		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-vitalight"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
-          buyBtnText="Buy Vitalight"
+          buyBtnText="Buy Vitalight - Canada"
+        />
+		<StoreItem
+          imgWidth="719"
+          imgAlt="DonateMask.ca Mini CO2 Monitor"
+          imgUrl={vitalightImageUrl}
+          title="DonateMask.ca Mini CO2 Monitor (USA)"
+          description={
+            <>
+              <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
+              measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
+			  Up to 8 hour battery life!
+            </>
+          }
+          dataSheetUrl={VitalightData}
+          price="$69.99 USD"
+		  shipping=" with FREE shipping to USA (import fees & taxes not included)"
+          buyBtnId="buy-co2-vitalight-usa"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightUSA)}
+          buyBtnText="Buy Vitalight - USA"
         />
       </Container>
       <SimpleFooter />
