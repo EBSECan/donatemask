@@ -12,6 +12,8 @@ export const STRIPE_LINKS = {
   mask: {
     small: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAdSE41H1Yb8jS5kn",
     regular: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR6cOA9m19qD0Rq5km",
+	eclipseRegular: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/9AQcOA7dT0U70Rq00u",
+	eclipseLarge: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR615S0Pv9qDeIgdRj",
     honeywell: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28o7ug0Pv8mzas0aEQ",
     respiratorKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAeWI9m1cCP57G28c",
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/00gbKwbu90U78jS7sN",
@@ -19,6 +21,8 @@ export const STRIPE_LINKS = {
     dentecRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY6qc69P9qDbw4eVa",
 	draegerKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28o3e00Pv1Yb43C8wS",
     draegerRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZeeWIeGlfP143C5kH",
+	floMaskKidsKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14keWI8hX46j6bK28z",
+    floMaskKidsRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14k15S41HauHbw46oQ",
     lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
   },
   co2: {
@@ -43,6 +47,8 @@ export const MASKS_DONATED_FROM_PURCHASE = {
   mask: {
     small: 25,
     regular: 25,
+	eclipseRegular: 25,
+	eclipseLarge: 25,
     honeywell: 20,
     respiratorKit: 32,
     refillPack: 32,
@@ -50,6 +56,8 @@ export const MASKS_DONATED_FROM_PURCHASE = {
     dentecRefillPack: 16,
 	draegerKit: 20,
 	draegerRefillPack: 25,
+	floMaskKidsKit: 20,
+	floMaskKidsRefillPack: 25,
     lanyard: 4,
   },
   co2: {

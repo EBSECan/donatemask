@@ -29,6 +29,7 @@ import DentecData from "assets/img/buy/dentec-spec.pdf";
 import DraegerData from "assets/img/buy/draeger-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
+import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -43,6 +44,8 @@ import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
 import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
+import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
+import floMaskKidsRefillImageUrl from "assets/img/buy/flo-mask-kids-refill.jpg";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
@@ -187,7 +190,7 @@ const BuyPage = () => {
           imgWidth="1024"
           imgAlt="Eclipse Horizon small mask"
           imgUrl={maskSmallImageUrl}
-          title="Masks (Small Size)"
+          title="Eclipse Horizon Masks (Small Size)"
           description={
             <>
               Small-Size <strong>Eclipse Horizon Masks</strong>{" "}
@@ -202,30 +205,12 @@ const BuyPage = () => {
           buyBtnText="Buy Masks"
         />
 
-        <StoreItem
-          imgWidth="720"
-          imgAlt="FUDAKIN FDK-MF-20-01 regular mask"
-          imgUrl={maskRegularImageUrl}
-          title="Masks (Regular Size)"
-          description={
-            <>
-              Regular-Size <strong>FUDAKIN FDK-MF-20-01 Masks</strong>{" "}
-              (N95-equivalent). Box of 25 masks.
-            </>
-          }
-          dataSheetUrl={FdkData}
-          price="$62.50"
-		  shipping=" with FREE shipping in Canada"
-          buyBtnId="buy-masks-regular"
-          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.regular)}
-          buyBtnText="Buy Masks"
-        />
-
+        
         <StoreItem
           imgWidth="495"
           imgAlt="Honeywell SAF-T-FIT PLUS NIOSH N95-Small Masks"
           imgUrl={honeywellImageUrl}
-          title="NIOSH N95-Small Masks"
+          title="Honeywell NIOSH N95-Small Masks"
           description={
             <>
               NIOSH N95-Small <strong>Honeywell SAF-T-FIT Plus Masks.</strong>{" "}
@@ -239,46 +224,105 @@ const BuyPage = () => {
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.honeywell)}
           buyBtnText="Buy Masks"
         />
-
-        <StoreItem
-          imgWidth="748"
-          imgAlt="3M 6200 Half Facepiece Respirator Kit"
-          imgUrl={kitImageUrl}
-          title="3M Respirator Kit"
+		
+		<StoreItem
+          imgWidth="720"
+          imgAlt="FUDAKIN FDK-MF-20-01 regular mask"
+          imgUrl={maskRegularImageUrl}
+          title="FDK Medical-Grade Masks (Regular Size)"
           description={
             <>
-              3M <strong>6200 Half Facepiece Respirator Kit</strong>{" "}
-              (N95-equivalent), <strong>P100 filters</strong>, and{" "}
-              <strong>10 alcohol-free respirator wipes</strong>.{" "}
-			  <strong>Medium fit.</strong>
+              Regular-Size <strong>FUDAKIN FDK-MF-20-01 Masks</strong>{" "}
+              (N95-equivalent). Box of 25 masks.
             </>
           }
-          dataSheetUrl={KitData}
-          price="$119.99"
+          dataSheetUrl={FdkData}
+          price="$62.50"
 		  shipping=" with FREE shipping in Canada"
-          buyBtnId="buy-3m-kit"
-          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.respiratorKit)}
-          buyBtnText="Buy Kit"
+          buyBtnId="buy-masks-regular"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.regular)}
+          buyBtnText="Buy Masks"
+        />
+		
+		<StoreItem
+          imgWidth="1024"
+          imgAlt="Eclipse Horizon Regular mask"
+          imgUrl={maskSmallImageUrl}
+          title="Eclipse Horizon Masks (Regular Size)"
+          description={
+            <>
+              Regular-Size <strong>Eclipse Horizon Masks</strong>{" "}
+              (N95-equivalent). Box of 25 masks.
+            </>
+          }
+          dataSheetUrl={EclipseData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-masks-eclipse-regular"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.eclipseRegular)}
+          buyBtnText="Buy Masks"
+        />
+
+		<StoreItem
+          imgWidth="1024"
+          imgAlt="Eclipse Horizon Large mask"
+          imgUrl={maskSmallImageUrl}
+          title="Eclipse Horizon Masks (Large Size)"
+          description={
+            <>
+              Large-Size <strong>Eclipse Horizon Masks</strong>{" "}
+              (N95-equivalent). Box of 25 masks.
+            </>
+          }
+          dataSheetUrl={EclipseData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-masks-eclipse-large"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.eclipseLarge)}
+          buyBtnText="Buy Masks"
         />
 
         <StoreItem
-          imgWidth="748"
-          imgAlt="3M 6200 Half Refill Pack"
-          imgUrl={refillImageUrl}
-          title="3M Refill Pack"
+          imgWidth="800"
+          imgAlt="Flo Mask Kids Elastomeric Respirator Kit"
+          imgUrl={floMaskKidsKitImageUrl}
+          title="Flo Mask Kids Elastomeric Respirator Kit"
           description={
             <>
-              3M 6200 refill pack of six <strong>604 Exhale Filters</strong>,
-              six <strong>P100 cartridges</strong>, and box of{" "}
-              <strong>100 alcohol-free respirator wipes</strong>.
+              
+              Kit includes original <strong>Flo Mask Kids</strong>, 30 N95-equivalent filters, 
+			  <strong> Halo Strap</strong> comfort add-on, {" "}
+			  5 condensation inserts, a microfiber carrying pouch, and{" "}
+              10 alcohol-free respirator wipes.{" "}
+			  <strong>Fit designed for ages 4+.</strong>
             </>
           }
-          dataSheetUrl={KitData}
-          price="$249.99"
+          dataSheetUrl={FloMaskData}
+          price="$199.99"
 		  shipping=" with FREE shipping in Canada"
-          buyBtnId="buy-3m-refill"
-          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.refillPack)}
-          buyBtnText="Buy Pack"
+          buyBtnId="buy-flo-mask-kids-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsKit)}
+          buyBtnText="Buy Flo Mask Kids Kit"
+        />
+
+        <StoreItem
+          imgWidth="800"
+          imgAlt="Flo Mask Kids Refill Kit"
+          imgUrl={floMaskKidsRefillImageUrl}
+          title="Flo Mask Kids Refill Kit"
+          description={
+            <>
+              Refill pack includes 50 N95-equivalent filters,
+              10 condensation inserts, and box of{" "}
+              100 alcohol-free respirator wipes.
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="$199.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-kids-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsRefillPack)}
+          buyBtnText="Buy Flo Mask Kids Refill"
         />
 
         <StoreItem
@@ -360,6 +404,47 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-draeger-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.draegerRefillPack)}
+          buyBtnText="Buy Pack"
+        />
+		
+		<StoreItem
+          imgWidth="748"
+          imgAlt="3M 6200 Half Facepiece Respirator Kit"
+          imgUrl={kitImageUrl}
+          title="3M Respirator Kit"
+          description={
+            <>
+              3M <strong>6200 Half Facepiece Respirator Kit</strong>{" "}
+              (N95-equivalent), <strong>P100 filters</strong>, and{" "}
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong>Medium fit.</strong>
+            </>
+          }
+          dataSheetUrl={KitData}
+          price="$119.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-3m-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.respiratorKit)}
+          buyBtnText="Buy Kit"
+        />
+
+        <StoreItem
+          imgWidth="748"
+          imgAlt="3M 6200 Half Refill Pack"
+          imgUrl={refillImageUrl}
+          title="3M Refill Pack"
+          description={
+            <>
+              3M 6200 refill pack of six <strong>604 Exhale Filters</strong>,
+              six <strong>P100 cartridges</strong>, and box of{" "}
+              <strong>100 alcohol-free respirator wipes</strong>.
+            </>
+          }
+          dataSheetUrl={KitData}
+          price="$249.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-3m-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.refillPack)}
           buyBtnText="Buy Pack"
         />
 
