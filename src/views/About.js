@@ -30,6 +30,7 @@ import Dentec from "assets/img/sponsors/dentec.png";
 import Prescientx from "assets/img/sponsors/prescientx.png";
 import Co2Click from "assets/img/sponsors/co2click.png";
 import ScrapScrunchieShop from "assets/img/sponsors/scrapscrunchieshop.png";
+import FloMask from "assets/img/sponsors/flomask.png";
 
 const AboutPage = () => {
   return (
@@ -151,6 +152,10 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		<Sponsorship
           src={ScrapScrunchieShop}
           href="https://www.buymask.ca"
+        />
+		<Sponsorship
+          src={FloMask}
+          href="https://www.flomask.com"
         />
       </Row>
       <SimpleFooter />
