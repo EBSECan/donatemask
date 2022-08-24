@@ -137,26 +137,11 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           src={HealthCanada}
           href="https://www.canada.ca/en/health-canada.html"
         />
-		<Sponsorship
-          src={Dentec}
-          href="https://dentecsafety.com/"
-        />
-		<Sponsorship
-          src={Prescientx}
-          href="https://prescientx.com/"
-        />
-		<Sponsorship
-          src={Co2Click}
-          href="https://www.co2.click/"
-        />
-		<Sponsorship
-          src={ScrapScrunchieShop}
-          href="https://www.buymask.ca"
-        />
-		<Sponsorship
-          src={FloMask}
-          href="https://www.flomask.com"
-        />
+        <Sponsorship src={Dentec} href="https://dentecsafety.com/" />
+        <Sponsorship src={Prescientx} href="https://prescientx.com/" />
+        <Sponsorship src={Co2Click} href="https://www.co2.click/" />
+        <Sponsorship src={ScrapScrunchieShop} href="https://www.buymask.ca" />
+        <Sponsorship src={FloMask} href="https://www.flomask.com" />
       </Row>
       <SimpleFooter />
     </>
