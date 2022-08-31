@@ -22,6 +22,7 @@ import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
 import HoneywellData from "assets/img/buy/honeywell.pdf";
+import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
@@ -30,6 +31,7 @@ import DraegerData from "assets/img/buy/draeger-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
+import HaloStrapKidsData from "assets/img/buy/halo-strap-kids-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -37,15 +39,19 @@ import maskRegularImageUrl from "assets/img/buy/fudakin-regular.jpg";
 import maskSmallImageUrl from "assets/img/buy/horizon-small.jpg";
 import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
 import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
+import dentecComfortEaseImageUrl from "assets/img/buy/dentec-comfort-ease.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
 import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
+import dentecP100KitImageUrl from "assets/img/buy/dentec-p100-kit.jpg";
+import dentecP100RefillImageUrl from "assets/img/buy/dentec-p100-refill.jpg";
 import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
 import floMaskKidsRefillImageUrl from "assets/img/buy/flo-mask-kids-refill.jpg";
+import haloStrapKidsImageUrl from "assets/img/buy/halo-strap-kids.png";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
@@ -226,6 +232,25 @@ const BuyPage = () => {
         />
 		
 		<StoreItem
+          imgWidth="396"
+          imgAlt="Dentec Safety Comfort Ease N95 (Regular) Masks"
+          imgUrl={dentecComfortEaseImageUrl}
+          title="Dentec Safety Comfort Ease N95 (Regular) masks"
+          description={
+            <>
+              N95 Certified <strong>Flat-fold Dentec Safety Comfort Ease Masks.</strong>{" "}
+              Box of 20 masks.
+            </>
+          }
+          dataSheetUrl={DentecComfortEaseData}
+          price="$49.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-masks-dentec-comfort-ease"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecComfortEase)}
+          buyBtnText="Buy Masks"
+        />
+		
+		<StoreItem
           imgWidth="720"
           imgAlt="FUDAKIN FDK-MF-20-01 regular mask"
           imgUrl={maskRegularImageUrl}
@@ -324,6 +349,25 @@ const BuyPage = () => {
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsRefillPack)}
           buyBtnText="Buy Flo Mask Kids Refill"
         />
+		
+		<StoreItem
+          imgWidth="721"
+          imgAlt="Halo Strap (Kids)"
+          imgUrl={haloStrapKidsImageUrl}
+          title="Halo Strap (Kids)"
+          description={
+            <>
+              Halo Strap for Flo Mask Kids reusable respirator for 
+			  easier time putting it on and a more comfortable fit.
+            </>
+          }
+          dataSheetUrl={HaloStrapKidsData}
+          price="$29.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-halo-strap-kids-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.haloStrapKids)}
+          buyBtnText="Buy Halo Strap (Kids)"
+        />
 
         <StoreItem
           imgWidth="748"
@@ -363,6 +407,48 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-dentec-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
+          buyBtnText="Buy Pack"
+        />
+		
+		<StoreItem
+          imgWidth="865"
+          imgAlt="Dentec Comfort-Air P100 Half Facepiece Respirator Kit"
+          imgUrl={dentecP100KitImageUrl}
+          title="Dentec Comfort-Air P100Respirator Kit"
+          description={
+            <>
+              Dentec <strong>Comfort-Air P100 Half Facepiece Respirator Kit</strong>,{" "}
+              <strong>4 pairs of P100 (99.97%) cartridge filters</strong>, and{" "}
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong>Medium-large fit.</strong>
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$129.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-dentec-p100-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecP100Kit)}
+          buyBtnText="Buy Kit"
+        />
+
+        <StoreItem
+          imgWidth="1113"
+          imgAlt="Dentec Comfort-Air P100 Refill Pack"
+          imgUrl={dentecP100RefillImageUrl}
+          title="Dentec Comfort-Air P100 Refill Pack"
+          description={
+            <>
+              Dentec Comfort-Air P100 refill pack of 6 pairs of{" "}
+              <strong>P100 (99.97%) cartridge filters</strong>, and box of{" "}
+              <strong>100 alcohol-free respirator wipes</strong>.
+			  Interchangeable on any Comfort-Air model and size.
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$129.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-dentec-p100-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecP100RefillPack)}
           buyBtnText="Buy Pack"
         />
 		
@@ -502,9 +588,49 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-d"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelD)}
-          buyBtnText="Buy Kit"
+          buyBtnText="Buy CO2.Click Model D"
         />
-
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model D USA"
+          imgUrl={co2ModelDImageUrl}
+          title="CO2 Model D (USA)"
+          description={
+            <>
+              <strong>CO2 detector and wall mount</strong> as a kit. Canadian
+              designed and made. Measures CO<sub>2</sub> levels as well as
+              temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelDData}
+          price="$249.99 USD"
+		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-d-usa"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelDUSA)}
+          buyBtnText="Buy CO2.Click Model D - USA"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model D EU"
+          imgUrl={co2ModelDImageUrl}
+          title="CO2 Model D (EU)"
+          description={
+            <>
+              <strong>CO2 detector and wall mount</strong> as a kit. Canadian
+              designed and made. Measures CO<sub>2</sub> levels as well as
+              temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelDData}
+          price="€279.99 EUR"
+		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-d-eu"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelDEU)}
+          buyBtnText="Buy CO2.Click Model D - EU"
+        />
+		
         <StoreItem
           imgWidth="794"
           imgAlt="CO2 Model C"
@@ -522,7 +648,47 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-c"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelC)}
-          buyBtnText="Buy Kit"
+          buyBtnText="Buy CO2.Click Model C"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model C USA"
+          imgUrl={co2ModelCImageUrl}
+          title="CO2 Model C (USA)"
+          description={
+            <>
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelCData}
+          price="$269.99 USD"
+		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-c-usa"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelCUSA)}
+          buyBtnText="Buy CO2.Click Model C - USA"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model C EU"
+          imgUrl={co2ModelCImageUrl}
+          title="CO2 Model C (EU)"
+          description={
+            <>
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelCData}
+          price="€299.99 EUR"
+		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-c-eu"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelCEU)}
+          buyBtnText="Buy CO2.Click Model C - EU"
         />
 
         <StoreItem
@@ -548,7 +714,7 @@ const BuyPage = () => {
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor"
+          title="DonateMask.ca Mini-CO2 Monitor"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -561,13 +727,13 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-vitalight"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
-          buyBtnText="Buy Vitalight - Canada"
+          buyBtnText="Buy Mini-CO2 Monitor"
         />
 		<StoreItem
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor (USA)"
+          title="DonateMask.ca Mini-CO2 Monitor (USA)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -580,13 +746,13 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-usa"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightUSA)}
-          buyBtnText="Buy Vitalight - USA"
+          buyBtnText="Buy Mini-CO2 Monitor - USA"
         />
 		<StoreItem
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor (EU)"
+          title="DonateMask.ca Mini-CO2 Monitor (EU)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -599,7 +765,7 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping to mainland Europe (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-eu"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightEU)}
-          buyBtnText="Buy Vitalight - EU"
+          buyBtnText="Buy Mini-CO2 Monitor - EU"
         />
       </Container>
       <SimpleFooter />
