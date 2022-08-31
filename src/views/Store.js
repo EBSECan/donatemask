@@ -22,6 +22,7 @@ import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
 import HoneywellData from "assets/img/buy/honeywell.pdf";
+import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
@@ -37,6 +38,7 @@ import maskRegularImageUrl from "assets/img/buy/fudakin-regular.jpg";
 import maskSmallImageUrl from "assets/img/buy/horizon-small.jpg";
 import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
 import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
+import dentecComfortEaseImageUrl from "assets/img/buy/dentec-comfort-ease.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
@@ -222,6 +224,25 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-masks-honeywell"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.honeywell)}
+          buyBtnText="Buy Masks"
+        />
+		
+		<StoreItem
+          imgWidth="396"
+          imgAlt="Dentec Safety Comfort Ease N95 (Regular) Masks"
+          imgUrl={dentecComfortEaseImageUrl}
+          title="Dentec Safety Comfort Ease N95 (Regular) masks"
+          description={
+            <>
+              N95 Certified <strong>Flat-fold Dentec Safety Comfort Ease Masks.</strong>{" "}
+              Box of 20 masks.
+            </>
+          }
+          dataSheetUrl={DentecComfortEaseData}
+          price="$49.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-masks-dentec-comfort-ease"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecComfortEase)}
           buyBtnText="Buy Masks"
         />
 		
