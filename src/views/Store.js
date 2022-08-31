@@ -45,6 +45,8 @@ import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
 import dentecKitImageUrl from "assets/img/buy/dentec-kit.png";
 import dentecRefillImageUrl from "assets/img/buy/dentec-refill.png";
+import dentecP100KitImageUrl from "assets/img/buy/dentec-p100-kit.jpg";
+import dentecP100RefillImageUrl from "assets/img/buy/dentec-p100-refill.jpg";
 import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
@@ -405,6 +407,48 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-dentec-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecRefillPack)}
+          buyBtnText="Buy Pack"
+        />
+		
+		<StoreItem
+          imgWidth="865"
+          imgAlt="Dentec Comfort-Air P100 Half Facepiece Respirator Kit"
+          imgUrl={dentecP100KitImageUrl}
+          title="Dentec Comfort-Air P100Respirator Kit"
+          description={
+            <>
+              Dentec <strong>Comfort-Air P100 Half Facepiece Respirator Kit</strong>,{" "}
+              <strong>4 pairs of P100 (99.97%) cartridge filters</strong>, and{" "}
+              <strong>10 alcohol-free respirator wipes</strong>.{" "}
+			  <strong>Medium-large fit.</strong>
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$129.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-dentec-p100-kit"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecP100Kit)}
+          buyBtnText="Buy Kit"
+        />
+
+        <StoreItem
+          imgWidth="1113"
+          imgAlt="Dentec Comfort-Air P100 Refill Pack"
+          imgUrl={dentecP100RefillImageUrl}
+          title="Dentec Comfort-Air P100 Refill Pack"
+          description={
+            <>
+              Dentec Comfort-Air P100 refill pack of 6 pairs of{" "}
+              <strong>P100 (99.97%) cartridge filters</strong>, and box of{" "}
+              <strong>100 alcohol-free respirator wipes</strong>.
+			  Interchangeable on any Comfort-Air model and size.
+            </>
+          }
+          dataSheetUrl={DentecData}
+          price="$129.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-dentec-p100-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.dentecP100RefillPack)}
           buyBtnText="Buy Pack"
         />
 		
