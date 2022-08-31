@@ -544,9 +544,49 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-d"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelD)}
-          buyBtnText="Buy Kit"
+          buyBtnText="Buy CO2.Click Model D"
         />
-
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model D USA"
+          imgUrl={co2ModelDImageUrl}
+          title="CO2 Model D (USA)"
+          description={
+            <>
+              <strong>CO2 detector and wall mount</strong> as a kit. Canadian
+              designed and made. Measures CO<sub>2</sub> levels as well as
+              temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelDData}
+          price="$249.99 USD"
+		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-d-usa"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelDUSA)}
+          buyBtnText="Buy CO2.Click Model D - USA"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model D EU"
+          imgUrl={co2ModelDImageUrl}
+          title="CO2 Model D (EU)"
+          description={
+            <>
+              <strong>CO2 detector and wall mount</strong> as a kit. Canadian
+              designed and made. Measures CO<sub>2</sub> levels as well as
+              temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelDData}
+          price="€279.99 EUR"
+		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-d-eu"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelDEU)}
+          buyBtnText="Buy CO2.Click Model D - EU"
+        />
+		
         <StoreItem
           imgWidth="794"
           imgAlt="CO2 Model C"
@@ -564,7 +604,47 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-co2-c"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelC)}
-          buyBtnText="Buy Kit"
+          buyBtnText="Buy CO2.Click Model C"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model C USA"
+          imgUrl={co2ModelCImageUrl}
+          title="CO2 Model C (USA)"
+          description={
+            <>
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelCData}
+          price="$269.99 USD"
+		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-c-usa"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelCUSA)}
+          buyBtnText="Buy CO2.Click Model C - USA"
+        />
+		
+		<StoreItem
+          imgWidth="794"
+          imgAlt="CO2 Model C EU"
+          imgUrl={co2ModelCImageUrl}
+          title="CO2 Model C (EU)"
+          description={
+            <>
+              <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
+              kit. Canadian designed and made. Measures CO<sub>2</sub> levels as
+              well as temperature and humidity.
+            </>
+          }
+          dataSheetUrl={CO2ModelCData}
+          price="€299.99 EUR"
+		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+          buyBtnId="buy-co2-co2-c-eu"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelCEU)}
+          buyBtnText="Buy CO2.Click Model C - EU"
         />
 
         <StoreItem
@@ -590,7 +670,7 @@ const BuyPage = () => {
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor"
+          title="DonateMask.ca Mini-CO2 Monitor"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -603,13 +683,13 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-vitalight"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
-          buyBtnText="Buy Vitalight - Canada"
+          buyBtnText="Buy Mini-CO2 Monitor"
         />
 		<StoreItem
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor (USA)"
+          title="DonateMask.ca Mini-CO2 Monitor (USA)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -622,13 +702,13 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping to USA (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-usa"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightUSA)}
-          buyBtnText="Buy Vitalight - USA"
+          buyBtnText="Buy Mini-CO2 Monitor - USA"
         />
 		<StoreItem
           imgWidth="719"
           imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini CO2 Monitor (EU)"
+          title="DonateMask.ca Mini-CO2 Monitor (EU)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -641,7 +721,7 @@ const BuyPage = () => {
 		  shipping=" with FREE shipping to mainland Europe (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-eu"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightEU)}
-          buyBtnText="Buy Vitalight - EU"
+          buyBtnText="Buy Mini-CO2 Monitor - EU"
         />
       </Container>
       <SimpleFooter />
