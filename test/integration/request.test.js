@@ -6,7 +6,7 @@ const requestUrl = `${donatemaskUrl}/request`;
 const fillDefaultValues = async (page, skipAmounts = false) => {
   await page.fill("#request-name", "Test Name");
   await page.fill("#request-email", "test@email.com");
-  await page.fill("#request-address", "Test Address");
+  await page.fill("#request-address1", "Test Address Line 1");
   await page.fill("#request-city", "Toronto");
   await page.selectOption("#request-province", { label: "Ontario" });
   await page.fill("#request-postal-code", "M5W 1E6");
