@@ -24,6 +24,7 @@ export const STRIPE_LINKS = {
     draegerRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZeeWIeGlfP143C5kH",
 	floMaskKidsKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14keWI8hX46j6bK28z",
     floMaskKidsRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14k15S41HauHbw46oQ",
+	haloStrapKids: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oE01O55L32f8jSaFa",
     lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
   },
   co2: {
@@ -60,6 +61,7 @@ export const MASKS_DONATED_FROM_PURCHASE = {
 	draegerRefillPack: 25,
 	floMaskKidsKit: 20,
 	floMaskKidsRefillPack: 25,
+	haloStrapKids: 8,
     lanyard: 4,
   },
   co2: {

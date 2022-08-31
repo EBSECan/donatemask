@@ -31,6 +31,7 @@ import DraegerData from "assets/img/buy/draeger-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
+import HaloStrapKidsData from "assets/img/buy/halo-strap-kids-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -48,6 +49,7 @@ import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
 import floMaskKidsRefillImageUrl from "assets/img/buy/flo-mask-kids-refill.jpg";
+import haloStrapKidsImageUrl from "assets/img/buy/halo-strap-kids.png";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
@@ -344,6 +346,25 @@ const BuyPage = () => {
           buyBtnId="buy-flo-mask-kids-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsRefillPack)}
           buyBtnText="Buy Flo Mask Kids Refill"
+        />
+		
+		<StoreItem
+          imgWidth="721"
+          imgAlt="Halo Strap (Kids)"
+          imgUrl={haloStrapKidsImageUrl}
+          title="Halo Strap (Kids)"
+          description={
+            <>
+              Halo Strap for Flo Mask Kids reusable respirator for 
+			  easier time putting it on and a more comfortable fit.
+            </>
+          }
+          dataSheetUrl={HaloStrapKidsData}
+          price="$29.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-halo-strap-kids-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.haloStrapKids)}
+          buyBtnText="Buy Halo Strap (Kids)"
         />
 
         <StoreItem
