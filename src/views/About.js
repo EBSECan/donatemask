@@ -31,6 +31,8 @@ import Prescientx from "assets/img/sponsors/prescientx.png";
 import Co2Click from "assets/img/sponsors/co2click.png";
 import ScrapScrunchieShop from "assets/img/sponsors/scrapscrunchieshop.png";
 import FloMask from "assets/img/sponsors/flomask.png";
+import MI from "assets/img/sponsors/mi.png";
+import Aranet from "assets/img/sponsors/aranet.png";
 
 const AboutPage = () => {
   return (
@@ -142,6 +144,8 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         <Sponsorship src={Co2Click} href="https://www.co2.click/" />
         <Sponsorship src={ScrapScrunchieShop} href="https://www.buymask.ca" />
         <Sponsorship src={FloMask} href="https://www.flomask.com" />
+		<Sponsorship src={MI} href="https://mi-integration.com/en/" />
+		<Sponsorship src={Aranet} href="https://aranet.com" />
       </Row>
       <SimpleFooter />
     </>
