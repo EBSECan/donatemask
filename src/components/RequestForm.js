@@ -12,14 +12,24 @@ import {
   Input,
   Row,
   Col,
+  Card,
+  CardBody,
+  CardImg,
 } from "reactstrap";
 
+// Import the facial size graph to add above mask size requests for clarity
+import FacialSize from "assets/img/other/facial-size.png";
+
 // Create a single address line from address components.
-// The address may contain newlines, switch them to commas.
-const buildAddress = (address, city, province, postalCode) =>
-  [address.replace(/\r?\n/, ", "), city, province, postalCode]
-    .map((value) => value.trim())
-    .join(", ");
+const buildAddress = (address1, address2, city, province, postalCode) => {
+  // We may or may not have an address2, only bother with it if we do
+  const address =
+    address2 && address2.length
+      ? address1 + ", " + address2
+      : address1[(address, city, province, postalCode)]
+          .map((value) => value.trim())
+          .join(", ");
+};
 
 // Create an array of strings representing any/all of the
 // demographic groups that were selected.  Default to
@@ -46,7 +56,8 @@ const RequestForm = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
   const [city, setCity] = useState("");
   const [province, setProvince] = useState("Ontario");
   const [postalCode, setPostal] = useState("");
@@ -54,6 +65,8 @@ const RequestForm = () => {
   const [maskAmntSmall, setMaskAmntSmall] = useState(0);
   const [maskAmntLarge, setMaskAmntLarge] = useState(0);
   const [testAmnt, setTestAmnt] = useState(0);
+  const [demographicWork, setDemographicWork] = useState(false);
+  const [demographicSchool, setDemographicSchool] = useState(false);
 
   const [msg, setMsg] = useState("");
   const [error, setError] = useState();
@@ -94,7 +107,7 @@ const RequestForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!maskAmntRegular && !maskAmntSmall &&!maskAmntLarge && !testAmnt) {
+    if (!maskAmntRegular && !maskAmntSmall && !maskAmntLarge && !testAmnt) {
       setError("Please request at least one mask size or box of COVID tests.");
       return false;
     }
@@ -117,12 +130,19 @@ const RequestForm = () => {
           maskAmntRegular,
           maskAmntSmall,
           testAmnt,
-          address: buildAddress(address, city, province, postalCode),
+          address: buildAddress(address1, address2, city, province, postalCode),
+          address1,
+          address2,
+          city,
           province,
           postal: postalCode,
           msg,
           timestamp: new Date(),
           demographics: buildDemographicList(),
+          purpose: {
+            returnToSchool: demographicSchool,
+            returnToWork: demographicWork,
+          },
         }),
       });
       if (!res.ok) {
@@ -142,7 +162,10 @@ const RequestForm = () => {
     <Container>
       <Form onSubmit={handleSubmit} id="request-form">
         <h3 className="display-3">Request Masks and COVID Tests</h3>
-        <p>Requests are free, and funded by charitable donations. All requests are processed and fulfilled by volunteers.</p>
+        <p>
+          Requests are free, and funded by charitable donations. All requests
+          are processed and fulfilled by volunteers.
+        </p>
 
         <Row>
           <Col md="6">
@@ -224,14 +247,26 @@ const RequestForm = () => {
         <Row>
           <Col md="12">
             <FormGroup>
-              <Label for="request-address">Address</Label>
+              <Label for="request-address1">Address Line 1</Label>
               <Input
-                id="request-address"
-                autoComplete="street-address"
-                type="textarea"
+                id="request-address1"
+                autoComplete="address-line1"
+                type="text"
                 required
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
+                value={address1}
+                onChange={(e) => setAddress1(e.target.value)}
+              />
+            </FormGroup>
+          </Col>
+          <Col md="12">
+            <FormGroup>
+              <Label for="request-address2">Address Line 2 (optional)</Label>
+              <Input
+                id="request-address2"
+                autoComplete="address-line2"
+                type="text"
+                value={address2}
+                onChange={(e) => setAddress2(e.target.value)}
               />
             </FormGroup>
           </Col>
@@ -292,21 +327,28 @@ const RequestForm = () => {
 
         <h3 className="mt-3">Mask Size and Quantity</h3>
         <Row>
-          <Col md="4">
-            <FormGroup>
-              <Label for="request-amount-large">Large-size Masks</Label>
-              <Input
-                id="request-amount-large"
-                placeholder={`Number Requested`}
-                type="number"
-                min="0"
-                onChange={(e) => onAmntChange(e, "masks-large")}
-              />
-            </FormGroup>
+          <Col md="12">
+            <p>
+              Use the following diagram to choose the correct mask size(s), and
+              indicate the desired size(s) and number(s) below:
+            </p>
           </Col>
+        </Row>
+        <Row>
+          <Col md={{ size: 10, offset: 1 }}>
+            <Card className="borderless">
+              <CardBody>
+                <CardImg alt={"Mask Sizing Chart"} src={FacialSize} />
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
           <Col md="4">
             <FormGroup>
-              <Label for="request-amount-regular">Regular-size Masks</Label>
+              <Label for="request-amount-regular">
+                Regular Masks (80% of adults)
+              </Label>
               <Input
                 id="request-amount-regular"
                 placeholder={`Number Requested`}
@@ -318,13 +360,25 @@ const RequestForm = () => {
           </Col>
           <Col md="4">
             <FormGroup>
-              <Label for="request-amount-small">Small-size Masks</Label>
+              <Label for="request-amount-small">Small Masks</Label>
               <Input
                 id="request-amount-small"
                 placeholder={`Number Requested`}
                 type="number"
                 min="0"
                 onChange={(e) => onAmntChange(e, "masks-small")}
+              />
+            </FormGroup>
+          </Col>
+          <Col md="4">
+            <FormGroup>
+              <Label for="request-amount-large">Large Masks</Label>
+              <Input
+                id="request-amount-large"
+                placeholder={`Number Requested`}
+                type="number"
+                min="0"
+                onChange={(e) => onAmntChange(e, "masks-large")}
               />
             </FormGroup>
           </Col>
@@ -348,7 +402,7 @@ const RequestForm = () => {
           </Col>
         </Row>
 
-        <h3 className="mt-2">Demographic Information</h3>
+        <h3 className="mt-2">Demographic Information (Optional)</h3>
         <Row>
           <Col>
             <p>
@@ -363,9 +417,9 @@ const RequestForm = () => {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <Container id="demographic-groups">
+        <Container>
+          <Row>
+            <Col id="demographic-groups">
               {DEMOGRAPHIC_GROUPS.map((label) => (
                 <FormGroup check key={label}>
                   <Input
@@ -378,31 +432,77 @@ const RequestForm = () => {
                   </Label>
                 </FormGroup>
               ))}
-            </Container>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+          <h5 className="mt-3">Usage information</h5>
+          <Row>
+            <Col md="12">
+              <FormGroup check key={"school"}>
+                <Input
+                  id="demographic-school"
+                  type="checkbox"
+                  onChange={() => setDemographicSchool(!demographicSchool)}
+                />{" "}
+                <Label for="demographic-school" check>
+                  This request will be used to return to school more safely
+                </Label>
+              </FormGroup>
+            </Col>
+            <Col md="12">
+              <FormGroup check key={"work"}>
+                <Input
+                  id="demographic-work"
+                  type="checkbox"
+                  onChange={() => setDemographicWork(!demographicWork)}
+                />{" "}
+                <Label for="demographic-work" check>
+                  This request will be used to return to work more safely
+                </Label>
+              </FormGroup>
+            </Col>
+          </Row>
+        </Container>
+        <h3 className="mt-3">Priority (Optional)</h3>
         <Row className="mt-3">
           <Col md="12">
             <FormGroup>
-              <Label for="request-priority">Please help us prioritize your request. How urgent is your need?</Label>
+              <Label for="request-priority">
+                Please help us prioritize your request. How urgent is your need?
+              </Label>
               <Input
                 id="request-priority"
                 type="select"
                 value={requestPriority}
                 onChange={(e) => setRequestPriority(e.target.value)}
               >
-                <option value="low">Low Priority: fill order when possible, but no hurry (e.g., will not impact my immediate safety)</option>
-                <option value="normal">Normal Priority: nice to have masks/tests (e.g., won't be in danger if they're delayed a couple of weeks)</option>
-                <option value="high">High Priority: needed ASAP (e.g., upcoming high-risk event/appointment for which no protection is currently available)</option>
+                <option value="low">
+                  Low Priority: fill order when possible, but no hurry (e.g.,
+                  will not impact my immediate safety)
+                </option>
+                <option value="normal">
+                  Normal Priority: nice to have masks/tests (e.g., won't be in
+                  danger if they're delayed a couple of weeks)
+                </option>
+                <option value="high">
+                  High Priority: needed ASAP (e.g., upcoming high-risk
+                  event/appointment for which no protection is currently
+                  available)
+                </option>
               </Input>
-              <FormText><em>Disclaimer: while we can't promise shipments by a certain date, our volunteers use this info to help guide prioritization of requests.</em></FormText>
+              <FormText>
+                <em>
+                  Disclaimer: while we can't promise shipments by a certain
+                  date, our volunteers use this info to help guide
+                  prioritization of requests.
+                </em>
+              </FormText>
             </FormGroup>
           </Col>
         </Row>
 
         <Row>
           <Col md="12">
-            <h4 className="mt-3">Thank-You Message (optional)</h4>
+            <h4 className="mt-3">Thank-You Message (Optional)</h4>
             <FormGroup>
               <Input
                 id="request-message"

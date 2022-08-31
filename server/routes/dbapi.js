@@ -76,19 +76,22 @@ router.post("/api/mask_request_add", async (req, res, next) => {
     // Record entries for requests and demographics separately
     await Promise.all([
       maskRequests.add({
-        priority: req.body.priority || 'normal',
+        priority: req.body.priority || "normal",
         requestorType: req.body.requestorType,
         organizationName: req.body.organizationName,
         organizationType: req.body.organizationType,
         name: req.body.name,
+        email: req.body.email,
         address: req.body.address,
+        address1: req.body.address1,
+        address2: req.body.address2,
+        city: req.body.city,
+        province: req.body.province,
+        postalCode: req.body.postal,
         maskAmntRegular: req.body.maskAmntRegular,
         maskAmntSmall: req.body.maskAmntSmall,
         maskAmntLarge: req.body.maskAmntLarge,
         testAmnt: req.body.testAmnt,
-        postalCode: req.body.postal,
-        province: req.body.province,
-        email: req.body.email,
         msg: req.body.msg,
         requestFulfilled: false,
         timestamp: req.body.timestamp,
@@ -96,6 +99,7 @@ router.post("/api/mask_request_add", async (req, res, next) => {
       demographics.add({
         postalCode: req.body.postal,
         groups: req.body.demographics || ["None Selected"],
+        purpose: req.body.purpose,
         timestamp: req.body.timestamp,
       }),
     ]);
