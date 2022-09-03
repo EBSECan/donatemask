@@ -24,11 +24,11 @@ import FacialSize from "assets/img/other/facial-size.png";
 const buildAddress = (address1, address2, city, province, postalCode) => {
   // We may or may not have an address2, only bother with it if we do
   const address =
-    address2 && address2.length
-      ? address1 + ", " + address2
-      : address1[(address, city, province, postalCode)]
-          .map((value) => value.trim())
-          .join(", ");
+    address2 && address2.length ? address1 + ", " + address2 : address1;
+
+  return [address, city, province, postalCode]
+    .map((value) => value.trim())
+    .join(", ");
 };
 
 // Create an array of strings representing any/all of the
