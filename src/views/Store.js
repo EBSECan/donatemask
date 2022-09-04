@@ -67,7 +67,7 @@ const BuyPage = () => {
       <PageNavbar />
       <Hero
         heading="Donate A Mask Charity Store"
-        body="100% of the money that we raise from our charity store goes towards sending free masks to people in need across Canada."
+        body="100% of the money that we raise from our charity store goes towards sending free 95-equivalent masks and rapid tests to folks in need across Canada."
       />
       <Container className="mt-4">
         <Row>
@@ -78,8 +78,7 @@ const BuyPage = () => {
               purchasing the e-book version of{" "}
               <strong>COVID-19 and Ethics in Canada</strong> below.{" "}
               <strong>Pay what you like</strong> and 100% of the book's proceeds
-              go toward sending free N95-equivalent masks to those who need
-              them. Thank you to Jon Parsons for his generous support of the
+              go toward sending free N95-equivalent masks and rapid tests to folks in need. Thank you to Jon Parsons for his generous support of the
               charity.
             </p>
           </Col>
@@ -414,7 +413,7 @@ const BuyPage = () => {
           imgWidth="865"
           imgAlt="Dentec Comfort-Air P100 Half Facepiece Respirator Kit"
           imgUrl={dentecP100KitImageUrl}
-          title="Dentec Comfort-Air P100Respirator Kit"
+          title="Dentec Comfort-Air P100 Respirator Kit"
           description={
             <>
               Dentec <strong>Comfort-Air P100 Half Facepiece Respirator Kit</strong>,{" "}
