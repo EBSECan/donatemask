@@ -21,7 +21,7 @@ import StoreItem from "components/StoreItem";
 import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
-import HoneywellData from "assets/img/buy/honeywell.pdf";
+import HoneywellData from "assets/img/buy/honeywell-spec.pdf";
 import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
