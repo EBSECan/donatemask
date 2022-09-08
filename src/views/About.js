@@ -33,6 +33,7 @@ import ScrapScrunchieShop from "assets/img/sponsors/scrapscrunchieshop.png";
 import FloMask from "assets/img/sponsors/flomask.png";
 import MI from "assets/img/sponsors/mi.png";
 import Aranet from "assets/img/sponsors/aranet.png";
+import ReadiMask from "assets/img/sponsors/readimask.jpg";
 
 const AboutPage = () => {
   return (
@@ -146,6 +147,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         <Sponsorship src={FloMask} href="https://www.flomask.com" />
 		<Sponsorship src={MI} href="https://mi-integration.com/en/" />
 		<Sponsorship src={Aranet} href="https://aranet.com" />
+		<Sponsorship src={ReadiMask} href="https://readimask.com" />
       </Row>
       <SimpleFooter />
     </>
