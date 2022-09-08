@@ -23,6 +23,7 @@ import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
 import HoneywellData from "assets/img/buy/honeywell-spec.pdf";
 import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
+import ReadiMaskData from "assets/img/buy/readimask-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
@@ -40,6 +41,7 @@ import maskSmallImageUrl from "assets/img/buy/horizon-small.jpg";
 import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
 import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
 import dentecComfortEaseImageUrl from "assets/img/buy/dentec-comfort-ease.jpg";
+import readiMaskImageUrl from "assets/img/buy/readimask.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
@@ -306,6 +308,26 @@ const BuyPage = () => {
           buyBtnText="Buy Masks"
         />
 
+		<StoreItem
+          imgWidth="1233"
+          imgAlt="ReadiMask 10-Pack Strapless N95-Equivalent Mask That Seals"
+          imgUrl={readiMaskImageUrl}
+          title="PRE-ORDER SPECIAL ReadiMask Strapless N95-Equivalent Mask That Seals - 10-Pack"
+          description={
+            <>
+              10-pack of medim-large (regular/one-size-fits-all) size <strong>ReadiMask</strong> strapless N95-quivalent masks that seal.  Reusable up to 10 times.{" "}
+              Hypoallergenic medical adhesive. Silicone yellow. Adjustable fit.
+			  (ETA 7-10 business days until pre-orders ship.)
+            </>
+          }
+          dataSheetUrl={ReadiMaskData}
+          price="$74.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-readiMask"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.readiMask)}
+          buyBtnText="Buy ReadiMask 10-Pack"
+        />
+	
         <StoreItem
           imgWidth="800"
           imgAlt="Flo Mask Kids Elastomeric Respirator Kit"
