@@ -34,6 +34,7 @@ import FloMask from "assets/img/sponsors/flomask.png";
 import MI from "assets/img/sponsors/mi.png";
 import Aranet from "assets/img/sponsors/aranet.png";
 import ReadiMask from "assets/img/sponsors/readimask.jpg";
+import Optrel from "assets/img/sponsors/optrel.png";
 
 const AboutPage = () => {
   return (
@@ -148,6 +149,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		<Sponsorship src={MI} href="https://mi-integration.com/en/" />
 		<Sponsorship src={Aranet} href="https://aranet.com" />
 		<Sponsorship src={ReadiMask} href="https://readimask.com" />
+		<Sponsorship src={Optrel} href="https://optrel.us" />
       </Row>
       <SimpleFooter />
     </>
