@@ -17,7 +17,7 @@ export const STRIPE_LINKS = {
     honeywell: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28o7ug0Pv8mzas0aEQ",
 	dentecComfortEase: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwdSE7dT8mz6bK7sX",
 	pAirClear: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oE01O7dT46j9nWeVz",
-	readiMask: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/28odSE9m132fas0dRu",
+	readiMask: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN229W8hX9qD1VueVx",
     respiratorKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAeWI9m1cCP57G28c",
     refillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/00gbKwbu90U78jS7sN",
     dentecP100Kit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMg0M55L0U72Zy28J",

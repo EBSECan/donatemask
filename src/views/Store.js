@@ -337,16 +337,16 @@ const BuyPage = () => {
           imgWidth="1233"
           imgAlt="ReadiMask 10-Pack Strapless N95-Equivalent Mask That Seals"
           imgUrl={readiMaskImageUrl}
-          title="PRE-ORDER SPECIAL ReadiMask Strapless N95-Equivalent Mask That Seals - 10-Pack"
+          title="ReadiMask Strapless N95-Equivalent Mask That Seals - 10-Pack"
           description={
             <>
               10-pack of medim-large (regular/one-size-fits-all) size <strong>ReadiMask</strong> strapless N95-quivalent masks that seal.  Reusable up to 10 times.{" "}
               Hypoallergenic medical adhesive. Silicone yellow. Adjustable fit.
-			  (ETA 7-10 business days until pre-orders ship.)
+			  (Now in stock!)
             </>
           }
           dataSheetUrl={ReadiMaskData}
-          price="$74.99"
+          price="$79.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-readiMask"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.readiMask)}
