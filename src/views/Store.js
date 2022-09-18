@@ -23,6 +23,7 @@ import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
 import HoneywellData from "assets/img/buy/honeywell-spec.pdf";
 import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
+import PAirClearData from "assets/img/buy/p-air-clear-spec.pdf";
 import ReadiMaskData from "assets/img/buy/readimask-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
@@ -41,6 +42,7 @@ import maskSmallImageUrl from "assets/img/buy/horizon-small.jpg";
 import ebookImageUrl from "assets/img/buy/jon-parsons-book.jpg";
 import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
 import dentecComfortEaseImageUrl from "assets/img/buy/dentec-comfort-ease.jpg";
+import pAirClearImageUrl from "assets/img/buy/p-air-clear.jpg";
 import readiMaskImageUrl from "assets/img/buy/readimask.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
@@ -306,6 +308,29 @@ const BuyPage = () => {
           buyBtnId="buy-masks-eclipse-large"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.eclipseLarge)}
           buyBtnText="Buy Masks"
+        />
+
+		<StoreItem
+          imgWidth="1030"
+          imgAlt="Optrel P.Air Clear N95 Mask with Transparent Window"
+          imgUrl={pAirClearImageUrl}
+          title="PRE-ORDER SPECIAL Optrel P.Air Clear N95 Mask with Transparent Window"
+          description={
+            <>
+               <strong>Optrel P.Air Clear</strong> N95 certified disposable respirator with anti-fog transparent window. {" "}
+               Adjustable padded nose bridge for optimized fit. Latex-free head straps.
+			   Perfect for teachers, nurses, dentists, and anyone who wants to show their
+			   smile and have their words be more accessible for those who lip read!
+			   Box of 20 (4 packs of 5).
+			  (ETA 7-10 business days until pre-orders ship.)
+            </>
+          }
+          dataSheetUrl={PAirClearData}
+          price="PRE-ORDER SPECIAL PRICE $79.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-pAirClear"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.pAirClear)}
+          buyBtnText="Buy P.Air Clear Box"
         />
 
 		<StoreItem
