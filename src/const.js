@@ -43,7 +43,8 @@ export const STRIPE_LINKS = {
 	co2ModelDUSA: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwbKwcyddGT2ZydRp",
 	co2ModelDEU: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZe6qccyd8mzgQo8x6",
     aranet4: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN29Co9m18mz1VufZb",
-	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
+	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY7ugbu9byL0RqcN6",
+//DISABLED 69.99 PRICE DURING SPECIAL	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
 	vitalightUSA: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oEeWIcydfP157G00p",
 	vitalightEU: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwbKw1Tz9qD8jScNc",
   }

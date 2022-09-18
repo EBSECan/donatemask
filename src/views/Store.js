@@ -849,9 +849,9 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="719"
-          imgAlt="DonateMask.ca Mini CO2 Monitor"
+          imgAlt="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini-CO2 Monitor"
+          title="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini-CO2 Monitor"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
@@ -860,7 +860,7 @@ const BuyPage = () => {
             </>
           }
           dataSheetUrl={VitalightData}
-          price="$69.99"
+          price="CHEAPER THAN AMAZON SPECIAL: $64.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-co2-vitalight"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalight)}
