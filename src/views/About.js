@@ -27,6 +27,7 @@ import Kanbanize from "assets/img/sponsors/kanbanize.svg";
 import CanRedCross from "assets/img/sponsors/canredcross.png";
 import HealthCanada from "assets/img/sponsors/healthcanada.png";
 import Dentec from "assets/img/sponsors/dentec.png";
+import ES from "assets/img/sponsors/es.jpg";
 import Prescientx from "assets/img/sponsors/prescientx.png";
 import Co2Click from "assets/img/sponsors/co2click.png";
 import ScrapScrunchieShop from "assets/img/sponsors/scrapscrunchieshop.png";
@@ -35,6 +36,9 @@ import MI from "assets/img/sponsors/mi.png";
 import Aranet from "assets/img/sponsors/aranet.png";
 import ReadiMask from "assets/img/sponsors/readimask.jpg";
 import Optrel from "assets/img/sponsors/optrel.png";
+import Ups from "assets/img/sponsors/ups.png";
+import SoftSeal from "assets/img/sponsors/softseal.png";
+import CanadaStrong from "assets/img/sponsors/canadastrong.png";
 
 const AboutPage = () => {
   return (
@@ -142,6 +146,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           href="https://www.canada.ca/en/health-canada.html"
         />
         <Sponsorship src={Dentec} href="https://dentecsafety.com/" />
+		<Sponsorship src={ES} href="https://www.es-canada.com/" />
         <Sponsorship src={Prescientx} href="https://prescientx.com/" />
         <Sponsorship src={Co2Click} href="https://www.co2.click/" />
         <Sponsorship src={ScrapScrunchieShop} href="https://www.buymask.ca" />
@@ -150,6 +155,9 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		<Sponsorship src={Aranet} href="https://aranet.com" />
 		<Sponsorship src={ReadiMask} href="https://readimask.com" />
 		<Sponsorship src={Optrel} href="https://optrel.us" />
+		<Sponsorship src={Ups} href="https://ups.com" />
+		<Sponsorship src={SoftSeal} href="https://www.softsealmask.com/" />
+		<Sponsorship src={CanadaStrong} href="https://canadastrongmasks.ca/" />
       </Row>
       <SimpleFooter />
     </>
