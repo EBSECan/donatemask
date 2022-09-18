@@ -34,6 +34,7 @@ import LanyardData from "assets/img/buy/lanyard-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
 import HaloStrapKidsData from "assets/img/buy/halo-strap-kids-spec.pdf";
+import HaloStrapAdultData from "assets/img/buy/halo-strap-adult-spec.pdf";
 
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
@@ -55,7 +56,11 @@ import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
 import floMaskKidsRefillImageUrl from "assets/img/buy/flo-mask-kids-refill.jpg";
+import floMaskAdultKitLowImageUrl from "assets/img/buy/flo-mask-adult-kit-low.jpg";
+import floMaskAdultKitHighImageUrl from "assets/img/buy/flo-mask-adult-kit-high.jpg";
+import floMaskAdultRefillImageUrl from "assets/img/buy/flo-mask-adult-refill.jpg";
 import haloStrapKidsImageUrl from "assets/img/buy/halo-strap-kids.png";
+import haloStrapAdultImageUrl from "assets/img/buy/halo-strap-adult.jpg";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
@@ -378,9 +383,9 @@ const BuyPage = () => {
 
         <StoreItem
           imgWidth="800"
-          imgAlt="Flo Mask Kids Refill Kit"
+          imgAlt="Flo Mask Kids Refill Pack"
           imgUrl={floMaskKidsRefillImageUrl}
-          title="Flo Mask Kids Refill Kit"
+          title="Flo Mask Kids Refill Pack"
           description={
             <>
               Refill pack includes 50 N95-equivalent filters,
@@ -394,6 +399,73 @@ const BuyPage = () => {
           buyBtnId="buy-flo-mask-kids-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsRefillPack)}
           buyBtnText="Buy Flo Mask Kids Refill"
+        />
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit Low-Med Nose Bridge"
+          imgUrl={floMaskAdultKitLowImageUrl}
+          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit (Low-Med Nose Bridge)"
+          description={
+            <>
+              
+              Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
+			  110 N95-equivalent filters (55 Everyday + 55 Pro), 
+			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
+			  4 condensation inserts, a microfiber carrying pouch, and{" "}
+              10 alcohol-free respirator wipes.{"     "}
+			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 7-10 days)
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="PRE ORDER SPECIAL $379.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-adult-kit-low"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultKitLow)}
+          buyBtnText="Buy Flo Mask Adult Kit"
+        />
+		
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit Med-High Nose Bridge"
+          imgUrl={floMaskAdultKitHighImageUrl}
+          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit (Med-High Nose Bridge)"
+          description={
+            <>
+              
+              Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
+			  110 N95-equivalent filters (55 Everyday + 55 Pro), 
+			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
+			  4 condensation inserts, a microfiber carrying pouch, and{" "}
+              10 alcohol-free respirator wipes.{" "}
+			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 7-10 days)
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="PRE ORDER SPECIAL $379.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-adult-kit-high"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultKitHigh)}
+          buyBtnText="Buy Flo Mask Adult Kit"
+        />
+		
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
+          imgUrl={floMaskAdultRefillImageUrl}
+          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
+          description={
+            <>
+              Refill pack includes 100 N95-equivalent filters (50 Everyday + 50 Pro),
+              9 condensation inserts, and box of{" "}
+              100 alcohol-free respirator cleaning wipes. (ETA to ship: 7-10 days)
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="PRE ORDER SPECIAL $279.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-adult-refill"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultRefillPack)}
+          buyBtnText="Buy Flo Mask Pro Adult Refill"
         />
 		
 		<StoreItem
@@ -410,9 +482,28 @@ const BuyPage = () => {
           dataSheetUrl={HaloStrapKidsData}
           price="$29.99"
 		  shipping=" with FREE shipping in Canada"
-          buyBtnId="buy-halo-strap-kids-refill"
+          buyBtnId="buy-halo-strap-kids"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.haloStrapKids)}
           buyBtnText="Buy Halo Strap (Kids)"
+        />
+		
+			<StoreItem
+          imgWidth="721"
+          imgAlt="PRE ORDER - Halo Strap (Adult)"
+          imgUrl={haloStrapAdultImageUrl}
+          title="PRE ORDER - Halo Strap (Adult)"
+          description={
+            <>
+              Halo Strap for Flo Mask Pro Adult reusable respirator for 
+			  easier time putting it on and a more comfortable fit. (ETA to ship: 7-10 days)
+            </>
+          }
+          dataSheetUrl={HaloStrapAdultData}
+          price="$34.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-halo-strap-adult"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.haloStrapAdult)}
+          buyBtnText="Buy Halo Strap (Adult)"
         />
 
         <StoreItem
