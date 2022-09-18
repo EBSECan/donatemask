@@ -28,7 +28,11 @@ export const STRIPE_LINKS = {
     draegerRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZeeWIeGlfP143C5kH",
 	floMaskKidsKit: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14keWI8hX46j6bK28z",
     floMaskKidsRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/14k15S41HauHbw46oQ",
+	floMaskAdultKitLow: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gw5m8gOt9qDas000H",
+	floMaskAdultKitHigh: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/3cs3e0bu946j0RqfZE",
+	floMaskAdultRefillPack: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/7sI9Co1TzdGTas000I",
 	haloStrapKids: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oE01O55L32f8jSaFa",
+	haloStrapAdult: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMcOA0PvdGTeIgcNv",
     lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
   },
   co2: {
@@ -39,7 +43,8 @@ export const STRIPE_LINKS = {
 	co2ModelDUSA: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwbKwcyddGT2ZydRp",
 	co2ModelDEU: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZe6qccyd8mzgQo8x6",
     aranet4: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/cN29Co9m18mz1VufZb",
-	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
+	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY7ugbu9byL0RqcN6",
+//DISABLED 69.99 PRICE DURING SPECIAL	vitalight: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMbKw9m1gT5cA84gE",
 	vitalightUSA: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oEeWIcydfP157G00p",
 	vitalightEU: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/4gwbKw1Tz9qD8jScNc",
   }
@@ -73,7 +78,11 @@ export const MASKS_DONATED_FROM_PURCHASE = {
 	draegerRefillPack: 25,
 	floMaskKidsKit: 20,
 	floMaskKidsRefillPack: 25,
+	floMaskAdultKitLow: 20,
+	floMaskAdultKitHigh: 20,
+	floMaskAdultRefillPack: 25,
 	haloStrapKids: 8,
+	haloStrapAdult: 8,
     lanyard: 4,
   },
   co2: {
