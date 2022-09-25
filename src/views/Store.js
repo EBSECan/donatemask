@@ -55,9 +55,12 @@ import dentecP100RefillImageUrl from "assets/img/buy/dentec-p100-refill.jpg";
 import draegerKitImageUrl from "assets/img/buy/draeger-kit.jpg";
 import draegerRefillImageUrl from "assets/img/buy/draeger-refill.jpg";
 import floMaskKidsKitImageUrl from "assets/img/buy/flo-mask-kids-kit.jpg";
+import floMaskKidsStandaloneImageUrl from "assets/img/buy/flo-mask-kids-standalone.jpg";
 import floMaskKidsRefillImageUrl from "assets/img/buy/flo-mask-kids-refill.jpg";
 import floMaskAdultKitLowImageUrl from "assets/img/buy/flo-mask-adult-kit-low.jpg";
 import floMaskAdultKitHighImageUrl from "assets/img/buy/flo-mask-adult-kit-high.jpg";
+import floMaskAdultStandaloneLowImageUrl from "assets/img/buy/flo-mask-adult-standalone-low.jpg";
+import floMaskAdultStandaloneHighImageUrl from "assets/img/buy/flo-mask-adult-standalone-high.jpg";
 import floMaskAdultRefillImageUrl from "assets/img/buy/flo-mask-adult-refill.jpg";
 import haloStrapKidsImageUrl from "assets/img/buy/halo-strap-kids.png";
 import haloStrapAdultImageUrl from "assets/img/buy/halo-strap-adult.jpg";
@@ -362,13 +365,13 @@ const BuyPage = () => {
           imgWidth="800"
           imgAlt="Flo Mask Kids Elastomeric Respirator Kit"
           imgUrl={floMaskKidsKitImageUrl}
-          title="Flo Mask Kids Elastomeric Respirator Kit"
+          title="BEST VALUE: Flo Mask Kids Elastomeric Respirator Kit"
           description={
             <>
               
               Kit includes original <strong>Flo Mask Kids</strong>, 30 N95-equivalent filters, 
 			  <strong> Halo Strap</strong> comfort add-on, {" "}
-			  5 condensation inserts, a microfiber carrying pouch, and{" "}
+			  6 condensation inserts, a microfiber carrying pouch, and{" "}
               10 alcohol-free respirator wipes.{" "}
 			  <strong>Fit designed for ages 4+.</strong>
             </>
@@ -379,6 +382,26 @@ const BuyPage = () => {
           buyBtnId="buy-flo-mask-kids-kit"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsKit)}
           buyBtnText="Buy Flo Mask Kids Kit"
+        />
+		
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="Flo Mask Kids Elastomeric Respirator Standalone"
+          imgUrl={floMaskKidsStandaloneImageUrl}
+          title="Flo Mask Kids Elastomeric Respirator Standalone"
+          description={
+            <>
+              The Flow Mask Kids standalone includes original <strong>Flo Mask Kids</strong>, 
+			  5 N95-equivalent filters, 1 condensation insert and a microfiber carrying pouch.{" "}
+			  <strong>Fit designed for ages 4+.</strong>
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="$129.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-kids-standalone"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskKidsStandalone)}
+          buyBtnText="Buy Flo Mask Kids Standalone"
         />
 
         <StoreItem
@@ -402,18 +425,17 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit Low-Med Nose Bridge"
+          imgAlt="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Low-Med Nose Bridge"
           imgUrl={floMaskAdultKitLowImageUrl}
-          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit (Low-Med Nose Bridge)"
+          title="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Low-Med Nose Bridge)"
           description={
             <>
-              
               Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
 			  110 N95-equivalent filters (55 Everyday + 55 Pro), 
 			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
 			  4 condensation inserts, a microfiber carrying pouch, and{" "}
               10 alcohol-free respirator wipes.{"     "}
-			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 7-10 days)
+			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
             </>
           }
           dataSheetUrl={FloMaskData}
@@ -426,18 +448,17 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit Med-High Nose Bridge"
+          imgAlt="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Med-High Nose Bridge"
           imgUrl={floMaskAdultKitHighImageUrl}
-          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Elastomeric Respirator Kit (Med-High Nose Bridge)"
+          title="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Med-High Nose Bridge)"
           description={
             <>
-              
               Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
 			  110 N95-equivalent filters (55 Everyday + 55 Pro), 
 			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
 			  4 condensation inserts, a microfiber carrying pouch, and{" "}
               10 alcohol-free respirator wipes.{" "}
-			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 7-10 days)
+			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
             </>
           }
           dataSheetUrl={FloMaskData}
@@ -450,6 +471,48 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
+          imgAlt="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone Low-Med Nose Bridge"
+          imgUrl={floMaskAdultStandaloneLowImageUrl}
+          title="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone (Low-Med Nose Bridge)"
+          description={
+            <>
+              The Flo mask Pro Adult standalone includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
+			  10 N95-equivalent filters (5 Everyday + 5 Pro), {" "}
+			  1 condensation inserts, and a microfiber carrying pouch.{"     "}
+			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="$199.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-adult-standalone-low"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultStandaloneLow)}
+          buyBtnText="Buy Flo Mask Adult Standalone"
+        />
+		
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone Med-High Nose Bridge"
+          imgUrl={floMaskAdultStandaloneHighImageUrl}
+          title="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone (Med-High Nose Bridge)"
+          description={
+            <>
+              The Flo mask Pro Adult standalone includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
+			  10 N95-equivalent filters (5 Everyday + 5 Pro), {" "}
+			  1 condensation inserts, and a microfiber carrying pouch.{"     "}
+			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+            </>
+          }
+          dataSheetUrl={FloMaskData}
+          price="$199.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-flo-mask-adult-standalone-high"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultStandaloneHigh)}
+          buyBtnText="Buy Flo Mask Adult Standalone"
+        />
+		
+		<StoreItem
+          imgWidth="1000"
           imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
           imgUrl={floMaskAdultRefillImageUrl}
           title="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
@@ -457,7 +520,7 @@ const BuyPage = () => {
             <>
               Refill pack includes 100 N95-equivalent filters (50 Everyday + 50 Pro),
               9 condensation inserts, and box of{" "}
-              100 alcohol-free respirator cleaning wipes. (ETA to ship: 7-10 days)
+              100 alcohol-free respirator cleaning wipes. (ETA to ship: 3-4 days)
             </>
           }
           dataSheetUrl={FloMaskData}
