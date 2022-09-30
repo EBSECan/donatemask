@@ -322,7 +322,7 @@ const BuyPage = () => {
           imgWidth="1030"
           imgAlt="Optrel P.Air Clear N95 Mask with Transparent Window"
           imgUrl={pAirClearImageUrl}
-          title="PRE-ORDER SPECIAL Optrel P.Air Clear N95 Mask with Transparent Window"
+          title="POptrel P.Air Clear N95 Mask with Transparent Window"
           description={
             <>
                <strong>Optrel P.Air Clear</strong> N95 certified disposable respirator with anti-fog transparent window. {" "}
@@ -330,11 +330,11 @@ const BuyPage = () => {
 			   Perfect for teachers, nurses, dentists, and anyone who wants to show their
 			   smile and have their words be more accessible for those who lip read!
 			   Box of 20 (4 packs of 5).
-			  (ETA 7-10 business days until pre-orders ship.)
+			  (Now in stock!)
             </>
           }
           dataSheetUrl={PAirClearData}
-          price="PRE-ORDER SPECIAL PRICE $79.99"
+          price="$84.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-pAirClear"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.pAirClear)}
@@ -912,14 +912,14 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="719"
-          imgAlt="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini CO2 Monitor"
+          imgAlt="(Backordered) CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini-CO2 Monitor"
+          title="(Backordered) CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini-CO2 Monitor"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life!
+			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
             </>
           }
           dataSheetUrl={VitalightData}
@@ -931,14 +931,14 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="719"
-          imgAlt="DonateMask.ca Mini CO2 Monitor"
+          imgAlt="(Backordered) DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini-CO2 Monitor (USA)"
+          title="(Backordered) DonateMask.ca Mini-CO2 Monitor (USA)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life!
+			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
             </>
           }
           dataSheetUrl={VitalightData}
@@ -950,14 +950,14 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="719"
-          imgAlt="DonateMask.ca Mini CO2 Monitor"
+          imgAlt="(Backordered) DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="DonateMask.ca Mini-CO2 Monitor (EU)"
+          title="(Backordered) DonateMask.ca Mini-CO2 Monitor (EU)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life!
+			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
             </>
           }
           dataSheetUrl={VitalightData}
