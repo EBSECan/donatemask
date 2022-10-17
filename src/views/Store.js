@@ -425,9 +425,9 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Low-Med Nose Bridge"
+          imgAlt="(BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Low-Med Nose Bridge"
           imgUrl={floMaskAdultKitLowImageUrl}
-          title="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Low-Med Nose Bridge)"
+          title="(BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Low-Med Nose Bridge)"
           description={
             <>
               Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
@@ -435,11 +435,11 @@ const BuyPage = () => {
 			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
 			  4 condensation inserts, a microfiber carrying pouch, and{" "}
               10 alcohol-free respirator wipes.{"     "}
-			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (Now in stock!)
             </>
           }
           dataSheetUrl={FloMaskData}
-          price="PRE ORDER SPECIAL $379.99"
+          price="$399.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-flo-mask-adult-kit-low"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultKitLow)}
@@ -448,9 +448,9 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Med-High Nose Bridge"
+          imgAlt="(BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit Med-High Nose Bridge"
           imgUrl={floMaskAdultKitHighImageUrl}
-          title="PRE ORDER SPECIAL (BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Med-High Nose Bridge)"
+          title="(BEST VALUE) - Flo Mask Pro Adult Elastomeric Respirator Kit (Med-High Nose Bridge)"
           description={
             <>
               Kit includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
@@ -458,11 +458,11 @@ const BuyPage = () => {
 			  <strong> Adult Halo Strap</strong> comfort add-on, {" "}
 			  4 condensation inserts, a microfiber carrying pouch, and{" "}
               10 alcohol-free respirator wipes.{" "}
-			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (Now in stock!)
             </>
           }
           dataSheetUrl={FloMaskData}
-          price="PRE ORDER SPECIAL $379.99"
+          price="$399.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-flo-mask-adult-kit-high"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultKitHigh)}
@@ -471,15 +471,15 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone Low-Med Nose Bridge"
+          imgAlt="Flo Mask Pro Adult Elastomeric Respirator Standalone Low-Med Nose Bridge"
           imgUrl={floMaskAdultStandaloneLowImageUrl}
-          title="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone (Low-Med Nose Bridge)"
+          title="Flo Mask Pro Adult Elastomeric Respirator Standalone (Low-Med Nose Bridge)"
           description={
             <>
               The Flo mask Pro Adult standalone includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
 			  10 N95-equivalent filters (5 Everyday + 5 Pro), {" "}
 			  1 condensation inserts, and a microfiber carrying pouch.{"     "}
-			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+			  <strong>Low-Med Nose Bridge version suitable for those of Asian, Pacific Islander & African descent</strong> (See spec sheet for measurement guidance). (Now in stock!)
             </>
           }
           dataSheetUrl={FloMaskData}
@@ -492,15 +492,15 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone Med-High Nose Bridge"
+          imgAlt="Flo Mask Pro Adult Elastomeric Respirator Standalone Med-High Nose Bridge"
           imgUrl={floMaskAdultStandaloneHighImageUrl}
-          title="PRE ORDER - Flo Mask Pro Adult Elastomeric Respirator Standalone (Med-High Nose Bridge)"
+          title="Flo Mask Pro Adult Elastomeric Respirator Standalone (Med-High Nose Bridge)"
           description={
             <>
               The Flo mask Pro Adult standalone includes original <strong>Flo Mask Pro Adult</strong> elastomeric respirator,
 			  10 N95-equivalent filters (5 Everyday + 5 Pro), {" "}
 			  1 condensation inserts, and a microfiber carrying pouch.{"     "}
-			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (ETA to ship: 3-4 days)
+			  <strong>Med-High Nose Bridge version suitable for those of European and Hispanic descent</strong> (See spec sheet for measurement guidance). (Now in stock!)
             </>
           }
           dataSheetUrl={FloMaskData}
@@ -513,18 +513,18 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="1000"
-          imgAlt="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
+          imgAlt="Flo Mask Pro Adult Refill Pack"
           imgUrl={floMaskAdultRefillImageUrl}
-          title="PRE ORDER SPECIAL - Flo Mask Pro Adult Refill Pack"
+          title="Flo Mask Pro Adult Refill Pack"
           description={
             <>
               Refill pack includes 100 N95-equivalent filters (50 Everyday + 50 Pro),
               9 condensation inserts, and box of{" "}
-              100 alcohol-free respirator cleaning wipes. (ETA to ship: 3-4 days)
+              100 alcohol-free respirator cleaning wipes. (Now in stock!)
             </>
           }
           dataSheetUrl={FloMaskData}
-          price="PRE ORDER SPECIAL $279.99"
+          price="$299.99"
 		  shipping=" with FREE shipping in Canada"
           buyBtnId="buy-flo-mask-adult-refill"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.floMaskAdultRefillPack)}
@@ -552,13 +552,13 @@ const BuyPage = () => {
 		
 			<StoreItem
           imgWidth="721"
-          imgAlt="PRE ORDER - Halo Strap (Adult)"
+          imgAlt="Halo Strap (Adult)"
           imgUrl={haloStrapAdultImageUrl}
-          title="PRE ORDER - Halo Strap (Adult)"
+          title="Halo Strap (Adult)"
           description={
             <>
               Halo Strap for Flo Mask Pro Adult reusable respirator for 
-			  easier time putting it on and a more comfortable fit. (ETA to ship: 7-10 days)
+			  easier time putting it on and a more comfortable fit. (Now in stock!)
             </>
           }
           dataSheetUrl={HaloStrapAdultData}
@@ -813,9 +813,9 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="794"
-          imgAlt="CO2 Model D EU"
+          imgAlt="CO2 Model D EU/UK"
           imgUrl={co2ModelDImageUrl}
-          title="CO2 Model D (EU)"
+          title="CO2 Model D (EU/UK)"
           description={
             <>
               <strong>CO2 detector and wall mount</strong> as a kit. Canadian
@@ -825,10 +825,10 @@ const BuyPage = () => {
           }
           dataSheetUrl={CO2ModelDData}
           price="€279.99 EUR"
-		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+		  shipping=" with FREE shipping to EU/UK (import duties & taxes not included)"
           buyBtnId="buy-co2-co2-d-eu"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelDEU)}
-          buyBtnText="Buy CO2.Click Model D - EU"
+          buyBtnText="Buy CO2.Click Model D - EU/UK"
         />
 		
         <StoreItem
@@ -873,9 +873,9 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="794"
-          imgAlt="CO2 Model C EU"
+          imgAlt="CO2 Model C EU/UK"
           imgUrl={co2ModelCImageUrl}
-          title="CO2 Model C (EU)"
+          title="CO2 Model C (EU/UK)"
           description={
             <>
               <strong>CO2 detector (wifi-enabled) and desk mount</strong> as a
@@ -885,10 +885,10 @@ const BuyPage = () => {
           }
           dataSheetUrl={CO2ModelCData}
           price="€299.99 EUR"
-		  shipping=" with FREE shipping to EU (import duties & taxes not included)"
+		  shipping=" with FREE shipping to EU/UK (import duties & taxes not included)"
           buyBtnId="buy-co2-co2-c-eu"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.co2ModelCEU)}
-          buyBtnText="Buy CO2.Click Model C - EU"
+          buyBtnText="Buy CO2.Click Model C - EU/UK"
         />
 
         <StoreItem
@@ -912,14 +912,14 @@ const BuyPage = () => {
 		
 		<StoreItem
           imgWidth="719"
-          imgAlt="(Backordered) CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini CO2 Monitor"
+          imgAlt="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="(Backordered) CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini-CO2 Monitor"
+          title="CHEAPER THAN AMAZON SPECIAL - DonateMask.ca Mini-CO2 Monitor"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
+			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
@@ -931,14 +931,14 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="719"
-          imgAlt="(Backordered) DonateMask.ca Mini CO2 Monitor"
+          imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="(Backordered) DonateMask.ca Mini-CO2 Monitor (USA)"
+          title="DonateMask.ca Mini-CO2 Monitor (USA)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
+			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
@@ -950,22 +950,22 @@ const BuyPage = () => {
         />
 		<StoreItem
           imgWidth="719"
-          imgAlt="(Backordered) DonateMask.ca Mini CO2 Monitor"
+          imgAlt="DonateMask.ca Mini CO2 Monitor"
           imgUrl={vitalightImageUrl}
-          title="(Backordered) DonateMask.ca Mini-CO2 Monitor (EU)"
+          title="DonateMask.ca Mini-CO2 Monitor (EU/UK)"
           description={
             <>
               <strong>DonateMask.ca custom branded</strong>  mini CO<sub>2</sub> monitor. Features NDIR sensor that{" "}
               measures CO<sub>2</sub> levels in your spaces at a much lower cost.{" "}
-			  Up to 8 hour battery life! Backordered. 7-14 business days to ship.
+			  Up to 8 hour battery life!
             </>
           }
           dataSheetUrl={VitalightData}
           price="€79.99 EUR"
-		  shipping=" with FREE shipping to mainland Europe (import duties & taxes not included)"
+		  shipping=" with FREE shipping to mainland Europe/UK (import duties & taxes not included)"
           buyBtnId="buy-co2-vitalight-eu"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.co2.vitalightEU)}
-          buyBtnText="Buy Mini-CO2 Monitor - EU"
+          buyBtnText="Buy Mini-CO2 Monitor - EU/UK"
         />
       </Container>
       <SimpleFooter />
