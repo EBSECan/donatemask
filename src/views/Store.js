@@ -25,6 +25,8 @@ import HoneywellData from "assets/img/buy/honeywell-spec.pdf";
 import DentecComfortEaseData from "assets/img/buy/dentec-comfort-ease-spec.pdf";
 import PAirClearData from "assets/img/buy/p-air-clear-spec.pdf";
 import ReadiMaskData from "assets/img/buy/readimask-spec.pdf";
+import SoftSealData from "assets/img/buy/softseal-spec.pdf";
+import SoftSealVFoldData from "assets/img/buy/softseal-vfold-spec.pdf";
 import CO2ModelCData from "assets/img/buy/CO2_Model_C_Datasheet.pdf";
 import CO2ModelDData from "assets/img/buy/CO2_Model_D_Datasheet.pdf";
 import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
@@ -45,6 +47,13 @@ import honeywellImageUrl from "assets/img/buy/honeywell.jpg";
 import dentecComfortEaseImageUrl from "assets/img/buy/dentec-comfort-ease.jpg";
 import pAirClearImageUrl from "assets/img/buy/p-air-clear.jpg";
 import readiMaskImageUrl from "assets/img/buy/readimask.jpg";
+import softSealMediumImageUrl from "assets/img/buy/softseal-medium.jpg";
+import softSealLargeImageUrl from "assets/img/buy/softseal-large.jpg";
+import softSealXLargeImageUrl from "assets/img/buy/softseal-xlarge.jpg";
+import softSealVFoldSmallImageUrl from "assets/img/buy/softseal-vfold-small.jpg";
+import softSealVFoldMediumImageUrl from "assets/img/buy/softseal-vfold-medium.jpg";
+import softSealVFoldLargeImageUrl from "assets/img/buy/softseal-vfold-large.jpg";
+import softSealVFoldXLargeImageUrl from "assets/img/buy/softseal-vfold-xlarge.jpg";
 import co2ModelCImageUrl from "assets/img/buy/co2-model-c.jpg";
 import co2ModelDImageUrl from "assets/img/buy/co2-model-d.jpg";
 import aranet4ImageUrl from "assets/img/buy/aranet4.jpg";
@@ -359,6 +368,146 @@ const BuyPage = () => {
           buyBtnId="buy-readiMask"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.readiMask)}
           buyBtnText="Buy ReadiMask 10-Pack"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal 3D Silicone Sealing N95 Certified Respirators - Medium"
+          imgUrl={softSealMediumImageUrl}
+          title="SoftSeal 3D Silicone Sealing N95 Certified Respirator - Medium"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal 3D</strong>  N95 certified respirator with the 360 degree silicone face seal.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH medium size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealData}
+          price="$69.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-medium"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealMedium)}
+          buyBtnText="Buy SoftSeal 3D Medium Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal 3D Silicone Sealing N95 Certified Respirators - Large"
+          imgUrl={softSealLargeImageUrl}
+          title="SoftSeal 3D Silicone Sealing N95 Certified Respirator - Large"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal 3D</strong>  N95 certified respirator with the 360 degree silicone face seal.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH large size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealData}
+          price="$69.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-large"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealLarge)}
+          buyBtnText="Buy SoftSeal 3D Large Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal 3D Silicone Sealing N95 Certified Respirators - Extra-Large"
+          imgUrl={softSealXLargeImageUrl}
+          title="SoftSeal 3D Silicone Sealing N95 Certified Respirator - Extra-Large"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal 3D</strong>  N95 certified respirator with the 360 degree silicone face seal.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH extra-large size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealData}
+          price="$69.99"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-xlarge"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealXLarge)}
+          buyBtnText="Buy SoftSeal 3D XL Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal VFold Silicone Sealing N95 Certified Respirators - Small"
+          imgUrl={softSealVFoldSmallImageUrl}
+          title="SoftSeal VFold Silicone Sealing N95 Certified Respirator - Small"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal VFold</strong>  N95 certified respirator with the 360 degree silicone face seal. Foldable for easy carry.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH small size, suitable for children/youth. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealVFoldData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-vfold-small"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealVFoldSmall)}
+          buyBtnText="Buy SoftSeal VFold Small Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal VFold Silicone Sealing N95 Certified Respirators - Medium"
+          imgUrl={softSealVFoldMediumImageUrl}
+          title="SoftSeal VFold Silicone Sealing N95 Certified Respirator - Medium"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal VFold</strong>  N95 certified respirator with the 360 degree silicone face seal. Foldable for easy carry.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH medium size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealVFoldData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-vfold-medium"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealVFoldMedium)}
+          buyBtnText="Buy SoftSeal VFold Medium Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal VFold Silicone Sealing N95 Certified Respirators - Large"
+          imgUrl={softSealVFoldLargeImageUrl}
+          title="SoftSeal VFold Silicone Sealing N95 Certified Respirator - Large"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal VFold</strong>  N95 certified respirator with the 360 degree silicone face seal. Foldable for easy carry.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH large size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealVFoldData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-vfold-large"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealVFoldLarge)}
+          buyBtnText="Buy SoftSeal VFold Large Box"
+        />
+		
+		<StoreItem
+          imgWidth="480"
+          imgAlt="SoftSeal VFold Silicone Sealing N95 Certified Respirators - Extra-Large"
+          imgUrl={softSealVFoldXLargeImageUrl}
+          title="SoftSeal VFold Silicone Sealing N95 Certified Respirator - Extra-Large"
+          description={
+            <>
+              Box (10-count, individually wrapped) <strong>SoftSeal VFold</strong>  N95 certified respirator with the 360 degree silicone face seal. Foldable for easy carry.{" "}
+              Designed for comfort for long-duration wear. Adjustable fit headband. NIOSH extra-large size. No exhalation valve.
+			  (Now in stock!)
+            </>
+          }
+          dataSheetUrl={SoftSealVFoldData}
+          price="$62.50"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-softSeal-vfold-xlarge"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.softSealVFoldXLarge)}
+          buyBtnText="Buy SoftSeal VFold XL Box"
         />
 	
         <StoreItem
