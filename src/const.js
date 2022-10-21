@@ -10,6 +10,7 @@ export const STRIPE_LINKS = {
     $50: process.env.REACT_APP_STRIPE_EBOOK_LINK || "https://buy.stripe.com/9AQ9Co69PbyLas0007",
   },
   mask: {
+	sampler: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/fZe4i47dT46jeIg152",
     small: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/5kAdSE41H1Yb8jS5kn",
     regular: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR6cOA9m19qD0Rq5km",
 	eclipseRegular: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/9AQcOA7dT0U70Rq00u",
@@ -70,6 +71,7 @@ export const MASKS_DONATED_FROM_PURCHASE = {
     $50: 40,
   },
   mask: {
+	sampler: 16,
     small: 25,
     regular: 25,
 	eclipseRegular: 25,
