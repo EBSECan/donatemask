@@ -18,6 +18,7 @@ import Hero from "components/Hero.js";
 import SimpleFooter from "components/SimpleFooter.js";
 import StoreItem from "components/StoreItem";
 
+import SamplerData from "assets/img/buy/sampler-spec.pdf";
 import EclipseData from "assets/img/buy/eclipse-data.pdf";
 import FdkData from "assets/img/buy/fdk-data.pdf";
 import KitData from "assets/img/buy/6200kitspecifications.pdf";
@@ -38,6 +39,7 @@ import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
 import HaloStrapKidsData from "assets/img/buy/halo-strap-kids-spec.pdf";
 import HaloStrapAdultData from "assets/img/buy/halo-strap-adult-spec.pdf";
 
+import samplerImageUrl from "assets/img/buy/sampler.jpg";
 import kitImageUrl from "assets/img/buy/3m-6200.jpg";
 import refillImageUrl from "assets/img/buy/3m-refill.jpg";
 import maskRegularImageUrl from "assets/img/buy/fudakin-regular.jpg";
@@ -211,6 +213,25 @@ const BuyPage = () => {
             </p>
           </Col>
         </Row>
+
+		<StoreItem
+          imgWidth="1000"
+          imgAlt="Sampler Mask Pack"
+          imgUrl={samplerImageUrl}
+          title="Sampler Mask Pack"
+          description={
+            <>
+              Sampler pack includes 16 N95-equivalent masks: One of each type-size combination
+			  available on the buymask.ca charity fundraising store. Includes masks from Eclipse Innovations, SoftSeal, ReadiMask, Optrel, FUDAKIN, Dentec Safety, Honeywell, and BYD (free).  Great way to test fit before buying!
+            </>
+          }
+          dataSheetUrl={SamplerData}
+          price="$62.49"
+		  shipping=" with FREE shipping in Canada"
+          buyBtnId="buy-masks-sampler"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.sampler)}
+          buyBtnText="Buy Sampler Pack"
+        />
 
         <StoreItem
           imgWidth="1024"
