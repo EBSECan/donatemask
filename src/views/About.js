@@ -138,6 +138,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		  description="I'm a communications consultant and producer in the arts, the owner of FireDance Media, and a founding member of Protect Our Province BC."
           avatar={Kerri}
           website="https://protectbc.ca/"
+		  twitter="https://twitter.com/kerricoombs"
           email="kerri@donatemask.ca"
         />
 		<Profile
@@ -145,8 +146,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           role="Event Coordination & Translation"
           description="Currently helping the charity by organizing a fundraising and getting in touch coordinating volunteers."
 		  avatar={Josi}         
-		  instagram=""
-          twitter=""
+          twitter="NSJosi"
           email="josi@donatemask.ca"
         />
 		<Profile
@@ -154,8 +154,6 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           role="Graphic Design & Translation"
 		  description="Taking care of design and ordering for t-shirts and other charity merchandise as well as translation work."
           avatar={Annie}
-          instagram=""
-          twitter=""
           email="annie@donatemask.ca"
         />
       </Row>
