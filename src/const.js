@@ -45,6 +45,7 @@ export const STRIPE_LINKS = {
 	haloStrapKids: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/6oE01O55L32f8jSaFa",
 	haloStrapAdult: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/8wMcOA0PvdGTeIgcNv",
     lanyard: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/dR629WdChauHdEc5kB",
+	stickers: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/eVa15Saq5dGT43C4hf",
   },
   co2: {
     co2ModelC: process.env.REACT_APP_STRIPE_MASK_LINK || "https://buy.stripe.com/bIY29Wbu9byL2ZyfZ9",
@@ -106,6 +107,7 @@ export const MASKS_DONATED_FROM_PURCHASE = {
 	haloStrapKids: 8,
 	haloStrapAdult: 8,
     lanyard: 4,
+	stickers: 4,
   },
   co2: {
     co2ModelC: 32,
