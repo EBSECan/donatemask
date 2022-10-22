@@ -39,6 +39,13 @@ import Optrel from "assets/img/sponsors/optrel.png";
 import Ups from "assets/img/sponsors/ups.png";
 import SoftSeal from "assets/img/sponsors/softseal.png";
 import CanadaStrong from "assets/img/sponsors/canadastrong.png";
+import CatCrap from "assets/img/sponsors/catcrap.jpg";
+import SipMask from "assets/img/sponsors/sipmask.jpg";
+import GuelphMarket from "assets/img/sponsors/guelphmarket.png";
+import SAMGroup from "assets/img/sponsors/samgroup.png";
+import CanadaHelps from "assets/img/sponsors/canadahelps.jpg";
+import Benevity from "assets/img/sponsors/benevity.jpg";
+import ProjectN95 from "assets/img/sponsors/projectn95.jpg";
 
 const AboutPage = () => {
   return (
@@ -158,6 +165,13 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		<Sponsorship src={Ups} href="https://ups.com" />
 		<Sponsorship src={SoftSeal} href="https://www.softsealmask.com/" />
 		<Sponsorship src={CanadaStrong} href="https://canadastrongmasks.ca/" />
+		<Sponsorship src={CatCrap} href="https://ekusa.com/cat-crap-products/" />
+		<Sponsorship src={SipMask} href="https://sipmask.com/" />
+		<Sponsorship src={SAMGroup} href="https://www.thesamgroup.ca/" />
+		<Sponsorship src={GuelphMarket} href="https://guelphmarket.com/" />
+		<Sponsorship src={CanadaHelps} href="https://www.canadahelps.org/" />
+		<Sponsorship src={Benevity} href="https://benevity.com/" />
+		<Sponsorship src={ProjectN95} href="https://www.projectn95.org/" />
       </Row>
       <SimpleFooter />
     </>
