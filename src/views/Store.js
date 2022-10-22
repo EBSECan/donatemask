@@ -34,6 +34,7 @@ import Aranet4Data from "assets/img/buy/Aranet4_datasheet_v25_WEB.pdf";
 import DentecData from "assets/img/buy/dentec-spec.pdf";
 import DraegerData from "assets/img/buy/draeger-spec.pdf";
 import LanyardData from "assets/img/buy/lanyard-spec.pdf";
+import StickersData from "assets/img/buy/stickers-spec.pdf";
 import VitalightData from "assets/img/buy/vitalight-spec.pdf";
 import FloMaskData from "assets/img/buy/flo-mask-spec.pdf";
 import HaloStrapKidsData from "assets/img/buy/halo-strap-kids-spec.pdf";
@@ -76,6 +77,7 @@ import floMaskAdultRefillImageUrl from "assets/img/buy/flo-mask-adult-refill.jpg
 import haloStrapKidsImageUrl from "assets/img/buy/halo-strap-kids.png";
 import haloStrapAdultImageUrl from "assets/img/buy/halo-strap-adult.jpg";
 import lanyardImageUrl from "assets/img/buy/lanyard.jpg";
+import stickersImageUrl from "assets/img/buy/stickers.jpg";
 import vitalightImageUrl from "assets/img/buy/vitalight.jpg";
 
 const redirectTo = (url) => {
@@ -921,6 +923,25 @@ const BuyPage = () => {
           buyBtnId="buy-lanyard"
           buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.lanyard)}
           buyBtnText="Buy Lanyard"
+        />
+		
+		<StoreItem
+          imgWidth="1303"
+          imgAlt="Friendly COVID19 Stickers Set"
+          imgUrl={stickersImageUrl}
+          title="Friendly COVID19 Stickers Set"
+          description={
+            <>
+              A 6-sticker set designed by @FriendlyCOVID19 that illustrates the craziness of our world.
+              5 transparent and 1 matte. Liven up your world and comment on bad policy takes! (Now in stock!)
+            </>
+          }
+          dataSheetUrl={StickersData}
+          price="$22.99"
+		  shipping=" with FREE shipping to Canada/US"
+          buyBtnId="buy-stickers"
+          buyBtnOnClick={() => redirectTo(STRIPE_LINKS.mask.stickers)}
+          buyBtnText="Buy Stickers Set"
         />
 
         <Row>
