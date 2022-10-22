@@ -134,7 +134,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         />
 		<Profile
           name="Kerri Coombs"
-          role="East Coast Community Liaison"
+          role="West Coast Community Liaison"
 		  description="I'm a communications consultant and producer in the arts, the owner of FireDance Media, and a founding member of Protect Our Province BC."
           avatar={Kerri}
           website="https://protectbc.ca/"
