@@ -15,6 +15,9 @@ import Chris from "assets/img/team/chris.jpg";
 import Devarsh from "assets/img/team/devarsh.jpg";
 import Sarah from "assets/img/team/sarah.jpg";
 import Ali from "assets/img/team/ali.jpg";
+import Kerri from "assets/img/team/kerri.jpg";
+import Josi from "assets/img/team/josi.jpg";
+import Annie from "assets/img/team/annie.jpg";
 
 // Sponsorship Layout and Logos
 import Sponsorship from "components/Sponsorship";
@@ -83,7 +86,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         />
         <Profile
           name="Haider Zaidi"
-          role="Software Developer, Second-Year Undergrad at the Schulich School of Business"
+          role="Software Developer"
           avatar={Haider}
           linkedin="https://www.linkedin.com/in/haider-zaidi/"
           website="https://haiderzaidi.ca"
@@ -91,7 +94,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         />
         <Profile
           name="David Izrailov"
-          role="Data & Marketing, Second-Year Undergrad at the Schulich School of Business"
+          role="Data & Marketing"
           avatar={David}
           linkedin="https://www.linkedin.com/in/david-izrailov/"
           website="http://davidizrailov.com"
@@ -107,7 +110,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
         />
         <Profile
           name="Devarsh Patel"
-          role="Associate Software Developer"
+          role="Software Developer"
           avatar={Devarsh}
           linkedin="https://www.linkedin.com/in/devarsh19/"
           website="https://github.com/devarsh19"
@@ -128,6 +131,33 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
           instagram="https://www.instagram.com/ali_grimshaw/"
           twitter="https://twitter.com/aligrimshaw"
           email="ali@donatemask.ca"
+        />
+		<Profile
+          name="Kerri Coombs"
+          role="East Coast Community Liaison"
+		  description="I'm a communications consultant and producer in the arts, the owner of FireDance Media, and a founding member of Protect Our Province BC."
+          avatar={Kerri}
+          instagram=""
+          twitter=""
+          email="kerri@donatemask.ca"
+        />
+		<Profile
+          name="Josi Lorensini"
+          role="Event Coordination & Translation"
+          description="Currently helping the charity by organizing a fundraising and getting in touch coordinating volunteers."
+		  avatar={Josi}         
+		  instagram=""
+          twitter=""
+          email="josi@donatemask.ca"
+        />
+		<Profile
+          name="Annie Renaud"
+          role="Graphic Design & Translation"
+		  description="Taking care of design and ordering for t-shirts and other charity merchandise as well as translation work."
+          avatar={Annie}
+          instagram=""
+          twitter=""
+          email="annie@donatemask.ca"
         />
       </Row>
       <Row className="d-flex justify-content-center text-center no-margin about">
