@@ -49,6 +49,7 @@ import SAMGroup from "assets/img/sponsors/samgroup.png";
 import CanadaHelps from "assets/img/sponsors/canadahelps.jpg";
 import Benevity from "assets/img/sponsors/benevity.jpg";
 import ProjectN95 from "assets/img/sponsors/projectn95.jpg";
+import RippleStrategy from "assets/img/sponsors/ripple.jpg";
 
 const AboutPage = () => {
   return (
@@ -199,6 +200,7 @@ Mekki currently lives in Toronto and works at IBM as Financial Services Sector L
 		<Sponsorship src={CanadaHelps} href="https://www.canadahelps.org/" />
 		<Sponsorship src={Benevity} href="https://benevity.com/" />
 		<Sponsorship src={ProjectN95} href="https://www.projectn95.org/" />
+		<Sponsorship src={RippleStrategy} href="https://www.ripplestrategy.ca/" />
       </Row>
       <SimpleFooter />
     </>
