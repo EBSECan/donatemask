@@ -142,7 +142,25 @@ const calculateVulnerablePopulationsMetric = (stats) => {
 };
 
 /**
- * 3. Request Data by Region
+ * 3. Purpose of Request. We don't have data for all time, just from Aug 30th.
+ */
+const calculateRequestPurposeMetric = (stats) => {
+  // The total for purpose data is less than the overall total
+  const total = stats.purposeCounts.total;
+  const purposes = stats.purposeCounts.purposes;
+
+  return {
+    total: formatNumber(total),
+    purpose: Object.keys(purposes).map((purpose) => ({
+      name: purpose,
+      value: formatNumber(purposes[purpose]),
+      percent: toPercent(purposes[purpose] / total),
+    })),
+  };
+};
+
+/**
+ * 4. Request Data by Region
  */
 const calculateRegionRequestsMetric = (data) => {
   // Make sure every request has a proper postal code and province
@@ -307,7 +325,8 @@ const calculateMetrics = async () => {
     reportDate: currentDate(),
     metric1: calculateVulnerableMetric(demographicsStats),
     metric2: calculateVulnerablePopulationsMetric(demographicsStats),
-    metric3: calculateRegionRequestsMetric(allRequests),
+    metric3: calculateRequestPurposeMetric(demographicsStats),
+    metric4: calculateRegionRequestsMetric(allRequests),
   };
 };
 
