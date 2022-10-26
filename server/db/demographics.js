@@ -27,16 +27,47 @@ module.exports.stats = async () => {
 
   // Go through all records, and all groups in those records,
   // and count how many times we encounter each one.
+  // Do the same for all request purpose data
   const groupCounts = {};
-  demographics.forEach(({ groups }) => {
+  const purposeCounts = {
+    total: 0,
+    purposes: {
+      Unspecified: 0,
+      "Return To School": 0,
+      "Return To Work": 0,
+    },
+  };
+
+  demographics.forEach(({ groups, purpose }) => {
     groups.forEach((group) => {
       groupCounts[group] = groupCounts[group] || 0;
       groupCounts[group] = groupCounts[group] + 1;
     });
+
+    if (purpose) {
+      // Keep a separate total for purpose counts, since we don't have as much historic data.
+      purposeCounts.total += 1;
+
+      let anySelected = false;
+      if (purpose.returnToSchool) {
+        purposeCounts.purposes["Return To School"] += 1;
+        anySelected = true;
+      }
+      if (purpose.returnToWork) {
+        purposeCounts.purposes["Return To Work"] += 1;
+        anySelected = true;
+      }
+
+      // Deal with the case of neither being selected
+      if (!anySelected) {
+        purposeCounts.purposes["Unspecified"] += 1;
+      }
+    }
   });
 
   return {
     count: demographics.length,
     groupCounts,
+    purposeCounts,
   };
 };

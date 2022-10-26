@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Donate A Mask: Request Report</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      integrity="sha256-IUOUHAPazai08QFs7W4MbzTlwEWFo7z/4zw8YmxEiko="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-print-css@1.0.1/css/bootstrap-print.min.css"
+      integrity="sha256-44dq5zhEEr5Mgw12MgOkjgYQKOsVL58o3b3dbuT+Bg8="
       crossorigin="anonymous"
     />
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha256-h1OMS35Ij1pJ0S+Y1qBK/GHQDyankPMZVpeZrNQ062U="
       crossorigin="anonymous"
     ></script>
   </head>
@@ -79,7 +85,7 @@
         </p>
       </section>
 
-      <section id="metric2" class="my-5" style="page-break-after: always;">
+      <section id="metric2" class="my-5">
         <h2>2. Vulnerable Populations Served</h2>
         <table class="table table-bordered">
           <thead class="table-light">
@@ -122,14 +128,50 @@
       </section>
 
       <section id="metric3" class="my-5">
-        <h2>3. Requests by Region</h2>
+        <h2>3. Purpose of Request</h2>
+        <table class="table table-bordered">
+          <caption>
+            <strong>NOTE:</strong>
+            the collection of request purpose data began on August 30th, 2022.
+            Thus
+            <strong>% of Total Requests</strong>
+            has been calculated using total requests since that date.
+          </caption>
+          <thead class="table-light">
+            <tr>
+              <th scope="col">Purpose</th>
+              <th scope="col"># of Requests Involving this Purpose</th>
+              <th scope="col">% of Total Requests</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each metric3.purpose}}
+              <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.value}}</td>
+                <td>{{this.percent}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+          <tfoot class="table-light">
+            <tr>
+              <th>Total Requests</th>
+              <th>{{metric3.total}}</th>
+              <th>&nbsp;</th>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="metric4" class="my-5">
+        <h2>4. Requests by Region</h2>
         <img
           alt="Map of requests across Canada"
           src="https://ebsecan.github.io/canada-map-requests/map.png"
           width="100%"
           class="img-fluid mb-3"
         />
-        <p>
+        <p style="page-break-after: always;">
           The following table shows the number of masks (regular and small size)
           and number of boxes of rapid tests (5 tests per box) requested by
           region, based on postal code. For each region, the total number of
@@ -152,7 +194,7 @@
             </tr>
           </thead>
           <tbody>
-            {{#each metric3.regions}}
+            {{#each metric4.regions}}
               <tr>
                 <td>{{this.name}}</td>
                 <td>
@@ -174,10 +216,10 @@
           <tfoot class="table-light">
             <tr>
               <th>Canada</th>
-              <th>{{metric3.Canada.regularMaskAmount.value}}</th>
-              <th>{{metric3.Canada.smallMaskAmount.value}}</th>
-              <th>{{metric3.Canada.maskAmountTotal.value}}</th>
-              <th>{{metric3.Canada.testAmount.value}}</th>
+              <th>{{metric4.Canada.regularMaskAmount.value}}</th>
+              <th>{{metric4.Canada.smallMaskAmount.value}}</th>
+              <th>{{metric4.Canada.maskAmountTotal.value}}</th>
+              <th>{{metric4.Canada.testAmount.value}}</th>
             </tr>
           </tfoot>
         </table>
