@@ -932,7 +932,7 @@ const BuyPage = () => {
           title="Friendly COVID19 Stickers Set"
           description={
             <>
-              A 6-sticker set designed by @FriendlyCOVID19 that illustrates the craziness of our world.
+              A 6-sticker set designed by @FriendlyCOVID19 that illustrates the absurdity of our world.
               5 transparent and 1 matte. Liven up your world and comment on bad policy takes! (Now in stock!)
             </>
           }
