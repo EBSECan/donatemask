@@ -351,7 +351,7 @@ const BuyPage = () => {
         />
 
 		<StoreItem
-          imgWidth="1030"
+          imgWidth="1036"
           imgAlt="Optrel P.Air Clear N95 Mask with Transparent Window"
           imgUrl={pAirClearImageUrl}
           title="POptrel P.Air Clear N95 Mask with Transparent Window"
@@ -362,7 +362,7 @@ const BuyPage = () => {
 			   Perfect for teachers, nurses, dentists, and anyone who wants to show their
 			   smile and have their words be more accessible for those who lip read!
 			   Box of 20 (4 packs of 5).
-			  (Now in stock!)
+			  BONUS! Now with 10 FREE Cat Crap anti-fog wipes! No more fogging!
             </>
           }
           dataSheetUrl={PAirClearData}
