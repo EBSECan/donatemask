@@ -6,40 +6,10 @@ const maskPriceFormatted = formatCurrency(MASK_PRICE);
 
 export default [
   {
-    question: `There are lots of pandemic grifters out there, taking advantage of people when they are at their most vulnerable. How do I know this isn't a scam?`,
-    answer: `You are wise to do your due-diligence before donating money or sending your personal information (address) to a website! Good job!  You can verify that this is a real initiative by real people in several ways:
+	  question: `Who are you? Are you a real charity?`,
+	  answer: `The Donate A Mask Project is an initiative of Evidence-Based Social Enterprises Canada, a registered Charitable Organization.  You can look up the organization with the Canada Revenue Agency to verify that it is, indeed a real charitable organization, at this location: https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyRprtngPrd?q.srchNmFltr=evidence-based&q.stts=0007&selectedCharityBn=754329506RR0001&dsrdPg=1
 
-1) Donate A Mask Project founder and Executive Director of Evidence-Based Social Enterprises Canada, Mekki MacAulay, has a deliberately public profile on the Internet that goes back two decades.  You can find everything about him on his LinkedIn Profile (https://www.linkedin.com/in/mekkim), his Twitter (https://twitter.com/mekki), his Facebook (https://facebook.com/mekki), and so on.  You can also email him at mekki@donatemask.ca with any concerns or questions.  
-
-Mekki takes his obligations as a Professional Engineer (PEng) registered with Professional Engineers Ontario (License #100134797) very seriously.  One of his obligations as a Professional Engineer is to always hold the public interest as paramount.  The word of a professional engineer is his oath.  You can look up Mekki's professional engineering registration at this site: https://www.peo.on.ca/directory (search for Mekki as first name--there's only one!).
-
-2) The Donate A Mask Project is an initiative of Evidence-Based Social Enterprises Canada, a registered Charitable Organization*.  You can look up the organization with the Canada Revenue Agency to verify that it is, indeed a real charitable organization, at this location: https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en
-
-[*Charitable registration application in progress]
-
-3) If you are a media organization who wants to validate that we are real and do due diligence before publication, please reach out to us at marketing@donatemask.ca and we will be happy to provide any documentation you may wish to validate who we are and what we do.
-
-4) The Donate A Mask Project Canada leverages the principles of the open source movement of transparency and auditability.  Our web page and activities are deliberately accessible to the general public via GitHub at this location: https://github.com/mekkim/donatemask - We would LOVE it if you want to reproduce this project using our resources in your own jurisdiction (USA? France? UK? Reach out to us! We'll help get you set up!)`,
-  },
-
-  {
-    question: `When you say that you will provide "high-quality" masks to those who request them, what do you mean?`,
-    answer: `There is a lot of confusing messaging about masks, masking, and mask quality circulating during the pandemic.  When we say "high-quality" masks, what we mean is "NIOSH N95- respirators of various configurations or equivalent".  Technically, we are providing "respirators", not "masks", but since most people use the term "mask" in common discussions, we've adopted that term for simplicity of communication.  
-
-We have three tiers of reference masks that we attempt to procure and distribute as part of this initiative.  Wherever possible, based on supply chain availability, we will provide the tier 1 masks.  In the event that they are not available, we will substitute tier 2 and 3 masks as necessary.  The lowest tier masks we provide will still be "NIOSH N95-rated or equivalent".
-
-The majority of the masks we distribute are Canadian-designed and/or Canadian-manufactured that are approved by Health Canada for use in healthcare settings with airborne pathogens, like COVID-19.  That means that most of the masks we distribute also have ASTM Level 3 (highest) splash protection, in addition to 95% (or greater) efficiency against airborne particles.  
-
-Because the NIOSH N95 standard is American, Canadian manufacturers use a range of similar standards whose underlying testing requirements meet or exceed the N95 standard.  Most of the masks we distribute are actually rated closer to NIOSH N99 in their test results.
-
-Another major issue in quality is fit.  We only provide masks with headband straps. We do not distribute masks with earloop straps.  That's because masks need a tight fit on the face in order to be effective, and the pulling on the ears required to achieve that tight fit is too uncomfortable for most (especially children!). As a result, earloop masks are often worn incorrectly, to diminished effectiveness.  To address this issue, we simply decided to only provide headband strap masks that are designed to be worn by healthcare workers for 12 hour shifts comfortably.  In fact, the regular size mask we distribute presently is the same model worn by EMS in Ontario, from the same Canadian designer!
-
-Please note that while we will make every effort possible to ensure the quality of the masks and other items we provide, we cannot and will not take on any responsibility or liability for their effectiveness for any or no purpose.  All products requested and received are used at your own risk.  Please see our Terms of Use for more details.`,
-  },
-
-  {
-    question: `bUt MaSKs aRE bAd FoR yoU!!!1!one!11!!`,
-    answer: `Please look at the title of our organization once more: "Evidence-Based Social Enterprises Canada".  We're not here to debate with anti-science zealots.  Don't want our free masks delivered right to your door using the labour of volunteers and the funding of generous people who want our communities to be healthier?  Kool. Make room for those who want to protect themselves and the people they care about.  Don't let the website/app close button hit you on the way out!`,
+The Donate A Mask Project Canada leverages the principles of the open source movement of transparency and auditability.  Our web page and activities are deliberately accessible to the general public via GitHub at this location: https://github.com/ebsecan`
   },
 
   {
@@ -75,14 +45,16 @@ If you're a media organization who wishes to report on this project, please reac
 
   {
     question: `Will you issue a charitable donation receipt for my donation?`,
-    answer: `Yes, caveat: Our incorporation has been confirmed by Corporations Canada and our registered charity application has been fully submitted to CRA and we have a charitable organization registration number.  However, CRA takes more than 6 months to certify the charity (even though we already have our registered charity number!).  Our aim is to have all donations received after January 14, 2022 of $25 or more to be issued an official charitable donation receipt for the purposes of income tax in Canada.  However, please bear with us as we get up and running and please be understanding if our government paperwork takes longer than expected and we aren't able to issue charitable receipts until a later date (if we have problems with the paperwork, etc.).  Feel free to reach out to us at donate@donatemask.ca for status updates on the registered charity paperwork progress.`,
+    answer: `Yes. We will issue charitable donations for all cash donations at the end of the calendar year for the aggregate amount of the total donations for that year as a single receipt. We will require the information that CRA mandates to appear on the receipts and we will reach out to you to collect this information: https://www.canada.ca/en/revenue-agency/services/charities-giving/charities/operating-a-registered-charity/issuing-receipts/what-information-must-on-official-donation-receipt-a-registered-charity.html
+	
+	We will not be issuing charitable donation receipts for purchase from the charity fundraising store.  For receipts for in-kind donations (masks, etc.), please discuss with us beforehand as these will be considered on a case-by-case basis, subject to CRA rules.`,
   },
 
   {
     question: `You provide a lot of ways to donate money.  Which is best for the Donate A Mask Project?`,
     answer: `Thanks for thinking about the flow of money.  As you no doubt know, payment processing can be expensive for charities.  We wanted to make a large range of donation payment options available to make donations as easy as possible, but, indeed, some cost more than others.
 
-The simplest and most cost-effective way for us to receive donations is via INTERAC email transfers sent to donate@donatemask.ca.  They will be auto-accepted (eventually! Our banking partner, Desjardins, doesn't yet support auto-accept of INTERAC email transfers for business accounts! Only personal accounts for some reason! They've promised it'll be available soon!) and we will reply with confirmation of receipt to the email you used to send the donation.  In this manner, we receive 100% of the funds, with no fees.  Some other means are also cost effective, so please feel free to use the means that are best for you.`,
+The simplest and most cost-effective way for us to receive donations is via INTERAC email transfers sent to donate@donatemask.ca.  Please set the password to "masks" for simplicity. Our bank (Desjardins) does not have email money transfer auto-deposit available for business accounts, so passwords are still required.  In this manner, we receive 100% of the funds, with no fees.  Some other means are also cost effective, so please feel free to use the means that are best for you.`,
   },
 
   {
@@ -102,7 +74,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
     question: `How long will shipping take?`,
-    answer: `The shipping itself will mostly be done by Canada Post regular mail/regular parcel in order to keep costs as low as possible.  Therefore, regular Canada Post service times to your location (from Toronto) with their usual caveats are the approximate shipping time.  We usually ship out masks 3-4 times per week.`,
+    answer: `The shipping itself will mostly be done by UPS Stanard parcel in order to keep costs as low as possible as we have negotiated low corporate rates with UPS.  Requests to PO Boxes and to Northern Canada will be sent via Canada Post as UPS does not have regular service for those cases. We ship out requests and orders every week day via a daily UPS pickup in the evening.`,
   },
 
   {
@@ -122,7 +94,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
     question: `Where does your funding come from?`,
-    answer: ` 100% of our funding comes from donations from people like you and organizations willing to help out. We do not receive any government grants or other such funding to run this charitable initiative--yet!  We are applying for government and other charitable grants to support this initiative and will update you if we're lucky enough to receive them!`,
+    answer: ` 100% of our funding comes from donations from people like you and organizations willing to help out, as well as from the small margins on our charity fundraising store sales. We do not receive any government grants or other such funding to run this charitable initiative--yet!  We are applying for government and other charitable grants to support this initiative and will update you if we're lucky enough to receive them!`,
   },
 
   {
@@ -171,7 +143,7 @@ The simplest and most cost-effective way for us to receive donations is via INTE
 
   {
     question: `I never received my request. What happened?`,
-    answer: `We're sorry that your request hasn't arrived. It may have fallen through the cracks given the chaos of our growing pains and purely volunteer driven organization.   If you urgently need a status update, please email us at request@donatemask.ca and one of our volunteers will try to figure out what happened to your request.`,
+    answer: `We're sorry that your request hasn't arrived. It may have fallen through the cracks given the chaos of our growing pains and purely volunteer driven organization.   If you urgently need a status update, please email us at request@requestmask.ca and one of our volunteers will try to figure out what happened to your request.`,
   },
 
   {
@@ -185,13 +157,8 @@ The simplest and most cost-effective way for us to receive donations is via INTE
   },
 
   {
-    question: `I am an academic researcher and I would like to study your organization and its data for the purpose of academic publications. Who do I reach out to?`,
-    answer: `We are a big fan of academic research. Our project founder, Mekki, is an academic himself, and he would be delighted to collaborate with researchers looking at this project from a number of different theoretical perspectives. Reach out to him at mekki@donatemask.ca to discuss potential collaborations.`,
-  },
-
-  {
-    question: ` We would like to use some of this project's source code in our own projects but need a different license than the open source license provided. Will you consider different licensing?`,
-    answer: `Maybe. Reach out to Mekki at mekki@donatemask.ca to discuss your needs.`,
+    question: ` We would like to use some of your organization's source code in our own projects but need a different license than the open source licenses provided. Will you consider different licensing?`,
+    answer: `Maybe. Reach out to us to discuss: contact@evidencebased.ca`,
   },
 
   {
