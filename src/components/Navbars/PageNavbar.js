@@ -96,7 +96,7 @@ class PageNavbar extends React.Component {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink className="nav-link-text-cta" tag={Link} to="/store">
+                    <NavLink className="nav-link-text-cta" href="https://buymask.ca" id="navbar-shopify-redirect" target="_blank">
                       Store
                     </NavLink>
                   </NavItem>
