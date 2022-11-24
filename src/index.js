@@ -25,9 +25,26 @@ ReactDOM.render(
       <Route path="/" exact render={(props) => <Landing {...props} />} />
       <Route path="/donate" exact render={(props) => <Donate {...props} />} />
       <Route path="/request" exact render={(props) => <Request {...props} />} />
-      // For legacy purposes, support both /buy and /store
-      <Route path="/buy" exact render={(props) => <Store {...props} />} />
-      <Route path="/store" exact render={(props) => <Store {...props} />} />
+      
+	  // Mekki's Updates for New Shopify Store Redirect Nov 24 2022
+	  <Route path="/buy" exact component={() => { 
+		window.location.href = 'https://buymask.ca'; 
+		return null;
+		}}
+	  />
+	  <Route path="/store" exact component={() => { 
+		window.location.href = 'https://buymask.ca'; 
+		return null;
+		}}
+	  />
+	  
+	  //<Redirect from="/buy" exact to="/" />  # Works but redirects to main page; above preferred
+	  //<Redirect from="/store" exact to="/" />
+	  
+	  
+	  // For legacy purposes, support both /buy and /store
+	  //<Route path="/buy" exact render={(props) => <Store {...props} />} />
+      //<Route path="/store" exact render={(props) => <Store {...props} />} />
       <Route path="/summary" render={(props) => <Summary {...props} />} />
       <Route path="/about" exact render={(props) => <About {...props} />} />
       <Route path="/faq" exact render={(props) => <FAQ {...props} />} />

@@ -62,7 +62,7 @@ const DonateForm = () => {
                 <sub>2</sub> monitors</strong>, or the e-book{" "}
                 <strong>COVID-19 and Ethics in Canada</strong> by{" "}
                 <strong>Jon Parsons</strong> from our{" "}
-                <Link to="/store">Charity Store</Link>.
+                <a href="https://buymask.ca" target="_blank">Charity Fundraising Store</a>.
               </CardText>
             </CardBody>
           </Card>
@@ -259,7 +259,7 @@ const DonateForm = () => {
 
             <ul>
               <li>
-                <Link to="/store">Donate A Mask Charity Store</Link>
+                <a href="https://buymask.ca" target="_blank">Charity Fundraising Store</a>
               </li>
               <li>
                 <a
