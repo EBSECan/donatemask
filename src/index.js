@@ -10,7 +10,7 @@ import "assets/css/custom.css";
 import Landing from "views/Landing.js";
 import Donate from "views/Donate.js";
 import Request from "views/Request";
-import Store from "views/Store.js";
+import Store from "views/StoreNoCache.js";
 import Summary from "views/Summary";
 import About from "views/About.js";
 import FAQ from "views/FAQ.js";
