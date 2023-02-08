@@ -150,7 +150,7 @@ class SimpleFooter extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://github.com/mekkim/donatemask"
+                      href="https://github.com/EBSECan/donatemask"
                       id="tooltip-footer-github"
                       target="_blank"
                     >
@@ -170,7 +170,7 @@ class SimpleFooter extends React.Component {
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="mailto:donate@donatemask.ca"
+                      href="mailto:contact@donatemask.ca"
                       target="_blank"
                     >
                       <span className="btn-inner--icon">
